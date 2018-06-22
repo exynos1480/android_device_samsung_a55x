@@ -13,6 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+BUILD_BROKEN_DUP_RULES := true
+
 COMMON_PATH := device/samsung/gta4xls-common
 
 ## Inherit proprietary vendor configuartion
