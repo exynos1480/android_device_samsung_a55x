@@ -30,6 +30,23 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 # Soong namespaces
 $(call inherit-product, hardware/samsung_slsi-linaro/config/config.mk)
 
+# A/B
+AB_OTA_UPDATER := true
+
+AB_OTA_PARTITIONS += \
+    boot \
+    system \
+    vbmeta
+
+AB_OTA_POSTINSTALL_CONFIG += \
+    RUN_POSTINSTALL_system=true \
+    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
+    FILESYSTEM_TYPE_system=erofs \
+    POSTINSTALL_OPTIONAL_system=true
+
+PRODUCT_PACKAGES += \
+    otapreopt_script
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio.effect@7.0-impl:32 \
@@ -259,6 +276,15 @@ PRODUCT_SOONG_NAMESPACES += bootable/deprecated-ota
 PRODUCT_PACKAGES += \
     android.hardware.usb-service.samsung \
     android.hardware.usb.gadget-service.samsung
+
+# Update engine
+PRODUCT_PACKAGES += \
+    update_engine \
+    update_engine_sideload \
+    update_verifier
+
+PRODUCT_PACKAGES_DEBUG += \
+    update_engine_client
 
 # WiFi
 PRODUCT_PACKAGES += \
