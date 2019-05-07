@@ -18,6 +18,22 @@ COMMON_PATH := device/samsung/gta4xls-common
 ## Inherit proprietary vendor configuartion
 include vendor/samsung/gta4xls-common/BoardConfigVendor.mk
 
+## A/B
+AB_OTA_UPDATER := true
+
+AB_OTA_PARTITIONS := \
+    boot \
+    vendor_boot \
+    vbmeta_vendor \
+    dtbo \
+    odm \
+    product \
+    vbmeta \
+    system \
+    vbmeta_system \
+    vendor \
+    vendor_dlkm
+
 ## Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-2a-dotprod
