@@ -21,6 +21,9 @@ $(call inherit-product, vendor/samsung/gta4xls-common/gta4xls-common-vendor.mk)
 
 PRODUCT_CHARACTERISTICS := tablet
 
+# Enable virtual A/B OTA
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
+
 # Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
