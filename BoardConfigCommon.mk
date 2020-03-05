@@ -125,6 +125,7 @@ TARGET_SOC := s5e8845
 #include hardware/samsung_slsi-linaro/config/BoardConfig8845.mk
 
 ## Properties
+TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 TARGET_PRODUCT_PROP += $(COMMON_PATH)/product.prop
 
