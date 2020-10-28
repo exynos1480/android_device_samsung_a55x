@@ -81,6 +81,9 @@ ro.crypto.volume.metadata.method=dm-default-key
 ## Power HAL
 vendor.powerhal.disp.idle_support=false
 
+## Zygote
+zygote.critical_window.minute=10
+
 ## Samsung specific
 ro.product_ship=true
 # Set csc support in OMX
