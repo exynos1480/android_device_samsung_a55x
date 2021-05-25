@@ -9,4 +9,5 @@ recovery_only(`
  allow recovery system_data_file:dir r_dir_perms;
  allow recovery cache_file:dir mounton;
  allow recovery self:capability sys_rawio;
+ allow recovery proc_bootconfig:file r_file_perms;
 ')
