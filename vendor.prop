@@ -102,6 +102,7 @@ ro.boot.wificountrycode=00
 ro.vendor.radio.default_network=26
 
 ## LKMD
+ro.lmk.filecache_min_kb=153600
 ro.lmk.psi_partial_stall_ms=70
 ro.lmk.psi_complete_stall_ms=700
 ro.lmk.thrashing_limit=100
