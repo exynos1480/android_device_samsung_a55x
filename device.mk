@@ -199,6 +199,8 @@ PRODUCT_PACKAGES += \
     init.samsung.rc \
     ueventd.s5e8845.rc
 
+$(call soong_config_set,libinit,vendor_init_lib,//$(LOCAL_PATH):libinit_a55x)
+
 # Kernel
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 
