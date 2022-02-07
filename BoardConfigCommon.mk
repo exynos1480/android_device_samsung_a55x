@@ -185,6 +185,8 @@ BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 ## USB
 $(call soong_config_set,samsungUsbGadgetVars,gadget_name,13200000.dwc3)
 
+BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := true
+
 ## Wi-Fi
 BOARD_WLAN_DEVICE                := slsi
 BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
