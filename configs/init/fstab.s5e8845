@@ -32,7 +32,7 @@ odm                                         /odm              ext4      noatime,
 /dev/block/by-name/slotinfo                 /slotinfo         emmc      defaults                           defaults
 
 # Zram
-/dev/block/zram0                            none              swap      defaults                           zramsize=30%,max_comp_streams=8
+/dev/block/zram0                            none              swap      defaults                           zramsize=30%
 
 # VOLD
 /devices/platform/13200000.usb*             auto              vfat      default                            voldmanaged=usb:auto
