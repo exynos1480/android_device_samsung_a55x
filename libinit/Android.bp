@@ -1,0 +1,24 @@
+//
+// Copyright (C) The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_library_static {
+    name: "libinit_s5e8845",
+    srcs: [
+        "libinit_dalvik_heap.cpp",
+        "libinit_utils.cpp",
+    ],
+    whole_static_libs: ["libbase"],
+    export_include_dirs: ["include"],
+    recovery_available: true,
+}
+
+cc_library_static {
+    name: "init_s5e8845",
+    srcs: ["init_s5e8845.cpp"],
+    whole_static_libs: ["libinit_s5e8845"],
+    include_dirs: ["system/core/init"],
+    recovery_available: true,
+}
