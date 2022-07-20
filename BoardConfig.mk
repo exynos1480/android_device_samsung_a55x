@@ -124,7 +124,6 @@ TARGET_SOC := s5e8845
 ## Properties
 TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
-TARGET_PRODUCT_PROP += $(COMMON_PATH)/product.prop
 
 ## Recovery
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/configs/init/recovery.fstab
