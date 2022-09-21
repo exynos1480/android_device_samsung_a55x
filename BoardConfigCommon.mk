@@ -75,6 +75,10 @@ $(call soong_config_set,samsungCameraVars,usage_64bit,true)
 BOARD_MINIMUM_DISPLAY_BRIGHTNESS := 1
 TARGET_SCREEN_DENSITY := 450
 
+# https://source.android.com/docs/core/architecture/kernel/erofs
+BOARD_EROFS_COMPRESSOR := lz4
+BOARD_EROFS_PCLUSTER_SIZE := 262144
+
 ## Dynamic Partitions
 BOARD_SUPER_PARTITION_SIZE := 8321499136
 BOARD_SUPER_PARTITION_GROUPS := samsung_dynamic_partitions
