@@ -21,8 +21,8 @@ $(call inherit-product, vendor/samsung/gta4xls-common/gta4xls-common-vendor.mk)
 
 PRODUCT_CHARACTERISTICS := tablet
 
-# Enable virtual A/B OTA
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
+# Enable virtual AB with vendor ramdisk
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/vabc_features.mk)
 
 # Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
@@ -47,6 +47,8 @@ AB_OTA_POSTINSTALL_CONFIG += \
 
 PRODUCT_PACKAGES += \
     otapreopt_script
+
+PRODUCT_VIRTUAL_AB_COMPRESSION_METHOD := lz4
 
 # Audio
 PRODUCT_PACKAGES += \
