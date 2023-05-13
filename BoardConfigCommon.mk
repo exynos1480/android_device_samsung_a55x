@@ -23,6 +23,7 @@ AB_OTA_UPDATER := true
 
 AB_OTA_PARTITIONS := \
     boot \
+    init_boot \
     vendor_boot \
     vbmeta_vendor \
     dtbo \
@@ -48,6 +49,10 @@ $(call soong_config_set,exynos_audio,PROXY_LIBRARY,//device/samsung/gta4xls-comm
 
 ## Bluetooth
 BOARD_HAVE_BLUETOOTH_SLSI := true
+
+## Init Boot
+BOARD_INIT_BOOT_HEADER_VERSION := 4
+BOARD_MKBOOTIMG_INIT_ARGS += --header_version $(BOARD_INIT_BOOT_HEADER_VERSION)
 
 ## Boot Image
 BOARD_BOOTCONFIG := buildtime_bootconfig=enable
