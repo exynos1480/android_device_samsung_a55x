@@ -106,4 +106,4 @@ ro.lmk.psi_partial_stall_ms=70
 ro.lmk.psi_complete_stall_ms=700
 ro.lmk.thrashing_limit=100
 ro.lmk.thrashing_limit_decay=10
-ro.lmk.swap_free_low_percentage=20
+ro.lmk.swap_free_low_percentage=100
