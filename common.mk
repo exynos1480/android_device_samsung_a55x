@@ -271,10 +271,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.samsung
 
-# Update
-AB_OTA_UPDATER := false
-PRODUCT_SOONG_NAMESPACES += bootable/deprecated-ota
-
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb-service.samsung \
