@@ -89,7 +89,7 @@ $(call soong_config_set,samsungCameraVars,usage_64bit,true)
 
 ## Display
 BOARD_MINIMUM_DISPLAY_BRIGHTNESS := 1
-TARGET_SCREEN_DENSITY := 240
+TARGET_SCREEN_DENSITY := 450
 
 ## Dynamic Partitions
 BOARD_SUPER_PARTITION_SIZE := 10380902400
