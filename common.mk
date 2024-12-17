@@ -184,6 +184,10 @@ $(call soong_config_set,lineage_health,charging_control_supports_deadline,false)
 PRODUCT_PACKAGES += \
     vendor.lineage.touch-service.samsung
 
+# DOZE
+PRODUCT_PACKAGES += \
+    SamsungDoze
+
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml
 
