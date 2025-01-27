@@ -88,6 +88,8 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('android.hardware.security.keymint-V1-ndk_platform.so',
             'android.hardware.security.keymint-V4-ndk.so')
         .add_needed('android.hardware.security.rkp-V3-ndk.so'),
+    'vendor/lib64/libexynosgraphicbuffer.so': blob_fixup()
+        .add_needed('libshim_ui.so'),
     'vendor/etc/init/init.nfc.samsung.rc': blob_fixup()
         .regex_replace('system', 'secure_element'),
     'vendor/lib64/libsec-ril.so': blob_fixup()

@@ -14,7 +14,7 @@
 // limitations under the License.
 
 cc_library_shared {
-    name: "libshim_camera",
+    name: "libshim_ui",
     srcs: ["GraphicBufferMapper.cpp"],
     shared_libs: [
         "libsync",
