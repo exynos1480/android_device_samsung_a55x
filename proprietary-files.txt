@@ -141,12 +141,33 @@ vendor/lib64/nfc_nci_sec.so
 vendor/lib64/vendor.samsung.hardware.nfc_aidl-V1-ndk.so
 
 ## RIL
+vendor/bin/dmd
+vendor/bin/hw/rild
+vendor/etc/init/dmd.rc
+vendor/etc/init/init.vendor.onebinary.rc
 vendor/etc/init/init.baseband.rc
-vendor/lib64/libengmode_client.so
+vendor/etc/init/init.vendor.rilcommon.rc
+vendor/etc/init/vendor.samsung.rild.rc
+vendor/etc/init/vendor.samsung.rilchip.slsi.rc
+vendor/etc/vintf/manifest/vendor.samsung.hardware.radio.exclude.slsi.xml
+vendor/etc/vintf/manifest/vendor.samsung.hardware.radio_manifest_2_34.xml
+vendor/etc/vintf/manifest/vendor.samsung.hardware.sehradio_manifest_2_34.xml
+vendor/lib64/libVendorSemDataProps.so
+vendor/lib64/libVendorSemTelephonyProps.so
+vendor/lib64/libril_sem.so
+vendor/lib64/libsec-ril.so
+vendor/lib64/libsemnativecarrierfeature.so
+vendor/lib64/vendor.samsung.hardware.radio-V1-ndk.so
+vendor/lib64/vendor.samsung.hardware.radio.bridge-V1-ndk.so
+vendor/lib64/vendor.samsung.hardware.radio.channel-V1-ndk.so
+vendor/lib64/vendor.samsung.hardware.radio.data-V1-ndk.so
+vendor/lib64/vendor.samsung.hardware.radio.messaging-V1-ndk.so
+vendor/lib64/vendor.samsung.hardware.radio.sim-V1-ndk.so
 
-## RIL - from a14 - A145FXXS5BXA1
-vendor/lib/libsecril-client.so|96bf65152d221ac528b763f625bb93e56899033d
-vendor/lib64/libsecril-client.so|26efd845750d4ad91e3a5c5dd7d95d40e8ef52a8
+## RIL Dependencies
+vendor/lib64/libsecril-client.so
+vendor/lib64/libengmode_client.so
+vendor/lib64/libvkmanager_vendor.so
 
 ## SECNATIVE
 vendor/lib/libsecnativefeature.so

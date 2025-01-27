@@ -213,7 +213,9 @@ PRODUCT_COPY_FILES += \
 
 # RIL
 PRODUCT_PACKAGES += \
-    cbd
+    cbd \
+    secril_config_svc \
+    sehradiomanager
 
 # Sensors
 PRODUCT_PACKAGES += \
