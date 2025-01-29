@@ -103,11 +103,32 @@ vendor/lib64/libenn_user_driver_gpu_lib.so
 vendor/lib64/libenn_user_driver_unified.so
 vendor/lib64/libenn_user_lib.so
 
-## Codecs
-vendor/etc/media_codecs.xml
+## Media Codecs
 vendor/etc/media_codecs_c2.xml
-vendor/etc/media_codecs_performance.xml
+vendor/etc/media_codecs_performance_c2.xml
 vendor/etc/media_profiles_V1_0.xml
+
+# Codec2
+vendor/bin/hw/samsung.hardware.media.c2@1.2-service
+vendor/etc/init/samsung.hardware.media.c2@1.2-service.rc
+vendor/etc/seccomp_policy/codec2.vendor.base.policy
+vendor/etc/seccomp_policy/codec2.vendor.ext.policy
+vendor/etc/seccomp_policy/mediaextractor_sec.policy
+vendor/etc/vintf/manifest/sec_c2_manifest_default0_1_2.xml
+vendor/lib64/libExynosC2ComponentStore.so
+vendor/lib64/libExynosC2H264Dec.so
+vendor/lib64/libExynosC2H264Enc.so
+vendor/lib64/libExynosC2HevcDec.so
+vendor/lib64/libExynosC2HevcEnc.so
+vendor/lib64/libExynosC2Vp8Dec.so
+vendor/lib64/libExynosC2Vp8Enc.so
+vendor/lib64/libExynosC2Vp9Dec.so
+vendor/lib64/libExynosC2Vp9Enc.so
+
+## Codec2 Dependencies
+vendor/lib64/libexynosgdc.so
+vendor/lib64/libexynosutils.so
+vendor/lib64/libexynosv4l2.so
 
 ## Firmware
 vendor/firmware/dolby.bin
