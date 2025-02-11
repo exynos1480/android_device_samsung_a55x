@@ -83,11 +83,14 @@
 /vendor/bin/hw/android\.hardware\.graphics\.composer3-service.exynos    u:object_r:hal_graphics_composer_default_exec:s0
 
 # Same process HALs installed by platform into /vendor/lib(64)?/hw
+/vendor/lib(64)?/libOpenCL\.so				 u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libSGPUOpenCL\.so                       u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libion_exynos\.so                       u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libsbwchelper\.so                       u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libdrmresource\.so                      u:object_r:same_process_hal_file:s0
 
 # Vulkan
+/vendor/lib(64)?/hw/vulkan\.samsung\.so                  u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libexynosgraphicbuffer_core\.so         u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libeis_utils\.so                        u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libdrm\.so                              u:object_r:same_process_hal_file:s0

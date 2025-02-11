@@ -146,10 +146,13 @@ vendor/lib64/vendor.samsung.hardware.gnss@2.0.so
 vendor/lib64/vendor.samsung.hardware.gnss@2.1.so
 
 ## Graphics
-vendor/lib/egl/libGLES_mali.so;SYMLINK=vendor/lib/libOpenCL.so;SYMLINK=vendor/lib/libOpenCL.so.1;SYMLINK=vendor/lib/libOpenCL.so.1.1
-vendor/lib64/egl/libGLES_mali.so;SYMLINK=vendor/lib64/libOpenCL.so;SYMLINK=vendor/lib64/libOpenCL.so.1;SYMLINK=vendor/lib64/libOpenCL.so.1.1
-vendor/lib/hw/vulkan.mali.so
-vendor/lib64/hw/vulkan.mali.so
+vendor/etc/Khronos/OpenCL/samsung.icd;SYMLINK=vendor/Khronos/OpenCL/vendors/samsung.icd
+vendor/lib64/hw/vulkan.samsung.so
+vendor/lib64/libOpenCL.so
+vendor/lib64/egl/libEGL_samsung.so
+vendor/lib64/egl/libGLESv1_CM_samsung.so
+vendor/lib64/egl/libGLESv2_samsung.so
+vendor/lib64/libSGPUOpenCL.so
 
 # Display - DQE
 vendor/etc/dqe/calib_data_colormode0_off.xml
