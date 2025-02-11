@@ -17,6 +17,7 @@ genfscon sysfs /devices/platform/mfc/video4linux/video7/name                    
 genfscon sysfs /devices/system/chip-id/revision                                                                  u:object_r:sysfs_chipid:s0
 
 genfscon sysfs /devices/virtual/sensors/light_sensor/hall_ic                                                     u:object_r:sysfs_sensors_writable:s0
+genfscon sysfs /devices/virtual/sensors/flip_cover_detector_sensor/nfc_cover_status     			  u:object_r:sysfs_sensors_writable:s0
 
 # Firmware
 genfscon sysfs /firmware/devicetree/base/sound/mixer-paths                                                     u:object_r:sysfs_audio:s0

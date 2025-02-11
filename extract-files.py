@@ -73,6 +73,8 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('android.hardware.security.keymint-V1-ndk_platform.so',
             'android.hardware.security.keymint-V4-ndk.so')
         .add_needed('android.hardware.security.rkp-V3-ndk.so'),
+    'vendor/etc/init/init.nfc.samsung.rc': blob_fixup()
+        .regex_replace('system', 'secure_element'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(

@@ -24,6 +24,9 @@
 # ZRAM
 /dev/block/zram0                             u:object_r:swap_block_device:s0
 
+# NFC
+/dev/sec-nfc                                 u:object_r:nfc_device:s0
+
 ## EFS
 /efs/FactoryApp(/.*)?                        u:object_r:app_efs_file:s0
 /efs/TEE(/.*)?                               u:object_r:prov_efs_file:s0
@@ -73,3 +76,6 @@
 
 ## Vendor
 /(vendor|system/vendor)/bin/hw/gps.sh        u:object_r:gpsd_exec:s0
+
+# Services
+/vendor/bin/hw/sec\.android\.hardware\.nfc-service            u:object_r:hal_nfc_default_exec:s0

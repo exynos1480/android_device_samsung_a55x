@@ -129,6 +129,14 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="aidl">
+        <name>vendor.samsung.hardware.nfc_aidl</name>
+        <version>1</version>
+        <interface>
+            <name>ISehNfc</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <hal format="hidl">
         <name>vendor.lineage.touch</name>
         <transport>hwbinder</transport>
