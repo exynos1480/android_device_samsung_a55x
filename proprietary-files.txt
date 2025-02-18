@@ -181,6 +181,8 @@ vendor/lib64/android.hardware.graphics.extension.composer3-V1-ndk.so
 vendor/lib64/libExynosHWCService.so
 
 ## Display - HWC Dependencies
+vendor/lib64/android.hardware.graphics.composer@2.1-resources.so:vendor/lib64/android.hardware.graphics.composer@2.1-resources_samsung.so;FIX_SONAME
+vendor/lib64/android.hardware.graphics.composer@2.2-resources.so:vendor/lib64/android.hardware.graphics.composer@2.2-resources_samsung.so;FIX_SONAME
 vendor/lib64/libacryl.so
 vendor/lib64/libdrmresource.so
 vendor/lib64/libexynosdisplay.so

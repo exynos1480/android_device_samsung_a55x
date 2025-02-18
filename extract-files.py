@@ -37,6 +37,13 @@ lib_fixups: lib_fixups_user_type = {
 } # fmt: skip
 
 blob_fixups: blob_fixups_user_type = {
+    'vendor/bin/hw/android.hardware.graphics.composer3-service.exynos': blob_fixup()
+        .replace_needed(
+            'android.hardware.graphics.composer@2.1-resources.so',
+            'android.hardware.graphics.composer@2.1-resources_samsung.so')
+        .replace_needed(
+            'android.hardware.graphics.composer@2.2-resources.so',
+            'android.hardware.graphics.composer@2.2-resources_samsung.so'),
     (
         'vendor/bin/hw/android.hardware.security.keymint-service.samsung',
         'vendor/lib64/libskeymint10device.so',
@@ -54,6 +61,10 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/etc/init/android.hardware.security.keymint-service.samsung.rc': blob_fixup()
         .regex_replace('android\\.hardware\\.security\\.keymint-service\n',
             'android.hardware.security.keymint-service.samsung\n'),
+    'vendor/lib64/android.hardware.graphics.composer@2.2-resources_samsung.so': blob_fixup()
+        .replace_needed(
+            'android.hardware.graphics.composer@2.1-resources.so',
+            'android.hardware.graphics.composer@2.1-resources_samsung.so'),
     'vendor/lib64/hw/vulkan.samsung.so': blob_fixup()
         .clear_symbol_version('AHardwareBuffer_acquire')
         .clear_symbol_version('AHardwareBuffer_allocate')
