@@ -14,8 +14,6 @@ include vendor/samsung/a55x/BoardConfigVendor.mk
 PRODUCT_CHARACTERISTICS := phone
 
 ## A/B
-AB_OTA_UPDATER := true
-
 AB_OTA_PARTITIONS := \
     boot \
     init_boot \
@@ -135,13 +133,11 @@ TARGET_NO_RECOVERY := true
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE :=
 BOARD_USES_FULL_RECOVERY_IMAGE :=
 
-ifeq ($(AB_OTA_UPDATER), true)
 # move recovery ramdisk to vendor_boot
 BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
 BOARD_INCLUDE_RECOVERY_RAMDISK_IN_VENDOR_BOOT := true
 ## remove /lib/modules in recovery ramdisk
 BOARD_RECOVERY_KERNEL_MODULES :=
-endif
 
 ## RIL
 ENABLE_VENDOR_RIL_SERVICE := true
