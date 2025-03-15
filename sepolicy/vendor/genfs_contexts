@@ -53,6 +53,7 @@ genfscon sysfs /devices/platform/11560000.hsi2c/i2c-6/6-003a/s2mf301-top/power_s
 genfscon sysfs /devices/platform/11560000.hsi2c/i2c-6/6-0063/power_supply/sm5461-charger/wakeup                        u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/11560000.hsi2c/i2c-6/6-003c/power_supply/s2mf301-water/wakeup                         u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/11560000.hsi2c/i2c-6/6-0063/wakeup                                                    u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:etspi-spi@0/wakeup                        u:object_r:sysfs_wakeup:s0
 
 # Sensor
 genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:hall_ic/wakeup                    u:object_r:sysfs_wakeup:s0

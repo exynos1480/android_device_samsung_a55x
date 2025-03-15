@@ -94,6 +94,10 @@ ro.vendor.cscsupported=1
 ro.soc.manufacturer=Samsung
 ro.soc.model=Exynos 1480
 
+## Fingerprint
+ro.vendor.fingerprint.type=udfps_optical
+ro.vendor.fingerprint.force_calibrate=1
+
 ## Bluetooth
 bluetooth.device.class_of_device=90,2,12
 bluetooth.profile.asha.central.enabled=true
