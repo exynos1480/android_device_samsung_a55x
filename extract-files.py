@@ -97,6 +97,8 @@ blob_fixups: blob_fixups_user_type = {
         .binary_regex_replace(b'_ZN7android6Thread3runEPKcim', b'_ZN7utils326Thread3runEPKcim'),
     'vendor/lib64/libexynosgraphicbuffer.so': blob_fixup()
         .add_needed('libshim_ui.so'),
+    'vendor/lib64/libsamsungcamerahal.so': blob_fixup()
+        .sig_replace('f0 3a 01 00', 'a0 3b 01 00'),
     'vendor/etc/init/init.nfc.samsung.rc': blob_fixup()
         .regex_replace('system', 'secure_element'),
     'vendor/lib64/libsec-ril.so': blob_fixup()
