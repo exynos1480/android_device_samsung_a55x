@@ -13,5 +13,7 @@ binder_use(hermesd)
 
 hal_server_domain(hermesd, hal_weaver)
 
+allow hermesd self:capability2 wake_alarm;
+
 allow hermesd vendor_gatekeeper_data_file:dir rw_dir_perms;
 allow hermesd vendor_gatekeeper_data_file:file create_file_perms;
