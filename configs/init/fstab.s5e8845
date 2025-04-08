@@ -31,6 +31,9 @@ odm                                         /odm              ext4      noatime,
 /dev/block/by-name/cache                    /cache            ext4      noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic  wait,formattable,check
 /dev/block/by-name/slotinfo                 /slotinfo         emmc      defaults                           defaults
 
+# Zram
+/dev/block/zram0                            none              swap      defaults                           zramsize=2147483648,auto_configure
+
 # VOLD
 /devices/platform/13200000.usb*             auto              vfat      default                            voldmanaged=usb:auto
 /devices/platform/12be0000.dwmmc2/mmc_host* auto              auto      default                            voldmanaged=sdcard:auto,encryptable=userdata
