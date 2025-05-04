@@ -124,6 +124,9 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
 
+# Secure Element
+PRODUCT_PACKAGES += android.hardware.secure_element-service.thales-st33
+
 # fastbootd
 PRODUCT_PACKAGES += \
     fastbootd \
