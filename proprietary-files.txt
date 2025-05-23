@@ -26,6 +26,16 @@ vendor/firmware/calliope_dram.bin
 vendor/firmware/dax_param.bin
 vendor/firmware/dolby.bin
 
+## Audio - Hotword
+product/etc/permissions/privapp-permissions-google-product.xml
+product/etc/sysconfig/asi_features.xml
+product/etc/sysconfig/sysconfig_contextual_search.xml
+product/etc/sysconfig/sysconfig_gemini.xml
+product/priv-app/HotwordEnrollmentOKGoogleEx4CORTEXM4/HotwordEnrollmentOKGoogleEx4CORTEXM4.apk
+product/priv-app/HotwordEnrollmentXGoogleEx4CORTEXM4/HotwordEnrollmentXGoogleEx4CORTEXM4.apk
+system_ext/framework/com.android.hotwordenrollment.common.util.jar
+system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
+
 ## Camera
 vendor/lib64/hw/camera.s5e8825.so
 vendor/lib64/libexynoscamera_plugin.so
