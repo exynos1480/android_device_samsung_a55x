@@ -37,6 +37,7 @@ type sysfs_v4l, sysfs_type, r_fs_type, fs_type;
 type sysfs_vendor_display, sysfs_type, rw_fs_type, fs_type;
 type sysfs_ss_writable, fs_type, sysfs_type;
 type sysfs_memboost_writable, sysfs_type, rw_fs_type, fs_type;
+type sysfs_chip_id, sysfs_type, fs_type;
 
 # hermes
 type hermes_socket, file_type, data_file_type;

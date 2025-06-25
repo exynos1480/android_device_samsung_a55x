@@ -166,6 +166,36 @@ vendor/bin/hw/android.hardware.gatekeeper-service
 vendor/etc/init/android.hardware.gatekeeper-service.rc
 vendor/lib64/hw/gatekeeper.s5e8845.so
 
+## GPS
+vendor/etc/init/init.gps.rc
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/bin/gps.rose.sh:vendor/bin/hw/gps.sh
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/bin/gpsd_K44:vendor/bin/hw/gpsd_K44
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/bin/vendor.samsung.hardware.gnss.lsi.rose-service:vendor/bin/hw/vendor.samsung.hardware.gnss-service
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/ca.pem:vendor/etc/gnss/ca.pem
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/cfg/gps.rose.cfg:vendor/etc/gnss/gps.cfg
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/cfg/gps.rose.debug.cfg:vendor/etc/gnss/gps.debug.cfg
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/cfg/gps.rose.issuetracker.cfg:vendor/etc/gnss/gps.issuetracker.cfg
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/cfg/gps.rose.dcm.cfg:vendor/etc/gnss/gps.dcm.cfg
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/cfg/gps.rose.dcm.debug.cfg:vendor/etc/gnss/gps.dcm.debug.cfg
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/cfg/gps.rose.dcm.issuetracker.cfg:vendor/etc/gnss/gps.dcm.issuetracker.cfg
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/cfg/gps.rose.kdi.cfg:vendor/etc/gnss/gps.kdi.cfg
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/cfg/gps.rose.kdi.debug.cfg:vendor/etc/gnss/gps.kdi.debug.cfg
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/cfg/gps.rose.kdi.issuetracker.cfg:vendor/etc/gnss/gps.kdi.issuetracker.cfg
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/init.gps.rose.apex.sh.rc:vendor/etc/init/init.gps.rose.rc
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/vendor.samsung.hardware.gnss.lsi.rose-service.rc:vendor/etc/init/vendor.samsung.hardware.gnss-service.rc
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/firmware/firmware_signed_a55xdcm.bin:vendor/firmware/gnss/firmware_signed_a55xdcm.bin
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/firmware/firmware_signed_a55xkdi.bin:vendor/firmware/gnss/firmware_signed_a55xkdi.bin
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/firmware/firmware_signed_a55xnaxx.bin:vendor/firmware/gnss/firmware_signed_a55xnaxx.bin
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/firmware/firmware_signed_a55xnsxx.bin:vendor/firmware/gnss/firmware_signed_a55xnsxx.bin
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/firmware/firmware_signed_a55xskt.bin:vendor/firmware/gnss/firmware_signed_a55xskt.bin
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/firmware/firmware_signed_a55xzc.bin:vendor/firmware/gnss/firmware_signed_a55xzc.bin
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/firmware/firmware_signed_a55xzh.bin:vendor/firmware/gnss/firmware_signed_a55xzh.bin
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/firmware/firmware_signed_m56xddxx.bin:vendor/firmware/gnss/firmware_signed_m56xddxx.bin
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/firmware/firmware_signed_m56xins.bin:vendor/firmware/gnss/firmware_signed_m56xins.bin
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/lib64/gnss_aidl_lib.so:vendor/lib64/gnss_aidl_lib.so
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/lib64/libwrappergps.so:vendor/lib64/libwrappergps.so
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/lib64/vendor.samsung.hardware.gnss-V3-ndk.so:vendor/lib64/vendor.samsung.hardware.gnss-V3-ndk.so
+
 ## Graphics
 vendor/etc/Khronos/OpenCL/samsung.icd;SYMLINK=vendor/Khronos/OpenCL/vendors/samsung.icd
 vendor/lib64/hw/vulkan.samsung.so

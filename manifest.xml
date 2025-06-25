@@ -33,7 +33,6 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <!--
     <hal format="aidl">
         <name>android.hardware.gnss</name>
         <version>3</version>
@@ -42,7 +41,6 @@
             <instance>default</instance>
         </interface>
     </hal>
-    -->
     <hal format="aidl">
         <name>android.hardware.graphics.allocator</name>
         <interface>
@@ -125,6 +123,14 @@
         <version>1.0</version>
         <interface>
             <name>ISbwcDecompService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.samsung.hardware.gnss</name>
+        <version>3</version>
+        <interface>
+            <name>ISehGnss</name>
             <instance>default</instance>
         </interface>
     </hal>

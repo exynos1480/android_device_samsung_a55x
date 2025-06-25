@@ -73,6 +73,9 @@ genfscon sysfs /firmware/devicetree/base/sound/mixer-paths                      
 # Kernel
 genfscon sysfs /kernel/mm/vmscan/mem_boost_mode                                                                u:object_r:sysfs_camera_writable:s0
 
+# SOC
+genfscon sysfs /devices/system/chip-id/evt_ver									u:object_r:sysfs_chip_id:s0
+
 # Module
 genfscon sysfs /module/scsc_bt/parameters/bluetooth_address                                                    u:object_r:sysfs_bt_writable:s0
 
