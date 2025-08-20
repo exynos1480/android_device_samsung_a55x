@@ -13,6 +13,7 @@
 
 #include "LegacyHAL.h"
 #include "LockoutTracker.h"
+#include "TimedRestore.h"
 #include "UdfpsHandler.h"
 
 #define FINGERPRINT_DATA_DIR "/data/vendor/biometrics/fp/User_%d/"
@@ -102,6 +103,7 @@ private:
     // Binder death handler.
     AIBinder_DeathRecipient* mDeathRecipient;
 
+    std::unique_ptr<TimedRestore> mBrightnessRestore;
     std::unique_ptr<UdfpsHandler> mUdfpsHandler;
 };
 
