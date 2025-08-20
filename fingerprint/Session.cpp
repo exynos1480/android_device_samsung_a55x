@@ -8,6 +8,7 @@
 #include "Legacy2Aidl.h"
 #include "Session.h"
 #include "VendorConstants.h"
+#include "TimedRestore.h"
 
 #include <fingerprint.sysprop.h>
 
@@ -222,6 +223,12 @@ ndk::ScopedAStatus Session::onPointerDown(int32_t /*pointerId*/, int32_t /*x*/, 
                                           float /*major*/) {
     LOG(INFO) << "onPointerDown";
 
+    std::string sensorTypeProp = FingerprintHalProperties::type().value_or("");
+    if (sensorTypeProp == "udfps_optical") {
+        mBrightnessRestore = std::make_unique<TimedRestore>("/sys/class/backlight/panel/brightness");
+        mBrightnessRestore->set(300);
+    }
+
     if (FingerprintHalProperties::request_touch_event().value_or(false)) {
         mHal.request(SEM_REQUEST_TOUCH_EVENT, 2);
     }
@@ -232,6 +239,11 @@ ndk::ScopedAStatus Session::onPointerDown(int32_t /*pointerId*/, int32_t /*x*/, 
 
 ndk::ScopedAStatus Session::onPointerUp(int32_t /*pointerId*/) {
     LOG(INFO) << "onPointerUp";
+
+    std::string sensorTypeProp = FingerprintHalProperties::type().value_or("");
+    if (sensorTypeProp == "udfps_optical") {
+        mBrightnessRestore.reset();
+    }
 
     if (FingerprintHalProperties::request_touch_event().value_or(false)) {
         mHal.request(SEM_REQUEST_TOUCH_EVENT, 1);
@@ -287,6 +299,11 @@ ndk::ScopedAStatus Session::setIgnoreDisplayTouches(bool /*shouldIgnore*/) {
 
 ndk::ScopedAStatus Session::cancel() {
     int32_t ret = mHal.ss_fingerprint_cancel();
+
+    std::string sensorTypeProp = FingerprintHalProperties::type().value_or("");
+    if (sensorTypeProp == "udfps_optical") {
+        mBrightnessRestore.reset();
+    }
 
     if (ret == 0) {
         mCb->onError(Error::CANCELED, 0 /* vendorCode */);
@@ -415,6 +432,12 @@ void Session::notify(const fingerprint_msg_t* msg) {
             int32_t vendorCode = 0;
             Error result = VendorErrorFilter(msg->data.error, &vendorCode);
             LOG(DEBUG) << "onError(" << static_cast<int>(result) << ")";
+
+            std::string sensorTypeProp = FingerprintHalProperties::type().value_or("");
+            if (sensorTypeProp == "udfps_optical") {
+                mBrightnessRestore.reset();
+            }
+
             mCb->onError(result, vendorCode);
         } break;
         case FINGERPRINT_ACQUIRED: {
@@ -458,6 +481,12 @@ void Session::notify(const fingerprint_msg_t* msg) {
                 if (mUdfpsHandler) {
                     mUdfpsHandler->setFodPress(false);
                 }
+
+                std::string sensorTypeProp = FingerprintHalProperties::type().value_or("");
+                if (sensorTypeProp == "udfps_optical") {
+                    mBrightnessRestore.reset();
+                }
+
                 mCb->onAuthenticationSucceeded(msg->data.authenticated.finger.fid, authToken);
                 mLockoutTracker.reset(true);
             } else {

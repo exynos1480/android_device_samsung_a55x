@@ -16,6 +16,7 @@ cc_binary {
         "LockoutTracker.cpp",
         "Session.cpp",
         "service.cpp",
+        "TimedRestore.cpp",
     ],
     shared_libs: [
         "libbase",
