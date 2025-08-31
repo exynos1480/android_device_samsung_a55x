@@ -8,23 +8,6 @@ on early-init
     setprop sys.perf.viboost true
 
 on init
-    # See storage config details at http://source.android.com/tech/storage/
-    mkdir /storage/sdcard 0000 root root
-    mkdir /storage/usb1 0000 root root
-    mkdir /storage/usb2 0000 root root
-    mkdir /mnt/media_rw/sdcard 0700 media_rw media_rw
-    mkdir /mnt/media_rw/usb1 0700 media_rw media_rw
-    mkdir /mnt/media_rw/usb2 0700 media_rw media_rw
-
-    export SECONDARY_STORAGE /storage/sdcard:/storage/usb1:/storage/usb2
-
-    # Change suspend poewr mode to s2idle
-    write /sys/power/mem_sleep s2idle
-
-    # Support legacy paths
-    symlink /storage/sdcard /mnt/ext_sd
-    symlink /data/app /factory
-
     symlink /dev/block/by-name/steady /dev/block/steady
     symlink /dev/block/by-name/persistent /dev/block/persistent
     symlink /dev/block/by-name/param /dev/block/param
@@ -381,8 +364,6 @@ on boot
     chmod 0755 /sys/kernel/debug
     chown system system /sys/kernel/debug
 
-    #setprop ro.radio.noril no
-
     # Set up kernel tracing, but disable it by default
     chmod 0222 /sys/kernel/debug/tracing/trace_marker
     write /sys/kernel/debug/tracing/tracing_on 0
@@ -445,8 +426,6 @@ on fs
 
     wait /dev/block/by-name/sec_efs
     mount ext4 /dev/block/by-name/sec_efs /efs nosuid nodev noatime noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic
-
-    #setprop ro.crypto.fuse_sdcard true
 
     restorecon_recursive /mnt/vendor/efs
     restorecon_recursive /mnt/vendor/cpefs
@@ -687,24 +666,9 @@ on fs
 #load ecd firmware
     write /proc/ecd/load_firmware 1
 
-service fuse_sdcard /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard /storage/sdcard
-    class late_start
-    disabled
-service fuse_usb1 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/usb1 /storage/usb1
-    class late_start
-    disabled
-service fuse_usb2 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/usb2 /storage/usb2
-    class late_start
-    disabled
-
 # Write build info to kdebuginfo
 on property:ro.build.fingerprint=*
     write /sys/module/debug_kinfo/parameters/build_info ${ro.build.fingerprint}
-
-service abox_log /vendor/bin/abox_log sec-audio-debug /data/vendor/log/abox
-    class late_start
-    user audioserver
-    group system
 
 # GPS daemon
 #service gpsd /vendor/bin/hw/gpsd
@@ -781,17 +745,6 @@ service prepare_param /system/bin/prepare_param.sh /dev/block/by-name/param
     group root
     seclabel u:r:prepare_param:s0
     oneshot
-
-# Pageboostd
-on property:sys.boot_completed=1
-    start pageboostd
-
-service pageboostd /system/bin/pageboostd
-    class main
-    user system
-    group system mount radio net_bt sdcard_rw shell media media_rw
-    socket pageboostd seqpacket 0660 system system
-    disabled
 
 # enabled permission
 on property:sys.boot_completed=1
