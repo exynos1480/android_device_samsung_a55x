@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright (C) 2020 The LineageOS Project
+// Copyright (C) The LineageOS Project
 
 #pragma once
 
