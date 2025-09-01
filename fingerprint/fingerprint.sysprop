@@ -1,4 +1,4 @@
-# fingerprint-s5e8825.sysprop
+# fingerprint.sysprop
 # module becomes static class (Java) / namespace (C++) for serving API
 module: "android.fingerprint.samsung.FingerprintHalProperties"
 owner: Vendor

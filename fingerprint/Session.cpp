@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 The LineageOS Project
+ * Copyright (C) The LineageOS Project
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -10,7 +10,7 @@
 #include "VendorConstants.h"
 #include "TimedRestore.h"
 
-#include <fingerprint-s5e8825.sysprop.h>
+#include <fingerprint.sysprop.h>
 
 #include <android-base/logging.h>
 
