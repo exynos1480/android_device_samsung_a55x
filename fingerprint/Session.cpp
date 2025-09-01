@@ -10,7 +10,7 @@
 #include "VendorConstants.h"
 #include "TimedRestore.h"
 
-#include <fingerprint.sysprop.h>
+#include <fingerprint-s5e8825.sysprop.h>
 
 #include <android-base/logging.h>
 

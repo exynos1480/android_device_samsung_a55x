@@ -7,7 +7,7 @@
 #include "Fingerprint.h"
 #include "VendorConstants.h"
 
-#include <fingerprint.sysprop.h>
+#include <fingerprint-s5e8825.sysprop.h>
 
 #include <android-base/logging.h>
 #include <android-base/parseint.h>
