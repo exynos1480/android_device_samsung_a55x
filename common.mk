@@ -259,6 +259,9 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/samsung_slsi-linaro/exynos/cpboot_v3 \
     hardware/samsung_slsi/libbt
 
+# Libinit
+$(call soong_config_set,libinit,vendor_init_lib,//$(COMMON_PATH)/libinit:libinit_s5e8845)
+
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal-service.pixel \
