@@ -1,1 +1,4 @@
 allow system_suspend sysfs:dir { read };
+
+allow hal_audio_default system_suspend:binder call;
+allow system_suspend hal_audio_default:binder transfer;
