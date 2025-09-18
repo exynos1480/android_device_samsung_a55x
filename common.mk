@@ -19,7 +19,7 @@ COMMON_PATH := device/samsung/gta4xls-common
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/samsung/gta4xls-common/gta4xls-common-vendor.mk)
 
-PRODUCT_CHARACTERISTICS := tablet
+PRODUCT_CHARACTERISTICS := phone
 
 # Enable virtual AB with vendor ramdisk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/vabc_features.mk)
@@ -158,7 +158,7 @@ PRODUCT_PACKAGES += \
 # Graphics
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := 400dpi
+PRODUCT_AAPT_PREF_CONFIG := 450dpi
 PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
 
 # Health
