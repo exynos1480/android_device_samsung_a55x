@@ -23,12 +23,6 @@
     <!-- Whether Hearing Aid profile is supported -->
     <bool name="config_hearing_aid_profile_supported">true</bool>
 
-    <!-- The RadioAccessFamilies supported by the device.
-         Empty is viewed as "all".  Only used on devices which
-         don't support RIL_REQUEST_GET_RADIO_CAPABILITY
-         format is UMTS|LTE|... -->
-    <string translatable="false" name="config_radio_access_family">GSM|CDMA|EVDO|WCDMA|LTE</string>
-
     <!-- Flag indicating whether we should enable the automatic brightness.
          Software implementation will be used if config_hardware_auto_brightness_available is not set -->
     <bool name="config_automatic_brightness_available">true</bool>
@@ -53,15 +47,6 @@
     <!-- Whether UI for multi user should be shown -->
     <bool name="config_enableMultiUserUI">true</bool>
 
-    <!-- Configure mobile tcp buffer sizes in the form:
-         rat-name:rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max
-         If no value is found for the rat-name in use, the system default will be applied.
-    -->
-    <string-array name="config_mobile_tcp_buffers">
-        <item>5gnr:2097152,6291456,16777216,512000,2097152,8388608</item>
-        <item>lte:2097152,4194304,8388608,1048576,3145728,4194304</item>
-    </string-array>
-
     <!-- Remote server that can provide NTP responses. -->
     <string translatable="false" name="config_ntpServer">1.android.pool.ntp.org</string>
 
@@ -70,8 +55,8 @@
          when adapting to brighter or darker environments.  This parameter controls how quickly
          brightness changes occur in response to an observed change in light level that exceeds the
          hysteresis threshold. -->
-    <integer name="config_autoBrightnessBrighteningLightDebounce">2000</integer>
-    <integer name="config_autoBrightnessDarkeningLightDebounce">6000</integer>
+    <integer name="config_autoBrightnessBrighteningLightDebounce">4000</integer>
+    <integer name="config_autoBrightnessDarkeningLightDebounce">8000</integer>
 
     <!-- Control whether Night display is available. This should only be enabled on devices
          that have a HWC implementation that can apply the matrix passed to setColorTransform
@@ -205,13 +190,17 @@
          backlight values for lux levels between these control points.
          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
-        <item>8</item>
-        <item>15</item>
-        <item>25</item>
+        <item>1</item>
+        <item>5</item>
+        <item>6</item>
+        <item>50</item>
         <item>100</item>
         <item>500</item>
         <item>1500</item>
+        <item>3000</item>
+        <item>4999</item>
         <item>5000</item>
+        <item>19999</item>
         <item>20000</item>
     </integer-array>
 
@@ -222,12 +211,16 @@
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
         <item>6</item>
-        <item>20</item>
-        <item>38</item>
-        <item>55</item>
-        <item>93</item>
-        <item>143</item>
-        <item>199</item>
+        <item>6</item>
+        <item>6</item>
+        <item>11</item>
+        <item>79</item>
+        <item>95</item>
+        <item>141</item>
+        <item>183</item>
+        <item>200</item>
+        <item>219</item>
+        <item>255</item>
         <item>255</item>
         <item>255</item>
     </integer-array>
@@ -235,12 +228,12 @@
     <!-- Screen brightness used to dim the screen when the user activity
          timeout expires.  May be less than the minimum allowed brightness setting
          that can be set by the user. -->
-    <integer name="config_screenBrightnessDim">13</integer>
+    <integer name="config_screenBrightnessDim">10</integer>
 
     <!-- Indicate whether closing the lid causes the device to go to sleep and opening
          it causes the device to wake up.
          The default is false. -->
-    <bool name="config_lidControlsSleep">true</bool>
+    <bool name="config_lidControlsSleep">false</bool>
 
     <!-- The device supports freeform window management. Windows have title bars and can be moved
          and resized. If you set this to true, you also need to add
