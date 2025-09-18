@@ -124,6 +124,7 @@ include hardware/samsung_slsi-linaro/config/BoardConfig8825.mk
 
 ## Properties
 TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
+TARGET_PRODUCT_PROP += $(COMMON_PATH)/product.prop
 
 ## Recovery
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/configs/init/fstab.s5e8825
