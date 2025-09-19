@@ -46,10 +46,6 @@ TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := cortex-a76
 
-## Audio
-$(call soong_config_set,exynos_audio,PREDEFINED_LOW_CAPTURE_DURATION,20)
-$(call soong_config_set,exynos_audio,PROXY_LIBRARY,//device/samsung/gta4xls-common:libaudioproxy)
-
 ## Bluetooth
 BOARD_HAVE_BLUETOOTH_SLSI := true
 

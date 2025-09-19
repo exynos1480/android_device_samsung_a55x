@@ -33,9 +33,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 # Virtualization service
 $(call inherit-product, packages/modules/Virtualization/apex/product_packages.mk)
 
-# Soong namespaces
-$(call inherit-product, hardware/samsung_slsi-linaro/config/config.mk)
-
 # SHIPPING API
 BOARD_SHIPPING_API_LEVEL := 34
 PRODUCT_SHIPPING_API_LEVEL := 34
@@ -60,12 +57,11 @@ PRODUCT_VIRTUAL_AB_COMPRESSION_METHOD := lz4
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio.effect@7.0-impl:32 \
-    android.hardware.audio@7.1-impl:32 \
+    android.hardware.audio.effect@7.0-impl \
+    android.hardware.audio@7.1-impl \
     android.hardware.audio.service \
     android.hardware.bluetooth.audio-impl \
     audio.bluetooth.default \
-    audio.primary.universal8825 \
     audio.r_submix.default \
     audio.usb.default
 
@@ -96,44 +92,9 @@ PRODUCT_COPY_FILES += \
     hardware/samsung_slsi/libbt/conf/bt_did.conf:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth/bt_did.conf \
     hardware/samsung_slsi/libbt/conf/bt_vendor.conf:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth/bt_vendor.conf
 
-# Camera
-PRODUCT_PACKAGES += \
-    android.hardware.camera.provider-service.samsung
-
-PRODUCT_PACKAGES += \
-    libvpl
-
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images_vendor
-
-# Codec2
-PRODUCT_PACKAGES += \
-    samsung.hardware.media.c2@1.2-service \
-
-PRODUCT_PACKAGES += \
-    libExynosC2H264Dec \
-    libExynosC2H264Enc \
-    libExynosC2HevcDec \
-    libExynosC2HevcEnc \
-    libExynosC2Vp8Dec \
-    libExynosC2Vp8Enc
-
-PRODUCT_PACKAGES += \
-    codec2.vendor.base.policy \
-    codec2.vendor.ext.policy
-
-# ConfigStore
-PRODUCT_PACKAGES += \
-    disable_configstore
-
-# Display
-PRODUCT_PACKAGES += \
-    android.hardware.graphics.allocator@4.0-service \
-    android.hardware.graphics.mapper@4.0-impl
-
-PRODUCT_PACKAGES += \
-    android.hardware.composer.hwc3-service.slsi
 
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -145,10 +106,6 @@ PRODUCT_PACKAGES += \
 # fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
-
-# FastCharge
-PRODUCT_PACKAGES += \
-    vendor.lineage.fastcharge@1.0-service.samsung
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
@@ -178,7 +135,6 @@ PRODUCT_COPY_FILES += \
 
 # Kernel
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
-PRODUCT_ENABLE_UFFD_GC := true
 
 # Kernel Modules
 PRODUCT_PACKAGES += \
@@ -187,10 +143,6 @@ PRODUCT_PACKAGES += \
 # Lineage Health
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
-
-# Memtrack
-PRODUCT_PACKAGES += \
-    android.hardware.memtrack-service.samsung-mali
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
@@ -268,7 +220,6 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/pixel \
     hardware/samsung \
     hardware/samsung_slsi-linaro/exynos/cpboot_v3 \
-    hardware/samsung_slsi-linaro/exynos/libaudio/audiohal \
     hardware/samsung_slsi/libbt
 
 # Thermal
@@ -278,10 +229,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/thermal/thermal_info_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json
-
-# Touch HAL
-PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.samsung
 
 # USB
 PRODUCT_PACKAGES += \
