@@ -115,7 +115,8 @@ PRODUCT_PACKAGES += \
 
 # fastbootd
 PRODUCT_PACKAGES += \
-    fastbootd
+    fastbootd \
+    android.hardware.fastboot-service.example_recovery
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
