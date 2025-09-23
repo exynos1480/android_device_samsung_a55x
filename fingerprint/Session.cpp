@@ -16,6 +16,8 @@
 
 #include <dirent.h>
 #include <endian.h>
+#include <fstream>
+#include <string>
 #include <thread>
 
 using namespace ::android::fingerprint::samsung;
@@ -226,7 +228,20 @@ ndk::ScopedAStatus Session::onPointerDown(int32_t /*pointerId*/, int32_t /*x*/, 
     std::string sensorTypeProp = FingerprintHalProperties::type().value_or("");
     if (sensorTypeProp == "udfps_optical") {
         mBrightnessRestore = std::make_unique<TimedRestore>("/sys/class/backlight/panel/brightness");
-        mBrightnessRestore->set(300);
+
+        int currentBrightness = 0;
+        {
+            std::ifstream infile("/sys/class/backlight/panel/brightness");
+            if (infile.is_open()) {
+                infile >> currentBrightness;
+            }
+        }
+
+        if (currentBrightness < 290) {
+            mBrightnessRestore->set(290);
+        } else {
+            mBrightnessRestore->set(currentBrightness);
+        }
     }
 
     if (FingerprintHalProperties::request_touch_event().value_or(false)) {
