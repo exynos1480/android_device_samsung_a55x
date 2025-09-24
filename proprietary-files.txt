@@ -57,24 +57,51 @@ product/priv-app/HotwordEnrollmentXGoogleEx4CORTEXM4/HotwordEnrollmentXGoogleEx4
 system_ext/framework/com.android.hotwordenrollment.common.util.jar
 system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
 
-## Camera
-vendor/lib64/hw/camera.s5e8825.so
-vendor/lib64/libexynoscamera_plugin.so
-
-## Camera dependencies
-vendor/lib64/libMERTA.so
-vendor/lib64/libc++_shared.so
-vendor/lib64/libexynoscamera_merta_plugin.so
-vendor/lib64/libexynoscamera_swlme_plugin.so
-vendor/lib64/libexynoscamera_vpl_plugin.so
-vendor/lib64/libhwjsqz.so
-vendor/lib64/liblmecpu.so
+## Camera - HAL
 vendor/lib64/libsec2lsi_conversion.so
-vendor/lib64/libsensorlistener.so
-vendor/lib64/libswlme.so
+vendor/lib64/libIRTA.so
+vendor/lib64/libeis_core.so
 vendor/lib64/libuniapi.so
 vendor/lib64/libuniplugin.so
+
+## Camera - HAL Dependencies
+vendor/lib64/libcsc.so
+vendor/lib64/libexynos_sensor_interface.so
+vendor/lib64/libexynosscaler.so
+vendor/lib64/libgiantmscl.so
+vendor/lib64/libhwjpeg.so
+vendor/lib64/libhwjsqz.so
+vendor/lib64/libmpbase.so
+vendor/lib64/libsemseg.so
+vendor/lib64/libsensorlistener.so
+vendor/lib64/libvpl.so
+vendor/lib64/vendor.samsung.hardware.thermal-V1-ndk.so
 vendor/lib64/vendor.samsung.hardware.thermal@1.0.so
+
+## Camera - Provider
+vendor/bin/hw/vendor.samsung.hardware.camera.provider-service_64
+vendor/etc/init/vendor.samsung.hardware.camera.provider-service_64.rc
+vendor/etc/vintf/manifest/vendor.samsung.hardware.camera.provider-service.xml
+vendor/lib64/lib_profiler.so
+vendor/lib64/libExtIRTA.so
+vendor/lib64/libsamsungcamerahal.so
+vendor/lib64/libsamsungcamerahalutils.so
+vendor/lib64/libsamsungcamerahwl_impl.so
+vendor/lib64/vendor.samsung.hardware.camera.device-V1-ndk.so
+vendor/lib64/vendor.samsung.hardware.camera.provider-V1-ndk.so
+vendor/lib64/libarcsoft_dualcam_portraitlighting_preview.so
+vendor/lib64/libdualcam_refocus_video.so
+
+## ENN
+vendor/lib64/libenn_common_utils.so
+vendor/lib64/libenn_cpu_operators.so
+vendor/lib64/libenn_engine_lib.so
+vendor/lib64/libenn_model.so
+vendor/lib64/libenn_public_api_cpp_lib.so
+vendor/lib64/libenn_user_driver_cpu.so
+vendor/lib64/libenn_user_driver_gpu_lib.so
+vendor/lib64/libenn_user_driver_unified.so
+vendor/lib64/libenn_user_lib.so
 
 ## Codecs
 vendor/etc/media_codecs.xml
@@ -221,6 +248,12 @@ vendor/lib64/vendor.samsung.hardware.radio.messaging-V1-ndk.so
 vendor/lib64/vendor.samsung.hardware.radio.sim-V1-ndk.so
 
 ## RIL Dependencies
+vendor/etc/plmn_delta.bin
+vendor/etc/plmn_delta_attaio.bin
+vendor/etc/plmn_delta_hktw.bin
+vendor/etc/plmn_delta_ltn.bin
+vendor/etc/plmn_delta_usagsm.bin
+vendor/etc/plmn_se13_prebuilt.bin
 vendor/lib64/libsecril-client.so
 vendor/lib64/libengmode_client.so
 vendor/lib64/libvkmanager_vendor.so

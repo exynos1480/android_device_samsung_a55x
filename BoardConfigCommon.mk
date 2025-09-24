@@ -65,9 +65,6 @@ BOARD_USES_GENERIC_KERNEL_IMAGE := true
 
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 
-## Camera
-$(call soong_config_set,samsungCameraVars,usage_64bit,true)
-
 ## Display
 BOARD_MINIMUM_DISPLAY_BRIGHTNESS := 1
 TARGET_SCREEN_DENSITY := 450
