@@ -6,6 +6,6 @@
 
 soong_namespace {
     imports: [
-        "vendor/samsung/gta4xls-common",
+        "vendor/samsung/a55x-common",
     ],
 }

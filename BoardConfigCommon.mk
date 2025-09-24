@@ -16,10 +16,10 @@
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
-COMMON_PATH := device/samsung/gta4xls-common
+COMMON_PATH := device/samsung/a55x-common
 
 ## Inherit proprietary vendor configuartion
-include vendor/samsung/gta4xls-common/BoardConfigVendor.mk
+include vendor/samsung/a55x-common/BoardConfigVendor.mk
 
 ## A/B
 AB_OTA_UPDATER := true

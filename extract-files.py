@@ -8,19 +8,20 @@ from extract_utils.fixups_blob import (
     blob_fixup,
     blob_fixups_user_type,
 )
+
 from extract_utils.fixups_lib import (
     lib_fixups,
     lib_fixups_user_type,
 )
+
 from extract_utils.main import (
     ExtractUtils,
     ExtractUtilsModule,
 )
 
 namespace_imports = [
-    'device/samsung/gta4xls-common',
-    'hardware/samsung_slsi-linaro/exynos',
-    'hardware/samsung_slsi-linaro/graphics',
+    'device/samsung/a55x-common',
+    'hardware/samsung',
 ]
 
 def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
@@ -104,7 +105,7 @@ blob_fixups: blob_fixups_user_type = {
 }  # fmt: skip
 
 module = ExtractUtilsModule(
-    'gta4xls-common',
+    'a55x-common',
     'samsung',
     namespace_imports=namespace_imports,
     blob_fixups=blob_fixups,
