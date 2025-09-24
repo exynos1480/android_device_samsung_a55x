@@ -117,10 +117,10 @@ BOARD_ROOT_EXTRA_FOLDERS := efs
 
 ## Platform
 BOARD_VENDOR := samsung
-TARGET_BOARD_PLATFORM := universal8825
-TARGET_BOOTLOADER_BOARD_NAME := s5e8825
-TARGET_SOC := s5e8825
-include hardware/samsung_slsi-linaro/config/BoardConfig8825.mk
+TARGET_BOARD_PLATFORM := erd8845
+TARGET_BOOTLOADER_BOARD_NAME := s5e8845
+TARGET_SOC := s5e8845
+#include hardware/samsung_slsi-linaro/config/BoardConfig8845.mk
 
 ## Properties
 TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
