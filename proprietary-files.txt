@@ -1,14 +1,52 @@
 # Common proprietary files - from Samsung package version P620XXS5AYB4, unless pinned
 
-## Audio
-vendor/etc/default_volume_tables.xml
-vendor/etc/dolby/dax-default.xml
+## Audio-Hardware
+vendor/bin/hw/secaudiohalaidl
+vendor/etc/init/secaudiohalaidl.rc
+vendor/etc/sec_audio_volume_curve.xml
 vendor/etc/usb_audio_policy_configuration.xml
+vendor/etc/vintf/manifest/secaudiohalaidl_manifest.xml
+vendor/lib64/hw/audio.sec_primary.default.so
+vendor/lib64/hw/libsecaudiohal_aidl.so
+vendor/lib64/libspeakercalibration.so
+vendor/lib64/vendor.samsung.hardware.audio-V1-ndk.so
 
-## Audio - Dolby Atmos
-vendor/lib/libprofileparamstorage.so
-vendor/lib/libsecaudiocoreutils.so
-vendor/lib/libspatializerparamstorage.so
+## Audio
+vendor/etc/mixer_gains.xml
+vendor/etc/mixer_paths.xml
+vendor/lib64/hw/audio.primary.s5e8845.so
+vendor/lib64/libSamsungPostProcessConvertor.so
+vendor/lib64/lib_SamsungRec_07010.so
+vendor/lib64/lib_SoundAlive_SRC384_ver320.so
+vendor/lib64/lib_soundaliveresampler.so
+vendor/lib64/libalsautils_sec.so
+vendor/lib64/libaudio-ril.so
+vendor/lib64/libaudioparamupdate.so
+vendor/lib64/libaudioproxy2.so
+vendor/lib64/liblastaboxmsg.so
+vendor/lib64/librecordalive.so;DUMMY_SHARED_LIB
+vendor/lib64/libsecaudioinfo.so
+vendor/lib64/libsecaudiolevel.so
+vendor/lib64/libsehbluetooth_audio_session_aidl.so
+vendor/lib64/vendor.samsung.hardware.bluetooth.audio-impl.so
+vendor/lib64/vendor.samsung.hardware.bluetooth.audio-V2-ndk.so
+vendor/lib64/vndk/libaudioroute.so:vendor/lib64/libaudioroute_samsung.so;FIX_SONAME
+vendor/lib64/vndk/libtinyalsa.so:vendor/lib64/libtinyalsa_samsung.so;FIX_SONAME
+
+## Audio - Sound Trigger
+vendor/etc/sound_trigger_info.xml
+vendor/lib64/hw/sound_trigger.primary.s5e8845.so
+
+## Audio - Effects
+vendor/lib64/soundfx/libaudioeffectoffload.so
+vendor/lib64/soundfx/libmyspace.so
+vendor/lib64/lib_SoundAlive_3DPosition_ver202.so
+vendor/lib64/lib_SoundAlive_AlbumArt_ver105.so
+vendor/lib64/lib_SoundAlive_play_plus_ver600.so
+vendor/lib64/lib_SoundBooster_ver2000.so
+vendor/lib64/libprofileparamstorage.so
+vendor/lib64/libsecaudiocoreutils.so
+vendor/lib64/libspatializerparamstorage.so
 
 ## Audio Firmware
 vendor/firmware/APBargeIn_AUDIO_SLSI.bin
@@ -170,7 +208,7 @@ vendor/lib64/libengmode_client.so
 vendor/lib64/libvkmanager_vendor.so
 
 ## SECNATIVE
-vendor/lib/libsecnativefeature.so
+vendor/lib64/libfloatingfeature.so
 vendor/lib64/libsecnativefeature.so
 
 ## TEEGRIS

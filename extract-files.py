@@ -54,8 +54,23 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/etc/init/android.hardware.security.keymint-service.samsung.rc': blob_fixup()
         .regex_replace('android\\.hardware\\.security\\.keymint-service\n',
             'android.hardware.security.keymint-service.samsung\n'),
-    'vendor/lib64/libsensorlistener.so': blob_fixup()
+    (
+        'vendor/lib64/hw/audio.primary.s5e8845.so',
+        'vendor/lib64/libaudioproxy2.so',
+        'vendor/lib64/libaudioparamupdate.so',
+    ): blob_fixup()
+        .replace_needed('libaudioroute.so', 'libaudioroute_samsung.so')
+        .replace_needed('libtinyalsa.so', 'libtinyalsa_samsung.so'),
+    (
+        'vendor/lib64/libsensorlistener.so',
+        'vendor/lib64/libvdis_core.so',
+    ): blob_fixup()
         .add_needed('libshim_sensorndkbridge.so'),
+    (
+        'vendor/lib64/libalsautils_sec.so',
+        'vendor/lib64/libaudioroute_samsung.so',
+    ): blob_fixup()
+        .replace_needed('libtinyalsa.so', 'libtinyalsa_samsung.so'),
     'vendor/lib64/libwvhidl.so': blob_fixup()
         .replace_needed('libprotobuf-cpp-lite-3.9.1.so', 'libprotobuf-cpp-full-3.9.1.so'),
     (
