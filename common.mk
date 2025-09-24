@@ -118,11 +118,6 @@ PRODUCT_PACKAGES += \
     fastbootd \
     android.hardware.fastboot-service.example_recovery
 
-# Gatekeeper
-PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-impl:64 \
-    android.hardware.gatekeeper@1.0-service
-
 # Graphics
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal

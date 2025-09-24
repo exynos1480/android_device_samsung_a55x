@@ -26,10 +26,8 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="hidl">
+    <hal format="aidl">
         <name>android.hardware.gatekeeper</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
         <interface>
             <name>IGatekeeper</name>
             <instance>default</instance>

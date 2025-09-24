@@ -128,8 +128,9 @@ vendor/firmware/volumemonitor.bin
 vendor/firmware/w9021_gta4xls.bin
 
 ## Gatekeeper
-vendor/lib/hw/gatekeeper.s5e8825.so
-vendor/lib64/hw/gatekeeper.s5e8825.so
+vendor/bin/hw/android.hardware.gatekeeper-service
+vendor/etc/init/android.hardware.gatekeeper-service.rc
+vendor/lib64/hw/gatekeeper.s5e8845.so
 
 ## GPS
 vendor/bin/hw/gps.sh
