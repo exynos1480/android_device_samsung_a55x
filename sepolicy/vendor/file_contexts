@@ -4,6 +4,10 @@
 /data/vendor/mediadrm(/.*)?                  u:object_r:mediadrm_vendor_data_file:s0
 /data/camera(/.*)?                           u:object_r:camera_data_file:s0
 
+# Kernel modules related
+/vendor_dlkm/lib/modules/.*\.ko		     u:object_r:vendor_file:s0
+/vendor/bin/init\.insmod\.sh          	     u:object_r:insmod-sh_exec:s0
+
 ## Devices
 # Bluetooth
 /dev/scsc_h4_0                               u:object_r:bt_device:s0
