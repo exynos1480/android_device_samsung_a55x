@@ -37,6 +37,8 @@ $(call inherit-product, packages/modules/Virtualization/apex/product_packages.mk
 BOARD_SHIPPING_API_LEVEL := 34
 PRODUCT_SHIPPING_API_LEVEL := 34
 
+BOARD_BUILD_SUPER_IMAGE_BY_DEFAULT := true
+
 # A/B
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
