@@ -47,22 +47,6 @@ vendor/lib64/libprofileparamstorage.so
 vendor/lib64/libsecaudiocoreutils.so
 vendor/lib64/libspatializerparamstorage.so
 
-## Audio Firmware
-vendor/firmware/APBargeIn_AUDIO_SLSI.bin
-vendor/firmware/APBiBF_AUDIO_SLSI.bin
-vendor/firmware/APDV_AUDIO_SLSI.bin
-vendor/firmware/APSV_AUDIO_SLSI.bin
-vendor/firmware/AP_AUDIO_SLSI.bin
-vendor/firmware/SoundBoosterParam.bin
-vendor/firmware/a2dpcom.bin
-vendor/firmware/abox_tplg.bin
-vendor/firmware/abox_tplg.conf
-vendor/firmware/avsyncmix.bin
-vendor/firmware/bidirmic.bin
-vendor/firmware/calliope_dram.bin
-vendor/firmware/dax_param.bin
-vendor/firmware/dolby.bin
-
 ## Audio - Hotword
 product/etc/permissions/privapp-permissions-google-product.xml
 product/etc/sysconfig/asi_features.xml
@@ -99,52 +83,40 @@ vendor/etc/media_codecs_performance.xml
 vendor/etc/media_profiles_V1_0.xml
 
 ## Firmware
-vendor/firmware/OD_V2.1.6_01_26_QVGA.nnc
-vendor/firmware/OD_V2.3.7_02_05_VGA.nnc
-vendor/firmware/SetMultiCalInfo.bin
-vendor/firmware/dbmd8_va_asrp_fw.bin
-vendor/firmware/dbmd8_va_fw.bin
+vendor/firmware/dolby.bin
+vendor/firmware/a2dpcom.bin
+vendor/firmware/abox_solution.conf
+vendor/firmware/abox_solution_rev00.conf
+vendor/firmware/abox_solution_ti.conf
+vendor/firmware/abox_system.conf
+vendor/firmware/abox_tplg.bin
+vendor/firmware/abox_tplg.conf
+vendor/firmware/avsyncmix.bin
+vendor/firmware/calliope_dram.bin
+vendor/firmware/compress_capture.bin
+vendor/firmware/cs40l26.wmfw
 vendor/firmware/default_configuration.flm.cfg.bin
-vendor/firmware/dual_cal_wide_swide.bin
-vendor/firmware/hx83102e_gta4xls.bin
-vendor/firmware/is_lib.bin
-vendor/firmware/is_rta.bin
+vendor/firmware/icc_profile.bin
+vendor/firmware/is_mcu_fw.bin
+vendor/firmware/lc3dec.bin
+vendor/firmware/lc3enc.bin
 vendor/firmware/listenbackeffect.bin
-vendor/firmware/lmecpu_GC5035.json
-vendor/firmware/lmecpu_S5K4HA.json
-vendor/firmware/rxse.bin
+vendor/firmware/OD_V3.4.10_11_17_QVGA_ROSE_ENN_BGRA.nnc
+vendor/firmware/OD_V3.5.3_06_12_VGA_ROSE_ENN_BGRA.nnc
+vendor/firmware/param_ti.bin
+vendor/firmware/sb_ll.bin
 vendor/firmware/sb_music.bin
 vendor/firmware/sb_others.bin
-vendor/firmware/sectiongraph_tplg.bin
-vendor/firmware/sectiongraph_tplg.conf
 vendor/firmware/secure_configuration.flm.cfg.bin
-vendor/firmware/setfile_4ha.bin
-vendor/firmware/setfile_gc5035.bin
-vendor/firmware/tfa9878.bin
-vendor/firmware/tfa98xx.cnt
-vendor/firmware/txse1.bin
-vendor/firmware/txse2.bin
+vendor/firmware/SoundAlive.bin
+vendor/firmware/spkamp.bin
+vendor/firmware/volctrl.bin
 vendor/firmware/volumemonitor.bin
-vendor/firmware/w9021_gta4xls.bin
 
 ## Gatekeeper
 vendor/bin/hw/android.hardware.gatekeeper-service
 vendor/etc/init/android.hardware.gatekeeper-service.rc
 vendor/lib64/hw/gatekeeper.s5e8845.so
-
-## GPS
-vendor/bin/hw/gps.sh
-vendor/bin/hw/gpsd
-vendor/bin/hw/vendor.samsung.hardware.gnss@2.1-service
-vendor/etc/gnss/ca.pem
-vendor/etc/gnss/gps.cfg
-vendor/etc/init/init.gps.rc
-vendor/etc/init/vendor.samsung.hardware.gnss@2.1-service.rc
-vendor/lib64/hw/android.hardware.gnss@2.1-impl.so;FIX_SONAME
-vendor/lib64/hw/vendor.samsung.hardware.gnss@2.1-impl.so;FIX_SONAME
-vendor/lib64/libwrappergps.so
-vendor/lib64/vendor.samsung.hardware.gnss@2.0.so
-vendor/lib64/vendor.samsung.hardware.gnss@2.1.so
 
 ## Graphics
 vendor/etc/Khronos/OpenCL/samsung.icd;SYMLINK=vendor/Khronos/OpenCL/vendors/samsung.icd
@@ -213,14 +185,6 @@ vendor/lib64/vendor.samsung.hardware.security.drk-V1-ndk.so
 vendor/lib64/vendor.samsung.hardware.security.drk@2.0.so
 vendor/lib64/vendor.samsung.hardware.security.hermes-V1-ndk.so
 
-# Ramdisk firmware
-vendor_ramdisk/vendor/firmware/hx83102e_gta4xls.bin
-vendor_ramdisk/vendor/firmware/w9021_gta4xls.bin
-
-# Recovery firmware
-vendor_ramdisk/vendor/firmware/hx83102e_gta4xls.bin:recovery/root/vendor/firmware/hx83102e_gta4xls.bin
-vendor_ramdisk/vendor/firmware/w9021_gta4xls.bin:recovery/root/vendor/firmware/w9021_gta4xls.bin
-
 # NFC
 vendor/bin/hw/sec.android.hardware.nfc-service
 vendor/etc/init/init.nfc.samsung.rc
@@ -288,14 +252,95 @@ vendor/apex/com.google.android.widevine.nonupdatable.apex
 # Power
 vendor/lib64/libepicoperator.so
 
-## Wi-Fi
+## Wifi Firmware
+vendor/firmware/wifi/slsi_reg_database.bin
+vendor/firmware/wifi/mx140.bin
+vendor/firmware/wifi/mx140_common.hcf
+vendor/firmware/wifi/mx140_wlan_sw.hcf
+vendor/firmware/wifi/mx140_wlan_t_sw.hcf
+vendor/firmware/wifi/mx140/debug/bt/log-strings.bin
+vendor/firmware/wifi/mx140/debug/common/log-strings.bin
+vendor/firmware/wifi/mx140/debug/hardware/moredump/btwl/btwl/moredump/btwl_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/cortexM0Plus.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/cortexM3.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/cortexM3_dbg.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/cortexM3_dwt.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/cortexM3_etm.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/cortexM3_fpb.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/cortexM3_itm.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/cortexM3_mpu.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/cortexM3_nvic.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/cortexM3_scs.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/cortexM3_tpi.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/cortexM7.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/cortexM7_dbg.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/cortexM7_dwt.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/cortexM7_fpb.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/cortexM7_itm.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/cortexM7_mpu.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/cortexM7_nvic.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/cortexM7_scs.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/cortexR7.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/moredump.bin
+vendor/firmware/wifi/mx140/debug/hardware/moredump/moredump.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/pmu/mb_ap2bt/moredump/mb_ap2bt_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/pmu/mb_ap2pmu/moredump/mb_ap2pmu_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/pmu/mb_ap2wl/moredump/mb_ap2wl_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/pmu/mb_apm2wlbt/moredump/mb_apm2wlbt_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/pmu/mb_cp2bt/moredump/mb_cp2bt_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/pmu/mb_cp2wl/moredump/mb_cp2wl_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/pmu/mb_gnss2wlbt/moredump/mb_gnss2wlbt_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/pmu/mb_wlbt2abox/moredump/mb_wlbt2abox_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/pmu/mb_wlbt2chub/moredump/mb_wlbt2chub_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/pmu/pert/moredump/pert_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/pmu_conf/pmu_conf/moredump/pmu_conf_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/pp/mb_ap2bt/moredump/mb_ap2bt_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/pp/mb_ap2pmu/moredump/mb_ap2pmu_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/pp/mb_ap2wl/moredump/mb_ap2wl_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/pp/mb_apm2wlbt/moredump/mb_apm2wlbt_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/pp/mb_cp2bt/moredump/mb_cp2bt_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/pp/mb_cp2wl/moredump/mb_cp2wl_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/pp/mb_gnss2wlbt/moredump/mb_gnss2wlbt_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/pp/mb_wlbt2abox/moredump/mb_wlbt2abox_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/pp/mb_wlbt2chub/moredump/mb_wlbt2chub_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/pp/peri/moredump/peri_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/pp/periph_gic/moredump/periph_gic_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/pp/periph_int_ifc/moredump/periph_int_ifc_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/pp/periph_scu/moredump/periph_scu_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/pp/pert/moredump/pert_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/pp/perw_diet/moredump/perw_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/pp/perw_pri/moredump/perw_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/wpanpp/m3_periph_dwt/moredump/m3_periph_dwt_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/wpanpp/m3_periph_fpb/moredump/m3_periph_fpb_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/wpanpp/m3_periph_itm/moredump/m3_periph_itm_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/wpanpp/m3_periph_nvic/moredump/m3_periph_nvic_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/wpanpp/mb_ap2bt/moredump/mb_ap2bt_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/wpanpp/mb_ap2pmu/moredump/mb_ap2pmu_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/wpanpp/mb_ap2wl/moredump/mb_ap2wl_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/wpanpp/mb_apm2wlbt/moredump/mb_apm2wlbt_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/wpanpp/mb_cp2bt/moredump/mb_cp2bt_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/wpanpp/mb_cp2wl/moredump/mb_cp2wl_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/wpanpp/mb_gnss2wlbt/moredump/mb_gnss2wlbt_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/wpanpp/mb_wlbt2abox/moredump/mb_wlbt2abox_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/wpanpp/mb_wlbt2chub/moredump/mb_wlbt2chub_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/wpanpp/perb/moredump/perb_registers.xml
+vendor/firmware/wifi/mx140/debug/hardware/moredump/wpanpp/pert/moredump/pert_registers.xml
+vendor/firmware/wifi/mx140/debug/wlan/hip_signals.xml
+vendor/firmware/wifi/mx140/debug/wlan/hydra_config.sdb
+vendor/firmware/wifi/mx140/debug/wlan/id.txt
+vendor/firmware/wifi/mx140/debug/wlan/log-strings.bin
+vendor/firmware/wifi/mx140/debug/wlan/mib_out.xml
+vendor/firmware/wifi/mx140/debug/wlan/symbols.dbg
+vendor/firmware/wifi/mx140/debug/wlan/unicli.dbg
+vendor/firmware/wifi/mx140/debug/wlan/unitab.dbg
+vendor/firmware/wifi/mx140/debug/wlan/univif.dbg
+vendor/firmware/wifi/mx140/debug/wlan/xide_mib.dbg
+
+## Wi-Fi init files
+vendor/bin/init.insmod.sh
 vendor/etc/init/wifi.rc
 vendor/etc/init/wifi_slsi.rc
+vendor/etc/init/init.exynos.wifi.rc
+vendor/etc/init.insmod.vendor_dlkm.cfg
 vendor/etc/wifi/indoorchannel.info
-vendor/etc/wifi/mx140.bin
-vendor/etc/wifi/mx140_common.hcf
-vendor/etc/wifi/mx140_t.bin
-vendor/etc/wifi/mx140_common.hcf
-vendor/etc/wifi/mx140_t_wlan.hcf
-vendor/etc/wifi/mx140_t_wlan_t.hcf
-vendor/etc/wifi/slsi_reg_database.bin
+vendor/etc/wifi/init.insmod.wifi.cfg
