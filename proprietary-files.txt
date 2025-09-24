@@ -195,7 +195,7 @@ vendor/bin/hw/android.hardware.security.keymint-service:vendor/bin/hw/android.ha
 vendor/etc/init/android.hardware.security.keymint-service.rc:vendor/etc/init/android.hardware.security.keymint-service.samsung.rc
 vendor/lib64/libskeymint10device.so
 vendor/lib64/libskeymint_cli.so
-vendor/lib64/vendor.samsung.hardware.keymint-V1-ndk_platform.so
+vendor/lib64/vendor.samsung.hardware.keymint-V3-ndk.so
 
 # Ramdisk firmware
 vendor_ramdisk/vendor/firmware/hx83102e_gta4xls.bin
@@ -252,9 +252,7 @@ vendor/lib64/libsecnativefeature.so
 ## TEEGRIS
 vendor/bin/tzdaemon
 vendor/bin/tzts_daemon
-vendor/etc/init/teegris_v4.rc
-vendor/lib/libuuid.so;MODULE_SUFFIX=_vendor
-vendor/lib/libteecl.so
+vendor/etc/init/teegris.rc
 vendor/lib64/libteecl.so
 vendor/lib64/libuuid.so;MODULE_SUFFIX=_vendor
 
@@ -268,14 +266,8 @@ vendor/lib64/sensors.grip.so
 vendor/lib64/sensors.inputvirtual.so
 vendor/lib64/sensors.sensorhub.so
 
-## VNDK - from prebuilts/vndk/v33 - android-15.0.0_r20
-vendor/lib64/libcrypto-tm.so;FIX_SONAME|7291c0e41fa86b3739df0c0c20de21e88f43661a|f53b9d897921ade77c511eb98955db374fcc5c69
-
 ## Widevine
-vendor/bin/hw/android.hardware.drm@1.4-service.widevine
-vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc
-vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml
-vendor/lib64/libwvhidl.so
+vendor/apex/com.google.android.widevine.nonupdatable.apex
 
 # Power
 vendor/lib64/libepicoperator.so

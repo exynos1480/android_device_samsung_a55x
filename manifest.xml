@@ -71,6 +71,7 @@
     </hal>
     <hal format="aidl">
         <name>android.hardware.security.keymint</name>
+        <version>3</version>
         <interface>
             <name>IKeyMintDevice</name>
             <instance>default</instance>
@@ -78,6 +79,7 @@
     </hal>
     <hal format="aidl">
         <name>android.hardware.security.keymint</name>
+        <version>3</version>
         <interface>
             <name>IRemotelyProvisionedComponent</name>
             <instance>default</instance>
@@ -108,6 +110,7 @@
     </hal>
     <hal format="aidl">
         <name>vendor.samsung.hardware.keymint</name>
+        <version>3</version>
         <interface>
             <name>ISehKeyMintExtension</name>
             <instance>default</instance>
