@@ -6,7 +6,7 @@
 
 # Kernel modules related
 /vendor_dlkm/lib/modules/.*\.ko		     u:object_r:vendor_file:s0
-/vendor/bin/init\.insmod\.sh          	     u:object_r:insmod-sh_exec:s0
+/vendor/bin/init\.insmod\.sh		     u:object_r:insmod-sh_exec:s0
 
 ## Devices
 # Bluetooth
@@ -30,6 +30,9 @@
 
 # NFC
 /dev/sec-nfc                                 u:object_r:nfc_device:s0
+
+# Hermes
+/dev/socket/hermesd_secnvm		     u:object_r:hermes_socket:s0
 
 ## EFS
 /efs/FactoryApp(/.*)?                        u:object_r:app_efs_file:s0
@@ -82,9 +85,11 @@
 /(vendor|system/vendor)/bin/hw/gps.sh        u:object_r:gpsd_exec:s0
 
 # Services
-/vendor/bin/hw/sec\.android\.hardware\.nfc-service            u:object_r:hal_nfc_default_exec:s0
 /vendor/bin/dmd                                                         u:object_r:dmd_exec:s0
+/vendor/bin/hermesd                                                     u:object_r:hermesd_exec:s0
 /vendor/bin/hw/android\.hardware\.graphics\.composer3-service.exynos    u:object_r:hal_graphics_composer_default_exec:s0
+/vendor/bin/hw/sec\.android\.hardware\.nfc-service                      u:object_r:hal_nfc_default_exec:s0
+/vendor/bin/hw/vendor\.samsung\.hardware\.security\.hermes-service      u:object_r:hermesd_exec:s0
 
 # Same process HALs installed by platform into /vendor/lib(64)?/hw
 /vendor/lib(64)?/libOpenCL\.so				 u:object_r:same_process_hal_file:s0

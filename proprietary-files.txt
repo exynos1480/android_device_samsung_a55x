@@ -197,6 +197,22 @@ vendor/lib64/libskeymint10device.so
 vendor/lib64/libskeymint_cli.so
 vendor/lib64/vendor.samsung.hardware.keymint-V3-ndk.so
 
+## Hermes
+vendor/bin/hw/vendor.samsung.hardware.security.hermes-service
+vendor/bin/hermesd
+vendor/etc/init/hermesd.rc
+vendor/etc/init/vendor.samsung.hardware.security.hermes.rc
+vendor/etc/vintf/manifest/vendor.samsung.hardware.security.hermes.xml
+vendor/lib64/libhermes.so
+vendor/lib64/libhermes_bdbridge.so
+vendor/lib64/libhermes_cred.so
+vendor/lib64/libhwvault.so
+vendor/lib64/libshctrl.so
+vendor/lib64/libisosechw.so
+vendor/lib64/vendor.samsung.hardware.security.drk-V1-ndk.so
+vendor/lib64/vendor.samsung.hardware.security.drk@2.0.so
+vendor/lib64/vendor.samsung.hardware.security.hermes-V1-ndk.so
+
 # Ramdisk firmware
 vendor_ramdisk/vendor/firmware/hx83102e_gta4xls.bin
 vendor_ramdisk/vendor/firmware/w9021_gta4xls.bin

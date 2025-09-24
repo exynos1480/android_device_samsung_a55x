@@ -1,0 +1,17 @@
+type hermesd, domain;
+type hermesd_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(hermesd)
+
+allow hermesd tz_user_device:chr_file rw_file_perms;
+allow hermesd ssp_device:chr_file rw_file_perms;
+
+get_prop(hermesd, vendor_tztsdaemon_prop)
+set_prop(hermesd, vendor_securehw_prop)
+set_prop(hermesd, vendor_securenvm_prop)
+binder_use(hermesd)
+
+hal_server_domain(hermesd, hal_weaver)
+
+allow hermesd vendor_gatekeeper_data_file:dir rw_dir_perms;
+allow hermesd vendor_gatekeeper_data_file:file create_file_perms;
