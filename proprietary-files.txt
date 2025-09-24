@@ -252,6 +252,15 @@ vendor/apex/com.google.android.widevine.nonupdatable.apex
 # Power
 vendor/lib64/libepicoperator.so
 
+## Weaver
+vendor/etc/vintf/manifest/iweaver_aidl_v2_manifest.xml
+vendor/lib64/android.hardware.weaver@1.0.so:vendor/lib64/android.weaver@1.0.so;FIX_SONAME
+
+## Weaver Firmware
+vendor/etc/secnvm/k250a_41000001_1.img
+vendor/etc/secnvm/k250a_41000003_0.img
+vendor/etc/secnvm/k250a_41000005_c.img
+
 ## Wifi Firmware
 vendor/firmware/wifi/slsi_reg_database.bin
 vendor/firmware/wifi/mx140.bin
