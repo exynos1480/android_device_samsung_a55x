@@ -54,7 +54,7 @@ BOARD_INIT_BOOT_HEADER_VERSION := 4
 BOARD_MKBOOTIMG_INIT_ARGS += --header_version $(BOARD_INIT_BOOT_HEADER_VERSION)
 
 ## Boot Image
-BOARD_BOOTCONFIG := buildtime_bootconfig=enable
+BOARD_BOOTCONFIG := buildtime_bootconfig=enable androidboot.console=0
 BOARD_BOOT_HEADER_VERSION := 4
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_KERNEL_BASE := 0x00000000
