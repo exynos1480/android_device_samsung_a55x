@@ -27,7 +27,6 @@ AB_OTA_PARTITIONS := \
     vbmeta \
     system \
     system_ext \
-    vbmeta_system \
     vendor \
     vendor_dlkm \
     system_dlkm
@@ -194,20 +193,20 @@ BOARD_AVB_INIT_BOOT_ALGORITHM := SHA256_RSA4096
 BOARD_AVB_INIT_BOOT_ROLLBACK_INDEX := 0
 BOARD_AVB_INIT_BOOT_ROLLBACK_INDEX_LOCATION := 5
 
-BOARD_AVB_VBMETA_SYSTEM := system system_ext system_dlkm vendor
-BOARD_AVB_VBMETA_SYSTEM_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
-BOARD_AVB_VBMETA_SYSTEM_ALGORITHM := SHA256_RSA4096
-BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := 0
-BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 10
+#BOARD_AVB_VBMETA_SYSTEM := system system_ext system_dlkm vendor
+#BOARD_AVB_VBMETA_SYSTEM_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
+#BOARD_AVB_VBMETA_SYSTEM_ALGORITHM := SHA256_RSA4096
+#BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := 0
+#BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 10
 
 ## Using sha256 for dm-verity partitions. b/156162446
 # system, system_dlkm.
-BOARD_AVB_SYSTEM_DLKM_ADD_HASHTREE_FOOTER_ARGS += --hash_algorithm sha256
-BOARD_AVB_SYSTEM_ADD_HASHTREE_FOOTER_ARGS += --hash_algorithm sha256
+#BOARD_AVB_SYSTEM_DLKM_ADD_HASHTREE_FOOTER_ARGS += --hash_algorithm sha256
+#BOARD_AVB_SYSTEM_ADD_HASHTREE_FOOTER_ARGS += --hash_algorithm sha256
 
 # vendor and vendor_dlkm.
-BOARD_AVB_VENDOR_ADD_HASHTREE_FOOTER_ARGS += --hash_algorithm sha256
-BOARD_AVB_VENDOR_DLKM_ADD_HASHTREE_FOOTER_ARGS += --hash_algorithm sha256
+#BOARD_AVB_VENDOR_ADD_HASHTREE_FOOTER_ARGS += --hash_algorithm sha256
+#BOARD_AVB_VENDOR_DLKM_ADD_HASHTREE_FOOTER_ARGS += --hash_algorithm sha256
 
 ## Wi-Fi
 BOARD_WLAN_DEVICE                := slsi
