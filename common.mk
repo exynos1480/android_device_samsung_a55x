@@ -279,6 +279,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.verified_boot.xml
 
+# Enable debug properties for eng/userdebug builds
+ifeq (,$(filter eng userdebug,$(TARGET_BUILD_VARIANT)))
+PRODUCT_PRODUCT_PROPERTIES += \
+	ro.debuggable=1 \
+	ro.secure=0 \
+	ro.adb.secure=0
+endif
+
 # WiFi
 PRODUCT_PACKAGES += \
     WifiOverlay \
