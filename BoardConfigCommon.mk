@@ -90,6 +90,9 @@ BOARD_PARTITION_LIST := $(call to-upper, $(BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PART
 $(foreach p, $(BOARD_PARTITION_LIST), $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := erofs))
 $(foreach p, $(BOARD_PARTITION_LIST), $(eval TARGET_COPY_OUT_$(p) := $(call to-lower, $(p))))
 
+# Reserved Partition size
+-include vendor/lineage/config/BoardConfigReservedSize.mk
+
 ## Graphics
 TARGET_USES_VULKAN := true
 
