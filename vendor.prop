@@ -8,7 +8,11 @@ ro.apk_verity.mode=2
 ro.hardware.keystore_desede=true
 
 ## Audio
+aaudio.mmap_policy=2
+aaudio.mmap_exclusive_policy=2
+aaudio.hw_burst_min_usec=2000
 ro.audio.spatializer_enabled=true
+audio.offload.min.duration.secs=30
 
 ## Dalvik
 dalvik.vm.dex2oat64.enabled=true
