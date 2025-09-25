@@ -78,6 +78,9 @@
 /sys/devices/platform/shub/iio:device[0-9]*/buffer/enable      u:object_r:sysfs_sensors_writable:s0
 /sys/devices/platform/shub/iio:device[0-9]*/buffer/length      u:object_r:sysfs_sensors_writable:s0
 
+# Vibrator
+/vendor/bin/hw/vendor\.samsung\.hardware\.vibrator-service    u:object_r:hal_vibrator_default_exec:s0
+
 # GPS
 /sys/devices/soc0/machine                                     u:object_r:sysfs_sec_gps:s0
 /sys/devices/soc0/revision                                    u:object_r:sysfs_sec_gps:s0
