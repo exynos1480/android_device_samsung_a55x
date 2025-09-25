@@ -1,4 +1,4 @@
-<manifest version="1.0" type="device" target-level="6">
+<manifest version="1.0" type="device" target-level="8">
     <hal format="hidl">
         <name>android.hardware.audio</name>
         <transport>hwbinder</transport>
@@ -20,7 +20,7 @@
     <hal format="hidl">
         <name>android.hardware.bluetooth</name>
         <transport>hwbinder</transport>
-        <version>1.0</version>
+        <version>1.1</version>
         <interface>
             <name>IBluetoothHci</name>
             <instance>default</instance>
@@ -33,19 +33,18 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="hidl">
+    <!--
+    <hal format="aidl">
         <name>android.hardware.gnss</name>
-        <transport>hwbinder</transport>
-        <version>2.1</version>
-        <version>1.1</version>
+        <version>3</version>
         <interface>
             <name>IGnss</name>
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="hidl">
+    -->
+    <hal format="aidl">
         <name>android.hardware.graphics.allocator</name>
-        <transport>hwbinder</transport>
         <interface>
             <name>IAllocator</name>
             <instance>default</instance>
@@ -53,14 +52,14 @@
     </hal>
     <hal format="hidl">
         <name>android.hardware.graphics.mapper</name>
-        <transport arch="32+64">passthrough</transport>
+        <transport arch="64">passthrough</transport>
         <version>4.0</version>
         <interface>
             <name>IMapper</name>
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="hidl">
+    <!-- <hal format="hidl">
         <name>android.hardware.media.c2</name>
         <transport>hwbinder</transport>
         <version>1.2</version>
@@ -68,7 +67,7 @@
             <name>IComponentStore</name>
             <instance>default</instance>
         </interface>
-    </hal>
+    </hal> -->
     <hal format="aidl">
         <name>android.hardware.security.keymint</name>
         <version>3</version>
@@ -99,15 +98,6 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="hidl">
-        <name>vendor.samsung.hardware.gnss</name>
-        <transport>hwbinder</transport>
-        <version>2.1</version>
-        <interface>
-            <name>ISehGnss</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
     <hal format="aidl">
         <name>vendor.samsung.hardware.keymint</name>
         <version>3</version>
@@ -117,14 +107,6 @@
         </interface>
         <interface>
             <name>ISehKeyMintFactory</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl">
-        <name>vendor.samsung.hardware.nfc_aidl</name>
-        <version>1</version>
-        <interface>
-            <name>ISehNfc</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -138,11 +120,27 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>vendor.lineage.touch</name>
+        <name>vendor.samsung_slsi.hardware.SbwcDecompService</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
+            <name>ISbwcDecompService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.lineage.touch</name>
+        <version>1</version>
+        <interface>
             <name>IGloveMode</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IHighTouchPollingRate</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>ITouchscreenGesture</name>
             <instance>default</instance>
         </interface>
     </hal>
