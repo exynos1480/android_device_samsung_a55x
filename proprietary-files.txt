@@ -271,12 +271,6 @@ vendor/lib64/libuuid.so;MODULE_SUFFIX=_vendor
 
 ## Sensors
 vendor/etc/init/init.sensorhub.rc
-vendor/etc/sensors/hals.conf
-vendor/lib/sensors.grip.so
-vendor/lib/sensors.sensorhub.so
-vendor/lib/sensors.inputvirtual.so
-vendor/lib64/sensors.grip.so
-vendor/lib64/sensors.inputvirtual.so
 vendor/lib64/sensors.sensorhub.so
 
 ## Widevine
