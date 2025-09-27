@@ -4,11 +4,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+#include "Session.h"
 #include "CancellationSignal.h"
 #include "Legacy2Aidl.h"
-#include "Session.h"
-#include "VendorConstants.h"
 #include "TimedRestore.h"
+#include "VendorConstants.h"
 
 #include <fingerprint.sysprop.h>
 
@@ -39,11 +39,7 @@ void onClientDeath(void* cookie) {
 
 Session::Session(LegacyHAL hal, int userId, std::shared_ptr<ISessionCallback> cb,
                  LockoutTracker lockoutTracker)
-    : mHal(hal),
-      mLockoutTracker(lockoutTracker),
-      mUserId(userId),
-      mCb(cb) {
-
+    : mHal(hal), mLockoutTracker(lockoutTracker), mUserId(userId), mCb(cb) {
     std::string sensorTypeProp = FingerprintHalProperties::type().value_or("");
     if (sensorTypeProp == "udfps_optical" || sensorTypeProp == "udfps") {
         mUdfpsHandler = std::make_unique<UdfpsHandler>();
@@ -144,8 +140,7 @@ ndk::ScopedAStatus Session::enumerateEnrollments() {
 
     if (mHal.ss_fingerprint_enumerate) {
         int32_t error = mHal.ss_fingerprint_enumerate();
-        if (error)
-            LOG(ERROR) << "ss_fingerprint_enumerate failed: " << error;
+        if (error) LOG(ERROR) << "ss_fingerprint_enumerate failed: " << error;
     } else {
         std::vector<int> enrollments;
         char filename[64];
@@ -157,8 +152,7 @@ ndk::ScopedAStatus Session::enumerateEnrollments() {
             while ((entry = readdir(directory))) {
                 int uid, fid;
                 if (sscanf(entry->d_name, "User_%d_%dtmpl.dat", &uid, &fid)) {
-                    if (uid == mUserId)
-                        enrollments.push_back(fid);
+                    if (uid == mUserId) enrollments.push_back(fid);
                 }
             }
             closedir(directory);
@@ -177,8 +171,7 @@ ndk::ScopedAStatus Session::removeEnrollments(const std::vector<int32_t>& enroll
 
     for (int32_t enrollment : enrollmentIds) {
         int32_t error = mHal.ss_fingerprint_remove(mUserId, enrollment);
-        if (error)
-            LOG(ERROR) << "ss_fingerprint_remove failed: " << error;
+        if (error) LOG(ERROR) << "ss_fingerprint_remove failed: " << error;
     }
 
     return ndk::ScopedAStatus::ok();
@@ -221,13 +214,14 @@ ndk::ScopedAStatus Session::close() {
     return ndk::ScopedAStatus::ok();
 }
 
-ndk::ScopedAStatus Session::onPointerDown(int32_t /*pointerId*/, int32_t /*x*/, int32_t /*y*/, float /*minor*/,
-                                          float /*major*/) {
+ndk::ScopedAStatus Session::onPointerDown(int32_t /*pointerId*/, int32_t /*x*/, int32_t /*y*/,
+                                          float /*minor*/, float /*major*/) {
     LOG(INFO) << "onPointerDown";
 
     std::string sensorTypeProp = FingerprintHalProperties::type().value_or("");
     if (sensorTypeProp == "udfps_optical") {
-        mBrightnessRestore = std::make_unique<TimedRestore>("/sys/class/backlight/panel/brightness");
+        mBrightnessRestore =
+                std::make_unique<TimedRestore>("/sys/class/backlight/panel/brightness");
 
         int currentBrightness = 0;
         {
@@ -271,9 +265,9 @@ ndk::ScopedAStatus Session::onUiReady() {
     return ndk::ScopedAStatus::ok();
 }
 
-ndk::ScopedAStatus Session::authenticateWithContext(
-        int64_t operationId, const OperationContext& /*context*/,
-        std::shared_ptr<ICancellationSignal>* out) {
+ndk::ScopedAStatus Session::authenticateWithContext(int64_t operationId,
+                                                    const OperationContext& /*context*/,
+                                                    std::shared_ptr<ICancellationSignal>* out) {
     return authenticate(operationId, out);
 }
 
@@ -283,8 +277,8 @@ ndk::ScopedAStatus Session::enrollWithContext(const HardwareAuthToken& hat,
     return enroll(hat, out);
 }
 
-ndk::ScopedAStatus Session::detectInteractionWithContext(const OperationContext& /*context*/,
-                                              std::shared_ptr<ICancellationSignal>* out) {
+ndk::ScopedAStatus Session::detectInteractionWithContext(
+        const OperationContext& /*context*/, std::shared_ptr<ICancellationSignal>* out) {
     return detectInteraction(out);
 }
 
@@ -419,8 +413,7 @@ void Session::clearLockout(bool clearAttemptCounter) {
 
 void Session::startLockoutTimer(int64_t timeout) {
     mIsLockoutTimerAborted = false;
-    std::function<void()> action =
-            std::bind(&Session::lockoutTimerExpired, this);
+    std::function<void()> action = std::bind(&Session::lockoutTimerExpired, this);
     std::thread([timeout, action]() {
         std::this_thread::sleep_for(std::chrono::milliseconds(timeout));
         action();
@@ -430,8 +423,7 @@ void Session::startLockoutTimer(int64_t timeout) {
 }
 
 void Session::lockoutTimerExpired() {
-    if (!mIsLockoutTimerAborted)
-        clearLockout(false);
+    if (!mIsLockoutTimerAborted) clearLockout(false);
 
     mIsLockoutTimerStarted = false;
     mIsLockoutTimerAborted = false;
@@ -454,18 +446,17 @@ void Session::notify(const fingerprint_msg_t* msg) {
         case FINGERPRINT_ACQUIRED: {
             int32_t vendorCode = 0;
             AcquiredInfo result =
-                VendorAcquiredFilter(msg->data.acquired.acquired_info, &vendorCode);
+                    VendorAcquiredFilter(msg->data.acquired.acquired_info, &vendorCode);
             LOG(DEBUG) << "onAcquired(" << static_cast<int>(result) << ")";
             mCb->onAcquired(result, vendorCode);
         } break;
         case FINGERPRINT_TEMPLATE_ENROLLING:
             if (FingerprintHalProperties::uses_percentage_samples().value_or(false)) {
                 const_cast<fingerprint_msg_t*>(msg)->data.enroll.samples_remaining =
-                    100 - msg->data.enroll.samples_remaining;
+                        100 - msg->data.enroll.samples_remaining;
             }
             if (FingerprintHalProperties::cancel_on_enroll_completion().value_or(false)) {
-                if (msg->data.enroll.samples_remaining == 0)
-                    mHal.ss_fingerprint_cancel();
+                if (msg->data.enroll.samples_remaining == 0) mHal.ss_fingerprint_cancel();
             }
             LOG(DEBUG) << "onEnrollResult(fid=" << msg->data.enroll.finger.fid
                        << ", gid=" << msg->data.enroll.finger.gid
@@ -524,8 +515,8 @@ void Session::onCaptureReady() {
     mCaptureReady = true;
 }
 
-} // namespace fingerprint
-} // namespace biometrics
-} // namespace hardware
-} // namespace android
-} // namespace aidl
+}  // namespace fingerprint
+}  // namespace biometrics
+}  // namespace hardware
+}  // namespace android
+}  // namespace aidl

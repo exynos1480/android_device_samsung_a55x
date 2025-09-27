@@ -37,12 +37,12 @@ constexpr char FW_VERSION[] = "1.01";
 constexpr char SERIAL_NUMBER[] = "00000001";
 constexpr char SW_COMPONENT_ID[] = "matchingAlgorithm";
 constexpr char SW_VERSION[] = "vendor/version/revision";
-}
+}  // namespace
 
 static Fingerprint* sInstance;
 
 Fingerprint::Fingerprint() {
-    sInstance = this; // keep track of the most recent instance
+    sInstance = this;  // keep track of the most recent instance
     if (!mHal.openHal(Fingerprint::notify)) {
         LOG(ERROR) << "Can't open HAL module";
     }
@@ -82,9 +82,8 @@ Fingerprint::Fingerprint() {
             goto skip_uinput_setup;
         }
 
-        int err = ioctl(uinputFd, UI_SET_EVBIT, EV_KEY) |
-              ioctl(uinputFd, UI_SET_KEYBIT, KEY_UP) |
-              ioctl(uinputFd, UI_SET_KEYBIT, KEY_DOWN);
+        int err = ioctl(uinputFd, UI_SET_EVBIT, EV_KEY) | ioctl(uinputFd, UI_SET_KEYBIT, KEY_UP) |
+                  ioctl(uinputFd, UI_SET_KEYBIT, KEY_DOWN);
         if (err != 0) {
             LOG(ERROR) << "Unable to enable key events";
             goto skip_uinput_setup;
@@ -116,9 +115,9 @@ ndk::ScopedAStatus Fingerprint::getSensorProps(std::vector<SensorProps>* out) {
     std::vector<common::ComponentInfo> componentInfo = {
             {HW_COMPONENT_ID, HW_VERSION, FW_VERSION, SERIAL_NUMBER, "" /* softwareVersion */},
             {SW_COMPONENT_ID, "" /* hardwareVersion */, "" /* firmwareVersion */,
-            "" /* serialNumber */, SW_VERSION}};
-    common::CommonProps commonProps = {SENSOR_ID, SENSOR_STRENGTH,
-                                       mMaxEnrollmentsPerUser, componentInfo};
+             "" /* serialNumber */, SW_VERSION}};
+    common::CommonProps commonProps = {SENSOR_ID, SENSOR_STRENGTH, mMaxEnrollmentsPerUser,
+                                       componentInfo};
 
     SensorLocation sensorLocation;
     std::string loc = FingerprintHalProperties::sensor_location().value_or("");
@@ -128,9 +127,8 @@ ndk::ScopedAStatus Fingerprint::getSensorProps(std::vector<SensorProps>* out) {
         ParseInt(dim[1], &sensorLocation.sensorLocationY);
         ParseInt(dim[2], &sensorLocation.sensorRadius);
 
-        if (dim.size() >= 4)
-            sensorLocation.display = dim[3];
-    } else if(loc.length() > 0) {
+        if (dim.size() >= 4) sensorLocation.display = dim[3];
+    } else if (loc.length() > 0) {
         LOG(WARNING) << "Invalid sensor location input (x|y|radius|display): " << loc;
     }
 
@@ -164,8 +162,8 @@ ndk::ScopedAStatus Fingerprint::createSession(int32_t /*sensorId*/, int32_t user
 
 void Fingerprint::notify(const fingerprint_msg_t* msg) {
     Fingerprint* thisPtr = sInstance;
-    if (msg->type == FINGERPRINT_ACQUIRED
-        && msg->data.acquired.acquired_info > SEM_FINGERPRINT_EVENT_BASE) {
+    if (msg->type == FINGERPRINT_ACQUIRED &&
+        msg->data.acquired.acquired_info > SEM_FINGERPRINT_EVENT_BASE) {
         thisPtr->handleEvent(msg->data.acquired.acquired_info);
         return;
     }
@@ -184,9 +182,8 @@ void Fingerprint::handleEvent(int eventCode) {
         case SEM_FINGERPRINT_EVENT_GESTURE_SWIPE_UP: {
             if (!mSupportsGestures) return;
 
-            struct input_event event {};
-            int keycode = eventCode == SEM_FINGERPRINT_EVENT_GESTURE_SWIPE_UP ?
-                          KEY_UP : KEY_DOWN;
+            struct input_event event{};
+            int keycode = eventCode == SEM_FINGERPRINT_EVENT_GESTURE_SWIPE_UP ? KEY_UP : KEY_DOWN;
 
             // Report the key
             event.type = EV_KEY;
@@ -232,8 +229,8 @@ void Fingerprint::handleEvent(int eventCode) {
     }
 }
 
-} // namespace fingerprint
-} // namespace biometrics
-} // namespace hardware
-} // namespace android
-} // namespace aidl
+}  // namespace fingerprint
+}  // namespace biometrics
+}  // namespace hardware
+}  // namespace android
+}  // namespace aidl
