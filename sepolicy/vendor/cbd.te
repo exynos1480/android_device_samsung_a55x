@@ -1,3 +1,4 @@
 allow cbd self:capability2 block_suspend;
 allow cbd modem_block_device:blk_file { read open getattr ioctl lock map };
+allow cbd ramdump_device:chr_file { read open getattr ioctl lock map };
 set_prop(cbd, vendor_radio_prop)

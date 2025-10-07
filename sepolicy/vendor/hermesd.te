@@ -1,5 +1,6 @@
 type hermesd, domain;
 type hermesd_exec, exec_type, vendor_file_type, file_type;
+type hal_hermes_default_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(hermesd)
 
@@ -18,3 +19,6 @@ allow hermesd self:capability2 wake_alarm;
 allow hermesd vendor_gatekeeper_data_file:dir rw_dir_perms;
 allow hermesd vendor_gatekeeper_data_file:file create_file_perms;
 allow hermesd k250a_device:chr_file { ioctl open read write };
+
+allow init hal_hermes_default_exec:file { read execute open getattr map };
+allow hermesd hal_hermes_default_exec:file { read execute open getattr map entrypoint };

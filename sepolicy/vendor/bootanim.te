@@ -1,1 +1,4 @@
 dontaudit bootanim system_data_file:dir search;
+allow bootanim graphics_device:chr_file rw_file_perms;
+allow bootanim sysfs_gpu:dir r_dir_perms;
+allow bootanim sysfs_gpu:lnk_file rw_file_perms;

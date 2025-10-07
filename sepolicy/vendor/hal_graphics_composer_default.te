@@ -2,6 +2,8 @@ vndbinder_use(hal_graphics_composer_default);
 
 hal_client_domain(hal_graphics_composer_default, hal_graphics_allocator);
 
+allow hal_graphics_composer_default gpu_device:chr_file rw_file_perms;
+
 allow hal_graphics_composer_default vendor_surfaceflinger_vndservice:service_manager { add find };
 
 allow hal_graphics_composer_default self:netlink_kobject_uevent_socket { create bind read setopt };
@@ -11,11 +13,22 @@ allow hal_graphics_composer_default graphics_device:chr_file rw_file_perms;
 allow hal_graphics_composer_default log_vendor_data_file:dir { rw_file_perms add_name search };
 allow hal_graphics_composer_default log_vendor_data_file:file { rw_file_perms create };
 
-allow hal_graphics_composer_default sysfs_decon:file r_file_perms;
 allow hal_graphics_composer_default sysfs_decon_writable:file rw_file_perms;
 
 allow hal_graphics_composer_default sysfs_chipid:file r_file_perms;
 
 get_prop(hal_graphics_composer_default, vendor_camera_prop);
 
-allow hal_graphics_composer_default sysfs_backlight_writable:file rw_file_perms;
+dontaudit hal_graphics_composer_default system_prop:file read;
+
+allow hal_graphics_composer_default {
+    sysfs_lcd_writable
+    sysfs_gpu
+    sysfs_vendor_display
+}:dir r_dir_perms;
+
+allow hal_graphics_composer_default {
+    sysfs_backlight_writable
+    sysfs_lcd_writable
+    sysfs_vendor_display
+}:file rw_file_perms;
