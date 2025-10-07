@@ -1,1 +1,3 @@
 r_dir_file(hal_health_default, sysfs_battery);
+allow hal_power_default sysfs_gpu:dir search;
+allow hal_power_default sysfs_gpu:file { read getattr open };

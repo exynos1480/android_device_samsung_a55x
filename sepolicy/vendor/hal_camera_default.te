@@ -35,4 +35,9 @@ allow hal_camera_default proc_meminfo:file r_file_perms;
 allow hal_camera_default dmabuf_heap_device:chr_file read;
 allow hal_camera_default rild:unix_stream_socket connectto;
 
+allow hal_camera_default sysfs_memboost_writable:file rw_file_perms;
+
+allow hal_camera_default sysfs_gpu:file r_file_perms;
+allow hal_camera_default sysfs_gpu:dir search;
+
 dontaudit hal_camera_default default_prop:file read;

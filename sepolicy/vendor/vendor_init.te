@@ -1,10 +1,14 @@
-get_prop(vendor_init, vendor_radio_prop);
+get_prop(vendor_init, vendor_radio_prop)
+set_prop(vendor_init, vendor_radio_prop)
 set_prop(vendor_init, vendor_cbd_prop)
+get_prop(vendor_init, vts_status_prop)
 
 allow vendor_init cgroup:file getattr;
 allow vendor_init tmpfs:dir { write add_name };
 allow vendor_init tmpfs:lnk_file create;
 allow vendor_init functionfs:file getattr;
+
+set_prop(vendor_init, vendor_hwc_prop)
 
 allow vendor_init proc_swappiness:file rw_file_perms;
 

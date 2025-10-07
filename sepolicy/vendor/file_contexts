@@ -3,10 +3,17 @@
 /data/vendor/media(/.*)?                     u:object_r:media_vendor_data_file:s0
 /data/vendor/mediadrm(/.*)?                  u:object_r:mediadrm_vendor_data_file:s0
 /data/camera(/.*)?                           u:object_r:camera_data_file:s0
+/data/vendor/gatekeeper(/.*)?                u:object_r:vendor_gatekeeper_data_file:s0
 
 # Kernel modules related
-/vendor_dlkm/lib/modules/.*\.ko             u:object_r:vendor_file:s0
-/vendor/bin/init\.insmod\.sh                u:object_r:insmod-sh_exec:s0
+/vendor_dlkm/lib/modules/.*\.ko              u:object_r:vendor_file:s0
+/vendor/bin/init\.insmod\.sh                 u:object_r:insmod-sh_exec:s0
+
+## DEV
+/dev/vertex10					                       u:object_r:npu_device:s0
+/dev/vts_fio_dev(/.*)?				               u:object_r:vts_fio_device:s0
+/dev/ramdump_memshare                        u:object_r:ramdump_device:s0
+/dev/ssp                                     u:object_r:ssp_device:s0
 
 ## Devices
 # Bluetooth
@@ -19,8 +26,10 @@
 /dev/gnss_ipc                                u:object_r:gnss_device:s0
 
 # Graphics
-/dev/mali[0-9]                               u:object_r:gpu_device:s0
 /dev/g2d                                     u:object_r:graphics_device:s0
+/dev/exynos-mem                              u:object_r:graphics_device:s0
+/dev/poc                                     u:object_r:graphics_device:s0
+/dev/fimg2d                                  u:object_r:graphics_device:s0
 
 # Secmem
 /dev/s5p-smem                                u:object_r:secmem_device:s0
@@ -37,6 +46,9 @@
 # k250a
 /dev/k250a                                   u:object_r:k250a_device:s0
 
+# SIPC RIL device
+/dev/ttyGS[0-3]*                             u:object_r:serial_device:s0
+
 ## EFS
 /efs/FactoryApp(/.*)?                        u:object_r:app_efs_file:s0
 /efs/TEE(/.*)?                               u:object_r:prov_efs_file:s0
@@ -49,6 +61,8 @@
 /efs/lpm(/.*)?                               u:object_r:sec_efs_file:s0
 /efs/mb_po(/.*)?                             u:object_r:mb_po_efs_file:s0
 /efs/pdp_bkup(/.*)?                          u:object_r:pdp_efs_file:s0
+/efs/DAK/keymaster(/.*)?                     u:object_r:keymaster_efs_file:s0
+/efs/DAK/prov_data(/.*)?                     u:object_r:keymaster_efs_file:s0
 /efs/recovery(/.*)?                          u:object_r:sec_efs_file:s0
 /efs/sec_efs(/.*)?                           u:object_r:sec_efs_file:s0
 /efs/sec_efs/kpm(/.*)?                       u:object_r:kpm_efs_file:s0
@@ -56,7 +70,18 @@
 /efs/tas25xx(/.*)?                           u:object_r:sec_efs_file:s0
 /efs/usb_hw_param(/.*)?                      u:object_r:sec_efs_file:s0
 /efs/wv.keys                                 u:object_r:sec_efs_file:s0
-/mnt/vendor/efs/camera(/.*)?	               u:object_r:camera_efs_file:s0
+/efs/mc(/.*)?	                               u:object_r:prov_efs_file:s0
+/efs/security(/.*)?                          u:object_r:prov_efs_file:s0
+/efs/prov_data(/.*)?                         u:object_r:dak_efs_file:s0
+/mnt/vendor/efs/camera(/.*)?                 u:object_r:camera_efs_file:s0
+/mnt/vendor/efs/mc(/.*)?                     u:object_r:prov_efs_file:s0
+/mnt/vendor/efs/TEE(/.*)?                    u:object_r:prov_efs_file:s0
+/mnt/vendor/efs/security(/.*)?               u:object_r:prov_efs_file:s0
+/mnt/vendor/efs/tas25xx(/.*)?                u:object_r:sec_efs_file:s0
+/mnt/vendor/efs/DAK(/.*)?	                   u:object_r:dak_efs_file:s0
+/mnt/vendor/efs/prov(/.*)?                   u:object_r:dak_efs_file:s0
+/mnt/vendor/efs/prov_data(/.*)?	             u:object_r:dak_efs_file:s0
+
 
 ## Sysfs
 # Block
@@ -66,7 +91,7 @@
 
 # Camera
 /sys/devices/virtual/camera/flash/rear_torch_flash           u:object_r:sysfs_camera_writable:s0
-/sys/devices/virtual/camera/flash/rear_flash	               u:object_r:sysfs_camera_writable:s0
+/sys/devices/virtual/camera/flash/rear_flash                  u:object_r:sysfs_camera_writable:s0
 /sys/devices/virtual/camera(/.*)                             u:object_r:sysfs_camera:s0
 
 # Net
@@ -74,9 +99,13 @@
 /sys/devices/virtual/net(/.*)/mtu                             u:object_r:sysfs_net_mtu_writable:s0
 
 # Sensors
-/sys/devices/platform/shub/iio:device[0-9]*(/.*)               u:object_r:sysfs_iio:s0
-/sys/devices/platform/shub/iio:device[0-9]*/buffer/enable      u:object_r:sysfs_sensors_writable:s0
-/sys/devices/platform/shub/iio:device[0-9]*/buffer/length      u:object_r:sysfs_sensors_writable:s0
+/sys/devices/platform/shub/iio:device[0-9]*/name                        u:object_r:sysfs_sensors:s0
+/sys/devices/platform/shub/iio:device[0-9]*/buffer/data_available       u:object_r:sysfs_sensors:s0
+/sys/devices/platform/shub/iio:device[0-9]*/buffer/enable               u:object_r:sysfs_sensors_writable:s0
+/sys/devices/platform/shub/iio:device[0-9]*/buffer/length               u:object_r:sysfs_sensors_writable:s0
+
+# Media
+/vendor/bin/hw/samsung\.software\.media\.c2@[0-9]\.[0-9]-service        u:object_r:mediacodec_exec:s0
 
 # Vibrator
 /vendor/bin/hw/vendor\.samsung\.hardware\.vibrator-service    u:object_r:hal_vibrator_default_exec:s0
@@ -89,23 +118,25 @@
 /sys/devices/platform/(.*)/wakeup[0-9]*(/.*)?                 u:object_r:sysfs_wakeup:s0
 
 ## Vendor
-/(vendor|system/vendor)/bin/hw/gps.sh        u:object_r:gpsd_exec:s0
+/(vendor|system/vendor)/bin/hw/gps.sh                         u:object_r:gpsd_exec:s0
 
 # Services
-/vendor/bin/dmd                                                         u:object_r:dmd_exec:s0
-/vendor/bin/epic	                                                      u:object_r:epicd_exec:s0
-/vendor/bin/hermesd                                                     u:object_r:hermesd_exec:s0
-/vendor/bin/hw/android\.hardware\.graphics\.composer3-service.exynos    u:object_r:hal_graphics_composer_default_exec:s0
-/vendor/bin/hw/sec\.android\.hardware\.nfc-service                      u:object_r:hal_nfc_default_exec:s0
-/vendor/bin/hw/vendor\.samsung\.hardware\.security\.hermes-service      u:object_r:hermesd_exec:s0
+/vendor/bin/dmd                                                           u:object_r:dmd_exec:s0
+/vendor/bin/hermesd                                                       u:object_r:hermesd_exec:s0
+/vendor/bin/hw/vendor\.samsung\.hardware\.security\.hermes-service        u:object_r:hal_hermes_default_exec:s0
+/vendor/bin/hw/android\.hardware\.graphics\.composer3-service.exynos      u:object_r:hal_graphics_composer_default_exec:s0
+/vendor/bin/hw/android\.hardware\.drm-service\.widevine                   u:object_r:hal_drm_widevine_exec:s0
+/vendor/bin/hw/secaudiohalaidl                                            u:object_r:hal_audio_default_exec:s0
+/vendor/bin/hw/vendor\.samsung\.hardware\.camera\.provider-service_64     u:object_r:hal_camera_default_exec:s0
+/vendor/bin/hw/sec\.android\.hardware\.nfc-service                        u:object_r:hal_nfc_default_exec:s0
 
 # Same process HALs installed by platform into /vendor/lib(64)?/hw
-/vendor/lib(64)?/libOpenCL\.so				                   u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libOpenCL\.so     		                   u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libSGPUOpenCL\.so                       u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libion_exynos\.so                       u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libsbwchelper\.so                       u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libdrmresource\.so                      u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libmpbase\.so	                         u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libmpbase\.so                           u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libenn_common_utils\.so	               u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libenn_cpu_operators\.so	               u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libenn_engine_lib\.so	                 u:object_r:same_process_hal_file:s0
@@ -118,6 +149,7 @@
 
 # Vulkan
 /vendor/lib(64)?/hw/vulkan\.samsung\.so                  u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/hw/gralloc\.exynos[0-9]*\.so            u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libexynosgraphicbuffer_core\.so         u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libeis_utils\.so                        u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libdrm\.so                              u:object_r:same_process_hal_file:s0
