@@ -188,8 +188,6 @@ vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/firmware/firmware_signe
 vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/firmware/firmware_signed_a55xskt.bin:vendor/firmware/gnss/firmware_signed_a55xskt.bin
 vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/firmware/firmware_signed_a55xzc.bin:vendor/firmware/gnss/firmware_signed_a55xzc.bin
 vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/firmware/firmware_signed_a55xzh.bin:vendor/firmware/gnss/firmware_signed_a55xzh.bin
-vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/firmware/firmware_signed_m56xddxx.bin:vendor/firmware/gnss/firmware_signed_m56xddxx.bin
-vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/firmware/firmware_signed_m56xins.bin:vendor/firmware/gnss/firmware_signed_m56xins.bin
 vendor/apex/com.samsung.android.gnss.lsi.rose.signed/lib64/gnss_aidl_lib.so:vendor/lib64/gnss_aidl_lib.so
 vendor/apex/com.samsung.android.gnss.lsi.rose.signed/lib64/libwrappergps.so:vendor/lib64/libwrappergps.so
 vendor/apex/com.samsung.android.gnss.lsi.rose.signed/lib64/vendor.samsung.hardware.gnss-V3-ndk.so:vendor/lib64/vendor.samsung.hardware.gnss-V3-ndk.so
