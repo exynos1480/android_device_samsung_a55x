@@ -188,7 +188,6 @@ PRODUCT_COPY_FILES += \
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
-PRODUCT_ENFORCE_RRO_TARGETS += *
 
 # GNSS
 PRODUCT_COPY_FILES += \
@@ -336,7 +335,6 @@ endif
 
 # WiFi
 PRODUCT_PACKAGES += \
-    WifiOverlay \
     android.hardware.wifi-service \
     hostapd \
     hostapd_cli \
