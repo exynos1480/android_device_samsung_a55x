@@ -125,7 +125,7 @@ vendor/lib64/libExynosC2Vp9Dec.so|e7ec8c2924dfa559ff8b9d789e3d228e87bb9289
 vendor/lib64/libExynosC2Vp9Enc.so|3ac4b49cebf92d218a0bb1958afd6a1b3936eb3a
 
 ## Codec2 Dependencies
-vendor/lib64/libexynosutils.so|15c330e7407df51051a2f62c39c9e0f435bb1745
+vendor/lib64/libexynosutils.so|c002bbbb6955bcddcf3d3e11b360f885aa4f6dde
 vendor/lib64/libexynosv4l2.so|ecb0308d5d8b17c26ef65e36b5b3b8fe7496ca3e
 
 ## Firmware
