@@ -29,9 +29,18 @@ static const variant_info_t a55xnsxx_xme = {
     .build_desc = "a55xnsxx-user 14 UP1A.231005.007 A556EXXSABYI2 release-keys"
 };
 
+static const variant_info_t a55xnsxx_xid = {
+    .device = "a55x",
+    .model = "SM-A556E",
+    .name = "a55xnsxx",
+    .build_fingerprint = "samsung/a55xnsxx/a55x:14/UP1A.231005.007/A556EXXSABYI4:user/release-keys",
+    .build_desc = "a55xnsxx-user 14 UP1A.231005.007 A556EXXSABYI4 release-keys",
+};
+
 static const std::vector<variant_info_t> variants = {
     a55xnaxx_eux,
     a55xnsxx_xme,
+    a55xnsxx_xid,
 };
 
 void vendor_load_properties() {
