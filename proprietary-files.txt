@@ -243,6 +243,12 @@ vendor/lib64/libskeymint10device.so
 vendor/lib64/libskeymint_cli.so
 vendor/lib64/vendor.samsung.hardware.keymint-V3-ndk.so
 
+## Keymint Dependencies
+vendor/lib64/libsec_esek.so
+vendor/lib64/libsec_semHalTlc.so
+vendor/lib64/libsec_semRil.so
+vendor/lib64/libspictrl.so
+
 ## Hermes
 vendor/bin/hw/vendor.samsung.hardware.security.hermes-service
 vendor/bin/hermesd
@@ -264,6 +270,7 @@ vendor/bin/hw/sec.android.hardware.nfc-service
 vendor/etc/init/init.nfc.samsung.rc
 vendor/etc/init/sec-nfc-service.rc
 vendor/etc/libnfc-sec-vendor.conf
+vendor/etc/libse-gto-hal.conf
 vendor/etc/nfc/sec_s3nsen6_hwreg.bin
 vendor/etc/nfc/sec_s3nsen6_swreg.bin
 vendor/etc/vintf/manifest/sec-nfc-service.xml
