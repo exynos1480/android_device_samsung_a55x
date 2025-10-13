@@ -14,6 +14,7 @@
 /dev/vts_fio_dev(/.*)?				               u:object_r:vts_fio_device:s0
 /dev/ramdump_memshare                        u:object_r:ramdump_device:s0
 /dev/ssp                                     u:object_r:ssp_device:s0
+/dev/p3                                      u:object_r:secure_element_device:s0
 
 ## Devices
 # Bluetooth
@@ -129,6 +130,9 @@
 /vendor/bin/hw/vendor\.samsung\.hardware\.camera\.provider-service_64     u:object_r:hal_camera_default_exec:s0
 /vendor/bin/hw/sec\.android\.hardware\.nfc-service                        u:object_r:hal_nfc_default_exec:s0
 /vendor/bin/hw/vendor\.samsung\.hardware\.gnss-service                    u:object_r:hal_gnss_default_exec:s0
+
+# secure_element
+/vendor/bin/hw/android\.hardware\.secure_element-service\.thales-st33     u:object_r:hal_secure_element_default_exec:s0
 
 # Same process HALs installed by platform into /vendor/lib(64)?/hw
 /vendor/lib(64)?/libOpenCL\.so     		                   u:object_r:same_process_hal_file:s0
