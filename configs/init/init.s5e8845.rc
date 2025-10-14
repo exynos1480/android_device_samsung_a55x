@@ -8,6 +8,9 @@ on early-init
     setprop sys.perf.viboost true
 
 on init
+    # Change suspend power mode to s2idle
+    write /sys/power/mem_sleep s2idle
+
     symlink /dev/block/by-name/steady /dev/block/steady
     symlink /dev/block/by-name/persistent /dev/block/persistent
     symlink /dev/block/by-name/param /dev/block/param
