@@ -331,16 +331,7 @@ vendor/lib64/sensors.sensorhub.so
 ## Widevine
 vendor/apex/com.google.android.widevine.nonupdatable.apex
 
-## EPIC
-vendor/bin/epic
-vendor/etc/ems.json
-vendor/etc/ems_parameter.json
-vendor/etc/epic.json
-vendor/lib64/libems_service.so
-vendor/lib64/libepic_helper.so
-vendor/lib64/libgmc.so
-
-# Power
+## Power
 vendor/lib64/libepicoperator.so
 vendor/lib64/vendor.samsung_slsi.hardware.epic-V1-ndk.so
 vendor/lib64/vendor.samsung_slsi.hardware.epic@1.0.so
