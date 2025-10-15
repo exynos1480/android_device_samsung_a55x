@@ -65,7 +65,7 @@ ro.incremental.enable=true
 
 # Media
 debug.stagefright.c2inputsurface=-1
-vendor.debug.c2.sbwc.enable=true
+vendor.debug.c2.sbwc.enable=false
 debug.stagefright.ccodec_strict_type=true
 debug.stagefright.ccodec_lax_type=true
 debug.stagefright.c2-poolmask=458752
