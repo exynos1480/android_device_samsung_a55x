@@ -118,7 +118,9 @@ DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
 ## Metadata
 BOARD_USES_METADATA_PARTITION := true
 
-BOARD_ROOT_EXTRA_FOLDERS := efs
+# Extra mount point
+BOARD_ROOT_EXTRA_SYMLINKS += /mnt/vendor/efs:/efs
+BOARD_ROOT_EXTRA_SYMLINKS += /mnt/vendor/persist:/persist
 
 ## Platform
 BOARD_VENDOR := samsung
