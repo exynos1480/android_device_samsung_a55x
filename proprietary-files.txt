@@ -110,23 +110,24 @@ vendor/etc/media_codecs_performance_c2.xml
 vendor/etc/media_profiles_V1_0.xml
 
 ## Codec2
-vendor/bin/hw/samsung.hardware.media.c2@1.2-service|8c889cf028e2c593902f5e6849c51df3f1ffc0aa
-vendor/etc/init/samsung.hardware.media.c2@1.2-service.rc|dea0e367ff25b270444979bf3a4076c5961cfa12
+vendor/bin/hw/samsung.hardware.media.c2@1.2-service
+vendor/etc/init/samsung.hardware.media.c2@1.2-service.rc
 vendor/etc/seccomp_policy/codec2.vendor.base.policy
 vendor/etc/seccomp_policy/codec2.vendor.ext.policy
-vendor/lib64/libExynosC2ComponentStore.so|ccd7ea6cea80cbf26eaf1aa87f535038f1dcd8b1
-vendor/lib64/libExynosC2H264Dec.so|1778f5d86f9636b684c8e709b13d595ad01308e1
-vendor/lib64/libExynosC2H264Enc.so|0ac284b5265a991668acef0610c567b93ab4b5c8
-vendor/lib64/libExynosC2HevcDec.so|524bc7373068585279007f115e20e2b5a4cbe28b
-vendor/lib64/libExynosC2HevcEnc.so|2383203d67804287a35840d3ef11d52d817dab18
-vendor/lib64/libExynosC2Vp8Dec.so|fc794a69aa9d5baf8814fee79ee81326c276e7fd
-vendor/lib64/libExynosC2Vp8Enc.so|7cdf42087224faa4449ddd5ec68631a5e0551127
-vendor/lib64/libExynosC2Vp9Dec.so|e7ec8c2924dfa559ff8b9d789e3d228e87bb9289
-vendor/lib64/libExynosC2Vp9Enc.so|3ac4b49cebf92d218a0bb1958afd6a1b3936eb3a
+vendor/etc/vintf/manifest/sec_c2_manifest_default0_1_2.xml
+vendor/lib64/libExynosC2ComponentStore.so
+vendor/lib64/libExynosC2H264Dec.so
+vendor/lib64/libExynosC2H264Enc.so
+vendor/lib64/libExynosC2HevcDec.so
+vendor/lib64/libExynosC2HevcEnc.so
+vendor/lib64/libExynosC2Vp8Dec.so
+vendor/lib64/libExynosC2Vp8Enc.so
+vendor/lib64/libExynosC2Vp9Dec.so
+vendor/lib64/libExynosC2Vp9Enc.so
 
 ## Codec2 Dependencies
-vendor/lib64/libexynosutils.so|c002bbbb6955bcddcf3d3e11b360f885aa4f6dde
-vendor/lib64/libexynosv4l2.so|ecb0308d5d8b17c26ef65e36b5b3b8fe7496ca3e
+vendor/lib64/libexynosutils.so
+vendor/lib64/libexynosv4l2.so
 
 ## Firmware
 vendor/firmware/dolby.bin
