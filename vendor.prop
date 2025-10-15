@@ -63,7 +63,10 @@ ro.egl.blobcache.multifile_limit=536870912
 ## Incremental FS
 ro.incremental.enable=true
 
-# Media
+## Camera
+ro.camera.disableJpegR=true
+
+## Media
 debug.stagefright.c2inputsurface=-1
 vendor.debug.c2.sbwc.enable=false
 debug.stagefright.ccodec_strict_type=true
