@@ -17,6 +17,7 @@ type dak_efs_file, file_type;
 type prov_efs_file, file_type;
 type keymaster_efs_file, fs_type;
 type camera_efs_file, file_type;
+type persist_file, file_type;
 
 # proc types
 type proc_simslot_count, fs_type, proc_type;

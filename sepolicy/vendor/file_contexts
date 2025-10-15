@@ -82,6 +82,8 @@
 /mnt/vendor/efs/DAK(/.*)?	                   u:object_r:dak_efs_file:s0
 /mnt/vendor/efs/prov(/.*)?                   u:object_r:dak_efs_file:s0
 /mnt/vendor/efs/prov_data(/.*)?	             u:object_r:dak_efs_file:s0
+/persist                                     u:object_r:persist_file:s0
+/mnt/vendor/persist(/.*)?                    u:object_r:persist_file:s0
 
 
 ## Sysfs
@@ -91,9 +93,10 @@
 /sys/devices/platform/(.*)/block/mmcblk0/mmcblk0p[0-9]+/start u:object_r:sysfs_block:s0
 
 # Camera
-/sys/devices/virtual/camera/flash/rear_torch_flash           u:object_r:sysfs_camera_writable:s0
+/sys/devices/virtual/camera/flash/rear_torch_flash            u:object_r:sysfs_camera_writable:s0
 /sys/devices/virtual/camera/flash/rear_flash                  u:object_r:sysfs_camera_writable:s0
-/sys/devices/virtual/camera(/.*)                             u:object_r:sysfs_camera:s0
+/sys/devices/virtual/camera(/.*)                              u:object_r:sysfs_camera:s0
+/sys/devices/virtual/camera/rear/ssrm_camera_info             u:object_r:sysfs_camera:s0
 
 # Net
 /sys/devices/platform/119c0000.scsc_wifibt/net(/.*)/mtu       u:object_r:sysfs_net_mtu_writable:s0
