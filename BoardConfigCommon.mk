@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020-2024 The LineageOS Project
+# Copyright (C) 2020-2025 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,10 +18,10 @@ BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 COMMON_PATH := device/samsung/a55x-common
 
-## Inherit proprietary vendor configuartion
+# Inherit proprietary vendor configuartion
 include vendor/samsung/a55x-common/BoardConfigVendor.mk
 
-## A/B
+# A/B
 AB_OTA_PARTITIONS := \
     boot \
     init_boot \
@@ -36,54 +36,49 @@ AB_OTA_PARTITIONS := \
     vendor_dlkm \
     system_dlkm
 
-## Architecture
+# Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-2a-dotprod
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := cortex-a76
 
-## Bluetooth
+# Bluetooth
 BOARD_HAVE_BLUETOOTH_SLSI := true
 
-## Init Boot
-BOARD_INIT_BOOT_HEADER_VERSION := 4
-BOARD_MKBOOTIMG_INIT_ARGS += --header_version $(BOARD_INIT_BOOT_HEADER_VERSION)
-
-## Boot Image
+# Boot Image
 BOARD_BOOTCONFIG := buildtime_bootconfig=enable androidboot.console=0
 BOARD_BOOT_HEADER_VERSION := 4
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+BOARD_INIT_BOOT_HEADER_VERSION := 4
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_CMDLINE := bootconfig
 BOARD_RAMDISK_USE_LZ4 := true
-
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
 
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 
-## Display
+BOARD_MKBOOTIMG_INIT_ARGS += --header_version $(BOARD_INIT_BOOT_HEADER_VERSION)
+
+# Display
 BOARD_MINIMUM_DISPLAY_BRIGHTNESS := 1
 TARGET_SCREEN_DENSITY := 450
 
-# https://source.android.com/docs/core/architecture/kernel/erofs
-BOARD_EROFS_COMPRESSOR := lz4
-BOARD_EROFS_PCLUSTER_SIZE := 262144
-
-## Partitions
-BOARD_INIT_BOOT_IMAGE_PARTITION_SIZE := 16777216
-BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
-BOARD_DTBOIMG_PARTITION_SIZE := 8388608
-BOARD_FLASH_BLOCK_SIZE := 4096
-BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := $(BOARD_BOOTIMAGE_PARTITION_SIZE)
-
-## Dynamic Partitions
+# Dynamic Partitions
 BOARD_SUPER_PARTITION_SIZE := 8321499136
 BOARD_SUPER_PARTITION_GROUPS := samsung_dynamic_partitions
 BOARD_SAMSUNG_DYNAMIC_PARTITIONS_SIZE := 8317304832
 BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := odm product system system_dlkm system_ext vendor vendor_dlkm
 
-## Filesystem
+# EroFS
+BOARD_EROFS_COMPRESSOR := lz4
+BOARD_EROFS_PCLUSTER_SIZE := 262144
+
+# Extra mount point
+BOARD_ROOT_EXTRA_SYMLINKS += /mnt/vendor/efs:/efs
+BOARD_ROOT_EXTRA_SYMLINKS += /mnt/vendor/persist:/persist
+
+# Filesystem
 BOARD_ODMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -99,76 +94,66 @@ TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 
-# Reserved Partition size
--include vendor/lineage/config/BoardConfigReservedSize.mk
-
-## Graphics
+# Graphics
 TARGET_USES_VULKAN := true
 
-## Manifest
-# HIDL
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
-    hardware/samsung/vintf/samsung_framework_compatibility_matrix.xml \
-    vendor/lineage/config/device_framework_matrix.xml \
-    $(COMMON_PATH)/framework_compatibility_matrix.xml
-
-DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
-DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
-
-## Metadata
+# Metadata
 BOARD_USES_METADATA_PARTITION := true
 
-# Extra mount point
-BOARD_ROOT_EXTRA_SYMLINKS += /mnt/vendor/efs:/efs
-BOARD_ROOT_EXTRA_SYMLINKS += /mnt/vendor/persist:/persist
+# Partitions
+BOARD_INIT_BOOT_IMAGE_PARTITION_SIZE := 16777216
+BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
+BOARD_DTBOIMG_PARTITION_SIZE := 8388608
+BOARD_FLASH_BLOCK_SIZE := 4096
+BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := $(BOARD_BOOTIMAGE_PARTITION_SIZE)
+-include vendor/lineage/config/BoardConfigReservedSize.mk
 
-## Platform
+# Platform
 BOARD_VENDOR := samsung
 TARGET_BOARD_PLATFORM := erd8845
 TARGET_BOOTLOADER_BOARD_NAME := s5e8845
 TARGET_SOC := s5e8845
-#include hardware/samsung_slsi-linaro/config/BoardConfig8845.mk
 
-## Properties
+# Properties
 TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 
-## Recovery
+# Recovery
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/configs/init/recovery.fstab
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
-
 TARGET_NO_RECOVERY := true
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE :=
 BOARD_USES_FULL_RECOVERY_IMAGE :=
-
-# move recovery ramdisk to vendor_boot
-BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
-BOARD_INCLUDE_RECOVERY_RAMDISK_IN_VENDOR_BOOT := true
-## remove /lib/modules in recovery ramdisk
 BOARD_RECOVERY_KERNEL_MODULES :=
 
-## RIL
+# RIL
 ENABLE_VENDOR_RIL_SERVICE := true
 
-$(call soong_config_set,cbd,protocol,sipc)
-
-## Security
+# Security
 VENDOR_SECURITY_PATCH := 2025-09-01
 
-## SELinux
+# SELinux
 BOARD_SEPOLICY_TEE_FLAVOR := teegris
+BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 include device/lineage/sepolicy/exynos/sepolicy.mk
 include device/samsung_slsi/sepolicy/sepolicy.mk
 
-BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
-SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
+# Vintf
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
+    hardware/samsung/vintf/samsung_framework_compatibility_matrix.xml \
+    vendor/lineage/config/device_framework_matrix.xml \
+    $(COMMON_PATH)/configs/vintf/framework_compatibility_matrix.xml
+DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/vintf/manifest.xml
+DEVICE_MATRIX_FILE := $(COMMON_PATH)/configs/vintf/compatibility_matrix.xml
 
-## USB
-$(call soong_config_set,samsungUsbGadgetVars,gadget_name,13200000.dwc3)
+# Vendor boot
+BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
+BOARD_INCLUDE_RECOVERY_RAMDISK_IN_VENDOR_BOOT := true
 
-## Verified Boot
+# Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_ROLLBACK_INDEX := 0
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
@@ -199,22 +184,7 @@ BOARD_AVB_INIT_BOOT_ALGORITHM := SHA256_RSA4096
 BOARD_AVB_INIT_BOOT_ROLLBACK_INDEX := 0
 BOARD_AVB_INIT_BOOT_ROLLBACK_INDEX_LOCATION := 5
 
-#BOARD_AVB_VBMETA_SYSTEM := system system_ext system_dlkm vendor
-#BOARD_AVB_VBMETA_SYSTEM_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
-#BOARD_AVB_VBMETA_SYSTEM_ALGORITHM := SHA256_RSA4096
-#BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := 0
-#BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 10
-
-## Using sha256 for dm-verity partitions. b/156162446
-# system, system_dlkm.
-#BOARD_AVB_SYSTEM_DLKM_ADD_HASHTREE_FOOTER_ARGS += --hash_algorithm sha256
-#BOARD_AVB_SYSTEM_ADD_HASHTREE_FOOTER_ARGS += --hash_algorithm sha256
-
-# vendor and vendor_dlkm.
-#BOARD_AVB_VENDOR_ADD_HASHTREE_FOOTER_ARGS += --hash_algorithm sha256
-#BOARD_AVB_VENDOR_DLKM_ADD_HASHTREE_FOOTER_ARGS += --hash_algorithm sha256
-
-## Wi-Fi
+# WiFi
 BOARD_WLAN_DEVICE                := slsi
 BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_slsi
