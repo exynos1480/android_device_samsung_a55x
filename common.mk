@@ -180,6 +180,9 @@ $(call soong_config_set,lineage_health,fast_charge_value_fast_charge,0)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
 
+# Overlays
+PRODUCT_PACKAGES += NcmTetheringOverlay
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.pro.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.pro.xml \
