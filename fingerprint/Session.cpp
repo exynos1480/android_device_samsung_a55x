@@ -237,11 +237,7 @@ ndk::ScopedAStatus Session::onPointerDown(int32_t /*pointerId*/, int32_t /*x*/, 
             }
         }
 
-        if (currentBrightness < 290) {
-            mBrightnessRestore->set(290);
-        } else {
-            mBrightnessRestore->set(currentBrightness);
-        }
+        mBrightnessRestore->set(std::max(currentBrightness, 200));
     }
 
     if (FingerprintHalProperties::request_touch_event().value_or(false)) {
