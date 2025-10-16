@@ -230,6 +230,9 @@
          that can be set by the user. -->
     <integer name="config_screenBrightnessDim">10</integer>
 
+    <!-- If true, the display will be shifted around in ambient mode. -->
+    <bool name="config_enableBurnInProtection">true</bool>
+
     <!-- Indicate whether closing the lid causes the device to go to sleep and opening
          it causes the device to wake up.
          The default is false. -->
