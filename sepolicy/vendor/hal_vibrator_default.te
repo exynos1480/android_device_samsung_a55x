@@ -15,7 +15,9 @@ allow hal_vibrator_default sysfs_leds:file rw_file_perms;
 # Allow vibrator HAL to read proc_bus_input files
 r_dir_file(hal_vibrator_default, proc_bus_input)
 
+allow hal_vibrator_default sysfs_vibrator:dir r_dir_perms;
 allow hal_vibrator_default sysfs_vibrator:file rw_file_perms;
-allow hal_vibrator_default sysfs:file rw_file_perms;
+allow hal_vibrator_default sysfs_vibrator:lnk_file read;
 
+allow hal_vibrator_default sysfs:file rw_file_perms;
 allow hal_vibrator_default efs_file:dir search;

@@ -236,6 +236,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.light-service.samsung
 
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator-service.s5e8845
+
 # Fingerprint
 PRODUCT_PACKAGES += android.hardware.biometrics.fingerprint-service.s5e8845
 

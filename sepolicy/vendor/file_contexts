@@ -112,7 +112,8 @@
 /vendor/bin/hw/samsung\.software\.media\.c2@[0-9]\.[0-9]-service        u:object_r:mediacodec_exec:s0
 
 # Vibrator
-/vendor/bin/hw/vendor\.samsung\.hardware\.vibrator-service    u:object_r:hal_vibrator_default_exec:s0
+/sys/devices/virtual/sec_vib_inputff/control(/.*)?                                      u:object_r:sysfs_vibrator:s0
+/vendor/bin/hw/android\.hardware\.vibrator(@[0-9].[0-9])?-service\.s5e8845(-haptic)?    u:object_r:hal_vibrator_default_exec:s0
 
 # GPS
 /sys/devices/soc0/machine                                     u:object_r:sysfs_sec_gps:s0

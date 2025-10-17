@@ -345,12 +345,6 @@ vendor/etc/secnvm/k250a_41000001_1.img
 vendor/etc/secnvm/k250a_41000003_0.img
 vendor/etc/secnvm/k250a_41000005_c.img
 
-## Vibrator
-vendor/bin/hw/vendor.samsung.hardware.vibrator-service
-vendor/etc/init/vendor.samsung.hardware.vibrator-default.rc
-vendor/etc/vintf/manifest/vendor.samsung.hardware.vibrator-default.xml
-vendor/lib64/vendor.samsung.hardware.vibrator-V5-ndk.so
-
 ## Firmware - Vibrator
 vendor/firmware/RTP_1.bin
 vendor/firmware/RTP_10.bin
