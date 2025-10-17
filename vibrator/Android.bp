@@ -24,11 +24,11 @@ samsung_vibrator {
 }
 
 cc_binary {
-    name: "android.hardware.vibrator-service.samsung",
+    name: "android.hardware.vibrator-service.s5e8845",
     defaults: ["samsung_vibrator_defaults"],
     relative_install_path: "hw",
-    init_rc: ["android.hardware.vibrator-service.samsung.rc"],
-    vintf_fragments: ["android.hardware.vibrator-service.samsung.xml"],
+    init_rc: ["android.hardware.vibrator-service.s5e8845.rc"],
+    vintf_fragments: ["android.hardware.vibrator-service.s5e8845.xml"],
     srcs: [
         "Vibrator.cpp",
         "service.cpp",
