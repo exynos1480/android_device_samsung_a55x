@@ -349,8 +349,18 @@ ndk::ScopedAStatus Vibrator::activate(uint32_t timeoutMs) {
 }
 
 ndk::ScopedAStatus Vibrator::uploadFFEffect(short effectId, int timeoutMs) {
-    int16_t data[2] = {0, effectId};
     int ret;
+    int16_t data[2];
+
+    // Zm918 haptic
+    static bool isZm918 = (access("/sys/bus/i2c/drivers/zm918_haptic", F_OK) == 0);
+    if (isZm918) {
+        data[0] = effectId;
+        data[1] = 0;
+    } else {
+        data[0] = 0;
+        data[1] = effectId;
+    }
 
     // Remove previously uploaded effect in case it exists
     ret = ioctl(mVibratorFd, EVIOCRMFF, 0);
