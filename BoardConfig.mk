@@ -20,6 +20,7 @@ AB_OTA_PARTITIONS := \
     odm \
     product \
     vbmeta \
+    vbmeta_system \
     system \
     system_ext \
     vendor \
@@ -171,6 +172,12 @@ BOARD_AVB_INIT_BOOT_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
 BOARD_AVB_INIT_BOOT_ALGORITHM := SHA256_RSA4096
 BOARD_AVB_INIT_BOOT_ROLLBACK_INDEX := 0
 BOARD_AVB_INIT_BOOT_ROLLBACK_INDEX_LOCATION := 5
+
+BOARD_AVB_VBMETA_SYSTEM := system system_ext vendor system_dlkm
+BOARD_AVB_VBMETA_SYSTEM_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
+BOARD_AVB_VBMETA_SYSTEM_ALGORITHM := SHA256_RSA4096
+BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := 0
+BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 10
 
 # WiFi
 BOARD_WLAN_DEVICE                := slsi
