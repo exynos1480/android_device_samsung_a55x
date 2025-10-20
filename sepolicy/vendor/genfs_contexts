@@ -1,9 +1,9 @@
 ## Proc
-genfscon proc /simslot_count           u:object_r:proc_simslot_count:s0
-genfscon proc /bus/input/devices       u:object_r:proc_bus_input:s0
+genfscon proc /simslot_count                                       u:object_r:proc_simslot_count:s0
+genfscon proc /bus/input/devices                                   u:object_r:proc_bus_input:s0
 
 ## Swappiness
-genfscon proc /sys/vm/swappiness       u:object_r:proc_swappiness:s0
+genfscon proc /sys/vm/swappiness                                   u:object_r:proc_swappiness:s0
 
 ## Sysfs
 # Class
@@ -16,19 +16,13 @@ genfscon sysfs /devices/platform/mfc/video4linux/video8/name        u:object_r:s
 genfscon sysfs /devices/platform/mfc/video4linux/video9/name        u:object_r:sysfs_v4l:s0
 
 # Devices
-genfscon sysfs /devices/platform/13200000.usb/13200000.dwc3/udc/13200000.dwc3/current_speed   u:object_r:sysfs_usb:s0
-genfscon sysfs /devices/system/chip-id/revision                                               u:object_r:sysfs_chipid:s0
-genfscon sysfs /devices/virtual/dqe                                                           u:object_r:sysfs_vendor_display:s0
-genfscon sysfs /devices/virtual/tas25xx/bigdata                                               u:object_r:sysfs_ss_writable:s0
-genfscon sysfs /devices/virtual/tas25xx/calib                                                 u:object_r:sysfs_ss_writable:s0
+genfscon sysfs /devices/platform/13200000.usb/13200000.dwc3/udc/13200000.dwc3/current_speed                                            u:object_r:sysfs_usb:s0
+genfscon sysfs /devices/system/chip-id/revision                                                                                        u:object_r:sysfs_chipid:s0
+genfscon sysfs /devices/virtual/dqe                                                                                                    u:object_r:sysfs_vendor_display:s0
+genfscon sysfs /devices/virtual/tas25xx/bigdata                                                                                        u:object_r:sysfs_ss_writable:s0
+genfscon sysfs /devices/virtual/tas25xx/calib                                                                                          u:object_r:sysfs_ss_writable:s0
 
 # Battery
-genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/ac/type                              u:object_r:sysfs_battery:s0
-genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/battery/type                         u:object_r:sysfs_battery:s0
-genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/otg/type                             u:object_r:sysfs_battery:s0
-genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/pogo/type                            u:object_r:sysfs_battery:s0
-genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/usb/type                             u:object_r:sysfs_battery:s0
-genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/wireless/type                        u:object_r:sysfs_battery:s0
 genfscon sysfs /devices/platform/11560000.hsi2c/i2c-6/6-003a/s2mf301-muic/power_supply/muic-manager/type                               u:object_r:sysfs_battery:s0
 genfscon sysfs /devices/platform/11560000.hsi2c/i2c-6/6-003a/s2mf301-charger/power_supply/s2mf301-charger/type                         u:object_r:sysfs_battery:s0
 genfscon sysfs /devices/platform/11560000.hsi2c/i2c-6/6-003a/leds-s2mf301/power_supply/s2mf301-fled/type                               u:object_r:sysfs_battery:s0
@@ -40,9 +34,6 @@ genfscon sysfs /devices/platform/11560000.hsi2c/i2c-6/6-003c/power_supply/s2mf30
 genfscon sysfs /devices/platform/11560000.hsi2c/i2c-6/6-003c/power_supply/usbpd-manager/type                                           u:object_r:sysfs_battery:s0
 genfscon sysfs /devices/platform/11560000.hsi2c/i2c-6/6-0063/power_supply/sm5461-charger/type                                          u:object_r:sysfs_battery:s0
 genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:sec-direct-charger/power_supply/sec-direct-charger/type	 u:object_r:sysfs_battery:s0
-genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/battery/batt_factory_mode            u:object_r:sysfs_battery:s0
-genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/battery/capacity                     u:object_r:sysfs_battery:s0
-genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/battery/temp                         u:object_r:sysfs_battery:s0
 
 # wake up nodes
 genfscon sysfs /devices/platform/148c0000.drmdsim/wakeup                                                               u:object_r:sysfs_wakeup:s0
@@ -74,9 +65,9 @@ genfscon sysfs /firmware/devicetree/base/sound/mixer-paths                      
 genfscon sysfs /kernel/mm/vmscan/mem_boost_mode                                                                u:object_r:sysfs_camera_writable:s0
 
 # SOC
-genfscon sysfs /devices/system/chip-id/evt_ver									u:object_r:sysfs_chip_id:s0
+genfscon sysfs /devices/system/chip-id/evt_ver                                                                 u:object_r:sysfs_chip_id:s0
 
-# Module
+# Bt
 genfscon sysfs /module/scsc_bt/parameters/bluetooth_address                                                    u:object_r:sysfs_bt_writable:s0
 
 # Camera
