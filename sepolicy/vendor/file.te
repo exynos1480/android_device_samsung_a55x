@@ -8,16 +8,12 @@ type vendor_gatekeeper_data_file, file_type, data_file_type;
 type cpdebug_efs_file, fs_type;
 type dsms_efs_file, fs_type;
 type gatekeeper_efs_file, fs_type;
-type knoxai_efs_file, fs_type;
 type kpm_efs_file, fs_type;
 type mb_po_efs_file, fs_type;
 type pdp_efs_file, fs_type;
 type ssm_efs_file, fs_type;
-type dak_efs_file, file_type;
-type prov_efs_file, file_type;
 type keymaster_efs_file, fs_type;
 type camera_efs_file, file_type;
-type persist_file, file_type;
 
 # proc types
 type proc_simslot_count, fs_type, proc_type;
@@ -39,6 +35,7 @@ type sysfs_vendor_display, sysfs_type, rw_fs_type, fs_type;
 type sysfs_ss_writable, fs_type, sysfs_type;
 type sysfs_memboost_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_chip_id, sysfs_type, fs_type;
+type sysfs_camera_flash_file, fs_type, sysfs_type;
 
 # hermes
 type hermes_socket, file_type, data_file_type;

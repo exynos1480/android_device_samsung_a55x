@@ -1,0 +1,2 @@
+# hwservice_contexts
+android.hardware.media.c2::IComponentStore                      u:object_r:hal_codec2_hwservice:s0
