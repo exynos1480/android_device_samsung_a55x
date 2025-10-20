@@ -7,12 +7,6 @@ ro.vendor.camera.             u:object_r:vendor_camera_prop:s0
 # HWC
 vendor.hwc.                   u:object_r:vendor_hwc_prop:s0
 
-# Kernel modules related
-vendor.common.modules.ready       u:object_r:vendor_device_prop:s0
-vendor.device.modules.ready       u:object_r:vendor_device_prop:s0
-vendor.system_dlkm.modules.ready	u:object_r:vendor_device_prop:s0
-vendor.vendor_dlkm.modules.ready	u:object_r:vendor_device_prop:s0
-
 # RIL
 persist.vendor.cbd.btl_size               u:object_r:vendor_radio_prop:s0
 ro.vendor.radio.default_network           u:object_r:vendor_radio_prop:s0
