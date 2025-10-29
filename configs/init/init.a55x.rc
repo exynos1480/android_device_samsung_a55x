@@ -1,6 +1,6 @@
 # This File is based on: https://github.com/exynos1280/android_device_samsung_a53x/blob/lineage-23.0/configs/init/init.a53x.unify.rc
-# Europe (EUX)
-on early-init && property:ro.boot.em.model=SM-A556B && property:ro.boot.csc=EUX
+# a55xnaxx
+on early-init && property:ro.boot.em.model=SM-A556B
     # Mount firmware files
     mount none /vendor/firmware/A556BXXSABYI1/AIE.bin /vendor/firmware/AIE.bin bind
     mount none /vendor/firmware/A556BXXSABYI1/calliope_sram.bin /vendor/firmware/calliope_sram.bin bind
@@ -14,8 +14,8 @@ on early-init && property:ro.boot.em.model=SM-A556B && property:ro.boot.csc=EUX
     mount none /vendor/tee/A556BXXSABYI1 /vendor/tee bind
     setprop ro.vendor.firmware.loaded EUX
 
-# Malaysia (XME)
-on early-init && property:ro.boot.em.model=SM-A556E && property:ro.boot.csc=XME
+# a55xnsxx
+on early-init && property:ro.boot.em.model=SM-A556E
     # Mount firmware files
     mount none /vendor/firmware/A556EXXSABYI2/AIE.bin /vendor/firmware/AIE.bin bind
     mount none /vendor/firmware/A556EXXSABYI2/calliope_sram.bin /vendor/firmware/calliope_sram.bin bind
@@ -27,23 +27,3 @@ on early-init && property:ro.boot.em.model=SM-A556E && property:ro.boot.csc=XME
     mount none /vendor/firmware/A556EXXSABYI2/wifi/slsi_reg_database.bin /vendor/firmware/wifi/slsi_reg_database.bin bind
     # Mount TEE
     mount none /vendor/tee/A556EXXSABYI2 /vendor/tee bind
-    setprop ro.vendor.firmware.loaded XME
-
-# Indonesia (XID)
-on early-init && property:ro.boot.em.model=SM-A556E && property:ro.boot.csc=XID
-    # Mount firmware files
-    mount none /vendor/firmware/A556EXXSABYI4/AIE.bin /vendor/firmware/AIE.bin bind
-    mount none /vendor/firmware/A556EXXSABYI4/calliope_sram.bin /vendor/firmware/calliope_sram.bin bind
-    mount none /vendor/firmware/A556EXXSABYI4/mfc_fw.bin /vendor/firmware/mfc_fw.bin bind
-    mount none /vendor/firmware/A556EXXSABYI4/os.checked.bin /vendor/firmware/os.checked.bin bind
-    mount none /vendor/firmware/A556EXXSABYI4/pablo_icpufw.bin /vendor/firmware/pablo_icpufw.bin bind
-    mount none /vendor/firmware/A556EXXSABYI4/vts.bin /vendor/firmware/vts.bin bind
-    mount none /vendor/firmware/A556EXXSABYI4/wifi/mx140.bin /vendor/firmware/wifi/mx140.bin bind
-    mount none /vendor/firmware/A556EXXSABYI4/wifi/slsi_reg_database.bin /vendor/firmware/wifi/slsi_reg_database.bin bind
-    # Mount TEE
-    mount none /vendor/tee/A556EXXSABYI4 /vendor/tee bind
-    setprop ro.vendor.firmware.loaded XID
-
-on boot
-    # Restart just to be safe
-    restart audioserver
