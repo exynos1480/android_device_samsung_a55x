@@ -118,6 +118,10 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libshim_ui.so'),
     'vendor/lib64/libsamsungcamerahal.so': blob_fixup()
         .sig_replace('f0 3a 01 00', 'a0 3b 01 00'),
+    'vendor/lib64/libgraphgen.so': blob_fixup()
+        .clear_symbol_version('AHardwareBuffer_describe')
+        .clear_symbol_version('AHardwareBuffer_lock')
+        .clear_symbol_version('AHardwareBuffer_unlock'),
     'vendor/etc/init/init.nfc.samsung.rc': blob_fixup()
         .regex_replace('system', 'secure_element'),
     'vendor/lib64/libsec-ril.so': blob_fixup()
