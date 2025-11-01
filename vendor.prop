@@ -134,6 +134,9 @@ bluetooth.profile.bas.client.enabled=true
 wifi.direct.interface=p2p0
 ro.boot.wificountrycode=00
 
+## NFC
+ro.vendor.nfc.feature.chipname=SLSI
+
 ## LKMD
 ro.lmk.filecache_min_kb=153600
 ro.lmk.kill_timeout_ms=50
