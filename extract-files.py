@@ -130,6 +130,8 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/bin/hermesd': blob_fixup()
         .binary_regex_replace(b'security.securehw.available', b'vendor.securehw.available\x00\x00')
         .binary_regex_replace(b'security.securenvm.available', b'vendor.securenvm.available\x00\x00'),
+    'vendor/bin/hw/android.hardware.boot-service.exynos': blob_fixup()
+        .replace_needed('android.hardware.boot-V1-ndk.so', 'android.hardware.boot-V1-ndk.exynos.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(

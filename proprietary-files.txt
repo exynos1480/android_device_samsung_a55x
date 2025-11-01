@@ -213,9 +213,8 @@ vendor/lib64/hw/gatekeeper.s5e8845.so
 
 # Boothal
 vendor/bin/hw/android.hardware.boot-service.exynos
-vendor/lib64/android.hardware.boot-V1-ndk.so
+vendor/lib64/android.hardware.boot-V1-ndk.so:vendor/lib64/android.hardware.boot-V1-ndk.exynos.so;FIX_SONAME
 vendor/etc/init/android.hardware.boot-service.exynos.rc
-vendor/etc/vintf/manifest/android.hardware.boot-service.exynos.xml
 
 # GPS
 vendor/apex/com.samsung.android.gnss.lsi.rose.signed/bin/gps.rose.sh:vendor/bin/hw/gps.sh
