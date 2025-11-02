@@ -144,3 +144,6 @@
 
 # secure_element
 /vendor/bin/hw/android\.hardware\.secure_element-service\.thales-st33                       u:object_r:hal_secure_element_default_exec:s0
+
+# Boot Control HAL
+/vendor/bin/hw/android\.hardware\.boot-service\.exynos                                      u:object_r:hal_bootctl_default_exec:s0
