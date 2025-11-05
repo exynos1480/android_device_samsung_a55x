@@ -49,14 +49,6 @@
         </interface>
     </hal>
     <hal format="aidl" optional="true">
-       <name>android.hardware.boot</name>
-       <version>1</version>
-       <interface>
-            <name>IBootControl</name>
-            <instance>default</instance>
-       </interface>
-    </hal>
-    <hal format="aidl" optional="true">
         <name>android.hardware.power</name>
         <version>5</version>
         <interface>
