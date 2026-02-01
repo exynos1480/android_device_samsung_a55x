@@ -1,0 +1,6 @@
+#Access to the new unified vendor path
+allow hal_gatekeeper_default vendor_hermes_gk_data_file:dir create_dir_perms;
+allow hal_gatekeeper_default vendor_hermes_gk_data_file:file create_file_perms;
+
+
+
