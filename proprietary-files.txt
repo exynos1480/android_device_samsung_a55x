@@ -363,6 +363,7 @@ vendor/lib64/libvkmanager_vendor.so
 # Sensors
 vendor/etc/init/init.sensorhub.rc
 vendor/lib64/sensors.sensorhub.so
+vendor/lib64/sensors.inputvirtual.so
 
 # TEEgris
 vendor/bin/tzdaemon
