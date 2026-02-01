@@ -2,8 +2,9 @@
 /data/vendor/camera(/.*)?                    u:object_r:camera_vendor_data_file:s0
 /data/vendor/media(/.*)?                     u:object_r:media_vendor_data_file:s0
 /data/vendor/mediadrm(/.*)?                  u:object_r:mediadrm_vendor_data_file:s0
-/data/vendor/gatekeeper(/.*)?                u:object_r:vendor_gatekeeper_data_file:s0
 /data/camera(/.*)?                           u:object_r:camera_data_file:s0
+/data/vendor/hermes_gk(/.*)?                 u:object_r:vendor_hermes_gk_data_file:s0
+
 
 ## DEV
 /dev/vts_fio_dev(/.*)?                       u:object_r:vts_fio_device:s0
@@ -29,6 +30,7 @@
 
 # Hermes
 /dev/socket/hermesd_secnvm                   u:object_r:hermes_socket:s0
+/mnt/vendor/persist/hermes_gk(/.*)?          u:object_r:vendor_persist_gk_file:s0
 
 # k250a
 /dev/k250a                                   u:object_r:k250a_device:s0
