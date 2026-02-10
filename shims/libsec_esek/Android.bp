@@ -1,0 +1,5 @@
+cc_library_shared {
+    name: "libsec_esek",
+    srcs: ["sec_esek.c"],
+    vendor: true,
+}

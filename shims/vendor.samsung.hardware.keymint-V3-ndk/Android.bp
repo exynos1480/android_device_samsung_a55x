@@ -1,0 +1,8 @@
+cc_library_shared {
+    name: "vendor.samsung.hardware.keymint-V3-ndk",
+    srcs: [
+        "BnSehKeyMintExtension.cpp",
+        "BnSehKeyMintFactory.cpp",
+    ],
+    vendor: true,
+}

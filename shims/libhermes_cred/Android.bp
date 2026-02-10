@@ -1,0 +1,5 @@
+cc_library_shared {
+    name: "libhermes_cred",
+    srcs: ["hermes_cred.cpp"],
+    vendor: true,
+}
