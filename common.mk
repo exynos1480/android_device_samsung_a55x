@@ -128,6 +128,15 @@ PRODUCT_PACKAGES += \
     android.hardware.health-service.example \
     android.hardware.health-service.example_recovery
 
+#OPENEUICC
+ifneq ($(wildcard packages/apps/OpenEUICC),)
+PRODUCT_PACKAGES += \
+    OpenEUICC
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/android.hardware.telephony.euicc.xml
+endif
+
 # HIDL
 # TODO(b/330696629) remove this once device can drop HIDL.
 PRODUCT_PACKAGES += \
