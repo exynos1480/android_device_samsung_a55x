@@ -457,6 +457,10 @@ on fs
 
 # Permissions for backlight
     chown system system /sys/class/backlight/panel/brightness
+    
+ # Fix for the pointer
+    write /sys/class/sec/sec_touchpad/input/enabled 1
+    chown system system /sys/class/sec/sec_touchpad/input/enabled
 
 # Permissions for LCD
     chown system system /dev/sec_display_debug
