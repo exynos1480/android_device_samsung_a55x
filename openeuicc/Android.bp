@@ -1,0 +1,10 @@
+android_app_import {
+    name: "OpenEUICC",
+    apk: "prebuilt-apk/OpenEUICC.apk",
+    certificate: "platform",
+    privileged: true,
+    product_specific: true,
+    dex_preopt: {
+        enabled: false,
+    },
+}

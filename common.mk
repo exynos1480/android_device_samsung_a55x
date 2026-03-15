@@ -128,13 +128,14 @@ PRODUCT_PACKAGES += \
     android.hardware.health-service.example \
     android.hardware.health-service.example_recovery
 
-#OPENEUICC
-ifneq ($(wildcard packages/apps/OpenEUICC),)
+#OpenEUICC
+ifneq ($(wildcard $(COMMON_PATH)/openeuicc),)
 PRODUCT_PACKAGES += \
     OpenEUICC
 
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/android.hardware.telephony.euicc.xml
+    $(COMMON_PATH)/openeuicc/permission/privapp_whitelist_im.angry.openeuicc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp_whitelist_im.angry.openeuicc.xml \
+    frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/android.hardware.telephony.euicc.xml    
 endif
 
 # HIDL
