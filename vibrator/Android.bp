@@ -4,31 +4,15 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-soong_config_module_type {
-    name: "samsung_vibrator",
-    module_type: "cc_defaults",
-    config_namespace: "samsungVibratorVars",
-    bool_variables: ["duration_amplitude"],
-    properties: ["cflags"],
-}
-
-samsung_vibrator {
-    name: "samsung_vibrator_defaults",
-    soong_config_variables: {
-        duration_amplitude: {
-            cflags: [
-                "-DVIBRATOR_SUPPORTS_DURATION_AMPLITUDE_CONTROL",
-            ],
-        },
-    },
-}
-
 cc_binary {
     name: "android.hardware.vibrator-service.s5e8845",
-    defaults: ["samsung_vibrator_defaults"],
     relative_install_path: "hw",
     init_rc: ["android.hardware.vibrator-service.s5e8845.rc"],
     vintf_fragments: ["android.hardware.vibrator-service.s5e8845.xml"],
+    cppflags: select(soong_config_variable("samsungVibratorVars", "duration_amplitude"), {
+        true: ["-DVIBRATOR_SUPPORTS_DURATION_AMPLITUDE_CONTROL"],
+        default: [],
+    }),
     srcs: [
         "Vibrator.cpp",
         "service.cpp",
