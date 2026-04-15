@@ -118,6 +118,8 @@ PRODUCT_PACKAGES += android.hardware.biometrics.fingerprint-service.s5e8845
 # Vibrator
 PRODUCT_PACKAGES += android.hardware.vibrator-service.s5e8845
 
+$(call soong_config_set_bool,samsungVibratorVars,duration_amplitude,true)
+
 # Graphics
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := 450dpi
