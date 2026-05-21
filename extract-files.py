@@ -71,7 +71,7 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/etc/init/vendor.samsung.hardware.gnss-service.rc'
     ): blob_fixup()
         .regex_replace('apex/com.samsung.android.gnss.lsi.rose', 'vendor')
-        .regex_replace('bin', 'bin/hw')
+        .regex_replace('/bin/(?!hw/)', '/bin/hw/')
         .regex_replace('gps.rose.dcm.cfg', 'gps.dcm.cfg')
         .regex_replace('gps.rose.sh', 'gps.sh')
         .regex_replace(
