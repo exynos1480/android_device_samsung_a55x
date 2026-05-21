@@ -121,11 +121,9 @@
 /vendor/lib(64)?/libenn_model\.so                                                         u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libenn_public_api_cpp_lib\.so                                            u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libenn_user_driver_cpu\.so                                               u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libenn_user_driver_gpu\.so                                               u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libenn_user_driver_gpu_lib\.so                                           u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libenn_user_driver_unified\.so                                           u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libenn_user_lib\.so                                                      u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/vendor.samsung_slsi.hardware.enn_aidl-V[0-9]-ndk.so                      u:object_r:same_process_hal_file:s0
 
 # Vulkan
 /vendor/lib(64)?/hw/vulkan\.samsung\.so                                                   u:object_r:same_process_hal_file:s0
