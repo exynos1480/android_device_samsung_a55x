@@ -1,0 +1,35 @@
+//
+// Copyright (C) The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+prebuilt_etc {
+    name: "audio_effects.xml",
+    src: "audio_effects.xml",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "audio_policy_configuration.xml",
+    src: "audio_policy_configuration.xml",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "usbv2_audio_policy_configuration.xml",
+    src: "usbv2_audio_policy_configuration.xml",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "audio_policy_volumes.xml",
+    src: "audio_policy_volumes.xml",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "audio_board_info.xml",
+    src: "audio_board_info.xml",
+    vendor: true,
+}
