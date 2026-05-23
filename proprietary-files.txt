@@ -6,6 +6,9 @@ vendor/etc/init/secaudiohalaidl.rc
 vendor/etc/vintf/manifest/secaudiohalaidl_manifest.xml
 vendor/etc/mixer_gains.xml
 vendor/etc/mixer_paths.xml
+vendor/etc/mixer_usb_default.xml
+vendor/etc/mixer_usb_gray.xml
+vendor/etc/mixer_usb_white.xml
 vendor/etc/sec_audio_volume_curve.xml
 vendor/lib64/hw/audio.primary.s5e8845.so
 vendor/lib64/hw/audio.sec_primary.default.so
@@ -208,7 +211,6 @@ vendor/lib64/vendor.samsung.hardware.biometrics.fingerprint-V1-ndk.so
 
 # Gatekeeper
 vendor/bin/hw/android.hardware.gatekeeper-service
-vendor/etc/init/android.hardware.gatekeeper-service.rc
 vendor/lib64/hw/gatekeeper.s5e8845.so
 
 # Boothal
@@ -270,7 +272,6 @@ vendor/lib64/libspictrl.so
 # Hermes
 vendor/bin/hw/vendor.samsung.hardware.security.hermes-service
 vendor/bin/hermesd
-vendor/etc/init/hermesd.rc
 vendor/etc/init/vendor.samsung.hardware.security.hermes.rc
 vendor/etc/vintf/manifest/vendor.samsung.hardware.security.hermes.xml
 vendor/lib64/libhermes.so
