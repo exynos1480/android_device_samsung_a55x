@@ -4,8 +4,6 @@
 vendor/bin/hw/secaudiohalaidl
 vendor/etc/init/secaudiohalaidl.rc
 vendor/etc/vintf/manifest/secaudiohalaidl_manifest.xml
-vendor/etc/mixer_gains.xml
-vendor/etc/mixer_paths.xml
 vendor/etc/mixer_usb_default.xml
 vendor/etc/mixer_usb_gray.xml
 vendor/etc/mixer_usb_white.xml

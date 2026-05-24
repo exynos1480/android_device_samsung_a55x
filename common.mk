@@ -69,6 +69,8 @@ PRODUCT_PACKAGES += \
     audio_board_info.xml \
     audio_policy_configuration.xml \
     audio_policy_volumes.xml \
+    mixer_gains.xml \
+    mixer_paths.xml \
     usbv2_audio_policy_configuration.xml
 
 PRODUCT_COPY_FILES += \
