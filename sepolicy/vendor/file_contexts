@@ -24,9 +24,6 @@
 # ZRAM
 /dev/block/zram0                             u:object_r:swap_block_device:s0
 
-# NFC
-/dev/sec-nfc                                 u:object_r:nfc_device:s0
-
 # Hermes
 /dev/socket/hermesd_secnvm                   u:object_r:hermes_socket:s0
 
