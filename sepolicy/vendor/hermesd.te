@@ -13,6 +13,7 @@ set_prop(hermesd, vendor_securenvm_prop)
 binder_use(hermesd)
 
 hal_server_domain(hermesd, hal_weaver)
+hal_server_domain(hermesd, hal_gatekeeper)
 
 allow hermesd self:capability2 wake_alarm;
 
