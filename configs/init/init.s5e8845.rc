@@ -324,8 +324,8 @@ on post-fs-data
     restorecon /sys/kernel/debug/tracing/trace_marker
 
 # Gatekeeper data
-    mkdir /data/vendor/hermes_gk 0771 system system
-    mkdir /mnt/vendor/persist/hermes_gk 0700 system system
+    mkdir /data/vendor/gk 0771 system system
+    mkdir /mnt/vendor/persist/gk 0700 system system
 
 # Weaver data
     mkdir /mnt/vendor/persist/weaver 0700 system system
