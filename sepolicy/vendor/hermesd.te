@@ -17,10 +17,6 @@ hal_server_domain(hermesd, hal_gatekeeper)
 
 allow hermesd self:capability2 wake_alarm;
 
-# Allow hermesd to read/write vendor_gatekeeper_data_file
-allow hermesd vendor_gatekeeper_data_file:dir rw_dir_perms;
-allow hermesd vendor_gatekeeper_data_file:file create_file_perms;
-
 # Allow hermesd to access k250a device
 allow hermesd k250a_device:chr_file rw_file_perms;
 
