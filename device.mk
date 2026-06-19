@@ -112,7 +112,8 @@ PRODUCT_PACKAGES += android.hardware.vibrator-service.s5e8845
 # Graphics
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator-aidl-service-sgr \
-    android.hardware.graphics.mapper@4.0-impl-sgr
+    android.hardware.graphics.mapper@4.0-impl-sgr \
+    libdrm_sgpu
 
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := 450dpi
