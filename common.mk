@@ -126,6 +126,7 @@ $(call soong_config_set_bool,samsungVibratorVars,duration_amplitude,true)
 
 PRODUCT_PACKAGES += \
     android.hardware.composer.hwc3-service.slsi \
+    android.hardware.composer.hwc3-service.slsi \
     android.hardware.graphics.allocator-service-sgr \
     android.hardware.graphics.mapper@4.0-impl-sgr \
     libdrm_sgpu
