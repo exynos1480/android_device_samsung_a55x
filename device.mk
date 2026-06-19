@@ -110,6 +110,10 @@ PRODUCT_PACKAGES += android.hardware.biometrics.fingerprint-service.s5e8845
 PRODUCT_PACKAGES += android.hardware.vibrator-service.s5e8845
 
 # Graphics
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator-aidl-service-sgr \
+    android.hardware.graphics.mapper@4.0-impl-sgr
+
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := 450dpi
 PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
@@ -295,3 +299,7 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
 
 PRODUCT_CFI_INCLUDE_PATHS += hardware/samsung_slsi/scsc_wifibt/wpa_supplicant_lib
+
+# Call Samsung LSI board support package makefiles
+$(call inherit-product, hardware/samsung_slsi-linaro/graphics/base/hwcomposer_property.mk)
+$(call inherit-product, hardware/samsung_slsi-linaro/config/config.mk)
