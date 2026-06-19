@@ -71,4 +71,12 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="hidl" optional="true">
+        <name>android.hardware.graphics.composer</name>
+        <version>2.4</version>
+        <interface>
+            <name>IComposer</name>
+            <instance>vr</instance>
+        </interface>
+    </hal>
 </compatibility-matrix>

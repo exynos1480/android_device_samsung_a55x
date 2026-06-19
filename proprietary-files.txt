@@ -115,37 +115,10 @@ vendor/lib64/libexynosv4l2.so
 # Display - DQE
 vendor/etc/dqe/calib_data_colormode0_off.xml
 
-# Display - Gralloc
-vendor/bin/hw/android.hardware.graphics.allocator-aidl-service-sgr
-vendor/etc/init/android.hardware.graphics.allocator-aidl-service-sgr.rc
-vendor/lib64/libeis_utils.so
-vendor/lib64/libion_exynos.so
-
-# Display - Graphics
-vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-sgr.so
-vendor/lib64/libdrm_sgpu.so
-vendor/lib64/libsbwchelper.so
-
 # Display - HDR
 vendor/lib64/libdisplaycolor_default.so
 vendor/lib64/libhdrwrapper.so
 vendor/lib64/vendor.samsung.libcolor.custom.so
-
-# Display - HWC
-vendor/bin/hw/android.hardware.graphics.composer3-service.exynos
-vendor/etc/init/hwc3.rc
-vendor/etc/vintf/manifest/hwc3.xml
-vendor/lib64/android.hardware.graphics.extension.composer3-V1-ndk.so
-vendor/lib64/libExynosHWCService.so
-
-# Display - HWC - Dependencies
-vendor/lib64/android.hardware.graphics.composer@2.1-resources.so:vendor/lib64/android.hardware.graphics.composer@2.1-resources_samsung.so;FIX_SONAME
-vendor/lib64/android.hardware.graphics.composer@2.2-resources.so:vendor/lib64/android.hardware.graphics.composer@2.2-resources_samsung.so;FIX_SONAME
-vendor/lib64/libacryl.so
-vendor/lib64/libdrmresource.so
-vendor/lib64/libexynosdisplay.so
-vendor/lib64/libexynosgraphicbuffer.so
-vendor/lib64/libexynosgraphicbuffer_core.so
 
 # DRM - Widevine
 vendor/apex/com.google.android.widevine.nonupdatable.apex

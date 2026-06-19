@@ -132,7 +132,7 @@
 
 # Pamir gralloc
 /vendor/lib(64)?/hw/android\.hardware\.graphics\.mapper@4\.0-impl-sgr\.so	                  u:object_r:same_process_hal_file:s0
-/vendor/bin/hw/android\.hardware\.graphics\.allocator-aidl-service-sgr		                  u:object_r:hal_graphics_allocator_default_exec:s0
+/vendor/bin/hw/android\.hardware\.graphics\.allocator-service-sgr		                  u:object_r:hal_graphics_allocator_default_exec:s0
 
 # Fingerprint
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint-service\.s5e8845  u:object_r:hal_fingerprint_default_exec:s0
