@@ -129,6 +129,7 @@ PRODUCT_PACKAGES += \
     android.hardware.composer.hwc3-service.slsi \
     android.hardware.graphics.allocator-service-sgr \
     android.hardware.graphics.mapper@4.0-impl-sgr \
+    android.hardware.memtrack-service.exynos \
     libdrm_sgpu
 
 PRODUCT_AAPT_CONFIG := normal
