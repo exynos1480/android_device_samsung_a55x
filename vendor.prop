@@ -138,6 +138,9 @@ ro.boot.wificountrycode=00
 ## NFC
 ro.vendor.nfc.feature.chipname=SLSI
 
+# Codec2
+media.c2.hal.selection=aidl
+
 ## LKMD
 ro.lmk.filecache_min_kb=153600
 ro.lmk.kill_timeout_ms=50

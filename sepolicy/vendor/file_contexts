@@ -79,7 +79,7 @@
 /sys/devices/platform/shub/iio:device[0-9]*/buffer/length                               u:object_r:sysfs_sensors_writable:s0
 
 # Media
-/vendor/bin/hw/samsung\.software\.media\.c2@[0-9]\.[0-9]-service                        u:object_r:mediacodec_exec:s0
+/vendor/bin/hw/samsung\.hardware\.media\.c2-service                                     u:object_r:mediacodec_exec:s0
 
 # Vibrator
 /sys/devices/virtual/sec_vib_inputff/control(/.*)?                                      u:object_r:sysfs_vibrator:s0

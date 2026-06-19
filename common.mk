@@ -123,7 +123,6 @@ PRODUCT_PACKAGES += android.hardware.vibrator-service.s5e8845
 $(call soong_config_set_bool,samsungVibratorVars,duration_amplitude,true)
 
 # Graphics
-
 PRODUCT_PACKAGES += \
     android.hardware.composer.hwc3-service.slsi \
     android.hardware.composer.hwc3-service.slsi \
@@ -131,6 +130,23 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@4.0-impl-sgr \
     android.hardware.memtrack-service.exynos \
     libdrm_sgpu
+
+
+# Codec2
+PRODUCT_PACKAGES += \
+    samsung.hardware.media.c2-service \
+    libExynosC2H264Dec \
+    libExynosC2H264Enc \
+    libExynosC2HevcDec \
+    libExynosC2HevcEnc \
+    libExynosC2Vp8Dec \
+    libExynosC2Vp8Enc \
+    libExynosC2Vp9Dec \
+    libExynosC2Vp9Enc \
+    libExynosC2Av1Dec \
+    media_codecs_c2.xml \
+    media_codecs_performance_c2.xml \
+    media_profiles_V1_0.xml
 
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := 450dpi
