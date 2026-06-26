@@ -255,6 +255,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/firmware/sgpu/vangogh_lite_unified_evt0.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/lib/firmware/sgpu/vangogh_lite_unified_evt0.bin \
     $(LOCAL_PATH)/firmware/sgpu/vangogh_lite_unified_evt0.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/lib/firmware/sgpu/vangogh_lite_unified_evt0.bin
 
+# Bootctrl blobs
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/root/system/bin/hw/android.hardware.boot-service.exynos_recovery:$(TARGET_COPY_OUT_RECOVERY)/system/bin/hw/android.hardware.boot-service.exynos_recovery \
+    $(LOCAL_PATH)/recovery/root/system/etc/init/android.hardware.boot-service.exynos_recovery.rc:$(TARGET_COPY_OUT_RECOVERY)/system/etc/init/android.hardware.boot-service.exynos_recovery.rc \
+    $(LOCAL_PATH)/recovery/root/system/etc/vintf/manifest/android.hardware.boot-service.exynos.xml:$(TARGET_COPY_OUT_RECOVERY)/system/etc/vintf/manifest/android.hardware.boot-service.exynos.xml
+
 # Placeholders
 EMPTY_PLACEHOLDER := $(LOCAL_PATH)/configs/placeholder
 
