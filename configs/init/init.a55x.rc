@@ -12,7 +12,6 @@ on early-init && property:ro.boot.em.model=SM-A556B
     mount none /vendor/firmware/A556BXXSABYI1/wifi/slsi_reg_database.bin /vendor/firmware/wifi/slsi_reg_database.bin bind
     # Mount TEE
     mount none /vendor/tee/A556BXXSABYI1 /vendor/tee bind
-    setprop ro.vendor.firmware.loaded EUX
 
 # a55xnsxx
 on early-init && property:ro.boot.em.model=SM-A556E
