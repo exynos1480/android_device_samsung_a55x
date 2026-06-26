@@ -20,4 +20,25 @@
     <!-- Microns/ums (1000 um = 1mm) per pixel for the given device. If unspecified, UI that
         relies on this value will not be sized correctly. -->
     <item name="pixel_pitch" format="float" type="dimen">65.05</item>
+
+    <!-- The padding on the top of the statusbar (usually 0) -->
+    <dimen name="status_bar_padding_top">10dp</dimen>
+
+    <!-- The padding on the start of the statusbar -->
+    <dimen name="status_bar_padding_start">10dp</dimen>
+
+    <!-- The padding on the end of the statusbar -->
+    <dimen name="status_bar_padding_end">10dp</dimen>
+
+    <!-- Status bar values -->
+    <dimen name="status_bar_height_default">24dp</dimen>
+    <dimen name="status_bar_height_portrait">24dp</dimen>
+    <dimen name="status_bar_height_landscape">24dp</dimen>
+
+    <!-- Location on the screen of the center of the physical power button. This is a reasonable
+         default that should be overridden by device-specific overlays. -->
+    <dimen name="physical_power_button_center_screen_location_y">1400px</dimen>
+
+    <!-- Bottom margin size when fingerprint in display is active -->
+    <dimen name="keyguard_indication_margin_bottom">32dp</dimen>
 </resources>
