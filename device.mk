@@ -260,6 +260,7 @@ PRODUCT_COPY_FILES += \
 # Bootctrl blobs
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/system/bin/hw/android.hardware.boot-service.exynos_recovery:$(TARGET_COPY_OUT_RECOVERY)/system/bin/hw/android.hardware.boot-service.exynos_recovery \
+    $(LOCAL_PATH)/recovery/root/system/lib64/android.hardware.boot-V1-ndk.so:$(TARGET_COPY_OUT_RECOVERY)/system/lib64/android.hardware.boot-V1-ndk.so \
     $(LOCAL_PATH)/recovery/root/system/etc/init/android.hardware.boot-service.exynos_recovery.rc:$(TARGET_COPY_OUT_RECOVERY)/system/etc/init/android.hardware.boot-service.exynos_recovery.rc \
     $(LOCAL_PATH)/recovery/root/system/etc/vintf/manifest/android.hardware.boot-service.exynos.xml:$(TARGET_COPY_OUT_RECOVERY)/system/etc/vintf/manifest/android.hardware.boot-service.exynos.xml
 
