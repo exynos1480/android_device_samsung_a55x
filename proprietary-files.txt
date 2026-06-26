@@ -78,7 +78,7 @@ vendor/etc/dqe/calib_data_colormode0_s6e3fc5_a55x_vivid1.xml
 vendor/etc/dqe/calib_data_colormode0_s6e3fc5_a55x_vivid2.xml
 
 # Camera
-vendor/lib64/hw/camera.s5e8845.so
+vendor/lib64/hw/camera.s5e8845.so|a5eff9d1eba1fbbc3e2b705c974a317f28a6374b|015f0d45b1a8bb4d882c0de9f84415042005526e
 vendor/lib64/libeis_interface.so
 vendor/lib64/libIRTA.so
 vendor/lib64/libeis_core.so
