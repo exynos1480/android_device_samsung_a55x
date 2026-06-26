@@ -32,16 +32,16 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 PRODUCT_DEVICE := a55x
 PRODUCT_NAME := lineage_a55x
 PRODUCT_BRAND := samsung
-PRODUCT_MODEL := SM-A556E
+PRODUCT_MODEL := SM-A556B
 PRODUCT_MANUFACTURER := samsung
 PRODUCT_SHIPPING_API_LEVEL := 34
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="a55xnsxx-user 14 UP1A.231005.007 A556EXXS9BYGX release-keys" \
-    BuildFingerprint=samsung/a55xnsxx/a55x:14/UP1A.231005.007/A556EXXS9BYGX:user/release-keys \
-    DeviceName=a55xnsxx \
-    DeviceProduct=a55xnsxx \
-    SystemDevice=a55xnsxx \
-    SystemName=a55xnsxx
+    BuildDesc="a55xnaxx-user 14 UP1A.231005.007 A556BXXSABYI1 release-keys" \
+    BuildFingerprint=samsung/a55xnsxx/a55x:14/UP1A.231005.007/A556BXXSABYI1:user/release-keys \
+    DeviceName=a55xnaxx \
+    DeviceProduct=a55xnaxx \
+    SystemDevice=a55xnaxx \
+    SystemName=a55xnaxx
 
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
