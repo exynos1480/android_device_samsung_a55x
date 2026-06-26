@@ -54,6 +54,9 @@ TARGET_KERNEL_NO_GCC := true
 TARGET_KERNEL_SOURCE := kernel/samsung/a55x
 TARGET_KERNEL_CONFIG := essi_defconfig
 
+# DTBO Config
+BOARD_DTBO_CFG := $(DEVICE_PATH)/configs/kernel/a55x.cfg
+
 # Kernel Modules
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/configs/kernel/modules.load))
 BOARD_SYSTEM_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/configs/kernel/modules.load.system_dlkm))
