@@ -39,9 +39,7 @@ PRODUCT_SHIPPING_API_LEVEL := 34
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="a55xnaxx-user 14 UP1A.231005.007 A556BXXSABYI1 release-keys" \
     BuildFingerprint=samsung/a55xnsxx/a55x:14/UP1A.231005.007/A556BXXSABYI1:user/release-keys \
-    DeviceName=a55xnaxx \
     DeviceProduct=a55xnaxx \
-    SystemDevice=a55xnaxx \
     SystemName=a55xnaxx
 
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
