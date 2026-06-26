@@ -16,10 +16,10 @@
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
-COMMON_PATH := device/samsung/a55x-common
+DEVICE_PATH := device/samsung/a55x
 
 # Inherit proprietary vendor configuartion
-include vendor/samsung/a55x-common/BoardConfigVendor.mk
+include vendor/samsung/a55x/BoardConfigVendor.mk
 
 # A/B
 AB_OTA_PARTITIONS := \
@@ -60,6 +60,9 @@ BOARD_USES_GENERIC_KERNEL_IMAGE := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 
 BOARD_MKBOOTIMG_INIT_ARGS += --header_version $(BOARD_INIT_BOOT_HEADER_VERSION)
+
+## Kernel
+TARGET_KERNEL_CONFIG := essi_defconfig
 
 # Display
 BOARD_MINIMUM_DISPLAY_BRIGHTNESS := 1
@@ -118,11 +121,11 @@ TARGET_SOC := s5e8845
 include hardware/samsung_slsi-linaro/config/BoardConfig8845.mk
 
 # Properties
-TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
-TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/configs/init/recovery.fstab
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/configs/init/recovery.fstab
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
@@ -139,17 +142,17 @@ VENDOR_SECURITY_PATCH := 2025-09-01
 
 # SELinux
 BOARD_SEPOLICY_TEE_FLAVOR := teegris
-BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
-SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
+BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/private
 include device/lineage/sepolicy/exynos/sepolicy.mk
 include device/samsung_slsi/sepolicy/sepolicy.mk
 
 # Vintf
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     hardware/samsung/vintf/samsung_framework_compatibility_matrix.xml \
-    $(COMMON_PATH)/configs/vintf/framework_compatibility_matrix.xml
-DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/vintf/manifest.xml
-DEVICE_MATRIX_FILE := $(COMMON_PATH)/configs/vintf/compatibility_matrix.xml
+    $(DEVICE_PATH)/configs/vintf/framework_compatibility_matrix.xml
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/vintf/manifest.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/vintf/compatibility_matrix.xml
 
 # Vendor boot
 BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true

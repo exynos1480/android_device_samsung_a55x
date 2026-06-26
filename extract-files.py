@@ -26,7 +26,7 @@ from extract_utils.main import (
 )
 
 namespace_imports = [
-    'device/samsung/a55x-common',
+    'device/samsung/a55x',
     'hardware/samsung',
     'hardware/samsung_slsi-linaro/exynos',
     'hardware/samsung_slsi-linaro/graphics',
@@ -132,10 +132,16 @@ blob_fixups: blob_fixups_user_type = {
         .binary_regex_replace(b'security.securenvm.available', b'vendor.securenvm.available\x00\x00'),
     'vendor/bin/hw/android.hardware.boot-service.exynos': blob_fixup()
         .replace_needed('android.hardware.boot-V1-ndk.so', 'android.hardware.boot-V1-ndk.exynos.so'),
+    'vendor/lib64/hw/camera.s5e8845.so': blob_fixup()
+        .add_needed('libui_shim.so'),
+    'vendor/lib64/libvkservice.so': blob_fixup()
+        .binary_regex_replace(rb'ro\.factory\.factory_binary', b'ro.vendor.factory_binary\x00'),
+    'vendor/bin/vaultkeeperd': blob_fixup()
+        .binary_regex_replace(rb'ro\.factory\.factory_binary', b'ro.vendor.factory_binary\x00'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
-    'a55x-common',
+    'a55x',
     'samsung',
     namespace_imports=namespace_imports,
     blob_fixups=blob_fixups,

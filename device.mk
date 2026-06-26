@@ -14,10 +14,10 @@
 # limitations under the License.
 #
 
-COMMON_PATH := device/samsung/a55x-common
+DEVICE_PATH := device/samsung/a55x
 
 # Get non-open-source specific aspects
-$(call inherit-product, vendor/samsung/a55x-common/a55x-common-vendor.mk)
+$(call inherit-product, vendor/samsung/a55x/a55x-vendor.mk)
 
 # Enable virtual A/B with vendor ramdisk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/vabc_features.mk)
@@ -158,12 +158,12 @@ PRODUCT_PACKAGES += \
     android.hardware.health-service.example_recovery
 
 #OpenEUICC
-ifneq ($(wildcard $(COMMON_PATH)/openeuicc),)
+ifneq ($(wildcard $(DEVICE_PATH)/openeuicc),)
 PRODUCT_PACKAGES += \
     OpenEUICC
 
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/openeuicc/permission/privapp_whitelist_im.angry.openeuicc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp_whitelist_im.angry.openeuicc.xml \
+    $(DEVICE_PATH)/openeuicc/permission/privapp_whitelist_im.angry.openeuicc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp_whitelist_im.angry.openeuicc.xml \
     frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/android.hardware.telephony.euicc.xml    
 endif
 
@@ -175,21 +175,21 @@ PRODUCT_PACKAGES += \
 
 # Init
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/init/fstab.s5e8845:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/fstab.s5e8845 \
-    $(COMMON_PATH)/configs/init/fstab.s5e8845:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.s5e8845 \
-    $(COMMON_PATH)/configs/init/fstab.s5e8845:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.s5e8845 \
-    $(COMMON_PATH)/configs/init/init.a55x.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.a55x.rc \
-    $(COMMON_PATH)/configs/init/init.s5e8845.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.s5e8845.rc \
-    $(COMMON_PATH)/configs/init/init.samsung.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.samsung.rc \
-    $(COMMON_PATH)/configs/init/init.s5e8845.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.s5e8845.usb.rc \
-    $(COMMON_PATH)/configs/init/init.recovery.s5e8845.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.s5e8845.rc \
-    $(COMMON_PATH)/configs/init/init.recovery.samsung.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.samsung.rc \
-    $(COMMON_PATH)/configs/init/ueventd.s5e8845.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc \
-    $(COMMON_PATH)/configs/init/hermesd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hermesd.rc \
-    $(COMMON_PATH)/configs/init/android.hardware.gatekeeper-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.gatekeeper-service.rc \
+    $(DEVICE_PATH)/configs/init/fstab.s5e8845:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/fstab.s5e8845 \
+    $(DEVICE_PATH)/configs/init/fstab.s5e8845:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.s5e8845 \
+    $(DEVICE_PATH)/configs/init/fstab.s5e8845:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.s5e8845 \
+    $(DEVICE_PATH)/configs/init/init.a55x.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.a55x.rc \
+    $(DEVICE_PATH)/configs/init/init.s5e8845.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.s5e8845.rc \
+    $(DEVICE_PATH)/configs/init/init.samsung.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.samsung.rc \
+    $(DEVICE_PATH)/configs/init/init.s5e8845.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.s5e8845.usb.rc \
+    $(DEVICE_PATH)/configs/init/init.recovery.s5e8845.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.s5e8845.rc \
+    $(DEVICE_PATH)/configs/init/init.recovery.samsung.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.samsung.rc \
+    $(DEVICE_PATH)/configs/init/ueventd.s5e8845.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc \
+    $(DEVICE_PATH)/configs/init/hermesd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hermesd.rc \
+    $(DEVICE_PATH)/configs/init/android.hardware.gatekeeper-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.gatekeeper-service.rc \
 
 # Init - Libinit
-$(call soong_config_set,libinit,vendor_init_lib,//$(COMMON_PATH)/configs/init/libinit:libinit_s5e8845)
+$(call soong_config_set,libinit,vendor_init_lib,//$(DEVICE_PATH)/configs/init/libinit:libinit_s5e8845)
 
 # Kernel
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
@@ -216,7 +216,7 @@ $(call soong_config_set,lineage_health,fast_charge_value_none,1)
 $(call soong_config_set,lineage_health,fast_charge_value_fast_charge,0)
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay
 
 # Overlays
 PRODUCT_PACKAGES += NcmTetheringOverlay
@@ -234,7 +234,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
     frameworks/native/data/etc/android.software.ipsec_tunnels.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.ipsec_tunnels.xml \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml \
-    frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml
+    frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml \
+    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.gsm.xml \
+    frameworks/native/data/etc/android.hardware.telephony.satellite.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.satellite.xml
 
 PRODUCT_PACKAGES += \
     android.hardware.audio.low_latency.prebuilt.xml \
@@ -269,10 +271,10 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += android.hardware.power-service.pixel-libperfmgr
-PRODUCT_COPY_FILES += $(COMMON_PATH)/configs/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+PRODUCT_COPY_FILES += $(DEVICE_PATH)/configs/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 # Public Libraries
-PRODUCT_COPY_FILES += $(COMMON_PATH)/configs/linker/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
+PRODUCT_COPY_FILES += $(DEVICE_PATH)/configs/linker/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
 # RIL
 PRODUCT_PACKAGES += \
@@ -281,6 +283,9 @@ PRODUCT_PACKAGES += \
     sehradiomanager
 
 $(call soong_config_set,cbd,protocol,sipc)
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/ril/sehradiomanager.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sehradiomanager.conf
 
 # Samsung DAP
 PRODUCT_PACKAGES += SamsungDAP
@@ -293,7 +298,7 @@ PRODUCT_PACKAGES += android.hardware.secure_element-service.thales-st33
 
 # Sensors
 PRODUCT_PACKAGES += android.hardware.sensors-service.samsung-multihal
-PRODUCT_COPY_FILES += $(COMMON_PATH)/configs/sensors.hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
+PRODUCT_COPY_FILES += $(DEVICE_PATH)/configs/sensors.hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
 
 # Shipping level
 BOARD_SHIPPING_API_LEVEL := 34
@@ -301,7 +306,7 @@ PRODUCT_SHIPPING_API_LEVEL := 34
 
 # Soong Namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(COMMON_PATH) \
+    $(DEVICE_PATH) \
     hardware/google/interfaces \
     hardware/google/pixel \
     hardware/samsung \
@@ -313,7 +318,7 @@ PRODUCT_PACKAGES += \
     android.hardware.thermal-service.pixel \
     thermal_symlinks
 
-PRODUCT_COPY_FILES += $(COMMON_PATH)/configs/thermal/thermal_info_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json
+PRODUCT_COPY_FILES += $(DEVICE_PATH)/configs/thermal/thermal_info_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json
 
 # Update engine
 PRODUCT_PACKAGES += \
@@ -340,9 +345,9 @@ PRODUCT_PACKAGES += \
     wpa_supplicant
 
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
-    $(COMMON_PATH)/configs/wifi/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf \
-    $(COMMON_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
+    $(DEVICE_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
+    $(DEVICE_PATH)/configs/wifi/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf \
+    $(DEVICE_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
 
 PRODUCT_CFI_INCLUDE_PATHS += hardware/samsung_slsi/scsc_wifibt/wpa_supplicant_lib
 
