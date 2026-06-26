@@ -252,8 +252,10 @@ PRODUCT_COPY_FILES += $(DEVICE_PATH)/configs/linker/public.libraries.txt:$(TARGE
 
 # Ramdisk firmware
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/firmware/sgpu/vangogh_lite_unified_evt0.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/lib/firmware/sgpu/vangogh_lite_unified_evt0.bin \
-    $(LOCAL_PATH)/firmware/sgpu/vangogh_lite_unified_evt0.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/lib/firmware/sgpu/vangogh_lite_unified_evt0.bin
+    $(LOCAL_PATH)/firmware/sgpu/vangogh_lite_unified_evt0_e.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/lib/firmware/sgpu/vangogh_lite_unified_evt0_e.bin \
+    $(LOCAL_PATH)/firmware/sgpu/vangogh_lite_unified_evt0_b.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/lib/firmware/sgpu/vangogh_lite_unified_evt0_b.bin \
+    $(LOCAL_PATH)/firmware/sgpu/vangogh_lite_unified_evt0_e.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/lib/firmware/sgpu/vangogh_lite_unified_evt0_e.bin \
+    $(LOCAL_PATH)/firmware/sgpu/vangogh_lite_unified_evt0_b.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/lib/firmware/sgpu/vangogh_lite_unified_evt0_b.bin
 
 # Bootctrl blobs
 PRODUCT_COPY_FILES += \
