@@ -1,13 +1,36 @@
 {
     "Nodes": [
         {
+            "Name": "CPULittleClusterMinFreq",
+            "Path": "/dev/cluster0_freq_min",
+            "Values": [
+                "0x000bb800",
+                "0x00000000"
+            ],
+            "HoldFd": true,
+            "DefaultIndex": 1,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "CPUBigClusterMinFreq",
+            "Path": "/dev/cluster1_freq_min",
+            "Values": [
+                "0x00130b00",
+                "0x00000000"
+            ],
+            "HoldFd": true,
+            "DefaultIndex": 1,
+            "ResetOnInit": true
+        },
+        {
             "Name": "GPUMinFreq",
             "Path": "/sys/kernel/gpu/gpu_min_clock",
             "Values": [
-                "806000",
-                "507000",
-                "312000",
+                "1300000",
+                "544000",
+                "252000"
             ],
+            "DefaultIndex": 2,
             "ResetOnInit": true
         },
         {
@@ -51,6 +74,18 @@
     "Actions": [
         {
             "PowerHint": "INTERACTION",
+            "Node": "CPULittleClusterMinFreq",
+            "Duration": 0,
+            "Value": "0x000bb800"
+        },
+        {
+            "PowerHint": "INTERACTION",
+            "Node": "CPUBigClusterMinFreq",
+            "Duration": 0,
+            "Value": "0x00130b00"
+        },
+        {
+            "PowerHint": "INTERACTION",
             "Node": "TABoost",
             "Duration": 0,
             "Value": "30"
@@ -59,7 +94,7 @@
             "PowerHint": "INTERACTION",
             "Node": "GPUMinFreq",
             "Duration": 0,
-            "Value": "507000"
+            "Value": "544000"
         },
         {
             "PowerHint": "INTERACTIVE",
@@ -83,7 +118,7 @@
             "PowerHint": "EXPENSIVE_RENDERING",
             "Node": "GPUMinFreq",
             "Duration": 0,
-            "Value": "806000"
+            "Value": "1300000"
         }
     ]
 }
