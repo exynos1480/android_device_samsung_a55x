@@ -1,4 +1,4 @@
-# Common proprietary files - from Samsung package version A556BXXSABYI1, unless pinned
+# Common proprietary files - from Samsung package version A556BXXSECZDE, unless pinned
 
 # Audio
 vendor/bin/hw/secaudiohalaidl
@@ -565,14 +565,13 @@ vendor/lib64/android.hardware.weaver@1.0.so:vendor/lib64/android.weaver@1.0.so;F
 # Weaver - Firmware
 vendor/etc/secnvm/k250a_41000001_1.img
 vendor/etc/secnvm/k250a_41000003_0.img
-vendor/etc/secnvm/k250a_41000005_c.img
+vendor/etc/secnvm/k250a_41000006_c.img
 
 # WiFi
 vendor/bin/init.insmod.sh
 vendor/etc/init/init.exynos.wifi.rc
 vendor/etc/init/wifi.rc
 vendor/etc/init/wifi_slsi.rc
-vendor/etc/wifi/indoorchannel.info
 vendor/etc/wifi/init.insmod.wifi.cfg
 vendor/etc/init.insmod.vendor_dlkm.cfg
 
