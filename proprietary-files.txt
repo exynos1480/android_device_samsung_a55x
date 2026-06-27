@@ -2,19 +2,17 @@
 
 # Audio
 vendor/bin/hw/secaudiohalaidl
+vendor/etc/SoundBoosterParam.txt
+vendor/etc/dolby/dax-default.xml
 vendor/etc/init/secaudiohalaidl.rc
-vendor/etc/vintf/manifest/secaudiohalaidl_manifest.xml
-vendor/lib64/hw/libsecaudiohal_aidl.so
 vendor/etc/mixer_usb_default.xml
 vendor/etc/mixer_usb_gray.xml
 vendor/etc/mixer_usb_white.xml
 vendor/etc/sec_audio_volume_curve.xml
-vendor/etc/SoundBoosterParam.txt
-vendor/etc/dolby/dax-default.xml
+vendor/etc/vintf/manifest/secaudiohalaidl_manifest.xml
 vendor/lib64/hw/audio.primary.s5e8845.so
 vendor/lib64/hw/audio.sec_primary.default.so
-vendor/lib64/vndk/libaudioroute.so:vendor/lib64/libaudioroute_samsung.so;FIX_SONAME
-vendor/lib64/vndk/libtinyalsa.so:vendor/lib64/libtinyalsa_samsung.so;FIX_SONAME
+vendor/lib64/hw/libsecaudiohal_aidl.so
 vendor/lib64/libSamsungPostProcessConvertor.so
 vendor/lib64/lib_SamsungRec_07010.so
 vendor/lib64/lib_SoundAlive_SRC384_ver320.so
@@ -32,14 +30,10 @@ vendor/lib64/libspeakercalibration.so
 vendor/lib64/vendor.samsung.hardware.audio-V1-ndk.so
 vendor/lib64/vendor.samsung.hardware.bluetooth.audio-V2-ndk.so
 vendor/lib64/vendor.samsung.hardware.bluetooth.audio-impl.so
+vendor/lib64/vndk/libaudioroute.so:vendor/lib64/libaudioroute_samsung.so;FIX_SONAME
+vendor/lib64/vndk/libtinyalsa.so:vendor/lib64/libtinyalsa_samsung.so;FIX_SONAME
 
 # Audio - Effects
-vendor/lib64/soundfx/libaudioeffectoffload.so
-vendor/lib64/soundfx/libmyspace.so
-vendor/lib64/soundfx/libaudiosaplus_sec.so
-vendor/lib64/soundfx/libsamsungSoundbooster_plus.so
-vendor/lib64/soundfx/libswdap.so
-vendor/lib64/soundfx/libswspatializer.so
 vendor/lib64/lib_SoundAlive_3DPosition_ver202.so
 vendor/lib64/lib_SoundAlive_AlbumArt_ver105.so
 vendor/lib64/lib_SoundAlive_play_plus_ver600.so
@@ -47,6 +41,12 @@ vendor/lib64/lib_SoundBooster_ver2000.so
 vendor/lib64/libprofileparamstorage.so
 vendor/lib64/libsecaudiocoreutils.so
 vendor/lib64/libspatializerparamstorage.so
+vendor/lib64/soundfx/libaudioeffectoffload.so
+vendor/lib64/soundfx/libaudiosaplus_sec.so
+vendor/lib64/soundfx/libmyspace.so
+vendor/lib64/soundfx/libsamsungSoundbooster_plus.so
+vendor/lib64/soundfx/libswdap.so
+vendor/lib64/soundfx/libswspatializer.so
 
 # Audio - Hotword
 product/etc/permissions/privapp-permissions-google-product.xml
@@ -79,9 +79,9 @@ vendor/etc/dqe/calib_data_colormode0_s6e3fc5_a55x_vivid2.xml
 
 # Camera
 vendor/lib64/hw/camera.s5e8845.so|a5eff9d1eba1fbbc3e2b705c974a317f28a6374b|015f0d45b1a8bb4d882c0de9f84415042005526e
-vendor/lib64/libeis_interface.so
 vendor/lib64/libIRTA.so
 vendor/lib64/libeis_core.so
+vendor/lib64/libeis_interface.so
 vendor/lib64/libsec2lsi_conversion.so
 vendor/lib64/libuniapi.so
 vendor/lib64/libuniplugin.so
@@ -115,7 +115,6 @@ vendor/lib64/vendor.samsung.hardware.camera.device-V1-ndk.so
 vendor/lib64/vendor.samsung.hardware.camera.provider-V1-ndk.so
 
 # Display - DQE
-vendor/etc/dqe/calib_data_colormode0_off.xml
 vendor/etc/dqe/calib_data_atc_ana6710_a55x.xml
 vendor/etc/dqe/calib_data_colormode0_ana6710_a55x.xml
 vendor/etc/dqe/calib_data_colormode0_ana6710_a55x_hdr.xml
@@ -123,6 +122,7 @@ vendor/etc/dqe/calib_data_colormode0_ana6710_a55x_natural.xml
 vendor/etc/dqe/calib_data_colormode0_ana6710_a55x_vivid0.xml
 vendor/etc/dqe/calib_data_colormode0_ana6710_a55x_vivid1.xml
 vendor/etc/dqe/calib_data_colormode0_ana6710_a55x_vivid2.xml
+vendor/etc/dqe/calib_data_colormode0_off.xml
 vendor/etc/dqe/calib_data_colormode0_s6e3fc5_a55x.xml
 vendor/etc/dqe/calib_data_colormode0_s6e3fc5_a55x_hdr.xml
 vendor/etc/dqe/calib_data_colormode0_s6e3fc5_a55x_natural.xml
@@ -155,9 +155,14 @@ vendor/lib64/vendor.samsung_slsi.hardware.epic-V1-ndk.so
 vendor/lib64/vendor.samsung_slsi.hardware.epic@1.0.so
 
 # Firmware
+vendor/firmware/APBargeIn_AUDIO_SLSI.bin
+vendor/firmware/APDVRX_AUDIO_SLSI.bin
+vendor/firmware/APDVTX_AUDIO_SLSI.bin
+vendor/firmware/AP_AUDIO_SLSI.bin
 vendor/firmware/OD_V3.4.10_11_17_QVGA_ROSE_ENN_BGRA.nnc
 vendor/firmware/OD_V3.5.3_06_12_VGA_ROSE_ENN_BGRA.nnc
 vendor/firmware/SoundAlive.bin
+vendor/firmware/SoundBoosterParam.bin
 vendor/firmware/a2dpcom.bin
 vendor/firmware/abox_solution.conf
 vendor/firmware/abox_solution_rev00.conf
@@ -167,8 +172,10 @@ vendor/firmware/abox_tplg.bin
 vendor/firmware/abox_tplg.conf
 vendor/firmware/avsyncmix.bin
 vendor/firmware/calliope_dram.bin
+vendor/firmware/camera_tilt_calibration_info_1_2
 vendor/firmware/compress_capture.bin
 vendor/firmware/cs40l26.wmfw
+vendor/firmware/dax_param.bin
 vendor/firmware/default_configuration.flm.cfg.bin
 vendor/firmware/dolby.bin
 vendor/firmware/icc_profile.bin
@@ -176,38 +183,31 @@ vendor/firmware/is_mcu_fw.bin
 vendor/firmware/lc3dec.bin
 vendor/firmware/lc3enc.bin
 vendor/firmware/listenbackeffect.bin
+vendor/firmware/nfc/sec_s3nsen6_firmware.bin
 vendor/firmware/param_ti.bin
+vendor/firmware/rear3_dualcal_param.bin
+vendor/firmware/rxse.bin
 vendor/firmware/sb_ll.bin
 vendor/firmware/sb_music.bin
 vendor/firmware/sb_others.bin
-vendor/firmware/secure_configuration.flm.cfg.bin
-vendor/firmware/spkamp.bin
-vendor/firmware/volctrl.bin
-vendor/firmware/volumemonitor.bin
-vendor/firmware/tfa98xx.cnt
 vendor/firmware/secnvm/k250a_fw_image.manifest
-vendor/firmware/nfc/sec_s3nsen6_firmware.bin
-vendor/firmware/rxse.bin
 vendor/firmware/sectiongraph_tplg.bin
 vendor/firmware/sectiongraph_tplg.conf
+vendor/firmware/secure_configuration.flm.cfg.bin
 vendor/firmware/setfile_gc05a3.bin
 vendor/firmware/setfile_gn5.bin
 vendor/firmware/setfile_imx258.bin
 vendor/firmware/setfile_imx616.bin
 vendor/firmware/setfile_imx906.bin
-vendor/firmware/AP_AUDIO_SLSI.bin
-vendor/firmware/APDVTX_AUDIO_SLSI.bin
-vendor/firmware/APDVRX_AUDIO_SLSI.bin
-vendor/firmware/APBargeIn_AUDIO_SLSI.bin
-vendor/firmware/SoundBoosterParam.bin
-vendor/firmware/camera_tilt_calibration_info_1_2
-vendor/firmware/dax_param.bin
-vendor/firmware/rear3_dualcal_param.bin
-vendor/firmware/txse1.bin
-vendor/firmware/txse2.bin
+vendor/firmware/spkamp.bin
 vendor/firmware/tfa9878.bin
+vendor/firmware/tfa98xx.cnt
 vendor/firmware/tismartpa_driver_tuning.bin
 vendor/firmware/tsp/gt9895_a55x.bin
+vendor/firmware/txse1.bin
+vendor/firmware/txse2.bin
+vendor/firmware/volctrl.bin
+vendor/firmware/volumemonitor.bin
 
 # A556BXXSABYI1
 vendor/firmware/A556BXXSABYI1/AIE.bin|c17055a5cc025b72648fd4e6b89af6d6f89a2188
@@ -250,14 +250,15 @@ vendor/lib64/hw/gatekeeper.s5e8845.so
 
 # Boothal
 vendor/bin/hw/android.hardware.boot-service.exynos
-vendor/lib64/android.hardware.boot-V1-ndk.so:vendor/lib64/android.hardware.boot-V1-ndk.exynos.so;FIX_SONAME
 vendor/etc/init/android.hardware.boot-service.exynos.rc
 vendor/etc/vintf/manifest/android.hardware.boot-service.exynos.xml
+vendor/lib64/android.hardware.boot-V1-ndk.so:vendor/lib64/android.hardware.boot-V1-ndk.exynos.so;FIX_SONAME
 
 # GPS
 vendor/apex/com.samsung.android.gnss.lsi.rose.signed/bin/gps.rose.sh:vendor/bin/hw/gps.sh
 vendor/apex/com.samsung.android.gnss.lsi.rose.signed/bin/gpsd_K44:vendor/bin/hw/gpsd_K44
 vendor/apex/com.samsung.android.gnss.lsi.rose.signed/bin/vendor.samsung.hardware.gnss.lsi.rose-service:vendor/bin/hw/vendor.samsung.hardware.gnss-service
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/ca.pem:vendor/etc/gnss/ca.pem
 vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/cfg/gps.rose.cfg:vendor/etc/gnss/gps.cfg
 vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/cfg/gps.rose.dcm.cfg:vendor/etc/gnss/gps.dcm.cfg
 vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/cfg/gps.rose.dcm.debug.cfg:vendor/etc/gnss/gps.dcm.debug.cfg
@@ -274,7 +275,6 @@ vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/firmware/firmware_signe
 vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/firmware/firmware_signed_a55xskt.bin:vendor/firmware/gnss/firmware_signed_a55xskt.bin
 vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/firmware/firmware_signed_a55xzc.bin:vendor/firmware/gnss/firmware_signed_a55xzc.bin
 vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/firmware/firmware_signed_a55xzh.bin:vendor/firmware/gnss/firmware_signed_a55xzh.bin
-vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/ca.pem:vendor/etc/gnss/ca.pem
 vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/init.gps.rose.apex.sh.rc:vendor/etc/init/init.gps.rose.rc
 vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/vendor.samsung.hardware.gnss.lsi.rose-service.rc:vendor/etc/init/vendor.samsung.hardware.gnss-service.rc
 vendor/apex/com.samsung.android.gnss.lsi.rose.signed/lib64/gnss_aidl_lib.so:vendor/lib64/gnss_aidl_lib.so
@@ -305,8 +305,8 @@ vendor/lib64/libsec_semRil.so
 vendor/lib64/libspictrl.so
 
 # Hermes
-vendor/bin/hw/vendor.samsung.hardware.security.hermes-service
 vendor/bin/hermesd
+vendor/bin/hw/vendor.samsung.hardware.security.hermes-service
 vendor/etc/init/hermesd.rc
 vendor/etc/init/vendor.samsung.hardware.security.hermes.rc
 vendor/etc/vintf/manifest/vendor.samsung.hardware.security.hermes.xml
@@ -324,11 +324,11 @@ vendor/lib64/vendor.samsung.hardware.security.hermes-V1-ndk.so
 vendor/bin/hw/sec.android.hardware.nfc-service
 vendor/etc/init/init.nfc.samsung.rc
 vendor/etc/init/sec-nfc-service.rc
+vendor/etc/libnfc-sec-vendor.conf
+vendor/etc/libse-gto-hal.conf
 vendor/etc/nfc/sec_s3nsen6_hwreg.bin
 vendor/etc/nfc/sec_s3nsen6_swreg.bin
 vendor/etc/vintf/manifest/sec-nfc-service.xml
-vendor/etc/libnfc-sec-vendor.conf
-vendor/etc/libse-gto-hal.conf
 vendor/lib64/nfc_nci_sec.so
 vendor/lib64/vendor.samsung.hardware.nfc_aidl-V1-ndk.so
 
@@ -371,8 +371,8 @@ vendor/lib64/libvkmanager_vendor.so
 
 # Sensors
 vendor/etc/init/init.sensorhub.rc
-vendor/lib64/sensors.sensorhub.so
 vendor/lib64/sensors.inputvirtual.so
+vendor/lib64/sensors.sensorhub.so
 
 # TEEgris
 vendor/bin/tzdaemon
@@ -383,78 +383,78 @@ vendor/lib64/libuuid.so;MODULE_SUFFIX=_vendor
 
 ## TEEGRIS Firmware
 # A556BXXSABYI1
-vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-657365636f6d|aa16fb88f32770fdc88c55e0919c9ea14cf7793d
-vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-46494e474552|2374e66833659db5b22fc6c8ebb1611c8290d6a1
-vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-42494f535542|78f7e772886d754b7beeb7ef48c7c93aeff4e482
 vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-000000010081|8feced4f73d91a83c915230429811755ebb299f3
-vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-4662436b6d52|d3b48801474a6ce9ac82c5ea72744f61193f087d
-vendor/tee/A556BXXSABYI1/ffffffff-0000-0000-0000-000000000030|11e101ff33ec301fe0250b8615409da9a4d2c002
-vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-0000534b504d|306d02ae2196ae4a36daefcf6fdc950523b4ecc3
-vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-6b6e78677564|a78a0e1631352b5bbc8cc3f626704e702c9a2515
-vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-564c544b5052|5dc24e141a8df7e50a611c51b18024e46798d2cf
-vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-0050524f4341|bdbfb77a9d1126f4c405f0ce727c9288752af3e2
-vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-474154454b45|1f4a9084d97a9ef0df79956e046ab3e55bed8148
-vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-4d7073617574|dd57674e9a19df035049ed159221034fbaf59d4e
 vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-000000020081|1e3b9e1aedce6b7c75bff989bf88b19721f4e41f
-vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-00575644524d|86e1c7fc2e86055d2dae4ea0a6a6c895361d60c1
-vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-0053545354ab|68be33fcc20256d90098b8a8361e916b9c236b37
-vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-4b45594d5354|bd22a74f70c5759d49ec07a2fa6301c4c87b0df5
-vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-4d7073534d43|a88bb55d28d4b7a7b07c982f432e79fe772038e7
-vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-4d5053545549|4a094ae679806ab35c6dc7fe2d1b0e2817711702
-vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-6d73745f5441|d1ece02383f46381b4a804af6b81da49deb2989a
-vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-487641557457|206555e594a30aae96203764d87423dbbb33f23f
-vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-656e676d6f64|4f252c63573e8e7c0ef6092f3c4fc894fa0734c0
-vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-4d704e434954|7279d886166f716f930b58e0350a0bd9c9462490
-vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-54412d48444d|7b2ae37b2267a3ddf363cfc7797ea8d3ce6d25a8
-vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-505256544545|6306523f81fe27bacc9f3caa83093f98242d2fc8
-vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-4d70536b566e|906264ed8ba4a0a848f16bdb4a907d18e8452552
 vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-000000534b4d|b468f16efb85936e9179502e224ee0ed9da81539
-vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-53454d655345|8f77025c1bfd6f871ff2084b900fc062f5d8d784
-vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-5345435f4652|62982a6b332e28ed5ff8ce6abcbc45a2bb6f162e
 vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-000048444350|96f5f25eca65c56b3760805ec551b5088d10be2a
+vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-0000534b504d|306d02ae2196ae4a36daefcf6fdc950523b4ecc3
+vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-0050524f4341|bdbfb77a9d1126f4c405f0ce727c9288752af3e2
+vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-0053545354ab|68be33fcc20256d90098b8a8361e916b9c236b37
+vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-00575644524d|86e1c7fc2e86055d2dae4ea0a6a6c895361d60c1
+vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-42494f535542|78f7e772886d754b7beeb7ef48c7c93aeff4e482
+vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-46494e474552|2374e66833659db5b22fc6c8ebb1611c8290d6a1
+vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-4662436b6d52|d3b48801474a6ce9ac82c5ea72744f61193f087d
+vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-474154454b45|1f4a9084d97a9ef0df79956e046ab3e55bed8148
+vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-487641557457|206555e594a30aae96203764d87423dbbb33f23f
+vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-4b45594d5354|bd22a74f70c5759d49ec07a2fa6301c4c87b0df5
+vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-4d5053545549|4a094ae679806ab35c6dc7fe2d1b0e2817711702
+vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-4d704e434954|7279d886166f716f930b58e0350a0bd9c9462490
+vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-4d70536b566e|906264ed8ba4a0a848f16bdb4a907d18e8452552
+vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-4d7073534d43|a88bb55d28d4b7a7b07c982f432e79fe772038e7
+vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-4d7073617574|dd57674e9a19df035049ed159221034fbaf59d4e
+vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-505256544545|6306523f81fe27bacc9f3caa83093f98242d2fc8
+vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-5345435f4652|62982a6b332e28ed5ff8ce6abcbc45a2bb6f162e
+vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-53454d655345|8f77025c1bfd6f871ff2084b900fc062f5d8d784
+vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-54412d48444d|7b2ae37b2267a3ddf363cfc7797ea8d3ce6d25a8
+vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-564c544b5052|5dc24e141a8df7e50a611c51b18024e46798d2cf
+vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-656e676d6f64|4f252c63573e8e7c0ef6092f3c4fc894fa0734c0
+vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-657365636f6d|aa16fb88f32770fdc88c55e0919c9ea14cf7793d
+vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-6b6e78677564|a78a0e1631352b5bbc8cc3f626704e702c9a2515
 vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-6d706f667376|bcdde1830f52560e395e2be18ab6ac51e7082749
-vendor/tee/A556BXXSABYI1/tui/resolution_common/ID00000100|a091703ae478a3da9b16201f559d296a665d7b8d
-vendor/tee/A556BXXSABYI1/driver/00000000-0000-0000-0000-564c544b4456|07214018a75b13df11f72f2907970cd059e6e011
-vendor/tee/A556BXXSABYI1/driver/00000000-0000-0000-0000-53626f786476|2614d2230c7be491d94208efc8ee73e354e34b57
+vendor/tee/A556BXXSABYI1/00000000-0000-0000-0000-6d73745f5441|d1ece02383f46381b4a804af6b81da49deb2989a
 vendor/tee/A556BXXSABYI1/driver/00000000-0000-0000-0000-494363447256|bd13c0e2f3fb7d707850c34831b13e8d6b2cd93d
 vendor/tee/A556BXXSABYI1/driver/00000000-0000-0000-0000-4d53546d7374|c4554c8b466a1bf4191373b349a2eb625ef639da
+vendor/tee/A556BXXSABYI1/driver/00000000-0000-0000-0000-53626f786476|2614d2230c7be491d94208efc8ee73e354e34b57
+vendor/tee/A556BXXSABYI1/driver/00000000-0000-0000-0000-564c544b4456|07214018a75b13df11f72f2907970cd059e6e011
+vendor/tee/A556BXXSABYI1/ffffffff-0000-0000-0000-000000000030|11e101ff33ec301fe0250b8615409da9a4d2c002
+vendor/tee/A556BXXSABYI1/tui/resolution_common/ID00000100|a091703ae478a3da9b16201f559d296a665d7b8d
 
 # A556EXXSABYI4
-vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-657365636f6d|206f116b799609262c97eee8b09235020ce23f3f
-vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-46494e474552|4ce5ca84c0ad8895f57ef59fb35cd87e58d1f829
-vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-42494f535542|4a10d9b13fabce69b4c5d789f0c28b43030b37c3
 vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-000000010081|7b6a2c4e4f144d1265827fa2aba4b837cc143367
-vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-4662436b6d52|a64ab178da1b9b2600bf36551cb42cc3411aeb40
-vendor/tee/A556EXXSABYI4/ffffffff-0000-0000-0000-000000000030|edd676761c0734902b3594b3942ac63fe149442a
-vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-0000534b504d|07f7f933f277e43f392cf7235b8d807cbb73fad0
-vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-6b6e78677564|2b28cf3701c66cab9f49281c4c9b892d182ea773
-vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-564c544b5052|d4602aaced113c964d197089b761079d07654627
-vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-0050524f4341|cb0c0fbd6bef8ee32733b5307d6171e31abdbeb9
-vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-474154454b45|f0b52b584aebfbc78a3ef3f503a918ad9e01bef8
-vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-4d7073617574|6b966b243c7f76fb372f713297a1521002b21b35
 vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-000000020081|e80f4d2d6cadecdf4f0dd4d409df816d940055d1
-vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-00575644524d|24f9b42f624c796c79dfcefdbd6bbdf81f13435b
-vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-0053545354ab|091cb57af8d0b27479dee2925acb8e6d50f1b922
-vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-4b45594d5354|ed0ddb40aac52a296bc2223aea31bb9d873890a1
-vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-4d7073534d43|4ffd55ee3c518feb1be89270cf338536ad23a863
-vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-544545535355|43c002d3339a8805591a42466fec38ab167069f3
-vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-4d5053545549|d84cb2b0b350247f670e54755a5a582418bb3348
-vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-6d73745f5441|52fb2db8341aba58b9121887580a44d04c578df1
-vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-487641557457|106fce961dc5ee05ce9d9bf2bc910346582a6096
-vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-656e676d6f64|db38fe9ca055a6492b4d3dd911cbd8e465c0e589
-vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-4d704e434954|7b2d1e759bef83968f3df98ab6eb33f3d57600ea
-vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-54412d48444d|e378e2890d799380d0a27c352bde91c1f24c11f0
-vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-505256544545|2b55592f732883469d877cf0f830422293b6d695
-vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-4d70536b566e|b6d7d5738b7a7862af2868a26834f74c0bbfcbaf
 vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-000000534b4d|094446a03732809b2d319a872ab79adb2a8149e1
-vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-5345435f4652|7e02043c88502f3cec8b42a660ccc7923e4f6db6
 vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-000048444350|ac3b995592d5f558d8e1bb639967d8686fd1893f
+vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-0000534b504d|07f7f933f277e43f392cf7235b8d807cbb73fad0
+vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-0050524f4341|cb0c0fbd6bef8ee32733b5307d6171e31abdbeb9
+vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-0053545354ab|091cb57af8d0b27479dee2925acb8e6d50f1b922
+vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-00575644524d|24f9b42f624c796c79dfcefdbd6bbdf81f13435b
+vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-42494f535542|4a10d9b13fabce69b4c5d789f0c28b43030b37c3
+vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-46494e474552|4ce5ca84c0ad8895f57ef59fb35cd87e58d1f829
+vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-4662436b6d52|a64ab178da1b9b2600bf36551cb42cc3411aeb40
+vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-474154454b45|f0b52b584aebfbc78a3ef3f503a918ad9e01bef8
+vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-487641557457|106fce961dc5ee05ce9d9bf2bc910346582a6096
+vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-4b45594d5354|ed0ddb40aac52a296bc2223aea31bb9d873890a1
+vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-4d5053545549|d84cb2b0b350247f670e54755a5a582418bb3348
+vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-4d704e434954|7b2d1e759bef83968f3df98ab6eb33f3d57600ea
+vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-4d70536b566e|b6d7d5738b7a7862af2868a26834f74c0bbfcbaf
+vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-4d7073534d43|4ffd55ee3c518feb1be89270cf338536ad23a863
+vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-4d7073617574|6b966b243c7f76fb372f713297a1521002b21b35
+vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-505256544545|2b55592f732883469d877cf0f830422293b6d695
+vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-5345435f4652|7e02043c88502f3cec8b42a660ccc7923e4f6db6
+vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-54412d48444d|e378e2890d799380d0a27c352bde91c1f24c11f0
+vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-544545535355|43c002d3339a8805591a42466fec38ab167069f3
+vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-564c544b5052|d4602aaced113c964d197089b761079d07654627
+vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-656e676d6f64|db38fe9ca055a6492b4d3dd911cbd8e465c0e589
+vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-657365636f6d|206f116b799609262c97eee8b09235020ce23f3f
+vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-6b6e78677564|2b28cf3701c66cab9f49281c4c9b892d182ea773
 vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-6d706f667376|105c01d165d753f09848de22fc9494a80d935b3a
-vendor/tee/A556EXXSABYI4/tui/resolution_common/ID00000100|a091703ae478a3da9b16201f559d296a665d7b8d
-vendor/tee/A556EXXSABYI4/driver/00000000-0000-0000-0000-564c544b4456|9bc89a65829e33258fc1f6b66defb9cd8f2f5c63
-vendor/tee/A556EXXSABYI4/driver/00000000-0000-0000-0000-53626f786476|ab95065035e60441700a3e08ef9df1a496794a19
+vendor/tee/A556EXXSABYI4/00000000-0000-0000-0000-6d73745f5441|52fb2db8341aba58b9121887580a44d04c578df1
 vendor/tee/A556EXXSABYI4/driver/00000000-0000-0000-0000-494363447256|a6779e0d4b926042abc9fd1ac0eb1310e91397ee
 vendor/tee/A556EXXSABYI4/driver/00000000-0000-0000-0000-4d53546d7374|08103db73e05d1333c5e65749f70fe67f5f66d91
+vendor/tee/A556EXXSABYI4/driver/00000000-0000-0000-0000-53626f786476|ab95065035e60441700a3e08ef9df1a496794a19
+vendor/tee/A556EXXSABYI4/driver/00000000-0000-0000-0000-564c544b4456|9bc89a65829e33258fc1f6b66defb9cd8f2f5c63
+vendor/tee/A556EXXSABYI4/ffffffff-0000-0000-0000-000000000030|edd676761c0734902b3594b3942ac63fe149442a
+vendor/tee/A556EXXSABYI4/tui/resolution_common/ID00000100|a091703ae478a3da9b16201f559d296a665d7b8d
 
 # Vibrator - Firmware
 vendor/firmware/RTP_1.bin
@@ -569,16 +569,16 @@ vendor/etc/secnvm/k250a_41000006_c.img
 
 # WiFi
 vendor/bin/init.insmod.sh
+vendor/etc/init.insmod.vendor_dlkm.cfg
 vendor/etc/init/init.exynos.wifi.rc
 vendor/etc/init/wifi.rc
 vendor/etc/init/wifi_slsi.rc
 vendor/etc/wifi/init.insmod.wifi.cfg
-vendor/etc/init.insmod.vendor_dlkm.cfg
 
 # Wifi - Firmware
+vendor/firmware/wifi/hydra_config.sdb
 vendor/firmware/wifi/mx140/build_id.txt
 vendor/firmware/wifi/mx140/wpal
-vendor/firmware/wifi/hydra_config.sdb
 vendor/firmware/wifi/mx140_bt.hcf
 vendor/firmware/wifi/mx140_common.hcf
 vendor/firmware/wifi/mx140_wlan.hcf
