@@ -171,7 +171,7 @@
 
     <!-- The type of the light sensor to be used by the display framework for things like
          auto-brightness. If unset, then it just gets the default sensor of type TYPE_LIGHT. -->
-    <string name="config_displayLightSensorType">android.sensor.light</string>
+    <string name="config_displayLightSensorType">com.samsung.sensor.autobrightness</string>
 
     <!-- Screen brightness used to dim the screen while dozing in a very low power state.
          May be less than the minimum allowed brightness setting
