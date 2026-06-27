@@ -1,15 +1,15 @@
-# Scaling Available Frequencies (S5E8825)
+# Scaling Available Frequencies (S5E8845)
 
 See https://www.kernel.org/doc/Documentation/power/pm_qos_interface.txt
 
 > Alternatively the user mode program could write a hex
 > string for the value using 10 char long format e.g. "0x12345678".
 
-## CPU Little Cluster (CPU0)
+## CPU Little Cluster (CPU0-3)
 
                0x12345678
 
-    2002000 -> 0x001e8c50
+    2050000 -> 0x001f47d0
     1920000 -> 0x001d4c00
     1824000 -> 0x001bd500
     1728000 -> 0x001a5e00
@@ -26,10 +26,14 @@ See https://www.kernel.org/doc/Documentation/power/pm_qos_interface.txt
      672000 -> 0x000a4100
      533000 -> 0x00082208
 
-## CPU Big Cluster (CPU6)
+## CPU Big Cluster (CPU4-7)
 
+    2750000 -> 0x0029f630
+    2688000 -> 0x00290400
+    2592000 -> 0x00278d00
+    2496000 -> 0x00261600
     2400000 -> 0x00249f00
-    2288000 -> 0x0022e980
+    2304000 -> 0x00232800
     2208000 -> 0x0021b100
     2112000 -> 0x00203a00
     2016000 -> 0x001ec300
@@ -51,12 +55,14 @@ See https://www.kernel.org/doc/Documentation/power/pm_qos_interface.txt
 
 ## GPU Scaling
 
-    897000 -> 0x000dafe8
-    806000 -> 0x000c4c70
-    702000 -> 0x000ab630
-    611000 -> 0x000952b8
-    507000 -> 0x0007bc78
-    403000 -> 0x00062638
-    312000 -> 0x0004c2c0
-    208000 -> 0x00032c80
-    104000 -> 0x00019640
+    1300000 -> 0x0013d620
+    1152000 -> 0x00119400
+    1025000 -> 0x000fa3e8
+     960000 -> 0x000ea600
+     864000 -> 0x000d2f00
+     750000 -> 0x000b71b0
+     648000 -> 0x0009e340
+     544000 -> 0x00084d00
+     450000 -> 0x0006ddd0
+     336000 -> 0x00052080
+     252000 -> 0x0003d860
