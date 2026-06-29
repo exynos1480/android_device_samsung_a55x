@@ -190,10 +190,20 @@ $(call soong_config_set,lineage_health,fast_charge_value_none,1)
 $(call soong_config_set,lineage_health,fast_charge_value_fast_charge,0)
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay
+PRODUCT_PACKAGES += \
+    ApertureOverlay \
+    CarrierConfigOverlay \
+    DialerOverlay \
+    FrameworkResOverlay \
+    LineageSDKOverlay \
+    NcmTetheringOverlay \
+    SettingsOverlay \
+    SettingsProviderOverlay \
+    SystemUIOverlay \
+    TelephonyOverlay \
+    WiFiOverlay
 
-# Overlays
-PRODUCT_PACKAGES += NcmTetheringOverlay
+PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # Permissions
 PRODUCT_COPY_FILES += \
