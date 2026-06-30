@@ -193,7 +193,6 @@ $(call soong_config_set,lineage_health,fast_charge_value_fast_charge,0)
 PRODUCT_PACKAGES += \
     ApertureOverlay \
     CarrierConfigOverlay \
-    DialerOverlay \
     FrameworkResOverlay \
     LineageSDKOverlay \
     NcmTetheringOverlay \
