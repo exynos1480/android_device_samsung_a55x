@@ -8,6 +8,22 @@ DEVICE_PATH := device/samsung/a55x
 # Inherit proprietary vendor configuartion
 include vendor/samsung/a55x/BoardConfigVendor.mk
 
+## A/B
+AB_OTA_UPDATER := true
+
+AB_OTA_PARTITIONS := \
+    boot \
+    vendor_boot \
+    vbmeta_vendor \
+    dtbo \
+    odm \
+    product \
+    vbmeta \
+    system \
+    vbmeta_system \
+    vendor \
+    vendor_dlkm
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-2a-dotprod
