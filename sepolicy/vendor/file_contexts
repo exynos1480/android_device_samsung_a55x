@@ -5,8 +5,8 @@
 /data/camera(/.*)?                           u:object_r:camera_data_file:s0
 
 # Kernel modules related
-/vendor_dlkm/lib/modules/.*\.ko		          u:object_r:vendor_file:s0
-/vendor/bin/init\.insmod\.sh		            u:object_r:insmod-sh_exec:s0
+/vendor_dlkm/lib/modules/.*\.ko             u:object_r:vendor_file:s0
+/vendor/bin/init\.insmod\.sh                u:object_r:insmod-sh_exec:s0
 
 ## Devices
 # Bluetooth
@@ -32,7 +32,7 @@
 /dev/sec-nfc                                 u:object_r:nfc_device:s0
 
 # Hermes
-/dev/socket/hermesd_secnvm		     u:object_r:hermes_socket:s0
+/dev/socket/hermesd_secnvm                   u:object_r:hermes_socket:s0
 
 # k250a
 /dev/k250a                                   u:object_r:k250a_device:s0
@@ -56,6 +56,7 @@
 /efs/tas25xx(/.*)?                           u:object_r:sec_efs_file:s0
 /efs/usb_hw_param(/.*)?                      u:object_r:sec_efs_file:s0
 /efs/wv.keys                                 u:object_r:sec_efs_file:s0
+/mnt/vendor/efs/camera(/.*)?	               u:object_r:camera_efs_file:s0
 
 ## Sysfs
 # Block
@@ -64,9 +65,9 @@
 /sys/devices/platform/(.*)/block/mmcblk0/mmcblk0p[0-9]+/start u:object_r:sysfs_block:s0
 
 # Camera
-/sys/devices/virtual/camera/rear/fw_update                    u:object_r:sysfs_camera_writable:s0
-/sys/devices/virtual/camera/rear/ssrm_camera_info             u:object_r:sysfs_camera_writable:s0
-/sys/devices/virtual/camera(/.*)                              u:object_r:sysfs_camera:s0
+/sys/devices/virtual/camera/flash/rear_torch_flash           u:object_r:sysfs_camera_writable:s0
+/sys/devices/virtual/camera/flash/rear_flash	               u:object_r:sysfs_camera_writable:s0
+/sys/devices/virtual/camera(/.*)                             u:object_r:sysfs_camera:s0
 
 # Net
 /sys/devices/platform/119c0000.scsc_wifibt/net(/.*)/mtu       u:object_r:sysfs_net_mtu_writable:s0
@@ -101,6 +102,16 @@
 /vendor/lib(64)?/libion_exynos\.so                       u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libsbwchelper\.so                       u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libdrmresource\.so                      u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libmpbase\.so	                         u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libenn_common_utils\.so	               u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libenn_cpu_operators\.so	               u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libenn_engine_lib\.so	                 u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libenn_model\.so	                       u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libenn_public_api_cpp_lib\.so	         u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libenn_user_driver_cpu\.so	             u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libenn_user_driver_gpu_lib\.so	         u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libenn_user_driver_unified\.so	         u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libenn_user_lib\.so	                   u:object_r:same_process_hal_file:s0
 
 # Vulkan
 /vendor/lib(64)?/hw/vulkan\.samsung\.so                  u:object_r:same_process_hal_file:s0

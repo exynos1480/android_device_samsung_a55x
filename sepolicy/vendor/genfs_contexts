@@ -27,3 +27,6 @@ genfscon sysfs /kernel/mm/vmscan/mem_boost_mode                                 
 
 # Module
 genfscon sysfs /module/scsc_bt/parameters/bluetooth_address                                                    u:object_r:sysfs_bt_writable:s0
+
+# Camera
+genfscon sysfs /devices/virtual/camera/flash/flash_state                                                       u:object_r:sysfs_camera_writable:s0
