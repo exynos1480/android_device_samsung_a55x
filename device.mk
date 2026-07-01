@@ -320,6 +320,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
 
+# Secure Element
+PRODUCT_PACKAGES += android.hardware.secure_element-service.thales-st33
+
 # Fastbootd
 PRODUCT_PACKAGES += \
     fastbootd \
