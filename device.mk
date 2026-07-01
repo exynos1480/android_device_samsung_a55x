@@ -282,7 +282,6 @@ endif
 
 # WiFi
 PRODUCT_PACKAGES += \
-    WifiOverlay \
     android.hardware.wifi-service \
     hostapd \
     hostapd_cli \
@@ -312,7 +311,6 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay
-PRODUCT_ENFORCE_RRO_TARGETS += *
 
 # GNSS
 PRODUCT_COPY_FILES += \
