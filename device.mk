@@ -30,6 +30,12 @@ PRODUCT_SHIPPING_API_LEVEL := 34
 
 BOARD_BUILD_SUPER_IMAGE_BY_DEFAULT := true
 
+# HIDL
+# TODO(b/330696629) remove this once device can drop HIDL.
+PRODUCT_PACKAGES += \
+    hwservicemanager \
+    android.hidl.allocator@1.0-service
+
 # Graphics
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
