@@ -80,3 +80,19 @@
 # Services
 /vendor/bin/hw/sec\.android\.hardware\.nfc-service            u:object_r:hal_nfc_default_exec:s0
 /vendor/bin/dmd                                                         u:object_r:dmd_exec:s0
+/vendor/bin/hw/android\.hardware\.graphics\.composer3-service.exynos    u:object_r:hal_graphics_composer_default_exec:s0
+
+# Same process HALs installed by platform into /vendor/lib(64)?/hw
+/vendor/lib(64)?/libion_exynos\.so                       u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libsbwchelper\.so                       u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libdrmresource\.so                      u:object_r:same_process_hal_file:s0
+
+# Vulkan
+/vendor/lib(64)?/libexynosgraphicbuffer_core\.so         u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libeis_utils\.so                        u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libdrm\.so                              u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libdrm_sgpu\.so                         u:object_r:same_process_hal_file:s0
+
+# Pamir gralloc
+/vendor/lib(64)?/hw/android\.hardware\.graphics\.mapper@4\.0-impl-sgr\.so	u:object_r:same_process_hal_file:s0
+/vendor/bin/hw/android\.hardware\.graphics\.allocator-aidl-service-sgr		u:object_r:hal_graphics_allocator_default_exec:s0

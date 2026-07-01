@@ -45,6 +45,8 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/libaudioroute_samsung.so',
     ): blob_fixup()
         .replace_needed('libtinyalsa.so', 'libtinyalsa_samsung.so'),
+    'vendor/lib64/libexynosgraphicbuffer.so': blob_fixup()
+        .add_needed('libshim_ui.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
