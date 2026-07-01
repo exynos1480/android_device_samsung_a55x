@@ -101,6 +101,9 @@ blob_fixups: blob_fixups_user_type = {
             '80 0e 40 f9 e1 03 16 aa 82 0c 80 52 03 00 80 d2 24 00 80 52'),
     'vendor/lib64/libskeymint_cli.so': blob_fixup()
         .add_needed('libshim_crypto.so'),
+    'vendor/bin/hermesd': blob_fixup()
+        .binary_regex_replace(b'security.securehw.available', b'vendor.securehw.available\x00\x00')
+        .binary_regex_replace(b'security.securenvm.available', b'vendor.securenvm.available\x00\x00'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(

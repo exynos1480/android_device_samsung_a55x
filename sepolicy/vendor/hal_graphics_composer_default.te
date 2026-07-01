@@ -1,5 +1,3 @@
-# hal_graphics_composer_default.te
-
 vndbinder_use(hal_graphics_composer_default);
 
 hal_client_domain(hal_graphics_composer_default, hal_graphics_allocator);
@@ -19,3 +17,5 @@ allow hal_graphics_composer_default sysfs_decon_writable:file rw_file_perms;
 allow hal_graphics_composer_default sysfs_chipid:file r_file_perms;
 
 get_prop(hal_graphics_composer_default, vendor_camera_prop);
+
+allow hal_graphics_composer_default sysfs_backlight_writable:file rw_file_perms;

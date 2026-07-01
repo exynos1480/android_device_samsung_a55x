@@ -1,0 +1,5 @@
+recovery_only(`
+allow watchdogd rootfs:dir r_dir_perms;
+allow watchdogd rootfs:file r_file_perms;
+allow watchdogd rootfs:file { entrypoint execute };
+');
