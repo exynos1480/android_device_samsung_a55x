@@ -62,9 +62,12 @@ PRODUCT_COPY_FILES += \
 # Kernel
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 
-# Kernel Modules
+# Filesystem management tools
 PRODUCT_PACKAGES += \
-    toolbox.vendor_ramdisk
+    linker.vendor_ramdisk \
+    tune2fs.vendor_ramdisk \
+    resize2fs.vendor_ramdisk \
+    fsck.f2fs.vendor_ramdisk
 
 # Lineage Health
 PRODUCT_PACKAGES += \
