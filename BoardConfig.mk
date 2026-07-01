@@ -22,7 +22,8 @@ AB_OTA_PARTITIONS := \
     system \
     vbmeta_system \
     vendor \
-    vendor_dlkm
+    vendor_dlkm \
+    system_dlkm
 
 # Architecture
 TARGET_ARCH := arm64
@@ -56,6 +57,7 @@ BOARD_ODMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_SYSTEM_DLKMIMAGE_FILE_SYSTEM_TYPE := erofs
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := erofs
 BOARD_VENDOR_DLKMIMAGE_FILE_SYSTEM_TYPE := erofs
 
@@ -64,6 +66,7 @@ TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
+TARGET_COPY_OUT_SYSTEM_DLKM := system_dlkm
 
 # Platform
 BOARD_VENDOR := samsung
