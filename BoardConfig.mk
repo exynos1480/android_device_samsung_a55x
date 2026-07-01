@@ -98,6 +98,11 @@ BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
 BOARD_INCLUDE_RECOVERY_RAMDISK_IN_VENDOR_BOOT := true
 
 # Sepolicy
+include device/lineage/sepolicy/exynos/sepolicy.mk
+
+BOARD_SEPOLICY_TEE_FLAVOR := teegris
+include device/samsung_slsi/sepolicy/sepolicy.mk
+
 BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/vendor
 
 ## Verified Boot
