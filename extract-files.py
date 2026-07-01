@@ -39,6 +39,10 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed(
             'android.hardware.graphics.composer@2.2-resources.so',
             'android.hardware.graphics.composer@2.2-resources_samsung.so'),
+    'vendor/etc/media_codecs_performance_c2.xml': blob_fixup()
+        .regex_replace('.*sec\\.(.|\n)*D', '    </D'),
+    'vendor/etc/vintf/manifest/sec_c2_manifest_default0_1_2.xml': blob_fixup()
+        .regex_replace('.*t0.*\n', ''),
     'vendor/etc/init/android.hardware.security.keymint-service.samsung.rc': blob_fixup()
         .regex_replace(
             'android\\.hardware\\.security\\.keymint-service\n',
