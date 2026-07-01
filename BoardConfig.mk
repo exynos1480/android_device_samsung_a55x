@@ -24,6 +24,7 @@ AB_OTA_PARTITIONS := \
     product \
     vbmeta \
     system \
+    system_ext \
     vbmeta_system \
     vendor \
     vendor_dlkm \
@@ -99,7 +100,7 @@ BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
 BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := true
 
-BOARD_AVB_VBMETA_SYSTEM := odm product system system_dlkm vendor vendor_dlkm
+BOARD_AVB_VBMETA_SYSTEM := odm product system system_dlkm system_ext vendor vendor_dlkm
 BOARD_AVB_VBMETA_SYSTEM_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
 BOARD_AVB_VBMETA_SYSTEM_ALGORITHM := SHA256_RSA4096
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
