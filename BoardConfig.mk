@@ -11,6 +11,8 @@ DEVICE_PATH := device/samsung/a55x
 # Inherit proprietary vendor configuartion
 include vendor/samsung/a55x/BoardConfigVendor.mk
 
+PRODUCT_CHARACTERISTICS := phone
+
 ## A/B
 AB_OTA_UPDATER := true
 
