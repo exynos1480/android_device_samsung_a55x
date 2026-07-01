@@ -210,7 +210,8 @@ PRODUCT_PACKAGES += \
 
 # Fastbootd
 PRODUCT_PACKAGES += \
-    fastbootd
+    fastbootd \
+    android.hardware.fastboot-service.example_recovery
 
 # Shipping level
 BOARD_SHIPPING_API_LEVEL := 34
