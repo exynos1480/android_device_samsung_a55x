@@ -21,6 +21,13 @@ namespace_imports = [
 ]
 
 blob_fixups: blob_fixups_user_type = {
+    'vendor/bin/hw/android.hardware.graphics.composer3-service.exynos': blob_fixup()
+        .replace_needed(
+            'android.hardware.graphics.composer@2.1-resources.so',
+            'android.hardware.graphics.composer@2.1-resources_samsung.so')
+        .replace_needed(
+            'android.hardware.graphics.composer@2.2-resources.so',
+            'android.hardware.graphics.composer@2.2-resources_samsung.so'),
     'vendor/etc/init/init.nfc.samsung.rc': blob_fixup()
         .regex_replace('system', 'secure_element'),
     'vendor/lib64/libsec-ril.so': blob_fixup()
@@ -47,6 +54,10 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libtinyalsa.so', 'libtinyalsa_samsung.so'),
     'vendor/lib64/libexynosgraphicbuffer.so': blob_fixup()
         .add_needed('libshim_ui.so'),
+    'vendor/lib64/android.hardware.graphics.composer@2.2-resources_samsung.so': blob_fixup()
+        .replace_needed(
+            'android.hardware.graphics.composer@2.1-resources.so',
+            'android.hardware.graphics.composer@2.1-resources_samsung.so'),
     'vendor/lib64/hw/vulkan.samsung.so': blob_fixup()
         .clear_symbol_version('AHardwareBuffer_acquire')
         .clear_symbol_version('AHardwareBuffer_allocate')
