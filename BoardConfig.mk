@@ -107,9 +107,23 @@ TARGET_SOC := s5e8845
 TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 TARGET_PRODUCT_PROP += $(COMMON_PATH)/product.prop
 
-# Vendor boot
+## Recovery
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/configs/init/recovery.fstab
+TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
+TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
+
+TARGET_NO_RECOVERY := true
+BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE :=
+BOARD_USES_FULL_RECOVERY_IMAGE :=
+
+ifeq ($(AB_OTA_UPDATER), true)
+# move recovery ramdisk to vendor_boot
 BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
 BOARD_INCLUDE_RECOVERY_RAMDISK_IN_VENDOR_BOOT := true
+## remove /lib/modules in recovery ramdisk
+BOARD_RECOVERY_KERNEL_MODULES :=
+endif
 
 # Sepolicy
 include device/lineage/sepolicy/exynos/sepolicy.mk
