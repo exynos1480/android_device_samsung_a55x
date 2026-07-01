@@ -21,6 +21,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 # Virtualization service
 $(call inherit-product, packages/modules/Virtualization/apex/product_packages.mk)
 
+# Shipping level
+BOARD_SHIPPING_API_LEVEL := 34
+PRODUCT_SHIPPING_API_LEVEL := 34
+
+BOARD_BUILD_SUPER_IMAGE_BY_DEFAULT := true
+
 # Graphics
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
@@ -212,10 +218,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fastbootd \
     android.hardware.fastboot-service.example_recovery
-
-# Shipping level
-BOARD_SHIPPING_API_LEVEL := 34
-PRODUCT_SHIPPING_API_LEVEL := 34
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
