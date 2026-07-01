@@ -28,6 +28,23 @@ blob_fixups: blob_fixups_user_type = {
         .sig_replace(
             '80 0e 40 f9 e1 03 16 aa 82 0c 80 52 e3 03 15 aa 24 00 80 52',
             '80 0e 40 f9 e1 03 16 aa 82 0c 80 52 03 00 80 d2 24 00 80 52'),
+    (
+        'vendor/lib64/hw/audio.primary.s5e8845.so',
+        'vendor/lib64/libaudioproxy2.so',
+        'vendor/lib64/libaudioparamupdate.so',
+    ): blob_fixup()
+        .replace_needed('libaudioroute.so', 'libaudioroute_samsung.so')
+        .replace_needed('libtinyalsa.so', 'libtinyalsa_samsung.so'),
+    (
+        'vendor/lib64/libsensorlistener.so',
+        'vendor/lib64/libvdis_core.so',
+    ): blob_fixup()
+        .add_needed('libshim_sensorndkbridge.so'),
+    (
+        'vendor/lib64/libalsautils_sec.so',
+        'vendor/lib64/libaudioroute_samsung.so',
+    ): blob_fixup()
+        .replace_needed('libtinyalsa.so', 'libtinyalsa_samsung.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
