@@ -4,6 +4,13 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+
+import os
+import sys
+import tempfile
+from zipfile import ZipFile
+from shutil import copytree
+
 from extract_utils.fixups_blob import (
     blob_fixup,
     blob_fixups_user_type,
@@ -39,6 +46,14 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed(
             'android.hardware.graphics.composer@2.2-resources.so',
             'android.hardware.graphics.composer@2.2-resources_samsung.so'),
+    'vendor/bin/hw/gps.sh': blob_fixup()
+        .regex_replace('apex/com.samsung.android.gnss.lsi.rose', 'vendor')
+        .regex_replace('bin/gpsd_K44', 'bin/hw/gpsd_K44')
+        .regex_replace('etc/firmware', 'firmware/gnss')
+        .regex_replace('etc/cfg', 'etc/gnss')
+        .regex_replace('gps.rose', 'gps')
+        .regex_replace('gps.rose.dcm', 'gps.dcm')
+        .regex_replace('gps.rose.kdi', 'gps.kdi'),
     'vendor/etc/media_codecs_performance_c2.xml': blob_fixup()
         .regex_replace('.*sec\\.(.|\n)*D', '    </D'),
     'vendor/etc/vintf/manifest/sec_c2_manifest_default0_1_2.xml': blob_fixup()
@@ -51,6 +66,17 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed(
             'android.hardware.graphics.composer@2.1-resources.so',
             'android.hardware.graphics.composer@2.1-resources_samsung.so'),
+    (
+        'vendor/etc/init/init.gps.rose.rc',
+        'vendor/etc/init/vendor.samsung.hardware.gnss-service.rc'
+    ): blob_fixup()
+        .regex_replace('apex/com.samsung.android.gnss.lsi.rose', 'vendor')
+        .regex_replace('bin', 'bin/hw')
+        .regex_replace('gps.rose.dcm.cfg', 'gps.dcm.cfg')
+        .regex_replace('gps.rose.sh', 'gps.sh')
+        .regex_replace(
+            'vendor\\.samsung\\.hardware\\.gnss\\.lsi\\.rose-service\n',
+            'vendor.samsung.hardware.gnss-service\n'),
     'vendor/lib64/hw/vulkan.samsung.so': blob_fixup()
         .clear_symbol_version('AHardwareBuffer_acquire')
         .clear_symbol_version('AHardwareBuffer_allocate')
@@ -114,6 +140,18 @@ module = ExtractUtilsModule(
     blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,
 )
+
+if len(sys.argv) > 1 and os.path.isdir(sys.argv[1]):
+    apex_path = os.path.join(sys.argv[1], 'vendor/apex/com.samsung.android.gnss.lsi.rose.signed')
+
+    if not os.path.isdir(apex_path):
+        print(f'Extracting {apex_path}...')
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            ZipFile(apex_path + '.apex').extractall(tmp_dir)
+            with tempfile.TemporaryDirectory() as tmp_payload_dir:
+                os.system('sudo mount -o ro ' + tmp_dir + '/apex_payload.img ' + tmp_payload_dir)
+                copytree(tmp_payload_dir, apex_path, ignore = lambda path, names: 'lost+found')
+                os.system('sudo umount ' + tmp_payload_dir)
 
 if __name__ == '__main__':
     utils = ExtractUtils.device(module)
