@@ -85,16 +85,6 @@ blob_fixups: blob_fixups_user_type = {
     ): blob_fixup()
         .replace_needed('libtinyalsa.so', 'libtinyalsa_samsung.so'),
     (
-        'vendor/lib/sensors.grip.so',
-        'vendor/lib/sensors.inputvirtual.so',
-        'vendor/lib/sensors.sensorhub.so',
-        'vendor/lib64/sensors.grip.so',
-        'vendor/lib64/sensors.inputvirtual.so',
-        'vendor/lib64/sensors.sensorhub.so',
-    ): blob_fixup()
-        .remove_needed('libhidltransport.so')
-        .add_needed('libutils-v32.so')
-        .binary_regex_replace(b'_ZN7android6Thread3runEPKcim', b'_ZN7utils326Thread3runEPKcim'),
     'vendor/lib64/libexynosgraphicbuffer.so': blob_fixup()
         .add_needed('libshim_ui.so'),
     'vendor/lib64/libsamsungcamerahal.so': blob_fixup()
