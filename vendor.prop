@@ -65,3 +65,6 @@ ro.soc.model=Exynos 1480
 ## Wi-Fi
 wifi.direct.interface=p2p0
 ro.boot.wificountrycode=00
+
+## RIL
+ro.vendor.radio.default_network=26

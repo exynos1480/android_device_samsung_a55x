@@ -125,6 +125,11 @@ BOARD_INCLUDE_RECOVERY_RAMDISK_IN_VENDOR_BOOT := true
 BOARD_RECOVERY_KERNEL_MODULES :=
 endif
 
+## RIL
+ENABLE_VENDOR_RIL_SERVICE := true
+
+$(call soong_config_set,cbd,protocol,sipc)
+
 # Sepolicy
 include device/lineage/sepolicy/exynos/sepolicy.mk
 

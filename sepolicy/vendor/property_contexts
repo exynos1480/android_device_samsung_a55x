@@ -13,6 +13,12 @@ ro.factory.factory_binary  u:object_r:vendor_factory_prop:s0
 # RADIO
 ro.radio.needcalibration   u:object_r:vendor_radio_prop:s0
 
+# RIL
+persist.vendor.cbd.btl_size               u:object_r:vendor_radio_prop:s0
+ro.vendor.radio.default_network           u:object_r:vendor_radio_prop:s0
+ro.vendor.multisim.simslotcount           u:object_r:vendor_radio_prop:s0
+persist.vendor.ril.supportNrModefromCp    u:object_r:vendor_radio_prop:s0
+
 # WLAN
 vendor.wlan.               u:object_r:vendor_wlan_prop:s0
 
