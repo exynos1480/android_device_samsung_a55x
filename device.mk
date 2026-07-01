@@ -98,4 +98,10 @@ PRODUCT_SHIPPING_API_LEVEL := 34
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(DEVICE_PATH)
+    $(DEVICE_PATH) \
+    hardware/google/interfaces \
+    hardware/google/pixel \
+    hardware/samsung \
+    hardware/samsung_slsi-linaro/exynos/cpboot_v3 \
+    hardware/samsung_slsi/libbt
+
