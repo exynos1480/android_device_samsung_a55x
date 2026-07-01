@@ -65,6 +65,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
 
+# Boot control HAL
+PRODUCT_PACKAGES += \
+    com.android.hardware.boot \
+    android.hardware.boot-service.default_recovery
+
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
