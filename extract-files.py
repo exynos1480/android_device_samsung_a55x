@@ -1,9 +1,8 @@
 #!/usr/bin/env -S PYTHONPATH=../../../tools/extract-utils python3
 #
-# SPDX-FileCopyrightText: 2024 The LineageOS Project
+# SPDX-FileCopyrightText: The LineageOS Project
 # SPDX-License-Identifier: Apache-2.0
 #
-
 
 import os
 import sys
@@ -15,10 +14,12 @@ from extract_utils.fixups_blob import (
     blob_fixup,
     blob_fixups_user_type,
 )
+
 from extract_utils.fixups_lib import (
     lib_fixups,
     lib_fixups_user_type,
 )
+
 from extract_utils.main import (
     ExtractUtils,
     ExtractUtilsModule,
@@ -26,8 +27,7 @@ from extract_utils.main import (
 
 namespace_imports = [
     'device/samsung/a55x',
-    'hardware/samsung_slsi-linaro/exynos',
-    'hardware/samsung_slsi-linaro/graphics',
+    'hardware/samsung',
 ]
 
 def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
@@ -114,7 +114,6 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/libaudioroute_samsung.so',
     ): blob_fixup()
         .replace_needed('libtinyalsa.so', 'libtinyalsa_samsung.so'),
-    (
     'vendor/lib64/libexynosgraphicbuffer.so': blob_fixup()
         .add_needed('libshim_ui.so'),
     'vendor/lib64/libsamsungcamerahal.so': blob_fixup()

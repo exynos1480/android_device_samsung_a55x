@@ -16,6 +16,7 @@ using android::base::GetProperty;
 static const variant_info_t a55xnaxx_eux = {
     .device = "a55x",
     .model = "SM-A556B",
+    .csc_code = "EUX",
     .name = "a55xnaxx",
     .build_fingerprint = "samsung/a55xnaxx/a55x:14/UP1A.231005.007/A556BXXSABYI1:user/release-keys",
     .build_desc = "a55xnaxx-user 14 UP1A.231005.007 A556BXXSABYI1 release-keys"

@@ -15,8 +15,14 @@
 
 cc_library_shared {
     name: "libshim_crypto",
+    enabled: false,
+    target: {
+        android_arm64: {
+            enabled: true,
+        },
+    },
     srcs: ["crypto.c"],
     compile_multilib: "64",
-    shared_libs: ["libcrypto-v33"],
+    shared_libs: ["libcrypto"],
     vendor: true,
 }
