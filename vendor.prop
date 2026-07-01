@@ -4,6 +4,9 @@ ro.crypto.volume.options=aes-256-xts:aes-256-cts:v2
 ## APK Verity
 ro.apk_verity.mode=2
 
+## Keystore
+ro.hardware.keystore_desede=true
+
 ## Audio
 audio.offload.min.duration.secs=30
 aaudio.mmap_policy=2
@@ -57,7 +60,7 @@ ro.vendor.cscsupported=1
 
 ## SoC
 ro.soc.manufacturer=Samsung
-ro.soc.model=Exynos 1280
+ro.soc.model=Exynos 1480
 
 ## Wi-Fi
 wifi.direct.interface=p2p0

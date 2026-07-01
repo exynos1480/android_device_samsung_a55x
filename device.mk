@@ -32,6 +32,18 @@ PRODUCT_PACKAGES += \
     android.hardware.health-service.samsung \
     android.hardware.health-service.samsung-recovery
 
+# Init
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/init/fstab.s5e8845:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/fstab.s5e8845 \
+    $(DEVICE_PATH)/configs/init/fstab.s5e8845:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.s5e8845 \
+    $(DEVICE_PATH)/configs/init/fstab.s5e8845:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.s5e8845 \
+    $(DEVICE_PATH)/configs/init/init.s5e8845.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.s5e8845.rc \
+    $(DEVICE_PATH)/configs/init/init.samsung.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.samsung.rc \
+    $(DEVICE_PATH)/configs/init/init.s5e8845.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.s5e8845.usb.rc \
+    $(DEVICE_PATH)/configs/init/init.recovery.s5e8845.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.s5e8845.rc \
+    $(DEVICE_PATH)/configs/init/init.recovery.samsung.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.samsung.rc \
+    $(DEVICE_PATH)/configs/init/ueventd.s5e8845.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc
+
 # NFC
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.ese.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.ese.xml \
