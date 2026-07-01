@@ -52,6 +52,16 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_VIRTUAL_AB_COMPRESSION_METHOD := lz4
 
+# Audio
+PRODUCT_PACKAGES += \
+    android.hardware.audio.effect@7.0-impl \
+    android.hardware.audio@7.1-impl \
+    android.hardware.audio.service \
+    android.hardware.bluetooth.audio-impl \
+    audio.bluetooth.default \
+    audio.r_submix.default \
+    audio.usb.default
+
 # Vendor service manager
 PRODUCT_PACKAGES += \
     vndservicemanager
