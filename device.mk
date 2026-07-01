@@ -12,3 +12,7 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Inherit from the proprietary version
 $(call inherit-product-if-exists, vendor/samsung/a55x/a55x-vendor.mk)
+
+# Shipping level
+BOARD_SHIPPING_API_LEVEL := 34
+PRODUCT_SHIPPING_API_LEVEL := 34
