@@ -21,6 +21,8 @@ namespace_imports = [
 ]
 
 blob_fixups: blob_fixups_user_type = {
+    'vendor/etc/init/init.nfc.samsung.rc': blob_fixup()
+        .regex_replace('system', 'secure_element'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
