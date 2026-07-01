@@ -9,6 +9,9 @@ DEVICE_PATH := device/samsung/a55x
 # Inherit from the proprietary version
 $(call inherit-product-if-exists, vendor/samsung/a55x/a55x-vendor.mk)
 
++# Enable virtual AB with vendor ramdisk
++$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/vabc_features.mk)
+
 # Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
@@ -29,6 +32,8 @@ AB_OTA_POSTINSTALL_CONFIG += \
 
 PRODUCT_PACKAGES += \
     otapreopt_script
+
+PRODUCT_VIRTUAL_AB_COMPRESSION_METHOD := lz4
 
 # Update engine
 PRODUCT_PACKAGES += \
