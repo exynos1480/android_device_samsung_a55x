@@ -63,6 +63,9 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.usb.default
 
+PRODUCT_PACKAGES += \
+    SamsungDAP
+
 # Vendor service manager
 PRODUCT_PACKAGES += \
     vndservicemanager
