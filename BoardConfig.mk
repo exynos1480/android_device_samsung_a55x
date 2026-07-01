@@ -13,6 +13,7 @@ AB_OTA_UPDATER := true
 
 AB_OTA_PARTITIONS := \
     boot \
+    init_boot \
     vendor_boot \
     vbmeta_vendor \
     dtbo \
@@ -31,6 +32,10 @@ TARGET_ARCH_VARIANT := armv8-2a-dotprod
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := cortex-a76
+
+## Init Boot
+BOARD_INIT_BOOT_HEADER_VERSION := 4
+BOARD_MKBOOTIMG_INIT_ARGS += --header_version $(BOARD_INIT_BOOT_HEADER_VERSION)
 
 # Boot Image
 BOARD_BOOTCONFIG := buildtime_bootconfig=enable androidboot.console=0
