@@ -143,6 +143,7 @@ PRODUCT_PACKAGES += \
     otapreopt_script
 
 PRODUCT_VIRTUAL_AB_COMPRESSION_METHOD := lz4
+PRODUCT_VENDOR_PROPERTIES += ro.virtual_ab.compression.threads=true
 
 # Audio
 PRODUCT_PACKAGES += \
