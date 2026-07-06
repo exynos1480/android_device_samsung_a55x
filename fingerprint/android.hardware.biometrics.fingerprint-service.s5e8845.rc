@@ -1,5 +1,0 @@
-service vendor.fingerprint-default /vendor/bin/hw/android.hardware.biometrics.fingerprint-service.s5e8845
-    class late_start
-    user system
-    group system input uhid
-    shutdown critical

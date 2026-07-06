@@ -104,7 +104,11 @@ PRODUCT_PACKAGES += \
     fsck.f2fs.vendor_ramdisk
 
 # Fingerprint
-PRODUCT_PACKAGES += android.hardware.biometrics.fingerprint-service.s5e8845
+PRODUCT_PACKAGES += android.hardware.biometrics.fingerprint-service.samsung
+
+# UDFPS
+$(call soong_config_set,samsungUdfpsVars,udfps_zorder,0xff)
+$(call soong_config_set,surfaceflinger,udfps_lib,//hardware/samsung/fingerprint:libudfps_extension.samsung)
 
 # Vibrator
 PRODUCT_PACKAGES += android.hardware.vibrator-service.s5e8845
