@@ -1,0 +1,2 @@
+on init
+    write /sys/class/lcd/panel/mask_brightness 319
