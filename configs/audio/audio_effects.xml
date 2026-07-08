@@ -65,12 +65,15 @@
     <postprocess>
         <stream type="music">
             <apply effect="sa3d"/>
+            <apply effect="soundbooster_plus"/>
         </stream>
         <stream type="ring">
             <apply effect="sa3d"/>
+            <apply effect="soundbooster_plus"/>
         </stream>
         <stream type="alarm">
             <apply effect="sa3d"/>
+            <apply effect="soundbooster_plus"/>
         </stream>
     </postprocess>
 </audio_effects_conf>

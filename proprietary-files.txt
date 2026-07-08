@@ -334,6 +334,7 @@ vendor/lib64/vendor.samsung.hardware.nfc_aidl-V1-ndk.so
 
 # RIL
 vendor/bin/hw/rild
+vendor/etc/floating_feature.xml
 vendor/etc/init/init.baseband.rc
 vendor/etc/init/init.vendor.rilcommon.rc
 vendor/etc/init/vendor.samsung.rilchip.slsi.rc
