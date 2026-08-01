@@ -58,6 +58,9 @@ cc_binary {
     srcs: [
         "service.cpp",
     ],
+    local_include_dirs: [
+        "include",
+    ],
     required: [
         "android.hardware.hardware_keystore.xml",
     ],

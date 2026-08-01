@@ -20,10 +20,10 @@
 #include <android/binder_manager.h>
 #include <android/binder_process.h>
 
-#include <AndroidKeyMintDevice.h>
-#include <AndroidRemotelyProvisionedComponentDevice.h>
-#include <AndroidSecureClock.h>
-#include <AndroidSharedSecret.h>
+#include <SKeyMint10Device.h>
+#include <SRemotelyProvisionedComponent.h>
+#include <SSecureClock.h>
+#include <SSharedSecret.h>
 #include <keymaster/soft_keymaster_logger.h>
 
 using aidl::android::hardware::security::keymint::AndroidKeyMintDevice;
