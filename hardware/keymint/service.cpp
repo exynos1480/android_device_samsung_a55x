@@ -24,7 +24,6 @@
 #include <SRemotelyProvisionedComponent.h>
 #include <SSecureClock.h>
 #include <SSharedSecret.h>
-#include <keymaster/soft_keymaster_logger.h>
 
 using aidl::android::hardware::security::keymint::SecurityLevel;
 using skeymint::SKeyMint10Device;
@@ -44,8 +43,6 @@ std::shared_ptr<T> addService(Args&&... args) {
 }
 
 int main() {
-    // The global logger object required by keymaster's logging macros in keymaster/logger.h.
-    keymaster::SoftKeymasterLogger km_logger;
     // Zero threads seems like a useless pool, but below we'll join this thread to it, increasing
     // the pool size to 1.
     ABinderProcess_setThreadPoolMaxThreadCount(0);
