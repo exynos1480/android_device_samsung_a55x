@@ -14,29 +14,19 @@
  * limitations under the License.
  */
 
-#pragma once
-
-#include "SKeyMint10Device.h"
 #include <aidl/android/hardware/security/secureclock/BnSecureClock.h>
 #include <aidl/android/hardware/security/secureclock/TimeStampToken.h>
 #include <aidl/android/hardware/security/secureclock/Timestamp.h>
 
-namespace keymaster {
-class AndroidKeymaster;
-}
+namespace skeymint {
+using namespace ::aidl::android::hardware::security::secureclock;
 
-namespace aidl::android::hardware::security::secureclock {
 using ::ndk::ScopedAStatus;
-using std::shared_ptr;
-using std::vector;
 
-class AndroidSecureClock : public BnSecureClock {
+class SSecureClock : public BnSecureClock {
   public:
-    explicit AndroidSecureClock(const std::shared_ptr<keymint::AndroidKeyMintDevice>& keymint);
-    virtual ~AndroidSecureClock();
+    explicit SSecureClock();
+    virtual ~SSecureClock();
     ScopedAStatus generateTimeStamp(int64_t challenge, TimeStampToken* token) override;
-
-  private:
-    shared_ptr<::keymaster::AndroidKeymaster>& impl_;
 };
-}  // namespace aidl::android::hardware::security::secureclock
+}  // namespace skeymint

@@ -14,29 +14,21 @@
  * limitations under the License.
  */
 
-#pragma once
-
-#include "SKeyMint10Device.h"
 #include <aidl/android/hardware/security/sharedsecret/BnSharedSecret.h>
 #include <aidl/android/hardware/security/sharedsecret/SharedSecretParameters.h>
 
-namespace keymaster {
-class AndroidKeymaster;
-}
-namespace aidl::android::hardware::security::sharedsecret {
+namespace skeymint {
+using namespace ::aidl::android::hardware::security::sharedsecret;
+
 using ::ndk::ScopedAStatus;
-using std::shared_ptr;
 using std::vector;
 
-class AndroidSharedSecret : public BnSharedSecret {
+class SSharedSecret : public BnSharedSecret {
   public:
-    explicit AndroidSharedSecret(const std::shared_ptr<keymint::AndroidKeyMintDevice>& keymint);
-    virtual ~AndroidSharedSecret();
+    explicit SSharedSecret();
+    virtual ~SSharedSecret();
     ScopedAStatus getSharedSecretParameters(SharedSecretParameters* params) override;
     ScopedAStatus computeSharedSecret(const vector<SharedSecretParameters>& params,
                                       vector<uint8_t>* sharingCheck) override;
-
-  private:
-    shared_ptr<::keymaster::AndroidKeymaster>& impl_;
 };
-}  // namespace aidl::android::hardware::security::sharedsecret
+}  // namespace skeymint

@@ -14,44 +14,36 @@
  * limitations under the License.
  */
 
-#pragma once
-
-#include <SKeyMint10Device.h>
 #include <aidl/android/hardware/security/keymint/BnRemotelyProvisionedComponent.h>
 #include <aidl/android/hardware/security/keymint/RpcHardwareInfo.h>
 #include <aidl/android/hardware/security/keymint/SecurityLevel.h>
 #include <cppbor.h>
-#include <keymaster/UniquePtr.h>
-#include <keymaster/android_keymaster.h>
 
-namespace aidl::android::hardware::security::keymint {
+namespace skeymint {
+using namespace ::aidl::android::hardware::security::keymint;
 
-class AndroidRemotelyProvisionedComponentDevice : public BnRemotelyProvisionedComponent {
-    using ScopedAStatus = ::ndk::ScopedAStatus;
+using ::ndk::ScopedAStatus;
+using std::vector;
 
+class SRemotelyProvisionedComponent : public BnRemotelyProvisionedComponent {
   public:
-    explicit AndroidRemotelyProvisionedComponentDevice(
-        const std::shared_ptr<AndroidKeyMintDevice>& keymint);
-    virtual ~AndroidRemotelyProvisionedComponentDevice() = default;
+    explicit SRemotelyProvisionedComponent();
+    virtual ~SRemotelyProvisionedComponent() = default;
 
     ScopedAStatus getHardwareInfo(RpcHardwareInfo* info) override;
 
     ScopedAStatus generateEcdsaP256KeyPair(bool testMode, MacedPublicKey* macedPublicKey,
-                                           std::vector<uint8_t>* privateKeyHandle) override;
+                                           vector<uint8_t>* privateKeyHandle) override;
 
     ScopedAStatus generateCertificateRequest(bool testMode,
-                                             const std::vector<MacedPublicKey>& keysToSign,
-                                             const std::vector<uint8_t>& endpointEncCertChain,
-                                             const std::vector<uint8_t>& challenge,
+                                             const vector<MacedPublicKey>& keysToSign,
+                                             const vector<uint8_t>& endpointEncCertChain,
+                                             const vector<uint8_t>& challenge,
                                              DeviceInfo* deviceInfo, ProtectedData* protectedData,
-                                             std::vector<uint8_t>* keysToSignMac) override;
+                                             vector<uint8_t>* keysToSignMac) override;
 
-    ScopedAStatus generateCertificateRequestV2(const std::vector<MacedPublicKey>& keysToSign,
-                                               const std::vector<uint8_t>& challenge,
-                                               std::vector<uint8_t>* csr) override;
-
-  private:
-    std::shared_ptr<::keymaster::AndroidKeymaster> impl_;
+    ScopedAStatus generateCertificateRequestV2(const vector<MacedPublicKey>& keysToSign,
+                                               const vector<uint8_t>& challenge,
+                                               vector<uint8_t>* csr) override;
 };
-
-}  // namespace aidl::android::hardware::security::keymint
+}  // namespace skeymint

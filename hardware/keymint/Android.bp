@@ -22,13 +22,6 @@ vintf_fragment {
     vendor: true,
 }
 
-// The following target has an insecure implementation of KeyMint where the
-// trusted application (TA) code runs in-process alongside the HAL service
-// code.
-//
-// A real device is required to run the TA code in a secure environment, as
-// per CDD 9.11 [C-1-1]: "MUST back up the keystore implementation with an
-// isolated execution environment."
 cc_binary {
     name: "android.hardware.security.keymint-service.samsung",
     relative_install_path: "hw",
@@ -38,10 +31,8 @@ cc_binary {
         "-Wall",
         "-Wextra",
     ],
-    defaults: [
-        "keymint_cpp_impl_hal_aidl_ndk_shared",
-    ],
     shared_libs: [
+        "android.hardware.security.keymint-V3-ndk",
         "android.hardware.security.rkp-V3-ndk",
         "android.hardware.security.sharedsecret-V1-ndk",
         "android.hardware.security.secureclock-V1-ndk",
@@ -49,10 +40,9 @@ cc_binary {
         "libbinder_ndk",
         "libcppbor",
         "libcrypto",
-        "libkeymaster_portable",
-        "libkeymint",
         "liblog",
         "libpuresoftkeymasterdevice",
+        "libskeymint10device",
         "libutils",
     ],
     srcs: [
@@ -62,7 +52,7 @@ cc_binary {
         "include",
     ],
     required: [
-        "android.hardware.hardware_keystore.xml",
+        "android.hardware.hardware_keystore_V3.xml",
     ],
     vintf_fragment_modules: [
         "android.hardware.security.keymint-service.samsung.xml",

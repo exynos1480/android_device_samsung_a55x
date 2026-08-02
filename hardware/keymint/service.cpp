@@ -26,11 +26,11 @@
 #include <SSharedSecret.h>
 #include <keymaster/soft_keymaster_logger.h>
 
-using aidl::android::hardware::security::keymint::AndroidKeyMintDevice;
-using aidl::android::hardware::security::keymint::AndroidRemotelyProvisionedComponentDevice;
 using aidl::android::hardware::security::keymint::SecurityLevel;
-using aidl::android::hardware::security::secureclock::AndroidSecureClock;
-using aidl::android::hardware::security::sharedsecret::AndroidSharedSecret;
+using skeymint::SKeyMint10Device;
+using skeymint::SRemotelyProvisionedComponent;
+using skeymint::SSecureClock;
+using skeymint::SSharedSecret;
 
 template <typename T, class... Args>
 std::shared_ptr<T> addService(Args&&... args) {
@@ -50,14 +50,16 @@ int main() {
     // the pool size to 1.
     ABinderProcess_setThreadPoolMaxThreadCount(0);
     // Add Keymint Service
-    std::shared_ptr<AndroidKeyMintDevice> keyMint =
-            addService<AndroidKeyMintDevice>(SecurityLevel::SOFTWARE);
+    std::shared_ptr<SKeyMint10Device> keyMint =
+            addService<SKeyMint10Device>(SecurityLevel::TRUSTED_ENVIRONMENT);
     // Add Secure Clock Service
-    addService<AndroidSecureClock>(keyMint);
+    addService<SSecureClock>();
     // Add Shared Secret Service
-    addService<AndroidSharedSecret>(keyMint);
+    addService<SSharedSecret>();
     // Add Remotely Provisioned Component Service
-    addService<AndroidRemotelyProvisionedComponentDevice>(keyMint);
+    addService<SRemotelyProvisionedComponent>();
+    // Initialise Keymint Service
+    keyMint->initialize();
     ABinderProcess_joinThreadPool();
     return EXIT_FAILURE;  // should not reach
 }

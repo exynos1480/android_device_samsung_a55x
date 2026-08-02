@@ -14,29 +14,23 @@
  * limitations under the License.
  */
 
-#pragma once
-
 #include <aidl/android/hardware/security/keymint/BnKeyMintDevice.h>
 #include <aidl/android/hardware/security/keymint/BnKeyMintOperation.h>
 #include <aidl/android/hardware/security/keymint/HardwareAuthToken.h>
 
-namespace keymaster {
-class AndroidKeymaster;
-}
+namespace skeymint {
+using namespace ::aidl::android::hardware::security::keymint;
 
-namespace aidl::android::hardware::security::keymint {
+using ::aidl::android::hardware::security::secureclock::TimeStampToken;
 using ::ndk::ScopedAStatus;
 using std::array;
 using std::optional;
-using std::shared_ptr;
 using std::vector;
 
-using secureclock::TimeStampToken;
-
-class AndroidKeyMintDevice : public BnKeyMintDevice {
+class SKeyMint10Device : public BnKeyMintDevice {
   public:
-    explicit AndroidKeyMintDevice(SecurityLevel securityLevel);
-    virtual ~AndroidKeyMintDevice();
+    explicit SKeyMint10Device(SecurityLevel securityLevel);
+    virtual ~SKeyMint10Device();
 
     ScopedAStatus getHardwareInfo(KeyMintHardwareInfo* info) override;
 
@@ -87,16 +81,9 @@ class AndroidKeyMintDevice : public BnKeyMintDevice {
                                  vector<uint8_t>* rootOfTrust) override;
     ScopedAStatus sendRootOfTrust(const vector<uint8_t>& rootOfTrust) override;
 
-    ScopedAStatus
-    setAdditionalAttestationInfo(const vector<KeyParameter>& additionalAttestationInfo) override;
-
-    shared_ptr<::keymaster::AndroidKeymaster>& getKeymasterImpl() { return impl_; }
+    void initialize();
 
   protected:
-    std::shared_ptr<::keymaster::AndroidKeymaster> impl_;
     SecurityLevel securityLevel_;
 };
-
-std::shared_ptr<IKeyMintDevice> CreateKeyMintDevice(SecurityLevel securityLevel);
-
-}  // namespace aidl::android::hardware::security::keymint
+}  // namespace skeymint
