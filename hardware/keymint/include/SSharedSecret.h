@@ -15,7 +15,6 @@
  */
 
 #include <aidl/android/hardware/security/sharedsecret/BnSharedSecret.h>
-#include <aidl/android/hardware/security/sharedsecret/SharedSecretParameters.h>
 
 namespace skeymint {
 using namespace ::aidl::android::hardware::security::sharedsecret;

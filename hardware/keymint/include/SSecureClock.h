@@ -15,8 +15,6 @@
  */
 
 #include <aidl/android/hardware/security/secureclock/BnSecureClock.h>
-#include <aidl/android/hardware/security/secureclock/TimeStampToken.h>
-#include <aidl/android/hardware/security/secureclock/Timestamp.h>
 
 namespace skeymint {
 using namespace ::aidl::android::hardware::security::secureclock;

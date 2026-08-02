@@ -15,8 +15,6 @@
  */
 
 #include <aidl/android/hardware/security/keymint/BnKeyMintDevice.h>
-#include <aidl/android/hardware/security/keymint/BnKeyMintOperation.h>
-#include <aidl/android/hardware/security/keymint/HardwareAuthToken.h>
 
 namespace skeymint {
 using namespace ::aidl::android::hardware::security::keymint;

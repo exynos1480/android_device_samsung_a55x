@@ -15,8 +15,6 @@
  */
 
 #include <aidl/android/hardware/security/keymint/BnRemotelyProvisionedComponent.h>
-#include <aidl/android/hardware/security/keymint/RpcHardwareInfo.h>
-#include <aidl/android/hardware/security/keymint/SecurityLevel.h>
 
 namespace skeymint {
 using namespace ::aidl::android::hardware::security::keymint;
