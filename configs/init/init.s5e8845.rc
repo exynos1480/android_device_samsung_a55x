@@ -746,6 +746,9 @@ service insmod_sh_system /vendor/bin/init.insmod.sh system_dlkm
 on property:vendor.system_dlkm.modules.ready=true
     start insmod_sh_common
 
+on property:vendor.vendor_dlkm.modules.ready=true
+    start wificond
+
 service prepare_param /system/bin/prepare_param.sh /dev/block/by-name/param
     class core
     user root
