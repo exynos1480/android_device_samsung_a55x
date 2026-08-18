@@ -25,6 +25,11 @@ on early-boot
     setprop sys.usb.mtp.batchcancel true
     symlink /config/usb_gadget/g1/configs/b.1 /config/usb_gadget/g1/os_desc/b.1
 
+    # ss_mon function
+    mkdir /config/usb_gadget/g1/functions/ss_mon.etc
+    mkdir /config/usb_gadget/g1/functions/ss_mon.mtp
+    mkdir /config/usb_gadget/g1/functions/ss_mon.ptp
+
     # mtp function
     mkdir /config/usb_gadget/g1/functions/mtp.gs0
 
