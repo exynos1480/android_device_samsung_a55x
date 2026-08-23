@@ -3,6 +3,10 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Kernel Modules
+PRODUCT_PACKAGES += \
+    toolbox.vendor_ramdisk
+
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
