@@ -49,6 +49,12 @@ PRODUCT_PACKAGES += \
     update_engine_sideload \
     update_verifier
 
+# Audio
+PRODUCT_PACKAGES += \
+    audio_effects.xml \
+    audio_policy_configuration.xml \
+    bluetooth_with_le_audio_policy_configuration_7_0.xml
+
 # Boot Control
 PRODUCT_PACKAGES += \
     android.hardware.boot-service.exynos \
