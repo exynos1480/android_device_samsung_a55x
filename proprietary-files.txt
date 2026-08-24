@@ -105,6 +105,15 @@ vendor/lib64/libenn_user_driver_unified.so
 vendor/lib64/libenn_user_lib.so
 vendor/lib64/vendor.samsung_slsi.hardware.enn_aidl-V1-ndk.so
 
+# Fingerprint - Dependencies
+vendor/lib64/libegis_fp_normal_sensor_test.so
+vendor/lib64/libsfp_sensor.so
+vendor/lib64/libsfp_teegw.so
+vendor/lib64/vendor.samsung.hardware.biometrics.fingerprint-V1-ndk.so
+
+# Fingerprint - Init
+vendor/etc/init/init.fingerprint.rc
+
 # Graphics
 vendor/etc/Khronos/OpenCL/samsung.icd;SYMLINK=vendor/Khronos/OpenCL/vendors/samsung.icd
 vendor/etc/hdr_samsung_mx.key
