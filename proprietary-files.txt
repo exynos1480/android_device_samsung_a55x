@@ -31,6 +31,25 @@ vendor/lib64/libsecaudiocoreutils.so
 vendor/lib64/libsecaudioinfo.so
 vendor/lib64/libspatializerparamstorage.so
 
+# Camera
+vendor/lib64/hw/camera.s5e8845.so
+vendor/lib64/libIRTA.so
+vendor/lib64/libeis_core.so
+vendor/lib64/libeis_interface.so
+vendor/lib64/libsec2lsi_conversion.so
+vendor/lib64/libuniapi.so
+vendor/lib64/libuniplugin.so
+
+# Camera - Dependencies
+vendor/lib64/libexynos_sensor_interface.so
+vendor/lib64/libhwjsqz.so
+vendor/lib64/libmpbase.so
+vendor/lib64/libsemseg.so
+vendor/lib64/libsensorlistener.so
+vendor/lib64/libvpl.so
+vendor/lib64/vendor.samsung.hardware.thermal-V1-ndk.so
+vendor/lib64/vendor.samsung.hardware.thermal@1.0.so
+
 # Codec2
 vendor/lib64/libHDRMetaGenerator.so
 
