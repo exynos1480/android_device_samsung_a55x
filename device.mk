@@ -119,6 +119,10 @@ $(call soong_config_set_bool,samsungCameraVars,usage_64bit,true)
 PRODUCT_PACKAGES += \
     com.android.hardware.drm.clearkey
 
+# Fingerprint
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint-service.samsung
+
 # Gatekeeper
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper-service.teegris
@@ -180,6 +184,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.flash-autofocus.prebuilt.xml \
     android.hardware.camera.full.prebuilt.xml \
     android.hardware.camera.raw.prebuilt.xml \
+    android.hardware.fingerprint.prebuilt.xml \
     android.hardware.sensor.accelerometer.prebuilt.xml \
     android.hardware.sensor.gyroscope.prebuilt.xml \
     android.hardware.sensor.hifi_sensors.prebuilt.xml \
