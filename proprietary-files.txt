@@ -31,6 +31,9 @@ vendor/lib64/libsecaudiocoreutils.so
 vendor/lib64/libsecaudioinfo.so
 vendor/lib64/libspatializerparamstorage.so
 
+# Codec2
+vendor/lib64/libHDRMetaGenerator.so
+
 # Codec2 - Configuration
 vendor/etc/media_codecs_c2.xml
 vendor/etc/media_codecs_performance_c2.xml
