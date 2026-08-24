@@ -26,6 +26,13 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
+    name: "init.s5e8845.usb.rc",
+    relative_install_path: "init",
+    src: "init.s5e8845.usb.rc",
+    vendor: true,
+}
+
+prebuilt_etc {
     name: "init.samsung.rc",
     relative_install_path: "init",
     src: "init.samsung.rc",
