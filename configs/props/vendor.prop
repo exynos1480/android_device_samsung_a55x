@@ -86,6 +86,10 @@ ro.frp.pst=/dev/block/by-name/persistent
 # Power
 vendor.powerhal.disp.idle_support=false
 
+# RIL
+ro.telephony.default_cdma_sub=0
+ro.vendor.epdg.support=true
+
 # ZRAM
 ro.zram.mark_idle_delay_mins=60
 ro.zram.first_wb_delay_mins=180
