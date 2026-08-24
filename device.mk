@@ -176,6 +176,13 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.flash-autofocus.prebuilt.xml \
     android.hardware.camera.full.prebuilt.xml \
     android.hardware.camera.raw.prebuilt.xml \
+    android.hardware.sensor.accelerometer.prebuilt.xml \
+    android.hardware.sensor.gyroscope.prebuilt.xml \
+    android.hardware.sensor.hifi_sensors.prebuilt.xml \
+    android.hardware.sensor.light.prebuilt.xml \
+    android.hardware.sensor.proximity.prebuilt.xml \
+    android.hardware.sensor.stepcounter.prebuilt.xml \
+    android.hardware.sensor.stepdetector.prebuilt.xml \
     android.hardware.vulkan.compute-0.prebuilt.xml \
     android.hardware.vulkan.level-1.prebuilt.xml \
     android.hardware.vulkan.version-1_3.prebuilt.xml \
@@ -202,6 +209,14 @@ PRODUCT_PACKAGES += \
 # Power - Configuration
 PRODUCT_PACKAGES += \
     powerhint.json
+
+# Sensors
+PRODUCT_PACKAGES += \
+    android.hardware.sensors-service.samsung-multihal
+
+# Sensors - Configuration
+PRODUCT_PACKAGES += \
+    hals.conf
 
 # Soong Namespaces
 PRODUCT_SOONG_NAMESPACES += \
