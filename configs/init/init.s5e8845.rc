@@ -180,6 +180,17 @@ on init
     chown system system /dev/cpuset/sf/cpus
     write /dev/cpuset/sf/cpus 0-7
 
+    mkdir /dev/cpuset/surfaceflinger
+    write /dev/cpuset/surfaceflinger/cpus 6-7
+    write /dev/cpuset/surfaceflinger/mems 0
+    chown system system /dev/cpuset/surfaceflinger
+    chown system system /dev/cpuset/surfaceflinger/tasks
+    chown system system /dev/cpuset/surfaceflinger/cgroup.procs
+    # set surfaceflinger to 0775 so SurfaceFlinger can touch it
+    chmod 0775 /dev/cpuset/surfaceflinger
+    chmod 0664 /dev/cpuset/surfaceflinger/tasks
+    chmod 0664 /dev/cpuset/surfaceflinger/cgroup.procs
+
     # Apply network parameters for high data performance.
     write /proc/sys/net/core/rmem_default 327680
     write /proc/sys/net/core/rmem_max 8388608
