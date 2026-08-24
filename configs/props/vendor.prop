@@ -48,6 +48,7 @@ ro.vendor.gpu.dataspace=1
 vendor.debug.c2.sbwc.enable=true
 
 # Graphics
+debug.sf.auto_latch_unsignaled=0
 debug.sf.high_fps_late_app_phase_offset_ns=0
 debug.sf.high_fps_late_sf_phase_offset_ns=0
 debug.sf.latch_unsignaled=1
