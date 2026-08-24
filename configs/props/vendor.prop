@@ -1,0 +1,3 @@
+# A/B
+ro.virtual_ab.compression.threads=true
+ro.virtual_ab.set_task_profiles=true
