@@ -2,6 +2,13 @@
 ro.virtual_ab.compression.threads=true
 ro.virtual_ab.set_task_profiles=true
 
+# Audio
+aaudio.hw_burst_min_usec=2000
+aaudio.mmap_exclusive_policy=2
+aaudio.mmap_policy=2
+audio.offload.min.duration.secs=30
+ro.audio.spatializer_enabled=true
+
 # ZRAM
 ro.zram.mark_idle_delay_mins=60
 ro.zram.first_wb_delay_mins=180
