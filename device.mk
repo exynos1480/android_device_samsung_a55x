@@ -199,6 +199,10 @@ PRODUCT_SHIPPING_API_LEVEL := $(BOARD_SHIPPING_API_LEVEL)
 PRODUCT_PACKAGES += \
     android.hardware.power-service.pixel-libperfmgr
 
+# Power - Configuration
+PRODUCT_PACKAGES += \
+    powerhint.json
+
 # Soong Namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \

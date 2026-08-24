@@ -1,0 +1,324 @@
+{
+    "Nodes": [
+        {
+            "Name": "GPUMinFreq",
+            "Path": "/sys/kernel/gpu/gpu_min_clock",
+            "Values": [
+                "1300000",
+                "1152000",
+                "1025000",
+                "960000",
+                "1306000",
+                "864000",
+                "750000",
+                "648000",
+                "544000",
+                "450000"
+            ],
+            "ResetOnInit": true
+        },
+        {
+            "Name": "MemFreq",
+            "Path": "/sys/devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/scaling_devfreq_min",
+            "Values": [
+                "3172000",
+                "1352000",
+                "421000"
+            ],
+            "ResetOnInit": true
+        },
+        {
+            "Name": "EmsTuneReqMode",
+            "Path": "/sys/kernel/ems/emstune/req_mode",
+            "Values": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+            ],
+            "Comments": [
+                "0 => Normal Mode",
+                "1 => Power-Scenario Mode",
+                "2 => Performance Mode",
+                "3 => Game Mode",
+                "4 => Balance Mode",
+                "5 => Camera Mode"
+            ],
+            "DefaultIndex": 1,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "EmsTuneReqLevel",
+            "Path": "/sys/kernel/ems/emstune/req_level",
+            "Values": [
+                "0",
+                "1",
+                "2"
+            ],
+            "Comments": [
+                "0 => EMS Level Normal",
+                "1 => EMS Level Boost",
+                "2 => EMS Level Performance"
+            ],
+            "DefaultIndex": 0,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "Memboost",
+            "Path": "/sys/kernel/mm/vmscan/mem_boost_mode",
+            "Values": [
+                "0",
+                "2"
+            ],
+            "DefaultIndex": 0,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "TAUClampBoost",
+            "Path": "/dev/cpuctl/top-app/cpu.uclamp.min",
+            "Values": [
+                "0.00",
+                "1.00",
+                "70.00"
+            ],
+            "DefaultIndex": 0,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "KernelAppStartNotify",
+            "Path": "/sys/kernel/mm/vmscan/am_app_launch",
+            "Values": [
+                "0",
+                "1"
+            ],
+            "DefaultIndex": 0,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "GPUIfpoRuntimeControl",
+            "Path": "/sys/kernel/gpu/gpu_ifpo_runtime_control",
+            "Values": [
+                "1",
+                "0"
+            ],
+            "DefaultIndex": 0,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "LPMDisable",
+            "Path": "/sys/devices/platform/exynos-ufcc/ucc/cstate_control",
+            "Values": [
+                "0",
+                "1"
+            ],
+            "DefaultIndex": 0,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "LPMDisableLevel",
+            "Path": "/sys/devices/platform/exynos-ufcc/ucc/cstate_control_level",
+            "Values": [
+                "0",
+                "1"
+            ],
+            "Comments": [
+                "0 => CPD Block",
+                "1 => C2 Block"
+            ],
+            "DefaultIndex": 0,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "DoubleTapToWakeEnable",
+            "Path": "/sys/class/sec/tsp/cmd",
+            "Values": [
+                "aot_enable,0",
+                "aot_enable,1"
+            ],
+            "DefaultIndex": 0,
+            "ResetOnInit": false
+        },
+        {
+            "Name": "TouchscreenEnable",
+            "Path": "/sys/class/sec/tsp/enabled",
+            "Values": [
+                "1,0",
+                "2,1"
+            ],
+            "DefaultIndex": 0,
+            "ResetOnInit": true
+        }
+    ],
+    "Actions": [
+        {
+            "PowerHint": "INTERACTION",
+            "Node": "MemFreq",
+            "Duration": 3000,
+            "Value": "1352000"
+        },
+        {
+            "PowerHint": "GAME_LOADING",
+            "Node": "MemFreq",
+            "Duration": 0,
+            "Value": "3172000"
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "Memboost",
+            "Duration": 2000,
+            "Value": "2"
+        },
+        {
+            "PowerHint": "INTERACTION",
+            "Node": "GPUMinFreq",
+            "Duration": 0,
+            "Value": "544000"
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "GPUMinFreq",
+            "Duration": 0,
+            "Value": "648000"
+        },
+        {
+            "PowerHint": "EXPENSIVE_RENDERING",
+            "Node": "GPUMinFreq",
+            "Duration": 0,
+            "Value": "648000"
+        },
+        {
+            "PowerHint": "GAME_LOADING",
+            "Node": "EmsTuneReqMode",
+            "Duration": 0,
+            "Value": "3"
+        },
+        {
+            "PowerHint": "GAME",
+            "Node": "EmsTuneReqMode",
+            "Duration": 0,
+            "Value": "3"
+        },
+        {
+            "PowerHint": "LOW_POWER",
+            "Node": "EmsTuneReqMode",
+            "Duration": 0,
+            "Value": "1"
+        },
+        {
+            "PowerHint": "INTERACTION",
+            "Node": "EmsTuneReqMode",
+            "Duration": 0,
+            "Value": "0"
+        },
+        {
+            "PowerHint": "INTERACTION",
+            "Node": "EmsTuneReqLevel",
+            "Duration": 0,
+            "Value": "1"
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "EmsTuneReqLevel",
+            "Duration": 3000,
+            "Value": "2"
+        },
+        {
+            "PowerHint": "CAMERA_LAUNCH",
+            "Node": "EmsTuneReqLevel",
+            "Duration": 1000,
+            "Value": "2"
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "TAUClampBoost",
+            "Duration": 2000,
+            "Value": "70.00"
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "KernelAppStartNotify",
+            "Duration": 1000,
+            "Value": "1"
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "GPUIfpoRuntimeControl",
+            "Duration": 1000,
+            "Value": "0"
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "LPMDisable",
+            "Duration": 3000,
+            "Value": "1"
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "LPMDisableLevel",
+            "Duration": 3000,
+            "Value": "1"
+        },
+        {
+            "PowerHint": "CAMERA_STREAMING_SECURE",
+            "Node": "EmsTuneReqMode",
+            "Duration": 0,
+            "Value": "5"
+        },
+        {
+            "PowerHint": "CAMERA_STREAMING_HIGH",
+            "Node": "EmsTuneReqMode",
+            "Duration": 0,
+            "Value": "5"
+        },
+        {
+            "PowerHint": "CAMERA_STREAMING_MID",
+            "Node": "EmsTuneReqMode",
+            "Duration": 0,
+            "Value": "5"
+        },
+        {
+            "PowerHint": "CAMERA_STREAMING_LOW",
+            "Node": "EmsTuneReqMode",
+            "Duration": 0,
+            "Value": "5"
+        },
+        {
+            "PowerHint": "CAMERA_STREAMING_SECURE",
+            "Node": "TAUClampBoost",
+            "Duration": 0,
+            "Value": "1.00"
+        },
+        {
+            "PowerHint": "CAMERA_STREAMING_HIGH",
+            "Node": "TAUClampBoost",
+            "Duration": 0,
+            "Value": "1.00"
+        },
+        {
+            "PowerHint": "CAMERA_STREAMING_MID",
+            "Node": "TAUClampBoost",
+            "Duration": 0,
+            "Value": "1.00"
+        },
+        {
+            "PowerHint": "CAMERA_STREAMING_LOW",
+            "Node": "TAUClampBoost",
+            "Duration": 0,
+            "Value": "1.00"
+        },
+        {
+            "PowerHint": "DOUBLE_TAP_TO_WAKE",
+            "Node": "DoubleTapToWakeEnable",
+            "Duration": 0,
+            "Value": "aot_enable,1"
+        },
+        {
+            "PowerHint": "INTERACTIVE",
+            "Node": "TouchscreenEnable",
+            "Duration": 0,
+            "Value": "2,1"
+        }
+    ]
+}
