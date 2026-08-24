@@ -2,7 +2,6 @@ on early-init
     mkdir /mnt/vendor/efs 0771 radio system
     mkdir /mnt/vendor/cpefs 0771 radio system
     mkdir /mnt/vendor/persist 0771 system system
-    mount debugfs /sys/kernel/debug /sys/kernel/debug
 
 on init
     # Change suspend poewr mode to s2idle
@@ -306,9 +305,6 @@ on post-fs-data
     # Permissions Camera
     mkdir /data/vendor/camera 0777 root root
 
-    chmod 0755 /sys/kernel/debug/tracing
-    restorecon /sys/kernel/debug/tracing/trace_marker
-
     # Gatekeeper data
     mkdir /data/vendor/gk 0771 system system
     mkdir /mnt/vendor/persist/gk 0700 system system
@@ -349,14 +345,6 @@ on boot
     # write /sys/module/scsc_mx/parameters/disable_recovery_handling 0
     # settings put global captive_portal_mode 0
 
-    # Allow to access debugfs for system:system
-    chown system system /sys/kernel/debug
-    chmod 0755 /sys/kernel/debug
-
-    # Set up kernel tracing, but disable it by default
-    chmod 0222 /sys/kernel/debug/tracing/trace_marker
-    write /sys/kernel/debug/tracing/tracing_on 0
-
     # Change permission for A-Box firmware logs file & GPR dump
     chown audioserver system /sys/devices/platform/14e50000.abox/0.abox-debug/gicd
     chown audioserver system /sys/devices/platform/14e50000.abox/0.abox-debug/gpr
@@ -364,7 +352,6 @@ on boot
     chown audioserver system /sys/devices/platform/14e50000.abox/0.abox-debug/calliope_dram
     chown audioserver system /sys/devices/platform/14e50000.abox/0.abox-debug/calliope_log
     chown audioserver system /sys/devices/platform/14e50000.abox/0.abox-debug/calliope_slog
-    chown audioserver system /sys/kernel/debug/regmap/14e50000.abox/registers
     chown audioserver system /proc/abox/log-00
     chown audioserver system /proc/abox/log-01
     chown audioserver system /proc/abox/qos
