@@ -1,0 +1,25 @@
+//
+// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+prebuilt_etc {
+    name: "init.s5e8845.rc",
+    relative_install_path: "init",
+    src: "init.s5e8845.rc",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.samsung.rc",
+    relative_install_path: "init",
+    src: "init.samsung.rc",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.recovery.s5e8845.rc",
+    recovery: true,
+    relative_install_path: "init",
+    src: "init.recovery.s5e8845.rc",
+}
