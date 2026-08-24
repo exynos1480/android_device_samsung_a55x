@@ -47,3 +47,6 @@ PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 
 # Inherit from the proprietary version
 $(call inherit-product-if-exists, vendor/samsung/a55x/a55x-vendor.mk)
+
+# Call Samsung LSI board support package makefiles
+$(call inherit-product, hardware/samsung_slsi-linaro/config/config.mk)
