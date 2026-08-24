@@ -114,6 +114,29 @@ vendor/lib64/vendor.samsung.hardware.biometrics.fingerprint-V1-ndk.so
 # Fingerprint - Init
 vendor/etc/init/init.fingerprint.rc
 
+# GNSS
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/bin/gps.rose.sh:vendor/bin/hw/gps.sh
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/init.gps.rose.apex.sh.rc:vendor/etc/init/init.gps.rose.rc
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/vendor.samsung.hardware.gnss.lsi.rose-service.rc:vendor/etc/init/vendor.samsung.hardware.gnss-service.rc
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/lib64/gnss_aidl_lib.so:vendor/lib64/gnss_aidl_lib.so
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/lib64/libwrappergps.so:vendor/lib64/libwrappergps.so
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/lib64/vendor.samsung.hardware.gnss-V3-ndk.so:vendor/lib64/vendor.samsung.hardware.gnss-V3-ndk.so
+vendor/etc/init/init.gps.rc
+
+# GNSS - A556BXXSABYI1
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/bin/gpsd_K44:vendor/bin/hw/gpsd_K44|2865193f8e27a80066fe92c954f27ffee1aa50cf
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/bin/vendor.samsung.hardware.gnss.lsi.rose-service:vendor/bin/hw/vendor.samsung.hardware.gnss-service|1c16eb8af8452b4c2628eee34c72c80233f97eba
+
+# GNSS - Configuration
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/cfg/gps.rose.cfg:vendor/etc/gnss/gps.cfg
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/cfg/gps.rose.debug.cfg:vendor/etc/gnss/gps.debug.cfg
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/cfg/gps.rose.issuetracker.cfg:vendor/etc/gnss/gps.issuetracker.cfg
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/ca.pem:vendor/etc/gnss/ca.pem
+
+# GNSS - Firmware - A556BXXSABYI1
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/firmware/firmware_signed_a55xnaxx.bin:vendor/firmware/gnss/firmware_signed_a55xnaxx.bin|b1055b06ed8ccc092815df984482a50acd152346
+vendor/apex/com.samsung.android.gnss.lsi.rose.signed/etc/firmware/firmware_signed_a55xnsxx.bin:vendor/firmware/gnss/firmware_signed_a55xnsxx.bin|3c36342ca215c92268e005d4dd5ab7b7184bcd83
+
 # Graphics
 vendor/etc/Khronos/OpenCL/samsung.icd;SYMLINK=vendor/Khronos/OpenCL/vendors/samsung.icd
 vendor/etc/hdr_samsung_mx.key

@@ -22,6 +22,14 @@
         </interface>
     </hal>
     <hal format="aidl">
+        <name>android.hardware.gnss</name>
+        <version>3</version>
+        <interface>
+            <name>IGnss</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl">
         <name>android.hardware.graphics.allocator</name>
         <interface>
             <name>IAllocator</name>
@@ -34,6 +42,14 @@
         <version>4.0</version>
         <interface>
             <name>IMapper</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.samsung.hardware.gnss</name>
+        <version>3</version>
+        <interface>
+            <name>ISehGnss</name>
             <instance>default</instance>
         </interface>
     </hal>
