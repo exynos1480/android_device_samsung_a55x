@@ -191,6 +191,8 @@ on init
     chmod 0664 /dev/cpuset/surfaceflinger/tasks
     chmod 0664 /dev/cpuset/surfaceflinger/cgroup.procs
 
+    setprop vendor.powerhal.init 1
+
     # Apply network parameters for high data performance.
     write /proc/sys/net/core/rmem_default 327680
     write /proc/sys/net/core/rmem_max 8388608

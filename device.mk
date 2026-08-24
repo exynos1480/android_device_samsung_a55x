@@ -195,6 +195,10 @@ PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := $(PRODUCT_BRAND)
 PRODUCT_SHIPPING_API_LEVEL := $(BOARD_SHIPPING_API_LEVEL)
 
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power-service.pixel-libperfmgr
+
 # Soong Namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \

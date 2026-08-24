@@ -78,6 +78,9 @@ vendor.hwc.drm.device=/dev/dri/card1
 # FRP
 ro.frp.pst=/dev/block/by-name/persistent
 
+# Power
+vendor.powerhal.disp.idle_support=false
+
 # ZRAM
 ro.zram.mark_idle_delay_mins=60
 ro.zram.first_wb_delay_mins=180
