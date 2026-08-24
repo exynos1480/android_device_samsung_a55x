@@ -4,26 +4,9 @@ on early-init
     mkdir /mnt/vendor/persist 0771 system system
     mount debugfs /sys/kernel/debug /sys/kernel/debug
 
-    # set property to animation vi boost
-    setprop sys.perf.viboost true
-
 on init
-    # See storage config details at http://source.android.com/tech/storage/
-    mkdir /storage/sdcard 0000 root root
-    mkdir /storage/usb1 0000 root root
-    mkdir /storage/usb2 0000 root root
-    mkdir /mnt/media_rw/sdcard 0700 media_rw media_rw
-    mkdir /mnt/media_rw/usb1 0700 media_rw media_rw
-    mkdir /mnt/media_rw/usb2 0700 media_rw media_rw
-
-    export SECONDARY_STORAGE /storage/sdcard:/storage/usb1:/storage/usb2
-
     # Change suspend poewr mode to s2idle
     write /sys/power/mem_sleep s2idle
-
-    # Support legacy paths
-    symlink /storage/sdcard /mnt/ext_sd
-    symlink /data/app /factory
 
     symlink /dev/block/by-name/steady /dev/block/steady
     symlink /dev/block/by-name/persistent /dev/block/persistent
@@ -41,7 +24,7 @@ on init
     ## SCSC BT
     chown bluetooth bluetooth /sys/module/scsc_bt/parameters/bluetooth_address
 
-    # Change CPUFreq governor to energy_aware(EGO)
+    # Change CPUFreq governor to energy_aware (EGO)
     write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor energy_aware
     write /sys/devices/system/cpu/cpufreq/policy4/scaling_governor energy_aware
     write /sys/devices/system/cpu/cpufreq/policy7/scaling_governor energy_aware
@@ -168,7 +151,7 @@ on init
     chown system system /dev/cpuset/cgroup.procs
     chmod 0664 /dev/cpuset/tasks
 
-    # CPUSET(s5e8845)
+    # CPUSET (s5e8845)
     chown system system /dev/cpuset/top-app/cpus
     chown system system /dev/cpuset/foreground/cpus
     chown system system /dev/cpuset/background/cpus
@@ -221,23 +204,23 @@ on init
     start watchdogd
 
 on post-fs-data
-# Log data folder
+    # Log data folder
     mkdir /data/vendor 0771 root system
     mkdir /data/vendor/log 0771 root system
     mkdir /data/vendor/log/abox 0775 audioserver system
     mkdir /data/vendor/log/cbd 0771 root system
     mkdir /data/vendor/log/chub 0771 root system
     mkdir /data/vendor/log/vts 0771 audioserver system
-# IPSEC PIDDIR for VoWiFi
+    # IPSEC PIDDIR for VoWiFi
     mkdir /data/vendor/misc 0771 root system
     mkdir /data/vendor/misc/vpn 0771 radio system
 
     setprop vold.post_fs_data_done 1
     #setprop sys.usb.controller 13200000.dwc3
 
-# Permissions for audio
-    chmod 0660 /proc/audio/aboxhalflog
+    # Permissions for audio
     chown audioserver system /proc/audio/aboxhalflog
+    chmod 0660 /proc/audio/aboxhalflog
 
     chown audioserver system /proc/abox/snapshot_0/log
     chown audioserver system /proc/abox/snapshot_1/log
@@ -247,11 +230,11 @@ on post-fs-data
     chown audioserver system /proc/abox/snapshot_1/clear
     chown audioserver system /proc/abox/dump/log
 
-# Audio abox bigdata
+    # Audio abox bigdata
     chown system audio /sys/class/audio/dsp/srcnt
     chown system audio /sys/class/audio/dsp/srcnt_keep
 
-# Audio amp bigdata
+    # Audio amp bigdata
     chown system audio /sys/class/audio/amp/temperature_max_0
     chown system audio /sys/class/audio/amp/temperature_keep_max_0
     chown system audio /sys/class/audio/amp/temperature_overcount_0
@@ -263,20 +246,17 @@ on post-fs-data
     chown system audio /sys/class/audio/amp/excursion_max_1
     chown system audio /sys/class/audio/amp/excursion_overcount_1
 
-# SSRM Amp temperature
+    # SSRM Amp temperature
     chown system system /sys/class/audio/amp/surface_temperature_0
     chown system system /sys/class/audio/amp/curr_temperature_0
     chown system system /sys/class/audio/amp/surface_temperature_1
     chown system system /sys/class/audio/amp/curr_temperature_1
 
-# Samsung Pay
-    mkdir /efs/pfw_data 0760 vendor_spay vendor_spay
-
-# MST/NFC Switch
+    # MST/NFC Switch
     chown vendor_spay system /dev/mst_ctrl
     chmod 0660 /dev/mst_ctrl
 
-# Amp Calibration and Factory test
+    # Amp Calibration and Factory test
     chmod 0664 /sys/class/tas25xx/calib/calibration
     chmod 0664 /sys/class/tas25xx/calib/cstatus
     chmod 0664 /sys/class/tas25xx/calib/cstatus_r
@@ -301,19 +281,19 @@ on post-fs-data
     chmod 0660 /efs/tas25xx/calib_re
     chmod 0660 /efs/tas25xx/calib_re_r
 
-# permissions for bluetooth.
+    # permissions for bluetooth.
     setprop ro.bt.bdaddr_path "/mnt/vendor/efs/bluetooth/bt_addr"
     chown bluetooth bluetooth ro.bt.bdaddr_path
 
-# for BT MAC address
+    # for BT MAC address
     mkdir /mnt/vendor/efs/bluetooth 0770 system bluetooth
-# if already exist
+    # if already exist
     chown system bluetooth /mnt/vendor/efs/bluetooth
     chown system bluetooth /mnt/vendor/efs/bluetooth/bt_addr
     chmod 0770 /mnt/vendor/efs/bluetooth
     chmod 0660 /mnt/vendor/efs/bluetooth/bt_addr
 
-# Gnss data
+    # Gnss data
     mkdir /data/vendor/gps 0771 system system
     mkdir /data/vendor/log/gps 0771 system system
 
@@ -323,37 +303,33 @@ on post-fs-data
     rm /data/vendor/gps/smd_started
     rm /data/vendor/gps/sv_cno.info
 
-# Permissions Camera
+    # Permissions Camera
     mkdir /data/vendor/camera 0777 root root
 
     chmod 0755 /sys/kernel/debug/tracing
     restorecon /sys/kernel/debug/tracing/trace_marker
 
-# Gatekeeper data
+    # Gatekeeper data
     mkdir /data/vendor/gk 0771 system system
     mkdir /mnt/vendor/persist/gk 0700 system system
 
-# Weaver data
-    mkdir /mnt/vendor/persist/weaver 0700 system system
-    mkdir /data/vendor/weaver 0700 system system
-
-# Video data
+    # Video data
     mkdir /data/vendor/media 0700 mediacodec mediacodec
     mkdir /data/vendor/media/gpu 0700 mediacodec mediacodec
 
-# Permission for GPU
+    # Permission for GPU
     chown mediacodec system /sys/kernel/gpu/gpu_mm_min_clock
     chmod 0644 /sys/kernel/gpu/gpu_mm_min_clock
     chmod 0000 /sys/class/devfreq/10e00000.sgpu/trans_stat
 
-# HWC data
+    # HWC data
     mkdir /data/vendor/log/hwc 0771 system graphics
 
-# Eden data
+    # Eden data
     mkdir /data/vendor/eden 0771 system system
     mkdir /data/vendor/eden/gpu 0771 system system
 
-# ENN data
+    # ENN data
     mkdir /data/vendor/enn 0771 system system
 
 on early-boot
@@ -361,7 +337,7 @@ on early-boot
     verity_update_state
 
 on boot
-# SDHMS Slowdown : Cpuset
+    # SDHMS Slowdown : Cpuset
     write /dev/cpuset/abnormal/cpus 0-2
     write /dev/cpuset/moderate/cpus 0-2
 
@@ -374,10 +350,8 @@ on boot
     # settings put global captive_portal_mode 0
 
     # Allow to access debugfs for system:system
-    chmod 0755 /sys/kernel/debug
     chown system system /sys/kernel/debug
-
-    #setprop ro.radio.noril no
+    chmod 0755 /sys/kernel/debug
 
     # Set up kernel tracing, but disable it by default
     chmod 0222 /sys/kernel/debug/tracing/trace_marker
@@ -397,7 +371,7 @@ on boot
     chown audioserver system /proc/abox/failsafe/online
     chown audioserver system /proc/abox/failsafe/reset
 
-# Permission for USB SELECT
+    # Permission for USB SELECT
     chown system system /sys/class/android_usb/android0/enable
     chmod 0660 /sys/class/android_usb/android0/enable
     chown system system /sys/class/android_usb/android0/idVendor
@@ -411,26 +385,25 @@ on boot
     chown system system /sys/class/android_usb/android0/bDeviceClass
     chmod 0660 /sys/class/android_usb/android0/bDeviceClass
 
-# Ownership and permissions for SEC PM
+    # Ownership and permissions for SEC PM
     # RTC reset status
     chown system system /sys/class/sec/rtc/rtc_status
     chown system system /efs/FactoryApp/rtc_status
     chmod 0664 /efs/FactoryApp/rtc_status
 
-# Permission for UART SWITCH
+    # Permission for UART SWITCH
     chmod 0660 /sys/class/sec/switch/uart_sel
     chown system system /sys/class/sec/switch/uart_sel
 
-# Permission for GPU
+    # Permission for GPU
     chown mediacodec system /sys/kernel/gpu/gpu_mm_min_clock
     chmod 0664 /sys/kernel/gpu/gpu_mm_min_clock
 
 on early-fs
-#    write /sys/devices/platform/fmp/fmp-fips/fmp_fips_run 1
+#   write /sys/devices/platform/fmp/fmp-fips/fmp_fips_run 1
 
 on late-fs
     wait_for_prop hwservicemanager.ready true
-#    wait_for_prop vendor.sys.mobicoredaemon.enable true
     mount_all /vendor/etc/fstab.${ro.hardware} --late
     swapon_all /vendor/etc/fstab.${ro.hardware}
 
@@ -442,8 +415,6 @@ on fs
 
     wait /dev/block/by-name/sec_efs
     mount ext4 /dev/block/by-name/sec_efs /efs nosuid nodev noatime noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic
-
-    #setprop ro.crypto.fuse_sdcard true
 
     restorecon_recursive /mnt/vendor/efs
     restorecon_recursive /mnt/vendor/cpefs
@@ -458,18 +429,18 @@ on fs
     mkdir /mnt/vendor/persist/data/sfs 0700 system system
     mkdir /mnt/vendor/persist/data/tz 0700 system system
 
-## SCSC WLAN
+    # SCSC WLAN
     # WLBT FW flash update
     write /sys/module/scsc_flash_service/parameters/flash_srv_manual 1
 
-# Permissions for ION
+    # Permissions for ION
     chmod 0660 /sys/class/ion_cma/ion_video_ext/isolated
     chown system system /sys/class/ion_cma/ion_video_ext/isolated
 
-# Permissions for backlight
+    # Permissions for backlight
     chown system system /sys/class/backlight/panel/brightness
 
-# Permissions for LCD
+    # Permissions for LCD
     chown system system /dev/sec_display_debug
     chown system radio /sys/class/lcd/panel/manufacture_code
     chown system radio /sys/class/lcd/panel/lcd_type
@@ -496,10 +467,10 @@ on fs
     chown system system /sys/class/lcd/panel/ccd_state
     chown system system /sys/class/lcd/panel/irc_mode
 
-    chmod 0666 /sys/module/exynos_drm/parameters/dpu_event_log
     chown system graphics /sys/module/exynos_drm/parameters/dpu_event_log
+    chmod 0666 /sys/module/exynos_drm/parameters/dpu_event_log
 
-# Permissions for MDNIE
+    # Permissions for MDNIE
     chown system media_rw /sys/class/mdnie/mdnie/mode
     chown system media_rw /sys/class/mdnie/mdnie/scenario
     chown system system /sys/class/mdnie/mdnie/accessibility
@@ -513,17 +484,17 @@ on fs
     chown system system /sys/class/mdnie/mdnie/hdr
     chown system system /sys/class/mdnie/mdnie/vividness
 
-# Permissions for drm/kms
+    # Permissions for drm/kms
     chmod 0666 /dev/dri/card0
     chown system graphics /dev/dri/card0
     chmod 0666 /dev/dri/card1
     chown system graphics /dev/dri/card1
 
-# Permissions for idle timer
+    # Permissions for idle timer
     chmod 0660 /sys/devices/platform/148c0000.drmdsim/148c0000.drmdsim.0/panel_idle_timer_ms
     chown system graphics /sys/devices/platform/148c0000.drmdsim/148c0000.drmdsim.0/panel_idle_timer_ms
 
-# Permissions for dqe
+    # Permissions for dqe
     chmod 0660 /sys/class/dqe/dqe/mode_idx
     chown system system /sys/class/dqe/dqe/mode_idx
     chmod 0660 /sys/class/dqe/dqe/gamma_ext
@@ -573,13 +544,7 @@ on fs
     chmod 0660 /sys/class/dqe/dqe/de
     chown system system /sys/class/dqe/dqe/de
 
-# Copy DRM Key
-#    copy /system/app/wv.keys /factory/wv.keys
-
-# Permission for DRM Key
-#    chmod 0644 /factory/wv.keys
-
-# Permision for xlat control
+    # Permision for xlat control
     chmod 0660 /sys/kernel/clat/xlat_plat
     chown clat clat /sys/kernel/clat/xlat_plat
     chmod 0660 /sys/kernel/clat/xlat_addrs
@@ -587,7 +552,7 @@ on fs
     chmod 0660 /sys/kernel/clat/xlat_v4_addrs
     chown clat clat /sys/kernel/clat/xlat_v4_addrs
 
-# Permissions Camera
+    # Permissions Camera
     mkdir /data/vendor/camera 0770 cameraserver system
     chown cameraserver cameraserver /sys/kernel/mm/vmscan/mem_boost_mode
     chown cameraserver system /sys/class/camera/rear/rear_camfw
@@ -677,40 +642,16 @@ on fs
     chown system radio /sys/class/camera/rear/rear_i2c_rfinfo
     chown system radio /sys/class/camera/rear/cam_wifi_info
 
-# Permission for flashlight control for HAL3.3
-    chmod 0660 /sys/class/camera/flash/rear_flash
+    # Permission for flashlight control for HAL3.3
     chown system camera /sys/class/camera/flash/rear_flash
+    chmod 0660 /sys/class/camera/flash/rear_flash
 
-#load ecd firmware
+    # load ecd firmware
     write /proc/ecd/load_firmware 1
 
-service fuse_sdcard /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard /storage/sdcard
-    class late_start
-    disabled
-service fuse_usb1 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/usb1 /storage/usb1
-    class late_start
-    disabled
-service fuse_usb2 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/usb2 /storage/usb2
-    class late_start
-    disabled
-
-# Write build info to kdebuginfo
+    # Write build info to kdebuginfo
 on property:ro.build.fingerprint=*
     write /sys/module/debug_kinfo/parameters/build_info ${ro.build.fingerprint}
-
-service abox_log /vendor/bin/abox_log sec-audio-debug /data/vendor/log/abox
-    class late_start
-    user audioserver
-    group system
-
-# GPS daemon
-#service gpsd /vendor/bin/hw/gpsd
-#    class main
-#    user gps
-#    group system inet net_raw wakelock
-#    capabilities BLOCK_SUSPEND
-#    ioprio be 0
-#    seclabel u:r:gpsd:s0
 
 # Set watchdog timer to 30 seconds and fed it every 10 seconds to get a 20 second margin
 service watchdogd /system/bin/watchdogd 10 20
@@ -722,37 +663,6 @@ service watchdogd /system/bin/watchdogd 10 20
 on property:ro.debuggable=1
     write /sys/module/kgdboc/parameters/kgdboc ttyFIQ1
     write /sys/module/fiq_debugger/parameters/kgdb_enable 1
-
-# IMS WiFi Calling [START] #
-#service charonservice /system/vendor/bin/charon
-#        class main
-#        user root
-#        group system
-#        disabled
-#        seclabel u:r:charonservice:s0
-
-#on property:vendor.charon.exec=1
-#    rm /data/vendor/misc/vpn/charon.pid
-#    chmod 0666 /dev/tun
-#    start charonservice
-
-#on property:vendor.charon.exec=0
-#    stop charonservice
-#    rm /data/vendor/misc/vpn/charon.pid
-# IMS WiFi Calling [END] #
-
-# IMS packet router daemon
-#service pktrouter /system/vendor/bin/wfc-pkt-router
-#    class main
-#    user root
-#    disabled
-#    seclabel u:r:pktrouter:s0
-
-#on property:vendor.pktrouter=1
-#    start pktrouter
-
-#on property:vendor.pktrouter=0
-#    stop pktrouter
 
 service insmod_sh_common /vendor/bin/init.insmod.sh vendor_dlkm
     class main
@@ -777,14 +687,3 @@ service prepare_param /system/bin/prepare_param.sh /dev/block/by-name/param
     group root
     seclabel u:r:prepare_param:s0
     oneshot
-
-# Pageboostd
-on property:sys.boot_completed=1
-    start pageboostd
-
-service pageboostd /system/bin/pageboostd
-    class main
-    user system
-    group system mount radio net_bt sdcard_rw shell media media_rw
-    socket pageboostd seqpacket 0660 system system
-    disabled
