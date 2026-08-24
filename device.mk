@@ -54,6 +54,14 @@ PRODUCT_PACKAGES += \
     android.hardware.boot-service.exynos \
     android.hardware.boot-service.exynos_recovery
 
+# Init
+PRODUCT_PACKAGES += \
+    fstab.s5e8845 \
+    init.recovery.s5e8845.rc \
+    init.s5e8845.rc \
+    init.samsung.rc \
+    ueventd.s5e8845.rc
+
 # Kernel
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 
