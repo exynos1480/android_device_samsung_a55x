@@ -69,6 +69,20 @@ vendor/etc/dqe/hlgLut_Default.xml
 vendor/etc/dqe/hlgLut_Inner_SRGB.xml
 vendor/etc/dqe/wcgLut.xml
 
+# ENN
+vendor/lib64/libenn_common_utils.so
+vendor/lib64/libenn_cpu_operators.so
+vendor/lib64/libenn_engine_lib.so
+vendor/lib64/libenn_model.so
+vendor/lib64/libenn_public_api_cpp.so
+vendor/lib64/libenn_public_api_cpp_lib.so
+vendor/lib64/libenn_user.samsung_slsi.so
+vendor/lib64/libenn_user_driver_cpu.so
+vendor/lib64/libenn_user_driver_gpu_lib.so
+vendor/lib64/libenn_user_driver_unified.so
+vendor/lib64/libenn_user_lib.so
+vendor/lib64/vendor.samsung_slsi.hardware.enn_aidl-V1-ndk.so
+
 # Graphics
 vendor/etc/Khronos/OpenCL/samsung.icd;SYMLINK=vendor/Khronos/OpenCL/vendors/samsung.icd
 vendor/etc/hdr_samsung_mx.key

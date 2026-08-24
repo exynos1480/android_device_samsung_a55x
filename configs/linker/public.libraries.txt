@@ -1,1 +1,5 @@
+libenn_public_api_cpp.so
+libenn_public_api_cpp_lib.so
+libenn_user.samsung_slsi.so
+libenn_user_lib.so
 libOpenCL.so
