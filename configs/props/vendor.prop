@@ -75,6 +75,9 @@ ro.surface_flinger.supports_background_blur=1
 ro.surface_flinger.use_content_detection_for_refresh_rate=true
 vendor.hwc.drm.device=/dev/dri/card1
 
+# Fingerprint
+ro.vendor.fingerprint.sensor_location=540|2087|113
+
 # FRP
 ro.frp.pst=/dev/block/by-name/persistent
 
