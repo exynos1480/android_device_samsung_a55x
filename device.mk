@@ -91,6 +91,15 @@ $(call soong_config_set,samsungAudioVars,soundbooster_dsp_library,//vendor/samsu
 
 TARGET_EXCLUDES_AUDIOFX := true
 
+# Bluetooth
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.1-service \
+    libbt-vendor
+
+# Bluetooth - Configuration
+PRODUCT_PACKAGES += \
+    bt_did.slsi.conf
+
 # Boot Control
 PRODUCT_PACKAGES += \
     android.hardware.boot-service.exynos \
@@ -284,6 +293,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/pixel/power-libperfmgr \
     hardware/google/pixel/thermal \
     hardware/samsung \
+    hardware/samsung_slsi/libbt \
     hardware/samsung_slsi-linaro/exynos/cpboot_v3 \
     hardware/samsung_slsi-linaro/exynos/libaudio/audiohal_comv1 \
     hardware/samsung_slsi-linaro/exynos/libaudio/audiohal_comv1/proxy
