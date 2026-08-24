@@ -77,6 +77,7 @@
 #define SOUND_DEVICE_VIRT_VTX_CAPTURE           123      // Voice Call TX virtual device
 #define SOUND_DEVICE_VIRT_FM_RECORD             124      // WDMA for FM Radio Recording
 #define SOUND_DEVICE_CALL_RECORD                125      // WDMA for Call Recording
+#define SOUND_DEVICE_VIRT_VTX_REF_CAPTURE       131      // Voice Call TX Ref virtual device
 
 // Sound card 2 device usage
 //Device  0 ~ 12 : used for A-Box DMA Dump
@@ -535,6 +536,9 @@ struct pcm_config pcm_config_mmap_capture = {
 // PCM Configurations for Voice TX/Voice Ref TX Capture Stream
 #define VTX_CAPTURE_CARD                SOUND_CARD0
 #define VTX_CAPTURE_DEVICE              SOUND_DEVICE_VIRT_VTX_CAPTURE
+
+#define VTX_REF_CAPTURE_CARD            SOUND_CARD0
+#define VTX_REF_CAPTURE_DEVICE          SOUND_DEVICE_VIRT_VTX_REF_CAPTURE
 
 #define VTX_CAPTURE_CHANNELS            DEFAULT_VOICE_CHANNELS
 #define VTX_CAPTURE_SAMPLING_RATE       DEFAULT_VOICE_SAMPLING_RATE
