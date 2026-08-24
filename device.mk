@@ -82,6 +82,9 @@ $(call soong_config_set,exynos_audio,proxy_header,//$(LOCAL_PATH):audio_proxy_he
 $(call soong_config_set,exynos_audio,sec_resampler_library,//vendor/samsung/a55x:libSamsungPostProcessConvertor)
 
 # Audio - Effects
+PRODUCT_PACKAGES += \
+    SamsungDAP
+
 TARGET_EXCLUDES_AUDIOFX := true
 
 # Boot Control
