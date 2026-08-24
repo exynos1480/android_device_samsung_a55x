@@ -21,4 +21,20 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="aidl">
+        <name>android.hardware.graphics.allocator</name>
+        <interface>
+            <name>IAllocator</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.graphics.mapper</name>
+        <transport arch="64">passthrough</transport>
+        <version>4.0</version>
+        <interface>
+            <name>IMapper</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
 </manifest>
