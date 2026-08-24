@@ -31,6 +31,45 @@ vendor/lib64/libsecaudiocoreutils.so
 vendor/lib64/libsecaudioinfo.so
 vendor/lib64/libspatializerparamstorage.so
 
+# Audio - Firmware
+vendor/firmware/APBargeIn_AUDIO_SLSI.bin
+vendor/firmware/APDVRX_AUDIO_SLSI.bin
+vendor/firmware/APDVTX_AUDIO_SLSI.bin
+vendor/firmware/AP_AUDIO_SLSI.bin
+vendor/firmware/SoundAlive.bin
+vendor/firmware/SoundBoosterParam.bin
+vendor/firmware/a2dpcom.bin
+vendor/firmware/abox_solution.conf
+vendor/firmware/abox_solution_rev00.conf
+vendor/firmware/abox_solution_ti.conf
+vendor/firmware/abox_system.conf
+vendor/firmware/abox_tplg.bin
+vendor/firmware/abox_tplg.conf
+vendor/firmware/avsyncmix.bin
+vendor/firmware/calliope_dram.bin
+vendor/firmware/compress_capture.bin
+vendor/firmware/cs40l26.wmfw
+vendor/firmware/dax_param.bin
+vendor/firmware/dolby.bin
+vendor/firmware/lc3dec.bin
+vendor/firmware/lc3enc.bin
+vendor/firmware/listenbackeffect.bin
+vendor/firmware/param_ti.bin
+vendor/firmware/rxse.bin
+vendor/firmware/sb_ll.bin
+vendor/firmware/sb_music.bin
+vendor/firmware/sb_others.bin
+vendor/firmware/sectiongraph_tplg.bin
+vendor/firmware/sectiongraph_tplg.conf
+vendor/firmware/spkamp.bin
+vendor/firmware/tfa9878.bin
+vendor/firmware/tfa98xx.cnt
+vendor/firmware/tismartpa_driver_tuning.bin
+vendor/firmware/txse1.bin
+vendor/firmware/txse2.bin
+vendor/firmware/volctrl.bin
+vendor/firmware/volumemonitor.bin
+
 # Camera
 vendor/lib64/hw/camera.s5e8845.so
 vendor/lib64/libIRTA.so
@@ -50,6 +89,18 @@ vendor/lib64/libvpl.so
 vendor/lib64/vendor.samsung.hardware.thermal-V1-ndk.so
 vendor/lib64/vendor.samsung.hardware.thermal@1.0.so
 
+# Camera - Firmware
+vendor/firmware/camera_tilt_calibration_info_1_2
+vendor/firmware/default_configuration.flm.cfg.bin
+vendor/firmware/icc_profile.bin
+vendor/firmware/rear3_dualcal_param.bin
+vendor/firmware/secure_configuration.flm.cfg.bin
+vendor/firmware/setfile_gc05a3.bin
+vendor/firmware/setfile_gn5.bin
+vendor/firmware/setfile_imx258.bin
+vendor/firmware/setfile_imx616.bin
+vendor/firmware/setfile_imx906.bin
+
 # Codec2
 vendor/lib64/libHDRMetaGenerator.so
 
@@ -57,6 +108,9 @@ vendor/lib64/libHDRMetaGenerator.so
 vendor/etc/media_codecs_c2.xml
 vendor/etc/media_codecs_performance_c2.xml
 vendor/etc/media_profiles_V1_0.xml
+
+# Display - Touch - Firmware
+vendor/firmware/tsp/gt9895_a55x.bin
 
 # DQE
 vendor/etc/dqe/DQE_coef_data.xml
@@ -104,6 +158,10 @@ vendor/lib64/libenn_user_driver_gpu_lib.so
 vendor/lib64/libenn_user_driver_unified.so
 vendor/lib64/libenn_user_lib.so
 vendor/lib64/vendor.samsung_slsi.hardware.enn_aidl-V1-ndk.so
+
+# ENN - Firmware
+vendor/firmware/OD_V3.4.10_11_17_QVGA_ROSE_ENN_BGRA.nnc
+vendor/firmware/OD_V3.5.3_06_12_VGA_ROSE_ENN_BGRA.nnc
 
 # Fingerprint - Dependencies
 vendor/lib64/libegis_fp_normal_sensor_test.so
