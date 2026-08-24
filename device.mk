@@ -252,6 +252,10 @@ PRODUCT_PACKAGES += \
 
 $(call soong_config_set,samsungUsbGadgetVars,gadget_name,13200000.dwc3)
 
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator-service.samsung
+
 # Inherit from the proprietary version
 $(call inherit-product-if-exists, vendor/samsung/a55x/a55x-vendor.mk)
 
