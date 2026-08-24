@@ -1,0 +1,11 @@
+//
+// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+prebuilt_etc {
+    name: "task_profiles.json.s5e8845",
+    src: "task_profiles.json",
+    filename: "task_profiles.json",
+    vendor: true,
+}

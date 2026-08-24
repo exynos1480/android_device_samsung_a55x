@@ -387,7 +387,64 @@ on boot
     chmod 0664 /sys/kernel/gpu/gpu_mm_min_clock
 
 on early-fs
-#   write /sys/devices/platform/fmp/fmp-fips/fmp_fips_run 1
+    write /sys/devices/platform/fmp/fmp-fips/fmp_fips_run 1
+    write /sys/block/sda/queue/scheduler ssg
+    write /sys/block/sdb/queue/scheduler ssg
+    write /sys/block/sdc/queue/scheduler ssg
+    write /sys/block/sdd/queue/scheduler ssg
+    write /sys/block/sde/queue/scheduler ssg
+    write /sys/block/sdf/queue/scheduler ssg
+    write /sys/block/sdg/queue/scheduler ssg
+    write /sys/block/sdh/queue/scheduler ssg
+    write /sys/class/block/mmcblk0/queue/scheduler ssg
+    write /sys/class/block/mmcblk1/queue/scheduler ssg
+
+    # blkio cgroup
+    mkdir /dev/blkio/top
+    mkdir /dev/blkio/high
+    mkdir /dev/blkio/normal
+    mkdir /dev/blkio/low
+    chown system system /dev/blkio/top
+    chown system system /dev/blkio/high
+    chown system system /dev/blkio/normal
+    chown system system /dev/blkio/low
+    chown system system /dev/blkio/top/tasks
+    chown system system /dev/blkio/high/tasks
+    chown system system /dev/blkio/normal/tasks
+    chown system system /dev/blkio/low/tasks
+    chown system system /dev/blkio/top/cgroup.procs
+    chown system system /dev/blkio/high/cgroup.procs
+    chown system system /dev/blkio/normal/cgroup.procs
+    chown system system /dev/blkio/low/cgroup.procs
+    chown system system /dev/blkio/top/blkio.ssg.boost_on
+    chown system system /dev/blkio/high/blkio.ssg.boost_on
+    chown system system /dev/blkio/normal/blkio.ssg.boost_on
+    chown system system /dev/blkio/low/blkio.ssg.boost_on
+    chown system system /dev/blkio/top/blkio.ssg.max_available_ratio
+    chown system system /dev/blkio/high/blkio.ssg.max_available_ratio
+    chown system system /dev/blkio/normal/blkio.ssg.max_available_ratio
+    chown system system /dev/blkio/low/blkio.ssg.max_available_ratio
+    chmod 0664 /dev/blkio/top/tasks
+    chmod 0664 /dev/blkio/high/tasks
+    chmod 0664 /dev/blkio/normal/tasks
+    chmod 0664 /dev/blkio/low/tasks
+    chmod 0664 /dev/blkio/top/cgroup.procs
+    chmod 0664 /dev/blkio/high/cgroup.procs
+    chmod 0664 /dev/blkio/normal/cgroup.procs
+    chmod 0664 /dev/blkio/low/cgroup.procs
+    chmod 0664 /dev/blkio/top/blkio.ssg.boost_on
+    chmod 0664 /dev/blkio/high/blkio.ssg.boost_on
+    chmod 0664 /dev/blkio/normal/blkio.ssg.boost_on
+    chmod 0664 /dev/blkio/low/blkio.ssg.boost_on
+    chmod 0664 /dev/blkio/top/blkio.ssg.max_available_ratio
+    chmod 0664 /dev/blkio/high/blkio.ssg.max_available_ratio
+    chmod 0664 /dev/blkio/normal/blkio.ssg.max_available_ratio
+    chmod 0664 /dev/blkio/low/blkio.ssg.max_available_ratio
+
+    write /dev/blkio/top/blkio.ssg.boost_on 1
+    write /dev/blkio/high/blkio.ssg.max_available_ratio 90
+    write /dev/blkio/normal/blkio.ssg.max_available_ratio 60
+    write /dev/blkio/low/blkio.ssg.max_available_ratio 30
 
 on late-fs
     mount_all /vendor/etc/fstab.${ro.hardware} --late
