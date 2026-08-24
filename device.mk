@@ -103,7 +103,18 @@ PRODUCT_PACKAGES += \
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health-service.samsung \
-    android.hardware.health-service.samsung-recovery
+    android.hardware.health-service.samsung-recovery \
+    vendor.lineage.health-service.default
+
+$(call soong_config_set_bool,lineage_health,charging_control_charging_bypass,true)
+$(call soong_config_set_bool,lineage_health,charging_control_charging_deadline,false)
+$(call soong_config_set_bool,lineage_health,charging_control_charging_toggle,true)
+$(call soong_config_set,lineage_health,charging_control_charging_disabled,0)
+$(call soong_config_set,lineage_health,charging_control_charging_enabled,1)
+$(call soong_config_set,lineage_health,charging_control_charging_path,/sys/class/power_supply/battery/charging_enabled)
+$(call soong_config_set,lineage_health,fast_charge_node,/sys/class/sec/switch/afc_disable)
+$(call soong_config_set,lineage_health,fast_charge_value_fast_charge,0)
+$(call soong_config_set,lineage_health,fast_charge_value_none,1)
 
 # Init
 PRODUCT_PACKAGES += \
