@@ -19,6 +19,13 @@ prebuilt_root {
 }
 
 prebuilt_etc {
+    name: "init.a55x.unify.rc",
+    relative_install_path: "init",
+    src: "init.a55x.unify.rc",
+    vendor: true,
+}
+
+prebuilt_etc {
     name: "init.s5e8845.rc",
     relative_install_path: "init",
     src: "init.s5e8845.rc",

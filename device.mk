@@ -130,6 +130,15 @@ PRODUCT_PACKAGES += \
 $(call soong_config_set,samsungUdfpsVars,udfps_zorder,0x100)
 $(call soong_config_set,surfaceflinger,udfps_lib,//hardware/samsung/fingerprint:libudfps_extension.samsung)
 
+# Firmware - Placeholders
+PRODUCT_PACKAGES += \
+    AIE.bin_placeholder \
+    calliope_sram.bin_placeholder \
+    mfc_fw.bin_placeholder \
+    pablo_icpufw.bin_placeholder \
+    os.checked.bin_placeholder \
+    vts.bin_placeholder
+
 # Gatekeeper
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper-service.teegris
@@ -164,6 +173,7 @@ $(call inherit-product, hardware/lineage/generic-ims/ims.mk)
 # Init
 PRODUCT_PACKAGES += \
     fstab.s5e8845 \
+    init.a55x.unify.rc \
     init.recovery.s5e8845.rc \
     init.s5e8845.rc \
     init.samsung.rc \

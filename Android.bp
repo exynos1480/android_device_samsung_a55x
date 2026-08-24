@@ -9,3 +9,45 @@ soong_namespace {
         "vendor/samsung/a55x",
     ],
 }
+
+prebuilt_firmware {
+    name: "AIE.bin_placeholder",
+    src: ":empty_file",
+    filename: "AIE.bin",
+    vendor: true,
+}
+
+prebuilt_firmware {
+    name: "calliope_sram.bin_placeholder",
+    src: ":empty_file",
+    filename: "calliope_sram.bin",
+    vendor: true,
+}
+
+prebuilt_firmware {
+    name: "mfc_fw.bin_placeholder",
+    src: ":empty_file",
+    filename: "mfc_fw.bin",
+    vendor: true,
+}
+
+prebuilt_firmware {
+    name: "pablo_icpufw.bin_placeholder",
+    src: ":empty_file",
+    filename: "pablo_icpufw.bin",
+    vendor: true,
+}
+
+prebuilt_firmware {
+    name: "os.checked.bin_placeholder",
+    src: ":empty_file",
+    filename: "os.checked.bin",
+    vendor: true,
+}
+
+prebuilt_firmware {
+    name: "vts.bin_placeholder",
+    src: ":empty_file",
+    filename: "vts.bin",
+    vendor: true,
+}
