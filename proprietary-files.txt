@@ -144,7 +144,7 @@ vendor/etc/vintf/manifest/vendor.samsung.hardware.sehradio_manifest_2_34.xml
 vendor/lib64/libVendorSemDataProps.so
 vendor/lib64/libVendorSemTelephonyProps.so
 vendor/lib64/libril_sem.so
-vendor/lib64/libsec-ril.so
+vendor/lib64/libsec-ril.so:vendor/lib64/libsec-ril-impl.so;FIX_SONAME
 vendor/lib64/libsecril-client.so
 vendor/lib64/libsemnativecarrierfeature.so
 vendor/lib64/vendor.samsung.hardware.radio-V1-ndk.so
