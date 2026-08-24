@@ -115,6 +115,10 @@ PRODUCT_PACKAGES += \
 $(call soong_config_set_bool,samsungCameraVars,needs_fps_field,true)
 $(call soong_config_set_bool,samsungCameraVars,usage_64bit,true)
 
+# Doze
+PRODUCT_PACKAGES += \
+    SamsungDoze
+
 # DRM
 PRODUCT_PACKAGES += \
     com.android.hardware.drm.clearkey
