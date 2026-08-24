@@ -100,6 +100,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper-service.teegris
 
+# Graphics
+PRODUCT_PACKAGES += \
+    android.hardware.composer.hwc3-service.slsi
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health-service.samsung \
