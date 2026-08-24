@@ -76,6 +76,12 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_PACKAGES += \
     handheld_core_hardware.prebuilt.xml
 
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.keystore.app_attest_key.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.keystore.app_attest_key.xml
+
+PRODUCT_PACKAGES += \
+    android.hardware.hardware_keystore_V3.xml
+
 # Platform
 BOARD_SHIPPING_API_LEVEL := 34
 PRODUCT_BRAND := samsung

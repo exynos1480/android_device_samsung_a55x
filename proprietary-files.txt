@@ -5,6 +5,10 @@
 
 # Proprietary files - from A556BXXSIDZI3, unless pinned
 
+# Keymint
+vendor/lib64/libskeymint10device.so
+vendor/lib64/libskeymint_cli.so
+
 # TEEGRIS
 vendor/bin/tzdaemon
 vendor/bin/tzts_daemon

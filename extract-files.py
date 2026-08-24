@@ -29,6 +29,8 @@ namespace_imports = [
 ]
 
 blob_fixups: blob_fixups_user_type = {
+    'vendor/lib64/libskeymint_cli.so': blob_fixup()
+        .replace_needed('libcrypto.so', 'libcrypto-v33.so'),
 }  # fmt: skip
 
 def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
@@ -45,6 +47,7 @@ module = ExtractUtilsModule(
     'samsung',
     namespace_imports=namespace_imports,
     blob_fixups=blob_fixups,
+    lib_fixups=lib_fixups,
 )
 
 if __name__ == '__main__':
