@@ -149,3 +149,11 @@ vendor/firmware/tee/A556EXXSABYI4/00000000-0000-0000-0000-0053545354ab|091cb57af
 vendor/firmware/tee/A556EXXSABYI4/00000000-0000-0000-0000-46494e474552|4ce5ca84c0ad8895f57ef59fb35cd87e58d1f829
 vendor/firmware/tee/A556EXXSABYI4/00000000-0000-0000-0000-474154454b45|f0b52b584aebfbc78a3ef3f503a918ad9e01bef8
 vendor/firmware/tee/A556EXXSABYI4/00000000-0000-0000-0000-4b45594d5354|ed0ddb40aac52a296bc2223aea31bb9d873890a1
+
+# Vibrator - Firmware
+vendor/firmware/RTP_1.bin
+vendor/firmware/RTP_119.bin
+vendor/firmware/RTP_124.bin
+vendor/firmware/RTP_2.bin
+vendor/firmware/RTP_41.bin
+vendor/firmware/RTP_5.bin
