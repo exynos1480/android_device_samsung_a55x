@@ -228,6 +228,16 @@ vendor/etc/nfc/sec_s3nsen6_hwreg.bin
 vendor/etc/nfc/sec_s3nsen6_swreg.bin
 vendor/firmware/nfc/sec_s3nsen6_firmware.bin
 
+# Ramdisk - Touch - Firmware
+vendor/firmware/tsp/gt9895_a55x.bin:recovery/root/vendor/firmware/tsp/gt9895_a55x.bin
+vendor/firmware/tsp/gt9895_a55x.bin:vendor_ramdisk/vendor/firmware/tsp/gt9895_a55x.bin
+
+# Ramdisk - SGPU - Firmware - from SM-A556B
+recovery/lib/firmware/sgpu/vangogh_lite_unified_evt0.bin:vendor_ramdisk/lib/firmware/sgpu/vangogh_lite_unified_evt0_b.bin|b81fb7ebc7227ec061e11d9af1e3b5a40be664e9
+
+# Ramdisk - SGPU - Firmware - from SM-A556E - A556EXXSIDZI3
+recovery/lib/firmware/sgpu/vangogh_lite_unified_evt0.bin:vendor_ramdisk/lib/firmware/sgpu/vangogh_lite_unified_evt0_e.bin|0c82d839993799403ac6e0790e2e5beb0db1d12f
+
 # RIL
 vendor/bin/hw/rild
 vendor/etc/vintf/manifest/vendor.samsung.hardware.radio_manifest_2_34.xml
