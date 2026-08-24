@@ -4,6 +4,21 @@
 //
 
 prebuilt_etc {
+    name: "fstab.s5e8845",
+    src: "fstab.s5e8845",
+    vendor: true,
+    required: ["fstab.s5e8845.vendor_ramdisk"],
+}
+
+prebuilt_root {
+    name: "fstab.s5e8845.vendor_ramdisk",
+    src: "fstab.s5e8845",
+    filename_from_src: true,
+    vendor_ramdisk: true,
+    install_in_root: true,
+}
+
+prebuilt_etc {
     name: "init.s5e8845.rc",
     relative_install_path: "init",
     src: "init.s5e8845.rc",
