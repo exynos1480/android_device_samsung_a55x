@@ -26,4 +26,4 @@ product                                      /product           ext4   ro       
 /devices/platform/12be0000.dwmmc2/mmc_host*  auto               auto   default                                                                                                         voldmanaged=sdcard:auto
 
 # ZRAM
-/dev/block/zram0                             none               swap   defaults                                                                                                        zramsize=50%,zram_loopback_path=/data/per_boot/zram_swap,zram_loopback_size=512M
+/dev/block/zram0                             none               swap   defaults                                                                                                        zramsize=50%,zram_backingdev_size=512M
