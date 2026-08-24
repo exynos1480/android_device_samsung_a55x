@@ -88,6 +88,9 @@ vendor/etc/dqe/hlgLut_Default.xml
 vendor/etc/dqe/hlgLut_Inner_SRGB.xml
 vendor/etc/dqe/wcgLut.xml
 
+# DRM - Widevine
+vendor/apex/com.google.android.widevine.nonupdatable.apex
+
 # ENN
 vendor/lib64/libenn_common_utils.so
 vendor/lib64/libenn_cpu_operators.so
