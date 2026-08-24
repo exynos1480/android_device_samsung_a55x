@@ -1,0 +1,10 @@
+//
+// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+prebuilt_etc {
+    name: "thermal_info_config.json",
+    src: "thermal_info_config.json",
+    vendor: true,
+}

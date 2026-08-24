@@ -198,12 +198,23 @@ PRODUCT_SHIPPING_API_LEVEL := $(BOARD_SHIPPING_API_LEVEL)
 # Soong Namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
+    hardware/google/interfaces \
+    hardware/google/pixel \
     hardware/samsung \
     hardware/samsung_slsi-linaro/exynos/libaudio/audiohal_comv1 \
     hardware/samsung_slsi-linaro/exynos/libaudio/audiohal_comv1/proxy
 
 # Task Profiles
 PRODUCT_PACKAGES += task_profiles.json.s5e8845
+
+# Thermal
+PRODUCT_PACKAGES += \
+    android.hardware.thermal-service.pixel \
+    thermal_symlinks
+
+# Thermal - Configuration
+PRODUCT_PACKAGES += \
+    thermal_info_config.json
 
 # Inherit from the proprietary version
 $(call inherit-product-if-exists, vendor/samsung/a55x/a55x-vendor.mk)
