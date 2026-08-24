@@ -77,6 +77,7 @@
 #define SOUND_DEVICE_VIRT_VTX_CAPTURE           123      // Voice Call TX virtual device
 #define SOUND_DEVICE_VIRT_FM_RECORD             124      // WDMA for FM Radio Recording
 #define SOUND_DEVICE_CALL_RECORD                125      // WDMA for Call Recording
+#define SOUND_DEVICE_VIRT_SPKAMP_REFERENCE      128      // Speaker Amp Ref virtual device
 #define SOUND_DEVICE_VIRT_VTX_REF_CAPTURE       131      // Voice Call TX Ref virtual device
 
 // Sound card 2 device usage
@@ -488,6 +489,28 @@ struct pcm_config pcm_config_primary_quad_mic_capture = {
     .stop_threshold  = PRIMARY_QUAD_CAPTURE_STOP,
 };
 #endif
+
+// PCM Configurations for Speaker AMP Reference Stream
+#define SPKAMP_REFERENCE_CARD           SOUND_CARD0
+#define SPKAMP_REFERENCE_DEVICE         SOUND_DEVICE_VIRT_SPKAMP_REFERENCE
+
+#define SPKAMP_REFERENCE_CHANNELS       MEDIA_4_CHANNELS
+#define SPKAMP_REFERENCE_SAMPLING_RATE  DEFAULT_MEDIA_SAMPLING_RATE
+#define SPKAMP_REFERENCE_PERIOD_SIZE    480
+#define SPKAMP_REFERENCE_PERIOD_COUNT   4
+#define SPKAMP_REFERENCE_FORMAT         DEFAULT_MEDIA_32_FORMAT
+#define SPKAMP_REFERENCE_START          SPKAMP_REFERENCE_PERIOD_SIZE
+#define SPKAMP_REFERENCE_STOP           ULONG_MAX
+
+struct pcm_config pcm_config_spkamp_reference = {
+    .channels        = SPKAMP_REFERENCE_CHANNELS,
+    .rate            = SPKAMP_REFERENCE_SAMPLING_RATE,
+    .period_size     = SPKAMP_REFERENCE_PERIOD_SIZE,
+    .period_count    = SPKAMP_REFERENCE_PERIOD_COUNT,
+    .format          = SPKAMP_REFERENCE_FORMAT,
+    .start_threshold = SPKAMP_REFERENCE_START,
+    .stop_threshold  = SPKAMP_REFERENCE_STOP,
+};
 
 // PCM Configurations for Low Latency Capture Stream
 #define LOW_CAPTURE_CARD                SOUND_CARD0
