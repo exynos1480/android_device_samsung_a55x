@@ -5,6 +5,15 @@
 
 DEVICE_PATH := device/samsung/a55x
 
+# A/B
+AB_OTA_PARTITIONS = \
+    $(BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST) \
+    boot \
+    dtbo \
+    init_boot \
+    vbmeta \
+    vendor_boot
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-2a-dotprod
