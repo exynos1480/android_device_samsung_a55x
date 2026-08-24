@@ -32,6 +32,18 @@ namespace_imports = [
 blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/libskeymint_cli.so': blob_fixup()
         .replace_needed('libcrypto.so', 'libcrypto-v33.so'),
+    (
+        'vendor/lib64/hw/vulkan.samsung.so',
+        'vendor/lib64/libSGPUOpenCL.so',
+        'vendor/lib64/egl/libGLESv2_samsung.so',
+    ): blob_fixup()
+        .clear_symbol_version('AHardwareBuffer_acquire')
+        .clear_symbol_version('AHardwareBuffer_allocate')
+        .clear_symbol_version('AHardwareBuffer_describe')
+        .clear_symbol_version('AHardwareBuffer_getId')
+        .clear_symbol_version('AHardwareBuffer_getNativeHandle')
+        .clear_symbol_version('AHardwareBuffer_release')
+        .clear_symbol_version('ANativeWindow_getFormat'),
 }  # fmt: skip
 
 def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):

@@ -61,6 +61,16 @@ vendor/etc/dqe/hlgLut_Default.xml
 vendor/etc/dqe/hlgLut_Inner_SRGB.xml
 vendor/etc/dqe/wcgLut.xml
 
+# Graphics
+vendor/etc/Khronos/OpenCL/samsung.icd;SYMLINK=vendor/Khronos/OpenCL/vendors/samsung.icd
+vendor/etc/hdr_samsung_mx.key
+vendor/lib64/egl/libEGL_samsung.so
+vendor/lib64/egl/libGLESv1_CM_samsung.so
+vendor/lib64/egl/libGLESv2_samsung.so
+vendor/lib64/hw/vulkan.samsung.so
+vendor/lib64/libOpenCL.so
+vendor/lib64/libSGPUOpenCL.so
+
 # Keymint
 vendor/lib64/libskeymint10device.so
 vendor/lib64/libskeymint_cli.so

@@ -142,11 +142,17 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_PACKAGES += \
     android.hardware.audio.low_latency.prebuilt.xml \
     android.hardware.bluetooth_le.prebuilt.xml \
+    android.hardware.vulkan.compute-0.prebuilt.xml \
+    android.hardware.vulkan.level-1.prebuilt.xml \
+    android.hardware.vulkan.version-1_3.prebuilt.xml \
+    android.software.opengles.deqp.level-2023-03-01.prebuilt.xml \
+    android.software.vulkan.deqp.level-2023-03-01.prebuilt.xml \
     handheld_core_hardware.prebuilt.xml
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.pro.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.pro.xml \
     frameworks/native/data/etc/android.hardware.keystore.app_attest_key.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.keystore.app_attest_key.xml \
+    frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml
 
 # Platform

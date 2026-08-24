@@ -35,6 +35,11 @@ bluetooth.profile.pbap.server.enabled=true
 bluetooth.profile.sap.server.enabled=true
 bluetooth.profile.vcp.controller.enabled=true
 
+# Graphics
+ro.hardware.egl=samsung
+ro.hardware.vulkan=samsung
+ro.opengles.version=196610
+
 # ZRAM
 ro.zram.mark_idle_delay_mins=60
 ro.zram.first_wb_delay_mins=180

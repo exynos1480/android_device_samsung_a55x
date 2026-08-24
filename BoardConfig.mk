@@ -57,6 +57,9 @@ TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 
+# Graphics
+TARGET_USES_VULKAN := true
+
 # Kernel
 BOARD_KERNEL_IMAGE_NAME := Image
 TARGET_KERNEL_CONFIG := a55x_defconfig
