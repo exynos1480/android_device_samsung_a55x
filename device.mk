@@ -183,6 +183,8 @@ PRODUCT_PACKAGES += \
     android.hardware.sensor.proximity.prebuilt.xml \
     android.hardware.sensor.stepcounter.prebuilt.xml \
     android.hardware.sensor.stepdetector.prebuilt.xml \
+    android.hardware.usb.accessory.prebuilt.xml \
+    android.hardware.usb.host.prebuilt.xml \
     android.hardware.vulkan.compute-0.prebuilt.xml \
     android.hardware.vulkan.level-1.prebuilt.xml \
     android.hardware.vulkan.version-1_3.prebuilt.xml \
@@ -241,6 +243,10 @@ PRODUCT_PACKAGES += \
 # Thermal - Configuration
 PRODUCT_PACKAGES += \
     thermal_info_config.json
+
+# USB
+PRODUCT_PACKAGES += \
+    android.hardware.usb-service.samsung
 
 # Inherit from the proprietary version
 $(call inherit-product-if-exists, vendor/samsung/a55x/a55x-vendor.mk)
