@@ -23,3 +23,10 @@ prebuilt_etc {
     relative_install_path: "init",
     src: "init.recovery.s5e8845.rc",
 }
+
+prebuilt_etc {
+    name: "ueventd.s5e8845.rc",
+    filename: "ueventd.rc",
+    src: "ueventd.s5e8845.rc",
+    vendor: true,
+}
