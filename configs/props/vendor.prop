@@ -35,6 +35,18 @@ bluetooth.profile.pbap.server.enabled=true
 bluetooth.profile.sap.server.enabled=true
 bluetooth.profile.vcp.controller.enabled=true
 
+# Codec2
+debug.c2.use_dmabufheaps=1
+debug.stagefright.c2-poolmask=458752
+debug.stagefright.c2inputsurface=-1
+debug.stagefright.ccodec_delayed_params=1
+debug.stagefright.ccodec_lax_type=true
+debug.stagefright.ccodec_strict_type=true
+media.c2.dmabuf.padding=512
+media.c2.hal.selection=aidl
+ro.vendor.gpu.dataspace=1
+vendor.debug.c2.sbwc.enable=true
+
 # Graphics
 ro.hardware.egl=samsung
 ro.hardware.vulkan=samsung
