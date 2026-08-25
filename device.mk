@@ -24,6 +24,11 @@ PRODUCT_PACKAGES += \
     update_engine_sideload \
     update_verifier
 
+# Boot Control
+PRODUCT_PACKAGES += \
+    android.hardware.boot-service.exynos \
+    android.hardware.boot-service.exynos_recovery
+
 # Kernel Modules
 PRODUCT_PACKAGES += \
     toolbox.vendor_ramdisk
