@@ -208,6 +208,19 @@ PRODUCT_PACKAGES += \
     android.hardware.nfc-service.sec \
     android.hardware.secure_element-service.thales-st33
 
+# Overlays
+PRODUCT_PACKAGES += \
+    ApertureOverlay \
+    FrameworkResOverlay \
+    LineageSDKOverlay \
+    NcmTetheringOverlay \
+    SettingsOverlay \
+    SettingsProviderOverlay \
+    SystemUIOverlay \
+    WiFiOverlay
+
+PRODUCT_ENFORCE_RRO_TARGETS := *
+
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
