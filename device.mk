@@ -83,7 +83,11 @@ $(call soong_config_set,exynos_audio,sec_resampler_library,//vendor/samsung/a55x
 
 # Audio - Effects
 PRODUCT_PACKAGES += \
-    SamsungDAP
+    libsamsungSoundbooster_plus \
+    SamsungDAP \
+    SoundBoosterStage
+
+$(call soong_config_set,samsungAudioVars,soundbooster_dsp_library,//vendor/samsung/a55x:lib_SoundBooster_ver2000)
 
 TARGET_EXCLUDES_AUDIOFX := true
 
