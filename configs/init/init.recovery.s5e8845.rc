@@ -1,4 +1,6 @@
 on init
+    symlink /dev/block/sdb /dev/block/by-name/fld_a
+    symlink /dev/block/sdc /dev/block/by-name/fld_b
     write /proc/sys/kernel/hung_task_timeout_secs 0
 
     start watchdogd
