@@ -69,6 +69,10 @@ PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 PRODUCT_PACKAGES += \
     toolbox.vendor_ramdisk
 
+# KeyMint
+PRODUCT_PACKAGES += \
+    android.hardware.security.keymint-service.samsung
+
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
@@ -78,9 +82,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.keystore.app_attest_key.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.keystore.app_attest_key.xml
-
-PRODUCT_PACKAGES += \
-    android.hardware.hardware_keystore_V3.xml
 
 # Platform
 BOARD_SHIPPING_API_LEVEL := 34
