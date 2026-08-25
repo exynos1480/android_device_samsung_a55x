@@ -48,6 +48,7 @@ ro.vendor.gpu.dataspace=1
 vendor.debug.c2.sbwc.enable=true
 
 # Graphics
+debug.renderengine.backend=skiavkthreaded
 debug.sf.auto_latch_unsignaled=0
 debug.sf.early.app.duration=16600000
 debug.sf.early.sf.duration=16600000
