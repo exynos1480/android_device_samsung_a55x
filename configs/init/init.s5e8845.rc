@@ -219,6 +219,9 @@ on init
 
     start watchdogd
 
+    # Fingerprint
+    write /sys/class/lcd/panel/mask_brightness 326
+
 on post-fs-data
     # Log data folder
     mkdir /data/vendor 0771 root system
