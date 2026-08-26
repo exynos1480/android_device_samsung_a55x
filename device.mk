@@ -65,6 +65,7 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.usbv2.default \
     bluetooth_with_le_audio_policy_configuration_7_0.xml \
+    mixer_paths.xml \
     usbv2_audio_policy_configuration.xml
 
 $(call soong_config_set_bool,frameworks_av,use_aosp_audio_policy_volumes,true)

@@ -29,6 +29,12 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
+    name: "mixer_paths.xml",
+    src: "mixer_paths.xml",
+    vendor: true,
+}
+
+prebuilt_etc {
     name: "usbv2_audio_policy_configuration.xml",
     src: ":gen_usbv2_audio_policy_configuration",
     vendor: true,
