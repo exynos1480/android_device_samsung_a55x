@@ -1,0 +1,9 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+allow vold sysfs_block_writable:file write;
+
+r_dir_file(vold, efs_file)
+r_dir_file(vold, mnt_vendor_file)

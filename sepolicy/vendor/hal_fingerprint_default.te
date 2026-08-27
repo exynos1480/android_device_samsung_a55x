@@ -1,0 +1,11 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+r_dir_file(hal_fingerprint_default, efs_file)
+r_dir_file(hal_fingerprint_default, sec_efs_file)
+
+r_dir_file(hal_fingerprint_default, sysfs_battery)
+r_dir_file(hal_fingerprint_default, sysfs_sec_touchscreen)
+r_dir_file(hal_fingerprint_default, sysfs_lcd_writable)

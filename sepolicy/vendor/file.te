@@ -1,0 +1,21 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# Camera
+type dmabuf_camera_heap_device, dmabuf_heap_device_type, dev_type;
+type sysfs_camera, sysfs_type, r_fs_type, fs_type;
+type sysfs_camera_writable, sysfs_type, rw_fs_type, fs_type;
+
+# DRM - Widevine
+type mediadrm_vendor_data_file, data_file_type, file_type;
+
+# Swappines
+type proc_swappiness, proc_type, fs_type, rw_fs_type;
+
+# UFS
+type sysfs_block_writable, sysfs_type, rw_fs_type, fs_type;
+
+# V4L
+type sysfs_v4l, sysfs_type, r_fs_type, fs_type;

@@ -1,0 +1,9 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+r_dir_file(surfaceflinger, sysfs_gpu)
+
+dontaudit surfaceflinger shell_data_file:dir r_dir_perms;
+get_prop(surfaceflinger, vendor_hwc_prop)

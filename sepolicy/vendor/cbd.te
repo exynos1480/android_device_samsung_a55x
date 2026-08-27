@@ -1,0 +1,7 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+allow cbd self:capability2 block_suspend;
+set_prop(cbd, vendor_radio_prop)

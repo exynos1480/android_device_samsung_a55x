@@ -1,0 +1,76 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# Battery
+genfscon sysfs /devices/platform/11560000.hsi2c/i2c-6/6-003a/leds-s2mf301/power_supply/s2mf301-fled/type                                    u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/11560000.hsi2c/i2c-6/6-003a/s2mf301-charger/power_supply/s2mf301-charger/type                              u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/11560000.hsi2c/i2c-6/6-003a/s2mf301-charger/power_supply/s2mf301-otg/type                                  u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/11560000.hsi2c/i2c-6/6-003a/s2mf301-fuelgauge/power_supply/s2mf301-fuelgauge/type                          u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/11560000.hsi2c/i2c-6/6-003a/s2mf301-muic/power_supply/muic-manager/type                                    u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/11560000.hsi2c/i2c-6/6-003a/s2mf301-powermeter/power_supply/s2mf301-pmeter/type                            u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/11560000.hsi2c/i2c-6/6-003a/s2mf301-top/power_supply/s2mf301-top/type                                      u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/11560000.hsi2c/i2c-6/6-003c/power_supply/s2mf301-water/type                                                u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/11560000.hsi2c/i2c-6/6-003c/power_supply/usbpd-manager/type                                                u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/11560000.hsi2c/i2c-6/6-0063/power_supply/sm5461-charger/type                                               u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:sec-direct-charger/power_supply/sec-direct-charger/type        u:object_r:sysfs_battery:s0
+
+# Block
+genfscon sysfs /devices/platform/100e0000.dwmmc2/mmc_host/mmc0/mmc0:5048/block/mmcblk0/mmcblk0p1                                            u:object_r:sysfs_block:s0
+genfscon sysfs /devices/platform/13500000.ufs/host0/target0:0:0/0:0:0:0/block/sda/mq/0/nr_tags                                              u:object_r:sysfs_block:s0
+genfscon sysfs /devices/platform/13500000.ufs/host0/target0:0:0/0:0:0:0/block/sda/queue/discard_max_bytes                                   u:object_r:sysfs_block_writable:s0
+
+# Bluetooth
+genfscon sysfs /module/scsc_bt/parameters/bluetooth_address                                                                                 u:object_r:sysfs_bluetooth_writable:s0
+
+# Camera
+genfscon sysfs /devices/virtual/camera/flash/flash_state                                                                                    u:object_r:sysfs_camera_writable:s0
+genfscon sysfs /devices/virtual/camera/flash/rear_flash                                                                                     u:object_r:sysfs_camera_writable:s0
+genfscon sysfs /devices/virtual/camera/flash/rear_torch_flash                                                                               u:object_r:sysfs_camera:s0
+genfscon sysfs /devices/virtual/camera/ois/ois_gain_rear                                                                                    u:object_r:sysfs_camera:s0
+genfscon sysfs /devices/virtual/camera/rear/ssrm_camera_info                                                                                u:object_r:sysfs_camera_writable:s0
+genfscon sysfs /kernel/mm/vmscan/mem_boost_mode                                                                                             u:object_r:sysfs_camera_writable:s0
+
+# GPS
+genfscon sysfs /devices/soc0/machine                                                                                                        u:object_r:sysfs_sec_gps:s0
+genfscon sysfs /devices/soc0/revision                                                                                                       u:object_r:sysfs_sec_gps:s0
+
+# Graphics
+genfscon sysfs /devices/platform/10e00000.sgpu                                                                                              u:object_r:sysfs_gpu:s0
+genfscon sysfs /devices/platform/exynos-drm                                                                                                 u:object_r:sysfs_gpu:s0
+genfscon sysfs /devices/virtual/dqe                                                                                                         u:object_r:sysfs_gpu:s0
+
+# Power
+genfscon sysfs /devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/scaling_devfreq_min                                      u:object_r:sysfs_power_writable:s0
+genfscon sysfs /devices/platform/ems/emstune/req_level                                                                                      u:object_r:sysfs_power_writable:s0
+genfscon sysfs /devices/platform/ems/emstune/req_mode                                                                                       u:object_r:sysfs_power_writable:s0
+genfscon sysfs /devices/platform/exynos-ufcc/ucc/cstate_control                                                                             u:object_r:sysfs_power_writable:s0
+genfscon sysfs /devices/platform/exynos-ufcc/ucc/cstate_control_level                                                                       u:object_r:sysfs_power_writable:s0
+genfscon sysfs /kernel/gpu/gpu_ifpo_runtime_control                                                                                         u:object_r:sysfs_power_writable:s0
+genfscon sysfs /kernel/gpu/gpu_max_clock                                                                                                    u:object_r:sysfs_power_writable:s0
+genfscon sysfs /kernel/mm/vmscan/am_app_launch                                                                                              u:object_r:sysfs_power_writable:s0
+genfscon sysfs /kernel/mm/vmscan/mem_boost_mode_system                                                                                      u:object_r:sysfs_power_writable:s0
+
+# Sensors
+genfscon sysfs
+/devices/platform/esca_mfd_bus@11960000/i2c-11/11-001f/s2mpu15-gpadc/iio:device0/name                                                       u:object_r:sysfs_iio:s0
+genfscon sysfs /devices/virtual/sensors/flip_cover_detector_sensor/nfc_cover_status                                                         u:object_r:sysfs_sensors_writable:s0
+genfscon sysfs /devices/virtual/sensors/light_sensor/hall_ic                                                                                u:object_r:sysfs_sensors_writable:s0
+
+# Swappiness
+genfscon proc /sys/vm/swappiness                                                                                                            u:object_r:proc_swappiness:s0
+
+# Vibrator
+genfscon sysfs /devices/virtual/sec_vib_inputff/control/use_sep_index                                                                       u:object_r:sysfs_vibrator:s0
+
+# Video4Linux
+genfscon sysfs /devices/platform/15090000.exynos_is/video4linux/video0/name                                                                 u:object_r:sysfs_v4l:s0
+genfscon sysfs /devices/platform/15090000.exynos_is/video4linux/video1/name                                                                 u:object_r:sysfs_v4l:s0
+genfscon sysfs /devices/platform/mfc/video4linux/video6/name                                                                                u:object_r:sysfs_v4l:s0
+genfscon sysfs /devices/platform/mfc/video4linux/video7/name                                                                                u:object_r:sysfs_v4l:s0
+genfscon sysfs /devices/platform/mfc/video4linux/video8/name                                                                                u:object_r:sysfs_v4l:s0
+genfscon sysfs /devices/platform/mfc/video4linux/video9/name                                                                                u:object_r:sysfs_v4l:s0
+
+# Wi-Fi
+genfscon sysfs /devices/platform/11b70000.scsc_wifibt/net/wlan0/mtu                                                                         u:object_r:sysfs_net:s0

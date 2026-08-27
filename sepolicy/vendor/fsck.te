@@ -1,0 +1,8 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+allow fsck cpefs_block_device:blk_file rw_file_perms;
+allow fsck efs_block_device:blk_file rw_file_perms;
+allow fsck sysfs_battery:dir search;

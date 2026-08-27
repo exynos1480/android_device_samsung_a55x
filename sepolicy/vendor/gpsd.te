@@ -1,0 +1,20 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+r_dir_file(gpsd, sysfs_sec_gps);
+
+binder_call(gpsd, servicemanager)
+wakelock_use(gpsd)
+
+allow gpsd gnss_device:chr_file rw_file_perms;
+allow gpsd gps_device:chr_file rw_file_perms;
+allow gpsd gpsd_exec:file execute_no_trans;
+allow gpsd log_vendor_data_file:file create_file_perms;
+allow gpsd vendor_radio_device:chr_file rw_file_perms;
+allow gpsd vendor_toolbox_exec:file execute_no_trans;
+allow gpsd log_vendor_data_file:dir { search write add_name };
+get_prop(gpsd, bootanim_system_prop)
+
+dontaudit gpsd system_prop:file read;

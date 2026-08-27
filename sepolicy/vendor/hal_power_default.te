@@ -1,0 +1,14 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+r_dir_file(hal_power_default, sysfs_gpu)
+hal_client_domain(hal_power_default, hal_thermal)
+
+allow hal_power_default fwk_stats_service:service_manager find;
+allow hal_power_default pm_qos_device:chr_file { open write };
+allow hal_power_default sysfs_battery:dir search;
+allow hal_power_default sysfs_battery_writable:file { open write };
+allow hal_power_default sysfs_camera_writable:file rw_file_perms;
+allow hal_power_default sysfs_power_writable:file write;

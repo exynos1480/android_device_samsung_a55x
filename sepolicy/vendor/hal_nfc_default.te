@@ -1,0 +1,7 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+allow hal_nfc_default nfc_device:chr_file rw_file_perms;
+dontaudit hal_nfc_default system_prop:file { getattr map open read };

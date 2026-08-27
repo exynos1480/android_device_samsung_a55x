@@ -1,0 +1,7 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+allow zygote dmabuf_system_heap_device:chr_file r_file_perms;
+get_prop(zygote, vendor_hwc_prop)

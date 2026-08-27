@@ -1,0 +1,15 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+r_dir_file(bootanim, sysfs_gpu)
+
+allow bootanim graphics_device:chr_file rw_file_perms;
+allow bootanim sysfs_gpu:lnk_file rw_file_perms;
+
+get_prop(bootanim, vendor_hwc_prop)
+
+# https://github.com/LineageOS/android_device_generic_goldfish/blob/7b227068cbf159c07096bd1c5ec5c479c9a430a2/sepolicy/vendor/bootanim.te#L3
+dontaudit bootanim system_data_file:dir r_dir_perms;
+dontaudit bootanim shell_data_file:dir r_dir_perms;

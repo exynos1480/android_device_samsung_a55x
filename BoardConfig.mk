@@ -105,6 +105,7 @@ VENDOR_SECURITY_PATCH := 2026-09-05
 
 # SELinux
 BOARD_SEPOLICY_TEE_FLAVOR := teegris
+BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 include device/samsung_slsi/sepolicy/sepolicy.mk
 include device/lineage/sepolicy/exynos/sepolicy.mk
 

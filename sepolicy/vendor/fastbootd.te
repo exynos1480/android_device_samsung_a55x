@@ -1,0 +1,9 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+allow fastbootd {
+    custom_ab_block_device
+    slotinfo_block_device
+}:blk_file rw_file_perms;

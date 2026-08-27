@@ -1,0 +1,7 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+dontaudit nfc system_data_file:dir rw_dir_perms;
+dontaudit nfc system_data_file:file create_file_perms;

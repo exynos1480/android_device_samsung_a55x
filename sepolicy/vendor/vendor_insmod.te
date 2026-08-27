@@ -1,0 +1,17 @@
+type vendor_insmod, domain;
+type vendor_insmod_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_insmod)
+
+allow vendor_insmod kmsg_device:chr_file rw_file_perms;
+allow vendor_insmod proc_cmdline:file r_file_perms;
+allow vendor_insmod self:capability sys_module;
+allow vendor_insmod system_dlkm_file:dir r_dir_perms;
+allow vendor_insmod system_dlkm_file:file r_file_perms;
+allow vendor_insmod system_dlkm_file:system module_load;
+allow vendor_insmod vendor_file:system module_load;
+allow vendor_insmod vendor_toolbox_exec:file execute_no_trans;
+set_prop(vendor_insmod, vendor_dlkm_prop)
+unix_socket_connect(vendor_insmod, property, init)
+
+dontaudit vendor_insmod self:key write;

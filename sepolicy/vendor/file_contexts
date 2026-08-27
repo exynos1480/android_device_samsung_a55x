@@ -1,0 +1,65 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# Bluetooth
+/dev/scsc_h4_0                                                                                  u:object_r:bt_device:s0
+
+# Camera
+/dev/dma_heap/camera                                                                            u:object_r:dmabuf_camera_heap_device:s0
+/dev/dma_heap/camera-uncached                                                                   u:object_r:dmabuf_camera_heap_device:s0
+
+# DRM - Widevine
+/data/vendor/mediadrm(/.*)?                                                                     u:object_r:mediadrm_vendor_data_file:s0
+/dev/s5p-smem                                                                                   u:object_r:vendor_secmem_device:s0
+
+# GPS
+/dev/gnss_ipc                                                                                   u:object_r:gps_device:s0
+/vendor/bin/hw/gps.sh                                                                           u:object_r:gpsd_exec:s0
+/vendor/bin/hw/gpsd_K44                                                                         u:object_r:gpsd_exec:s0
+
+# Graphics
+/dev/dmabuf_trace                                                                               u:object_r:dmabuf_trace_device:s0
+/vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-sgr.so                               u:object_r:same_process_hal_file:s0
+/vendor/lib64/hw/vulkan.samsung.so                                                              u:object_r:same_process_hal_file:s0
+/vendor/lib64/libOpenCL.so                                                                      u:object_r:same_process_hal_file:s0
+/vendor/lib64/libSGPUOpenCL.so                                                                  u:object_r:same_process_hal_file:s0
+/vendor/lib64/libdrm.so                                                                         u:object_r:same_process_hal_file:s0
+/vendor/lib64/libdrm_sgpu.so                                                                    u:object_r:same_process_hal_file:s0
+/vendor/lib64/libeis_utils.so                                                                   u:object_r:same_process_hal_file:s0
+/vendor/lib64/libexynosgraphicbuffer_core.so                                                    u:object_r:same_process_hal_file:s0
+/vendor/lib64/libsbwchelper.so                                                                  u:object_r:same_process_hal_file:s0
+/vendor/lib64/vendor.samsung_slsi.hardware.SbwcDecompService-V1-ndk.so                          u:object_r:same_process_hal_file:s0
+
+# Partitions - A/B
+/dev/block/platform/.+/by-name/boot_[ab]                                                        u:object_r:boot_block_device:s0
+/dev/block/platform/.+/by-name/cp_debug_[ab]                                                    u:object_r:custom_ab_block_device:s0
+/dev/block/platform/.+/by-name/dtbo_[ab]                                                        u:object_r:custom_ab_block_device:s0
+/dev/block/platform/.+/by-name/init_boot_[ab]                                                   u:object_r:boot_block_device:s0
+/dev/block/platform/.+/by-name/modem_[ab]                                                       u:object_r:modem_block_device:s0
+/dev/block/platform/.+/by-name/odm_[ab]                                                         u:object_r:system_block_device:s0
+/dev/block/platform/.+/by-name/product_[ab]                                                     u:object_r:system_block_device:s0
+/dev/block/platform/.+/by-name/radio_[ab]                                                       u:object_r:radio_block_device:s0
+/dev/block/platform/.+/by-name/system_[ab]                                                      u:object_r:system_block_device:s0
+/dev/block/platform/.+/by-name/vbmeta_[ab]                                                      u:object_r:custom_ab_block_device:s0
+/dev/block/platform/.+/by-name/vbmeta_system_[ab]                                               u:object_r:custom_ab_block_device:s0
+/dev/block/platform/.+/by-name/vendor_[ab]                                                      u:object_r:system_block_device:s0
+/dev/block/platform/.+/by-name/vendor_boot_[ab]                                                 u:object_r:custom_ab_block_device:s0
+/dev/block/platform/.+/by-name/vendor_dlkm_[ab]                                                 u:object_r:custom_ab_block_device:s0
+
+# Sensors
+/sys/devices/platform/shub/iio:device[0-9]+/buffer/data_available                               u:object_r:sysfs_iio:s0
+/sys/devices/platform/shub/iio:device[0-9]+/buffer/enable                                       u:object_r:sysfs_sensors_writable:s0
+/sys/devices/platform/shub/iio:device[0-9]+/buffer/length                                       u:object_r:sysfs_sensors_writable:s0
+/sys/devices/platform/shub/iio:device[0-9]+/name                                                u:object_r:sysfs_iio:s0
+/sys/devices/platform/shub/iio:device[0-9]+/poll_delay                                          u:object_r:sysfs_sensors_writable:s0
+
+# Vendor Services
+/vendor/bin/hw/android.hardware.graphics.allocator-aidl-service-sgr                             u:object_r:hal_graphics_allocator_default_exec:s0
+/vendor/bin/hw/vendor.samsung.hardware.gnss-service                                             u:object_r:hal_gnss_default_exec:s0
+/vendor/bin/init.insmod.sh                                                                      u:object_r:vendor_insmod_exec:s0
+
+# Wakeup
+/sys/devices/platform/(.*)/wakeup[0-9]*(/.*)?                                                   u:object_r:sysfs_wakeup:s0
+/sys/devices/virtual/sec/tsp/wakeup[0-9]*(/.*)?                                                 u:object_r:sysfs_wakeup:s0

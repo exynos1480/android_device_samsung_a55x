@@ -1,0 +1,18 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+allow update_engine_common {
+	boot_block_device
+        custom_ab_block_device
+	system_block_device
+}:blk_file rw_file_perms;
+
+allow update_engine loop_device:blk_file rw_file_perms;
+allow update_engine misc_block_device:blk_file rw_file_perms;
+allow update_engine proc_bootconfig:file r_file_perms;
+allow update_engine_common metadata_file:dir search;
+allow update_engine_common tmpfs:lnk_file r_file_perms;
+
+dontaudit update_engine_common self:capability { dac_read_search dac_override };
