@@ -16,3 +16,10 @@ on early-init
 
     # TEEGRIS - Firmware
     mount none /vendor/firmware/tee/${ro.boot.bootloader} /vendor/tee bind
+
+# GNSS
+on property:ro.boot.em.model=SM-A556E
+    setprop ro.vendor.gnss.variant a55xnsxx
+
+on property:ro.boot.em.model=SM-A556B
+    setprop ro.vendor.gnss.variant a55xnaxx
