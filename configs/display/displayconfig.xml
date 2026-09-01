@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<displayConfiguration>
+    <screenBrightnessMap>
+        <point>
+            <value>0.0</value>
+            <nits>1</nits>
+        </point>
+        <point>
+            <value>0.0184</value>
+            <nits>12.5</nits>
+        </point>
+        <point>
+            <value>0.0657</value>
+            <nits>60</nits>
+        </point>
+        <point>
+            <value>0.067</value>
+            <nits>62.6</nits>
+        </point>
+        <point>
+            <value>0.0802</value>
+            <nits>78.7</nits>
+        </point>
+        <point>
+            <value>0.1314</value>
+            <nits>148.8</nits>
+        </point>
+        <point>
+            <value>0.2654</value>
+            <nits>369.6</nits>
+        </point>
+        <point>
+            <value>0.3114</value>
+            <nits>454.7</nits>
+        </point>
+        <point>
+            <value>0.3272</value>
+            <nits>484.8</nits>
+        </point>
+        <point>
+            <value>0.3351</value>
+            <nits>500</nits>
+        </point>
+        <point>
+            <value>0.3364</value>
+            <nits>510</nits>
+        </point>
+        <point>
+            <value>0.3509</value>
+            <nits>531.4</nits>
+        </point>
+        <point>
+            <value>0.3784</value>
+            <nits>572.5</nits>
+        </point>
+        <point>
+            <value>0.4625</value>
+            <nits>698</nits>
+        </point>
+        <point>
+            <value>0.7162</value>
+            <nits>1076</nits>
+        </point>
+        <point>
+            <value>1.0</value>
+            <nits>1500</nits>
+        </point>
+    </screenBrightnessMap>
+
+    <highBrightnessMode enabled="true">
+        <transitionPoint>0.3364</transitionPoint>
+        <minimumLux>3000</minimumLux>
+        <timing>
+            <timeWindowSecs>0</timeWindowSecs> // Window in which we restrict HBM.
+            <timeMaxSecs>0</timeMaxSecs>       // Maximum time of HBM allowed in that window.
+            <timeMinSecs>0</timeMinSecs>       // Minimum time remaining required to switch
+        </timing>                              // HBM on for.
+    </highBrightnessMode>
+
+    <autoBrightness enabled="true">
+        <luxToBrightnessMapping>
+            <mode>default</mode>
+            <setting>normal</setting>
+            <map>
+                <point>
+                    <first>0</first>
+                    <second>0.016000</second> <!-- 11 nits -->
+                </point>
+                <point>
+                    <first>1</first>
+                    <second>0.020889</second> <!-- 15 nits -->
+                </point>
+                <point>
+                    <first>2</first>
+                    <second>0.027860</second> <!-- 22 nits -->
+                </point>
+                <point>
+                    <first>3</first>
+                    <second>0.031847</second> <!-- 26 nits -->
+                </point>
+                <point>
+                    <first>4</first>
+                    <second>0.036821</second> <!-- 31 nits -->
+                </point>
+                <point>
+                    <first>5</first>
+                    <second>0.040821</second> <!-- 35 nits -->
+                </point>
+                <point>
+                    <first>10</first>
+                    <second>0.051759</second> <!-- 46 nits -->
+                </point>
+                <point>
+                    <first>15</first>
+                    <second>0.066700</second> <!-- 62 nits -->
+                </point>
+                <point>
+                    <first>20</first>
+                    <second>0.080419</second> <!-- 79 nits -->
+                </point>
+                <point>
+                    <first>25</first>
+                    <second>0.086992</second> <!-- 88 nits -->
+                </point>
+                <point>
+                    <first>50</first>
+                    <second>0.090645</second> <!-- 93 nits -->
+                </point>
+                <point>
+                    <first>100</first>
+                    <second>0.095027</second> <!-- 99 nits -->
+                </point>
+                <point>
+                    <first>300</first>
+                    <second>0.103791</second> <!-- 111 nits -->
+                </point>
+                <point>
+                    <first>500</first>
+                    <second>0.117669</second> <!-- 130 nits -->
+                </point>
+                <point>
+                    <first>1000</first>
+                    <second>0.156404</second> <!-- 190 nits -->
+                </point>
+                <point>
+                    <first>2000</first>
+                    <second>0.247436</second> <!-- 340 nits -->
+                </point>
+                <point>
+                    <first>3000</first>
+                    <second>0.335100</second> <!-- 500 nits -->
+                </point>
+                <point>
+                    <first>4000</first>
+                    <second>0.530959</second> <!-- 800 nits -->
+                </point>
+                <point>
+                    <first>5000</first>
+                    <second>0.665192</second> <!-- 1000 nits -->
+                </point>
+                <point>
+                    <first>6000</first>
+                    <second>0.799198</second> <!-- 1200 nits -->
+                </point>
+                <point>
+                    <first>7000</first>
+                    <second>0.933066</second> <!-- 1400 nits -->
+                </point>
+                <point>
+                    <first>8000</first>
+                    <second>1.000000</second> <!-- 1500 nits -->
+                </point>
+                <point>
+                    <first>20000</first>
+                    <second>1.000000</second> <!-- 1500 nits -->
+                </point>
+                <point>
+                    <first>50000</first>
+                    <second>1.000000</second> <!-- 1500 nits -->
+                </point>
+                <point>
+                    <first>999999</first>
+                    <second>1.000000</second> <!-- 1500 nits -->
+                </point>
+            </map>
+        </luxToBrightnessMapping>
+
+        <brighteningLightDebounceMillis>4000</brighteningLightDebounceMillis>
+        <darkeningLightDebounceMillis>8000</darkeningLightDebounceMillis>
+        <brighteningLightDebounceIdleMillis>-1</brighteningLightDebounceIdleMillis>
+        <darkeningLightDebounceIdleMillis>-1</darkeningLightDebounceIdleMillis>
+    </autoBrightness>
+
+    <hdrBrightnessConfig>
+        <brightnessMap>
+        </brightnessMap>
+        <brightnessIncreaseDebounceMillis>0</brightnessIncreaseDebounceMillis>
+        <screenBrightnessRampIncrease>-1.0</screenBrightnessRampIncrease>
+        <brightnessDecreaseDebounceMillis>0</brightnessDecreaseDebounceMillis>
+        <screenBrightnessRampDecrease>-1.0</screenBrightnessRampDecrease>
+    </hdrBrightnessConfig>
+
+    <lightSensor>
+        <type>com.samsung.sensor.autobrightness</type>
+        <name>STK31610 Auto Brightness Sensor</name>
+    </lightSensor>
+</displayConfiguration>

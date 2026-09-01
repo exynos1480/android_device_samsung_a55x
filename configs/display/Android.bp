@@ -1,0 +1,12 @@
+//
+// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+prebuilt_etc {
+    name: "displayconfig.xml",
+    src: "displayconfig.xml",
+    filename: "display_id_4633128672291735936.xml",
+    sub_dir: "displayconfig",
+    vendor: true,
+}
