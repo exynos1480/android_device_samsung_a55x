@@ -1,0 +1,10 @@
+//
+// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+sh_binary {
+    name: "check_firmware",
+    src: "check_firmware.sh",
+    system_ext_specific: true,
+}

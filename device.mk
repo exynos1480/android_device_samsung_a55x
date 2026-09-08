@@ -36,12 +36,19 @@ AB_OTA_POSTINSTALL_CONFIG += \
     POSTINSTALL_OPTIONAL_system=true
 
 AB_OTA_POSTINSTALL_CONFIG += \
+    RUN_POSTINSTALL_system_ext=true \
+    POSTINSTALL_PATH_system_ext=bin/check_firmware \
+    FILESYSTEM_TYPE_system_ext=ext4 \
+    POSTINSTALL_OPTIONAL_system_ext=false
+
+AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_vendor=true \
     POSTINSTALL_PATH_vendor=bin/checkpoint_gc \
     FILESYSTEM_TYPE_vendor=erofs \
     POSTINSTALL_OPTIONAL_vendor=true
 
 PRODUCT_PACKAGES += \
+    check_firmware \
     checkpoint_gc \
     otapreopt_script \
     update_engine \
