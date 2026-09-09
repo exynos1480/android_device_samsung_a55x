@@ -59,11 +59,15 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace('gps.rose.sh', 'gps.sh')
         .regex_replace(r'\n\non [\s\S]*', '')
         .regex_replace('.lsi.rose', ''),
+    'vendor/etc/init/init.exynos.wifi.rc': blob_fixup()
+        .regex_replace(r'.*:.*', 'on fs'),
     'vendor/etc/init/init.nfc.samsung.rc': blob_fixup()
         .regex_replace('system', 'secure_element'),
     'vendor/etc/libnfc-sec-vendor.conf': blob_fixup()
         .regex_replace('F_', 'F_HW_')
         .regex_replace('SW_OPT', 'RF_SW'),
+    'vendor/etc/wifi/init.insmod.wifi.cfg': blob_fixup()
+         .regex_replace(r'\A', 'insmod|/system_dlkm/lib/modules/rfkill.ko\n'),
     'vendor/lib64/hw/camera.s5e8845.so': blob_fixup()
         .sig_replace('e7 89 01 94', '1f 20 03 d5')  # NOP VendorCameraIPCtoRIL::enable m_sendRequest()
         .sig_replace('92 89 01 94', '1f 20 03 d5') # NOP VendorCameraIPCtoRIL::disable m_sendRequest()
