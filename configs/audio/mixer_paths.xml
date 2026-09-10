@@ -2639,13 +2639,13 @@
     <ctl name="ABOX SPUM PRETUNE0 SEL" value="SIFM1"/>
     <ctl name="ABOX SPUM POSTTUNE0 SEL" value="SIFM1"/>
     <ctl name="ABOX SPUM0 PREGAIN EN" value="1"/>
-    <ctl name="ABOX SPUM0 PREGAIN CH0 Main Volume" value="32"/>
+    <ctl name="ABOX SPUM0 PREGAIN CH0 Main Volume" value="37"/>
     <ctl name="ABOX SPUM0 PREGAIN CH0 Fine Volume" value="0"/>
-    <ctl name="ABOX SPUM0 PREGAIN CH1 Main Volume" value="32"/>
+    <ctl name="ABOX SPUM0 PREGAIN CH1 Main Volume" value="37"/>
     <ctl name="ABOX SPUM0 PREGAIN CH1 Fine Volume" value="0"/>
-    <ctl name="ABOX SPUM0 PREGAIN CH2 Main Volume" value="32"/>
+    <ctl name="ABOX SPUM0 PREGAIN CH2 Main Volume" value="37"/>
     <ctl name="ABOX SPUM0 PREGAIN CH2 Fine Volume" value="0"/>
-    <ctl name="ABOX SPUM0 PREGAIN CH3 Main Volume" value="32"/>
+    <ctl name="ABOX SPUM0 PREGAIN CH3 Main Volume" value="37"/>
     <ctl name="ABOX SPUM0 PREGAIN CH3 Fine Volume" value="0"/>
     <ctl name="ABOX SPUM0 PREGAIN FUNC" value="FADE IN"/>
     <!-- 200ms fade duration @ 48KHz, (2^31-1) / (48000*0.2) = 223,696 -->
