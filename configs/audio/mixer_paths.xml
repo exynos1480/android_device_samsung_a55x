@@ -2023,6 +2023,10 @@
   <ctl name="ABOX RDMA6 Period" value="192"/>
   <ctl name="ABOX SPUS ASRC2 Dummy Start" value="1"/>
   <ctl name="ABOX RDMA2 Dummy Start" value="1"/>
+
+  <ctl name="ABOX UDMA RD0 Channel" value="1"/>
+  <ctl name="ABOX UDMA RD0 Expand" value="1"/>
+
   <!-- Considering fast-stream period-size 4ms, fade-out should be < 4ms-->
   <!-- (Max fade-out time)/volChg=frames i.e 0x800000/0x10000(65536)=0x80(128) frames -->
   <!-- fade-out time is (1000/48000)*128 = 2.66msec -->
