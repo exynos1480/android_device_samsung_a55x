@@ -30,6 +30,8 @@ namespace_imports = [
 ]
 
 blob_fixups: blob_fixups_user_type = {
+    'vendor/etc/media_codecs_performance_c2.xml': blob_fixup()
+        .regex_replace('.*sec\\.(.|\n)*D', '    </D'),
     'vendor/lib64/libskeymint_cli.so': blob_fixup()
         .replace_needed('libcrypto.so', 'libcrypto-v33.so'),
     (
