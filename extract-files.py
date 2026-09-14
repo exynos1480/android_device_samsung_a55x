@@ -54,6 +54,7 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace('/bin/(?!hw/)', '/bin/hw/')
         .regex_replace('gps.rose.dcm.cfg', 'gps.dcm.cfg')
         .regex_replace('gps.rose.sh', 'gps.sh')
+        .regex_replace(r'\n\non [\s\S]*', '')
         .regex_replace('.lsi.rose', ''),
     'vendor/lib64/hw/camera.s5e8845.so': blob_fixup()
         .sig_replace('e7 89 01 94', '1f 20 03 d5')  # NOP VendorCameraIPCtoRIL::enable m_sendRequest()
