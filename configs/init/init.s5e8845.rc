@@ -44,6 +44,10 @@ on init
     chown system system /dev/ems
     chown system system /sys/kernel/ems/emstune/req_mode
     chown system system /sys/kernel/ems/emstune/req_level
+
+    chmod 0664 /sys/kernel/ems/emstune/req_mode
+    chmod 0664 /sys/kernel/ems/emstune/req_level
+
     chown system system /sys/kernel/ems/emstune/aio_tuner
     chown system system /sys/kernel/ems/emstune/reset
     chown system system /sys/kernel/ems/emstune/sched_boost
@@ -610,7 +614,8 @@ on fs
 
     # Permissions Camera
     mkdir /data/vendor/camera 0770 cameraserver system
-    chown cameraserver cameraserver /sys/kernel/mm/vmscan/mem_boost_mode
+    chmod 0664 /sys/kernel/mm/vmscan/mem_boost_mode
+    chown system system /sys/kernel/mm/vmscan/mem_boost_mode
     chown cameraserver system /sys/class/camera/rear/rear_camfw
     chown system radio /sys/class/camera/rear/rear_camfw_full
     chown system radio /sys/class/camera/rear/rear_checkfw_user
