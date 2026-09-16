@@ -311,3 +311,6 @@ vendor/firmware/RTP_124.bin
 vendor/firmware/RTP_2.bin
 vendor/firmware/RTP_41.bin
 vendor/firmware/RTP_5.bin
+
+# VNDK - from prebuilts/vndk/v34 - android-17.0.0_r1
+vendor/lib64/libcryptx.so;FIX_SONAME|645314168ce45185344f03e86cebd9363791eee1|24151524870d9083332f9417b4fd65f9f64a095c
