@@ -403,6 +403,10 @@ on boot
     chown mediacodec system /sys/kernel/gpu/gpu_mm_min_clock
     chmod 0664 /sys/kernel/gpu/gpu_mm_min_clock
 
+    # Fingerprint
+    chown system system /sys/class/sec/tsp/scrub_pos
+    write /sys/class/sec/tsp/cmd "fod_enable,1,1,0"
+
 on early-fs
     write /sys/devices/platform/fmp/fmp-fips/fmp_fips_run 1
     write /sys/block/sda/queue/scheduler ssg
