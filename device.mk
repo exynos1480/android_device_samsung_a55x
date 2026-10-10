@@ -154,6 +154,9 @@ $(call soong_config_set,lineage_health,fast_charge_node,/sys/class/sec/switch/af
 $(call soong_config_set,lineage_health,fast_charge_value_fast_charge,0)
 $(call soong_config_set,lineage_health,fast_charge_value_none,1)
 
+# IMS
+$(call inherit-product, hardware/lineage/generic-ims/ims.mk)
+
 # Init
 PRODUCT_PACKAGES += \
     fstab.s5e8845 \
