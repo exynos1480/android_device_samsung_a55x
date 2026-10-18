@@ -35,6 +35,7 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/hw/camera.s5e8845.so': blob_fixup()
         .sig_replace('e7 89 01 94', '1f 20 03 d5')  # NOP VendorCameraIPCtoRIL::enable m_sendRequest()
         .sig_replace('92 89 01 94', '1f 20 03 d5') # NOP VendorCameraIPCtoRIL::disable m_sendRequest()
+        .sig_replace('48 d1 ff 10 1f 20 03 d5 09 dc ff 10', 'c8 e7 ff 10 1f 20 03 d5 09 dc ff 10')
         .add_needed('libui_shim.so'),
     'vendor/lib64/libskeymint_cli.so': blob_fixup()
         .replace_needed('libcrypto.so', 'libcrypto-v33.so'),
