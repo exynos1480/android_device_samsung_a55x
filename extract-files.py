@@ -47,6 +47,8 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace('gps.rose.dcm', 'gps.dcm')
         .regex_replace('gps.rose.kdi', 'gps.kdi')
         .regex_replace('product.odm.name', 'vendor.gnss.variant'),
+    'vendor/bin/hw/gpsd_K44': blob_fixup()
+        .binary_regex_replace(b'libcrypto.so', b'libcryptx.so'),
     (
         'vendor/etc/init/init.gps.rose.rc',
         'vendor/etc/init/vendor.samsung.hardware.gnss-service.rc'
