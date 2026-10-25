@@ -36,6 +36,11 @@ blob_fixups: blob_fixups_user_type = {
         .sig_replace('e7 89 01 94', '1f 20 03 d5')  # NOP VendorCameraIPCtoRIL::enable m_sendRequest()
         .sig_replace('92 89 01 94', '1f 20 03 d5') # NOP VendorCameraIPCtoRIL::disable m_sendRequest()
         .sig_replace('48 d1 ff 10 1f 20 03 d5 09 dc ff 10', 'c8 e7 ff 10 1f 20 03 d5 09 dc ff 10')
+        # Enable RAW Support
+        .sig_replace('28 00 80 52 29 1c 00 72', '13 00 00 14 29 1c 00 72')
+        .sig_replace(
+            'ff 83 01 d1 fd 7b 02 a9 f8 5f 03 a9 f6 57 04 a9 f4 4f 05 a9 fd 83 00 91 57 d0 3b d5 f3 03 00 aa f4 03 08 aa',
+            '1f 7d 00 a9 1f 09 00 f9 c0 03 5f d6 61 00 80 52 42 00 7d b2 28 00 80 52 eb ff ff 17 f3 03 00 aa f4 03 08 aa')
         .add_needed('libui_shim.so'),
     'vendor/lib64/libskeymint_cli.so': blob_fixup()
         .replace_needed('libcrypto.so', 'libcrypto-v33.so'),

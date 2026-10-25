@@ -168,6 +168,7 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth_le.prebuilt.xml \
     android.hardware.camera.flash-autofocus.prebuilt.xml \
     android.hardware.camera.full.prebuilt.xml \
+    android.hardware.camera.raw.prebuilt.xml \
     android.hardware.vulkan.compute-0.prebuilt.xml \
     android.hardware.vulkan.level-1.prebuilt.xml \
     android.hardware.vulkan.version-1_3.prebuilt.xml \
