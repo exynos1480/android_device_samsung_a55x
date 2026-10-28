@@ -71,6 +71,10 @@ vendor/lib64/hw/vulkan.samsung.so
 vendor/lib64/libOpenCL.so
 vendor/lib64/libSGPUOpenCL.so
 
+# HDR
+vendor/lib64/libhdr_plugin.so:vendor/lib64/libhdr_plugin_a55x.so;FIX_SONAME
+vendor/lib64/vendor.samsung.libcolor.custom.so
+
 # Keymint
 vendor/lib64/libskeymint10device.so
 vendor/lib64/libskeymint_cli.so
