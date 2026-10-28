@@ -4,5 +4,8 @@
 //
 
 soong_namespace {
-    imports: ["vendor/samsung/a55x"],
+    imports: [
+        "hardware/samsung_slsi-linaro/exynos",
+        "vendor/samsung/a55x",
+    ],
 }

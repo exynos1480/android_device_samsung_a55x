@@ -1,0 +1,13 @@
+cc_library_shared {
+    name: "libhdr_s5e8845",
+    shared_libs: [
+        "libbase",
+        "//vendor/samsung/a55x:libhdr_plugin_a55x",
+    ],
+    header_libs: [
+        "libhdrinterface_header_default",
+        "libsystem_headers",
+    ],
+    srcs: ["hdrInterface.cpp"],
+    vendor: true,
+}
