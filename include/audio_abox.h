@@ -55,15 +55,15 @@ audio_format_t supported_playback_audioformat[MAX_NUM_PLAYBACK_AF] = {AUDIO_FORM
 /* Calliope Firmware Dump */
 #define CALLIOPE_LOG_BUFFERSIZE     (4 * 1024)
 
-#define CALLIOPE_DBG_PATH  "/sys/kernel/debug/abox/"
+#define CALLIOPE_DBG_PATH  "/proc/abox/"
 #define CALLIOPE_LOG       "log-"
 #define SYSFS_PREFIX       "/sys"
-#define ABOX_DEV           "/devices/platform/18c50000.abox/"
-#define ABOX_REGMAP_PATH   "/d/regmap/18c50000.abox/"
+#define ABOX_DEV           "/devices/platform/14e50000.abox/"
+#define ABOX_REGMAP_PATH   "/proc/abox/runtime/"
 #define ABOX_DEBUG         "0.abox-debug/"
 #define ABOX_SRAM          "calliope_sram"
 #define ABOX_DRAM          "calliope_dram"
-#define ABOX_REG_FILE      "registers"
+#define ABOX_REG_FILE      "sfr"
 #define ABOX_PRIV          "calliope_priv"
 #define ABOX_SLOG          "calliope_slog"
 #define ABOX_DUMP          "/data/vendor/log/abox/"
