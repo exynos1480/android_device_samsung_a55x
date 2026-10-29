@@ -40,9 +40,6 @@
 #define MIXER_CTL_ABOX_A2DP_SUSPEND_PARAMS     "ABOX A2DP SUSPEND PARAM"
 #define MIXER_CTL_ABOX_A2DP_SUSPEND_PARAMS_CNT 1
 
-// Mixer Control for set USB Mode
-#define ABOX_USBMODE_CONTROL_NAME "ABOX ERAP info USB On"
-
 // Mixer Control for set A-Box Early WakeUp Control
 #define ABOX_TICKLE_CONTROL_NAME "ABOX Tickle"
 #define ABOX_TICKLE_ON      1
@@ -65,6 +62,13 @@
 #define ABOX_BIT_WIDTH_UDMA_WR0_NAME    "ABOX UDMA WR0 Width"
 #define ABOX_PERIOD_SIZE_UDMA_WR0_NAME  "ABOX UDMA WR0 Period"
 #define ABOX_PACKED_UDMA_WR0_NAME       "ABOX UDMA WR0 Packed"
+// UDMA RD0 config controls
+#define ABOX_SAMPLE_RATE_UDMA_RD0_NAME  "ABOX UDMA RD0 Rate"
+#define ABOX_CHANNELS_UDMA_RD0_NAME     "ABOX UDMA RD0 Channel"
+#define ABOX_BIT_WIDTH_UDMA_RD0_NAME    "ABOX UDMA RD0 Width"
+#define ABOX_PERIOD_SIZE_UDMA_RD0_NAME  "ABOX UDMA RD0 Period"
+#define ABOX_PACKED_UDMA_RD0_NAME       "ABOX UDMA RD0 Packed"
+#define ABOX_EXPAND_UDMA_RD0_NAME       "ABOX UDMA RD0 Expand"
 
 typedef enum {
     USBMODE        = 0,
@@ -76,8 +80,6 @@ typedef enum {
 // Mixer Control for set Android Audio Mode
 #define ABOX_AUDIOMODE_CONTROL_NAME "ABOX Audio Mode"
 
-#define SPK_AMPL_POWER_NAME "ABOX Spk AmpL Power"
-
 // Compress Offload Volume
 #define OFFLOAD_VOLUME_CONTROL_NAME "ABOX ComprTx0 Volume"
 #define COMPRESS_PLAYBACK_VOLUME_MAX   8192
@@ -86,8 +88,7 @@ typedef enum {
 #define OFFLOAD_UPSCALE_CONTROL_NAME "ABOX ComprTx0 Format"
 
 //AEC_Control
-#define ABOX_DNN_CONTROL_NAME "ABOX DNN PROCESS" // 1 : off / 0 : on
-#define ABOX_DVTX_CONTROL_NAME "ABOX DVTx PROCESS"
+#define ABOX_DNN_CONTROL_NAME "ABOX OEM PROCESS" // 1 : off / 0 : on
 #define MIXER_CTL_ABOX_NREC_CONTROL_PARAMS_CNT 1
 
 // Call volume
@@ -95,7 +96,7 @@ typedef enum {
 #define CALL_PLAYBACK_VOLUME_MAX   7
 
 #define CALL_RX_MUTE_CONTROL_NAME "ABOX Speech Rx Mute"
-#define CALL_TX_MUTE_CONTROL_NAME "ABOX DVTx Tx Mute"
+#define CALL_TX_MUTE_CONTROL_NAME "ABOX CP call TX MUTE"
 
 typedef enum {
     UPSCALE_NONE        = 0,
