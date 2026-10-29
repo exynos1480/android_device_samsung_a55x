@@ -143,12 +143,6 @@
                              samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000"
                              channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO AUDIO_CHANNEL_IN_FRONT_BACK AUDIO_CHANNEL_IN_VOICE_UPLINK_MONO AUDIO_CHANNEL_IN_VOICE_DNLINK_MONO"/>
                 </devicePort>
-
-                <devicePort tagName="Aux Device In" type="AUDIO_DEVICE_IN_AUX_DIGITAL" role="source">
-                    <profile format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000,11025,12000,16000,22050,24000,32000,44100,48000"
-                             channelMasks="AUDIO_CHANNEL_IN_MONO,AUDIO_CHANNEL_IN_STEREO,AUDIO_CHANNEL_IN_FRONT_BACK,AUDIO_CHANNEL_IN_VOICE_UPLINK_MONO,AUDIO_CHANNEL_IN_VOICE_DNLINK_MONO"/>
-                </devicePort>
                 <devicePort tagName="Voice Call Mic" type="AUDIO_DEVICE_IN_VOICE_CALL" role="source">
                 </devicePort>
 
@@ -180,7 +174,7 @@
                        sources="primary output,deep_buffer,fast"/>
 
                 <route type="mix" sink="primary input"
-                       sources="Built-In Mic,Built-In Back Mic,BT SCO Headset Mic,Aux Device In,USB Device In,USB Headset In,Voice Call Mic"/>
+                       sources="Built-In Mic,Built-In Back Mic,BT SCO Headset Mic,USB Device In,USB Headset In,Voice Call Mic"/>
                 <route type="mix" sink="mmap_no_irq_in"
                        sources="Built-In Mic,Built-In Back Mic,USB Device In,USB Headset In"/>
                 <route type="mix" sink="hifi_input" sources="USB Device In,USB Headset In" />
