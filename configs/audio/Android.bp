@@ -3,6 +3,13 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
+genrule {
+    name: "gen_usbv2_audio_policy_configuration",
+    srcs: ["//frameworks/av/services/audiopolicy/config:usb_audio_policy_configuration"],
+    cmd: "sed 's/b\"/bv2\"/g' $(in) > $(out)",
+    out: ["usbv2_audio_policy_configuration.xml"],
+}
+
 prebuilt_etc {
     name: "audio_effects.xml",
     src: "audio_effects.xml",
@@ -18,5 +25,11 @@ prebuilt_etc {
 prebuilt_etc {
     name: "bluetooth_with_le_audio_policy_configuration_7_0.xml",
     src: "//frameworks/av/services/audiopolicy/config:bluetooth_with_le_audio_policy_configuration_7_0",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "usbv2_audio_policy_configuration.xml",
+    src: ":gen_usbv2_audio_policy_configuration",
     vendor: true,
 }
