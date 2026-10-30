@@ -54,6 +54,9 @@ PRODUCT_PACKAGES += \
     android.hardware.boot-service.exynos \
     android.hardware.boot-service.exynos_recovery
 
+# Kernel
+PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
+
 # Kernel Modules
 PRODUCT_PACKAGES += \
     toolbox.vendor_ramdisk
